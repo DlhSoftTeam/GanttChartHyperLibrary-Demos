@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{AAF8550A-389E-447F-828F-A109A0FB33B9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.css" />
+    <Content Include="index.html" />
+    <Content Include="Samples\Images\AddNew.png" />
+    <Content Include="Samples\Images\Baseline.png" />
+    <Content Include="Samples\Images\Copy.png" />
+    <Content Include="Samples\Images\CriticalPath.png" />
+    <Content Include="Samples\Images\CustomScales.png" />
+    <Content Include="Samples\Images\DecreaseIndentation.png" />
+    <Content Include="Samples\Images\DecreaseTimelinePage.png" />
+    <Content Include="Samples\Images\Delete.png" />
+    <Content Include="Samples\Images\DependencyConstraints.png" />
+    <Content Include="Samples\Images\IncreaseIndentation.png" />
+    <Content Include="Samples\Images\IncreaseTimelinePage.png" />
+    <Content Include="Samples\Images\InsertNew.png" />
+    <Content Include="Samples\Images\LevelResources.png" />
+    <Content Include="Samples\Images\LoadChart.png" />
+    <Content Include="Samples\Images\LoadProjectXml.png" />
+    <Content Include="Samples\Images\MoveDown.png" />
+    <Content Include="Samples\Images\MoveUp.png" />
+    <Content Include="Samples\Images\NetworkDiagram.png" />
+    <Content Include="Samples\Images\Paste.png" />
+    <Content Include="Samples\Images\PertChart.png" />
+    <Content Include="Samples\Images\Print.png" />
+    <Content Include="Samples\Images\ProjectStatistics.png" />
+    <Content Include="Samples\Images\SaveProjectXml.png" />
+    <Content Include="Samples\Images\ScheduleChart.png" />
+    <Content Include="Samples\Images\SetColor.png" />
+    <Content Include="Samples\Images\SplitRemainingWork.png" />
+    <Content Include="Samples\Images\ZoomIn.png" />
+    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\styles.css" />
+    <Content Include="Templates\Sample.html" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\DlhSoft.Data.Angular.Directives.js" />
+    <Content Include="Scripts\DlhSoft.Data.HTML.Controls.js" />
+    <Content Include="Scripts\DlhSoft.HierarchicalData.HTML.Controls.js" />
+    <Content Include="Scripts\DlhSoft.ProjectData.GanttChart.Angular.Directives.js" />
+    <Content Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.Extras.js" />
+    <Content Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.js" />
+    <Content Include="Scripts\DlhSoft.ProjectData.PertChart.Angular.Directives.js" />
+    <Content Include="Scripts\DlhSoft.ProjectData.PertChart.HTML.Controls.js" />
+    <Content Include="web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="Scripts\DlhSoft.Data.HTML.Controls.d.ts" />
+    <TypeScriptCompile Include="Scripts\DlhSoft.HierarchicalData.HTML.Controls.d.ts" />
+    <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts" />
+    <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.Extras.d.ts" />
+    <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.PertChart.HTML.Controls.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="packages.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="LicenseManager, Version=4.3.1.1, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <HintPath>..\packages\DlhSoft.GanttChartHyperLibrary.5.3.7\lib\JavaScript\LicenseManagement\LicenseManager.exe</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Samples\AngularJS\GanttChartView\" />
+    <Folder Include="Samples\JavaScript\LoadChartView\" />
+    <Folder Include="Samples\JavaScript\NetworkDiagramView\" />
+    <Folder Include="Samples\JavaScript\PertChartView\" />
+    <Folder Include="Samples\JavaScript\ScheduleChartView\" />
+    <Folder Include="Samples\TypeScript\GanttChartView\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Demos</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59842</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59842/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+</Project>

@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" ng-app="Demos" ng-controller="MainController">
+<head id="head">
+    <title>Demos - Gantt Chart Hyper Library - DlhSoft</title>
+    <link href="http://DlhSoft.com/assets/css/app.min.css" rel="stylesheet">
+    <link href="http://DlhSoft.com/assets/css/custom.css" rel="stylesheet">
+    <link href="http://DlhSoft.com/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://DlhSoft.com/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://DlhSoft.com/css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://DlhSoft.com/css/theme-red.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://DlhSoft.com/css/custom.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600' rel='stylesheet' type='text/css'>
+    <link href="http://DlhSoft.com/Styles/Customizations.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="app.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://DlhSoft.com/js/jquery.min.js"></script>
+    <script type="text/javascript" src="http://DlhSoft.com/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/angular.min.js"></script>
+    <script type="text/javascript" src="Scripts/DlhSoft.Data.HTML.Controls.js"></script>
+    <script type="text/javascript" src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.js"></script>
+    <script type="text/javascript" src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.Extras.js"></script>
+    <script type="text/javascript" src="Scripts/DlhSoft.ProjectData.GanttChart.Angular.Directives.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="http://DlhSoft.com/assets/js/app.min.js"></script>
+    <script type="text/javascript" src="http://DlhSoft.com/assets/js/custom.js"></script>
+    <script type="text/javascript" src="http://DlhSoft.com/js/flexslider.min.js"></script>
+    <script type="text/javascript" src="http://DlhSoft.com/js/parallax.js" defer="defer"></script>
+    <script type="text/javascript" src="http://DlhSoft.com/js/scripts.js"></script>
+    <script type="text/javascript" src="http://DlhSoft.com/Scripts/Customizations.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="DlhSoft" />
+    <meta name="keywords" content="Demos, samples" />
+    <meta name="description" content="Sample applications for DlhSoft Gantt Chart Hyper Library." />
+</head>
+<body>
+    <div class="nav-container">
+        <nav class="bg-dark">
+            <div class="nav-bar">
+                <div class="module left">
+                    <a href="http://DlhSoft.com/index.html" target="_blank">
+                        <img class="logo logo-light" alt="logo" src="http://DlhSoft.com/Images/Logo-light.png">
+                    </a>
+                </div>
+                <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
+                    <i>≡</i>
+                </div>
+                <div class="module-group right">
+                    <div class="module left">
+                        <ul class="menu">
+                            <li>
+                                <a href="/index.html">Demos</a>&nbsp;
+                                –&nbsp;
+                                <a href="http://DlhSoft.com/GanttChartHyperLibrary" target="_blank">Gantt Chart Hyper Library</a>
+                            </li>
+                            <li>
+                                <a href="http://DlhSoft.com/GanttChartHyperLibrary/Purchase.aspx" target="_blank">Order licenses</a>
+                            </li>
+                            <li>
+                                <a href="http://DlhSoft.com/GanttChartHyperLibrary/Support.aspx" target="_blank">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="nav-container hidden-sm hidden-xs">
+        <nav class="bg-secondary">
+            <div class="nav-bar">
+                <div class="module-group right">
+                    <div class="module left">
+                        <ul class="menu">
+                            <li>
+                                <a href="javascript:" class="color-primary">JavaScript</a>
+                            </li>
+                            <li>
+                                <a href="javascript:">TypeScript</a>
+                            </li>
+                            <li>
+                                <a href="javascript:">AngularJS</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="module widget-handle language left">
+                        <ul class="menu">
+                            <li class="has-dropdown">
+                                <a href="javascript:" class="color-primary" title="Theme">Blue-red</a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:">Blue-red</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Yellow-green</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Default</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="main-container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <nav>
+                    <ul class="accordion accordion-1 one-open">
+                        <li class="active">
+                            <div class="title">
+                                <span>GanttChartView</span>
+                            </div>
+                            <div class="content bg-secondary">
+                                <p>
+                                    <span><a href="javascript:">Main features</a> <br /></span>
+                                    <span><a href="javascript:">Custom scales</a> <br /></span>
+                                    <span><a href="javascript:">Custom appearance</a> <br /></span>
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title">
+                                <span>ScheduleChartView</span>
+                            </div>
+                            <div class="content bg-secondary">
+                                <p>
+                                    <span><a href="javascript:">Main features</a> <br /></span>
+                                    <span><a href="javascript:">Custom scales</a> <br /></span>
+                                    <span><a href="javascript:">Custom appearance</a> <br /></span>
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title">
+                                <span>LoadChartView</span>
+                            </div>
+                            <div class="content bg-secondary">
+                                <p>
+                                    <span><a href="javascript:">Main features</a> <br /></span>
+                                    <span><a href="javascript:">Custom appearance</a> <br /></span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="tabbed-content text-tabs">
+                            <ul class="tabs">
+                                <li class="active">
+                                    <div class="tab-title">
+                                        <span>Run</span>
+                                    </div>
+                                    <div class="tab-content right-margin">
+                                        <ds:sample html="'Samples/JavaScript/GanttChartView/MainFeatures/index.html'"></ds:sample>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tab-title">
+                                        <span>HTML</span>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div>
+                                            ...
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tab-title">
+                                        <span>JavaScript®</span>
+                                    </div>
+                                    <div class="tab-content">
+                                        ...
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
