@@ -9,7 +9,8 @@ angular.module('Demos', [])
             replace: true,
             bindToController: {
                 html: '=',
-                style: '='
+                style: '=',
+                parameter: '='
             },
             controller: ($scope) => {
             },
