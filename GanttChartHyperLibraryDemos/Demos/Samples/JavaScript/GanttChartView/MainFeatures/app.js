@@ -1,7 +1,6 @@
-﻿// URL to load the application using a specific design theme: index.htm?theme
-// Suported design themes: Red-blue, Default.
-var parameter = window.location.search;
-var theme = parameter ? parameter.substr(1) : null;
+﻿// Query string syntax: ?theme
+// Supported themes: Red-blue, Default.
+var queryString = window.location.search;
 
 // Retrieve and store the control element for reference purposes.
 var ganttChartView = document.querySelector("#ganttChartView");
