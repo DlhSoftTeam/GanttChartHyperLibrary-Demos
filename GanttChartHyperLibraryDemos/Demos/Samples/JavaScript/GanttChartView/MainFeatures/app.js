@@ -1,4 +1,9 @@
-﻿// Retrieve and store the control element for reference purposes.
+﻿// URL to load the application using a specific design theme: index.htm?theme
+// Suported design themes: Red-blue, Default.
+var parameter = window.location.search;
+var theme = parameter ? parameter.substr(1) : null;
+
+// Retrieve and store the control element for reference purposes.
 var ganttChartView = document.querySelector("#ganttChartView");
 
 // Prepare data items.
