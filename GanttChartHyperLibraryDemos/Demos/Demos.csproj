@@ -53,7 +53,7 @@
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\ZoomIn.png" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\index.html" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\styles.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\app.css" />
     <Content Include="Templates\Sample.html" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
