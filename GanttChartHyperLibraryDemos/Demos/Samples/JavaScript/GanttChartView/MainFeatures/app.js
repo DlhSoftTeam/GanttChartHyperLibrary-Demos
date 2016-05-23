@@ -1,6 +1,7 @@
 ﻿// Query string syntax: ?theme
 // Supported themes: Red-blue, Default.
 var queryString = window.location.search;
+var theme = queryString ? queryString.substr(1) : null;
 
 // Retrieve and store the control element for reference purposes.
 var ganttChartView = document.querySelector("#ganttChartView");
