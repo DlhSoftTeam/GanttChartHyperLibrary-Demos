@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Samples\AngularJS\GanttChartView\" />
+    <Folder Include="Samples\JavaScript\GanttChartView\MainFeatures\Scripts\" />
     <Folder Include="Samples\JavaScript\LoadChartView\" />
     <Folder Include="Samples\JavaScript\NetworkDiagramView\" />
     <Folder Include="Samples\JavaScript\PertChartView\" />
@@ -135,4 +136,7 @@
     <TypeScriptSourceMap>false</TypeScriptSourceMap>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>xcopy /y "$(ProjectDir)\Scripts\DlhSoft*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures\Scripts"</PreBuildEvent>
+  </PropertyGroup>
 </Project>

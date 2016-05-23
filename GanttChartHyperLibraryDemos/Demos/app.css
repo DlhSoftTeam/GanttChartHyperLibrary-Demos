@@ -1,3 +1,9 @@
 ﻿.second-menu {
     margin-right: 8px;
 }
+.theme-menu-item {
+    width: 112px;
+}
+.technology-menu-item {
+    width: 128px;
+}
