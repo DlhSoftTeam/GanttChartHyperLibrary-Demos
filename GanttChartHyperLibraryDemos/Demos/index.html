@@ -77,46 +77,28 @@
                                 <div class="module left">
                                     <ul class="menu">
                                         <li>
-                                            <a href="javascript:" class="color-primary">Run</a>
+                                            <a class="color-primary" href="javascript:" ng-click="run(selectedSample, selectedTechnology)">Run</a>
                                         </li>
-                                        <li>
-                                            <a href="javascript:">index.html</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:">app.css</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:">app.js</a>
+                                        <li ng-repeat="sourceCodeFile in getSourceCodeFiles(selectedSample, selectedTechnology)">
+                                            <a href="javascript:" ng-click="showSourceCode(selectedSample, selectedTechnology, sourceCodeFile)">{{ sourceCodeFile }}</a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="module widget-handle left">
                                     <ul class="menu">
                                         <li>
-                                            <a href="javascript:" class="color-primary">JavaScript® demo</a>
+                                            <a class="theme-menu-item color-primary" href="javascript:">{{ selectedTheme }} theme</a>
                                             <ul>
-                                                <li>
-                                                    <a href="javascript:">JavaScript® demo</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:">TypeScript demo</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:">AngularJS demo</a>
+                                                <li ng-repeat="theme in themes">
+                                                    <a href="javascript:" ng-click="selectTheme(theme)">{{ theme }} theme</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="javascript:">Blue-red theme</a>
+                                            <a class="technology-menu-item text-right" href="javascript:">{{ selectedTechnology.title }} demo</a>
                                             <ul>
-                                                <li>
-                                                    <a href="javascript:">Blue-red theme</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:">Yellow-green theme</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:">Default theme</a>
+                                                <li ng-repeat="technology in technologies">
+                                                    <a href="javascript:" ng-click="selectTechnology(technology)">{{ technology.title }} demo</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -132,38 +114,16 @@
             <div class="col-xs-12 col-sm-3">
                 <nav>
                     <ul class="accordion accordion-1 one-open">
-                        <li class="active">
-                            <div class="title">
-                                <span>GanttChartView</span>
+                        <li ng-repeat="component in components" class="{{ selectedSample.component == component ? 'active' : '' }}">
+                            <div class="title" ng-click="selectComponent(component)">
+                                <span>{{ component }}</span>
                             </div>
                             <div class="content bg-secondary">
                                 <p>
-                                    <span><a href="javascript:">Main features</a> <br /></span>
-                                    <span class="fade-on-hover"><a href="javascript:">Custom scales</a> <br /></span>
-                                    <span class="fade-on-hover"><a href="javascript:">Custom appearance</a> <br /></span>
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title">
-                                <span>ScheduleChartView</span>
-                            </div>
-                            <div class="content bg-secondary">
-                                <p>
-                                    <span class="fade-on-hover"><a href="javascript:">Main features</a> <br /></span>
-                                    <span class="fade-on-hover"><a href="javascript:">Custom scales</a> <br /></span>
-                                    <span class="fade-on-hover"><a href="javascript:">Custom appearance</a> <br /></span>
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title">
-                                <span>LoadChartView</span>
-                            </div>
-                            <div class="content bg-secondary">
-                                <p>
-                                    <span class="fade-on-hover"><a href="javascript:">Main features</a> <br /></span>
-                                    <span class="fade-on-hover"><a href="javascript:">Custom appearance</a> <br /></span>
+                                    <span ng-repeat="sample in getSamples(component)" class="{{ selectedSample == sample ? '' : 'fade-on-hover' }}">
+                                        <a href="javascript:" ng-click="selectSample(sample)">{{ sample.title }}</a>
+                                        <br />
+                                    </span>
                                 </p>
                             </div>
                         </li>
