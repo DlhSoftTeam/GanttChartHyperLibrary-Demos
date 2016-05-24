@@ -1,6 +1,6 @@
 ﻿declare var angular;
 angular.module('Demos', [])
-    .controller('MainController', ($scope, $http) => {
+    .controller('MainController', ($scope, $http, $timeout) => {
         var themes = ['Blue-red', 'Default'];
         $scope.themes = themes;
         $scope.selectedTheme = themes[0];
@@ -65,6 +65,17 @@ angular.module('Demos', [])
         $scope.getSourceCodeFiles = (selectedSample, selectedTechnology) => {
             return selectedSample.sourceCodeFiles[selectedTechnology.name];
         };
+        var sourceCodePresentationScriptId = 'sourceCodePresentationScript';
+        var sourceCodePresentationScript = <HTMLScriptElement>document.getElementById(sourceCodePresentationScriptId);
+        var sourceCodePresentationScriptLocation = sourceCodePresentationScript.src;
+        var sourceCodePresentationScriptParent = sourceCodePresentationScript.parentNode;
+        var refreshCodePresentation = () => {
+            sourceCodePresentationScriptParent.removeChild(sourceCodePresentationScript);
+            sourceCodePresentationScript = document.createElement('script');
+            sourceCodePresentationScript.setAttribute('id', sourceCodePresentationScriptId);
+            sourceCodePresentationScript.src = sourceCodePresentationScriptLocation + '?' + new Date().valueOf();
+            sourceCodePresentationScriptParent.appendChild(sourceCodePresentationScript);
+        };
         $scope.selectedSourceCodeFile = null;
         $scope.selectedSourceCodeFileContents = null;
         $scope.selectSourceCodeFile = (selectedSample, selectedTechnology, sourceCodeFile) => {
@@ -73,6 +84,7 @@ angular.module('Demos', [])
             var sourceCodeFileUrl = 'Samples/' + selectedTechnology.name + '/' + selectedSample.component + '/' + selectedSample.feature + '/' + sourceCodeFile;
             $http.get(sourceCodeFileUrl).then((response) => {
                 $scope.selectedSourceCodeFileContents = response.data;
+                refreshCodePresentation();
             });
         };
         $scope.run = () => {
