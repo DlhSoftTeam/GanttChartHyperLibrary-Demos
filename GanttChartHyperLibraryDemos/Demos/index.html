@@ -21,7 +21,7 @@
     <script type="text/javascript" src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.Extras.js"></script>
     <script type="text/javascript" src="Scripts/DlhSoft.ProjectData.GanttChart.Angular.Directives.js"></script>
     <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="http://DlhSoft.com/assets/js/app.min.js"></script>
+    <script type="text/javascript" src="http://DlhSoft.com/assets/js/app.min.js" id="sourceCodePresentationScript"></script>
     <script type="text/javascript" src="http://DlhSoft.com/assets/js/custom.js"></script>
     <script type="text/javascript" src="http://DlhSoft.com/js/flexslider.min.js"></script>
     <script type="text/javascript" src="http://DlhSoft.com/js/parallax.js" defer="defer"></script>
@@ -137,7 +137,7 @@
                         <div ng-show="selectedSourceCodeFile == null">
                             <ds:sample html="getSampleUrl(selectedSample, selectedTechnology, selectedTheme)" parameter="'test'"></ds:sample>
                         </div>
-                        <div ng-repeat="sourceCodeFile in getSourceCodeFiles(selectedSample, selectedTechnology)" ng-show="selectedSourceCodeFile == sourceCodeFile">
+                        <div ng-repeat="sourceCodeFile in getSourceCodeFiles(selectedSample, selectedTechnology)" ng-if="selectedSourceCodeFile == sourceCodeFile">
                             <pre class="line-numbers">
 <code class="language-{{ getSourceCodeLanguage(sourceCodeFile) }}">{{ selectedSourceCodeFileContents }}</code>
                             </pre>
