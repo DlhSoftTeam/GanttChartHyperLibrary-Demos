@@ -1,15 +1,20 @@
 ﻿declare var angular;
-declare var javaScriptGanttChartViewMainFeaturesSample;
 angular.module('Demos', [])
-    .controller('MainController', ($scope) => {
+    .controller('MainController', ($scope, $http) => {
         var themes = ['Blue-red', 'Default'];
         $scope.themes = themes;
         $scope.selectedTheme = themes[0];
-        $scope.selectTheme = (theme) => { $scope.selectedTheme = theme; };
+        $scope.selectTheme = (theme) => {
+            $scope.selectedTheme = theme;
+            $scope.run();
+        };
         var technologies = [{ name: 'JavaScript', title: 'JavaScript®' }, { name: 'TypeScript', title: 'TypeScript' }, { name: 'AngularJS', title: 'AngularJS' }];
         $scope.technologies = technologies;
         $scope.selectedTechnology = technologies[0];
-        $scope.selectTechnology = (technology) => { $scope.selectedTechnology = technology; };
+        $scope.selectTechnology = (technology) => {
+            $scope.selectedTechnology = technology;
+            $scope.run();
+        };
         var components = ['GanttChartView', 'ScheduleChartView'];
         var samples = [
             {
@@ -37,7 +42,10 @@ angular.module('Demos', [])
             }
             return componentSamples;
         };
-        var selectSample = (sample) => { $scope.selectedSample = sample; };
+        var selectSample = (sample) => {
+            $scope.selectedSample = sample;
+            $scope.run();
+        };
         $scope.selectSample = selectSample;
         $scope.selectComponent = (component) => {
             var firstComponentSample;
@@ -56,6 +64,33 @@ angular.module('Demos', [])
         };
         $scope.getSourceCodeFiles = (selectedSample, selectedTechnology) => {
             return selectedSample.sourceCodeFiles[selectedTechnology.name];
+        };
+        $scope.selectedSourceCodeFile = null;
+        $scope.selectedSourceCodeFileContents = null;
+        $scope.selectSourceCodeFile = (selectedSample, selectedTechnology, sourceCodeFile) => {
+            $scope.selectedSourceCodeFile = sourceCodeFile;
+            $scope.selectedSourceCodeFileContents = '…';
+            var sourceCodeFileUrl = 'Samples/' + selectedTechnology.name + '/' + selectedSample.component + '/' + selectedSample.feature + '/' + sourceCodeFile;
+            $http.get(sourceCodeFileUrl).then((response) => {
+                $scope.selectedSourceCodeFileContents = response.data;
+            });
+        };
+        $scope.run = () => {
+            $scope.selectedSourceCodeFile = null;
+            $scope.selectedSourceCodeFileContents = null;
+        };
+        $scope.getSampleUrl = (selectedSample, selectedTechnology, selectedTheme) => {
+            return 'Samples/' + selectedTechnology.name + '/' + selectedSample.component + '/' + selectedSample.feature + '/index.html?' + selectedTheme;
+        };
+        var endsWith = (value, suffix) => {
+            return value.indexOf(suffix, value.length - suffix.length) !== -1;
+        };
+        $scope.getSourceCodeLanguage = (sourceCodeFile) => {
+            if (endsWith(sourceCodeFile, '.css'))
+                return 'css';
+            if (endsWith(sourceCodeFile, '.js'))
+                return 'javascript';
+            return 'markup';
         };
     })
     .directive('dsSample', ($timeout) => {
