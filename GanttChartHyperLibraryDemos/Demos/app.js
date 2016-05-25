@@ -64,17 +64,6 @@ angular.module('Demos', [])
     $scope.getSourceCodeFiles = function (selectedSample, selectedTechnology) {
         return selectedSample.sourceCodeFiles[selectedTechnology.name];
     };
-    var sourceCodePresentationScriptId = 'sourceCodePresentationScript';
-    var sourceCodePresentationScript = document.getElementById(sourceCodePresentationScriptId);
-    var sourceCodePresentationScriptLocation = sourceCodePresentationScript.src;
-    var sourceCodePresentationScriptParent = sourceCodePresentationScript.parentNode;
-    var refreshCodePresentation = function () {
-        sourceCodePresentationScriptParent.removeChild(sourceCodePresentationScript);
-        sourceCodePresentationScript = document.createElement('script');
-        sourceCodePresentationScript.setAttribute('id', sourceCodePresentationScriptId);
-        sourceCodePresentationScript.src = sourceCodePresentationScriptLocation + '?' + new Date().valueOf();
-        sourceCodePresentationScriptParent.appendChild(sourceCodePresentationScript);
-    };
     $scope.selectedSourceCodeFile = null;
     $scope.selectedSourceCodeFileContents = null;
     $scope.selectSourceCodeFile = function (selectedSample, selectedTechnology, sourceCodeFile) {
@@ -83,25 +72,25 @@ angular.module('Demos', [])
         var sourceCodeFileUrl = 'Samples/' + selectedTechnology.name + '/' + selectedSample.component + '/' + selectedSample.feature + '/' + sourceCodeFile;
         $http.get(sourceCodeFileUrl).then(function (response) {
             $scope.selectedSourceCodeFileContents = response.data;
-            refreshCodePresentation();
         });
     };
-    $scope.run = function () {
+    $scope.forceRun = false;
+    $scope.run = function (allowRefreshing) {
+        if (allowRefreshing && $scope.selectedSourceCodeFile == null) {
+            var technology = $scope.selectedTechnology;
+            $scope.selectedTechnology = null;
+            $timeout(function () {
+                $scope.selectedTechnology = technology;
+            });
+        }
         $scope.selectedSourceCodeFile = null;
         $scope.selectedSourceCodeFileContents = null;
     };
     $scope.getSampleUrl = function (selectedSample, selectedTechnology, selectedTheme) {
-        return 'Samples/' + selectedTechnology.name + '/' + selectedSample.component + '/' + selectedSample.feature + '/index.html?' + selectedTheme;
+        return 'Samples/' + (selectedTechnology ? selectedTechnology.name : '') + '/' + selectedSample.component + '/' + selectedSample.feature + '/index.html?' + selectedTheme;
     };
     var endsWith = function (value, suffix) {
         return value.indexOf(suffix, value.length - suffix.length) !== -1;
-    };
-    $scope.getSourceCodeLanguage = function (sourceCodeFile) {
-        if (endsWith(sourceCodeFile, '.css'))
-            return 'css';
-        if (endsWith(sourceCodeFile, '.js'))
-            return 'javascript';
-        return 'markup';
     };
 })
     .directive('dsSample', function ($timeout) {
@@ -110,13 +99,25 @@ angular.module('Demos', [])
         replace: true,
         bindToController: {
             html: '=',
-            style: '=',
             parameter: '='
         },
         controller: function ($scope) {
         },
         controllerAs: 'dss',
         templateUrl: 'Templates/Sample.html'
+    };
+})
+    .directive('dsSourceCode', function ($timeout) {
+    return {
+        restrict: 'E',
+        replace: true,
+        bindToController: {
+            contents: '='
+        },
+        controller: function ($scope) {
+        },
+        controllerAs: 'dssc',
+        templateUrl: 'Templates/SourceCode.html'
     };
 });
 //# sourceMappingURL=app.js.map
