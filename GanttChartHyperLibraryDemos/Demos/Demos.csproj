@@ -65,6 +65,7 @@
     <Content Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.js" />
     <Content Include="Scripts\DlhSoft.ProjectData.PertChart.Angular.Directives.js" />
     <Content Include="Scripts\DlhSoft.ProjectData.PertChart.HTML.Controls.js" />
+    <Content Include="Templates\SourceCode.html" />
     <Content Include="Templates\Sample.html" />
     <Content Include="web.config" />
   </ItemGroup>

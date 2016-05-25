@@ -2,8 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" ng-app="Demos" ng-controller="MainController">
 <head id="head">
     <title>Demos - Gantt Chart Hyper Library - DlhSoft</title>
-    <link href="http://DlhSoft.com/assets/css/app.min.css" rel="stylesheet">
-    <link href="http://DlhSoft.com/assets/css/custom.css" rel="stylesheet">
     <link href="http://DlhSoft.com/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://DlhSoft.com/css/themify-icons.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://DlhSoft.com/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -11,7 +9,6 @@
     <link href="http://DlhSoft.com/css/theme-red.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://DlhSoft.com/css/custom.css" rel="stylesheet" type="text/css" media="all" />
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600' rel='stylesheet' type='text/css'>
-    <link href="http://DlhSoft.com/Styles/Customizations.css" rel="stylesheet" type="text/css" media="all" />
     <link href="app.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://DlhSoft.com/js/jquery.min.js"></script>
     <script type="text/javascript" src="http://DlhSoft.com/js/bootstrap.min.js"></script>
@@ -21,12 +18,6 @@
     <script type="text/javascript" src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.Extras.js"></script>
     <script type="text/javascript" src="Scripts/DlhSoft.ProjectData.GanttChart.Angular.Directives.js"></script>
     <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="http://DlhSoft.com/assets/js/app.min.js" id="sourceCodePresentationScript"></script>
-    <script type="text/javascript" src="http://DlhSoft.com/assets/js/custom.js"></script>
-    <script type="text/javascript" src="http://DlhSoft.com/js/flexslider.min.js"></script>
-    <script type="text/javascript" src="http://DlhSoft.com/js/parallax.js" defer="defer"></script>
-    <script type="text/javascript" src="http://DlhSoft.com/js/scripts.js"></script>
-    <script type="text/javascript" src="http://DlhSoft.com/Scripts/Customizations.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width">
     <meta name="author" content="DlhSoft" />
@@ -78,7 +69,7 @@
                                 <div class="module left">
                                     <ul class="menu">
                                         <li>
-                                            <a class="{{ selectedSourceCodeFile == null ? 'color-primary' : '' }}" href="javascript:" ng-click="run()">Run</a>
+                                            <a class="{{ selectedSourceCodeFile == null ? 'color-primary' : '' }}" href="javascript:" ng-click="run(true)">Run</a>
                                         </li>
                                         <li ng-repeat="sourceCodeFile in getSourceCodeFiles(selectedSample, selectedTechnology)">
                                             <a class="{{ selectedSourceCodeFile == sourceCodeFile ? 'color-primary' : '' }}" href="javascript:" ng-click="selectSourceCodeFile(selectedSample, selectedTechnology, sourceCodeFile)">{{ sourceCodeFile }}</a>
@@ -96,7 +87,7 @@
                                             </ul>
                                         </li>
                                         <li>
-                                            <a class="technology-menu-item text-right" href="javascript:">{{ selectedTechnology.title }} demo</a>
+                                            <a class="technology-menu-item text-right" href="javascript:">{{ selectedTechnology != null ? selectedTechnology.title : "Refreshing" }} demo</a>
                                             <ul>
                                                 <li ng-repeat="technology in technologies">
                                                     <a href="javascript:" ng-click="selectTechnology(technology)">{{ technology.title }} demo</a>
@@ -135,12 +126,10 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div ng-show="selectedSourceCodeFile == null">
-                            <ds:sample html="getSampleUrl(selectedSample, selectedTechnology, selectedTheme)" parameter="'test'"></ds:sample>
+                            <ds:sample ng-if="selectedTechnology != null" html="getSampleUrl(selectedSample, selectedTechnology, selectedTheme)" parameter="'test'"></ds:sample>
                         </div>
-                        <div ng-repeat="sourceCodeFile in getSourceCodeFiles(selectedSample, selectedTechnology)" ng-if="selectedSourceCodeFile == sourceCodeFile">
-                            <pre class="line-numbers">
-<code class="language-{{ getSourceCodeLanguage(sourceCodeFile) }}">{{ selectedSourceCodeFileContents }}</code>
-                            </pre>
+                        <div ng-show="selectedSourceCodeFile != null">
+                            <ds:source-code contents="selectedSourceCodeFileContents"></ds:source-code>
                         </div>
                     </div>
                 </div>
