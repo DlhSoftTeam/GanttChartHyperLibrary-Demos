@@ -214,6 +214,10 @@ settings.areTaskDependencyConstraintsEnabled = true;
 // settings.areDependencyConstraintsAppliedOnStartedTasks = false;
 // settings.areDependencyConstraintsAppliedOnMilestones = false;
 
+// Optionally, initialize custom theme.
+if (initializeTheme && theme)
+    initializeTheme(ganttChartView, settings, theme);
+
 // Initialize the component.
 DlhSoft.Controls.GanttChartView.initialize(ganttChartView, items, settings);
 
