@@ -126,7 +126,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div ng-show="selectedSourceCodeFile == null">
-                            <ds:sample ng-if="selectedTechnology != null" html="getSampleUrl(selectedSample, selectedTechnology, selectedTheme)" parameter="'test'"></ds:sample>
+                            <ds:sample ng-if="selectedTechnology != null" html="getSampleUrl(selectedSample, selectedTechnology, selectedTheme)"></ds:sample>
                         </div>
                         <div ng-show="selectedSourceCodeFile != null">
                             <ds:source-code contents="selectedSourceCodeFileContents"></ds:source-code>
