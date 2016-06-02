@@ -1,7 +1,7 @@
 ﻿declare var angular;
 angular.module('Demos', [])
     .controller('MainController', ($scope, $http, $timeout) => {
-        var themes = ['Blue-red', 'Default'];
+        var themes = ['Blue', 'Default'];
         $scope.themes = themes;
         $scope.selectedTheme = themes[0];
         $scope.selectTheme = (theme) => {
