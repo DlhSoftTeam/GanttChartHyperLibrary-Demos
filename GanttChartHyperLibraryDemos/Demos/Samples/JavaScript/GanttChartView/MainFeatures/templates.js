@@ -1,4 +1,4 @@
-﻿function initializeTemplates(ganttChartView, settings, theme) {
+﻿function initializeGanttChartTemplates(ganttChartView, settings, theme) {
     if (theme == 'Default')
         return;
     // Override settings for standard task items.

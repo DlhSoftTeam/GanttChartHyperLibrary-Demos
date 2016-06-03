@@ -1,5 +1,5 @@
 ﻿// Query string syntax: ?theme
-// Supported themes: Red-blue, Default.
+// Supported themes: Generic-blue, Default.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 
@@ -216,8 +216,8 @@ settings.areTaskDependencyConstraintsEnabled = true;
 // settings.areDependencyConstraintsAppliedOnMilestones = false;
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-initializeTheme(ganttChartView, settings, theme);
-initializeTemplates(ganttChartView, settings, theme);
+initializeGanttChartTheme(ganttChartView, settings, theme);
+initializeGanttChartTemplates(ganttChartView, settings, theme);
 
 // Initialize the component.
 DlhSoft.Controls.GanttChartView.initialize(ganttChartView, items, settings);
@@ -322,7 +322,7 @@ function setCustomScales() {
                        { scaleType: 'Months', headerTextFormat: 'Month', headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White', isSeparatorVisible: true, separatorStyle: 'stroke: #c8bfe7; stroke-width: 0.5px' },
                        { scaleType: 'Weeks', headerTextFormat: 'Date', headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White', isSeparatorVisible: true, separatorStyle: 'stroke: #c8bfe7; stroke-width: 0.5px' },
                        { scaleType: 'Days', headerTextFormat: 'Day', headerStyle: 'padding: 2.25px; border-right: solid 1px White' },
-                       { scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: Red; stroke-width: 0.5px' }];
+                       { scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: #e31d3b; stroke-width: 0.5px' }];
     settings.updateScale = 60 * 60 * 1000; // 1 hour
     settings.hourWidth = 5;
     settings.visibleWeekStart = 1; // Monday
@@ -385,8 +385,8 @@ function scheduleChart() {
     var scheduleChartSettings = { isReadOnly: true, selectionMode: 'None', isMouseWheelZoomEnabled: false };
     ganttChartView.copyCommonSettings(scheduleChartSettings);
     var scheduleChartView = document.querySelector('#scheduleChartView');
-    initializeTheme(scheduleChartView, scheduleChartSettings, theme);
-    initializeTemplates(scheduleChartView, scheduleChartSettings, theme);
+    initializeGanttChartTheme(scheduleChartView, scheduleChartSettings, theme);
+    initializeGanttChartTemplates(scheduleChartView, scheduleChartSettings, theme);
     DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartView, scheduleChartItems, scheduleChartSettings);
     scheduleChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('ScheduleChart', displayedTime); }
     scheduleChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('ScheduleChart', gridWidth, chartWidth); }
@@ -402,6 +402,7 @@ function loadChart() {
     var loadChartSettings = { selectionMode: 'None', isMouseWheelZoomEnabled: false };
     ganttChartView.copyCommonSettings(loadChartSettings);
     var loadChartView = document.querySelector('#loadChartView');
+    initializeLoadChartTheme(loadChartView, loadChartSettings, theme);
     DlhSoft.Controls.LoadChartView.initialize(loadChartView, loadChartItems, loadChartSettings);
     loadChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('LoadChart', displayedTime); }
     loadChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('LoadChart', gridWidth, chartWidth); }
@@ -422,7 +423,7 @@ function pertChart() {
     var criticalItems = pertChartView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {
         var item = criticalItems[i];
-        item.shapeStyle = 'stroke: Red; fill: White';
+        item.shapeStyle = 'stroke: #e31d3b; fill: White';
         pertChartView.refreshItem(item);
     }
     // Optionally, reposition end nodes in order to get better visualization.
@@ -443,7 +444,7 @@ function networkDiagram() {
     var criticalItems = networkDiagramView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {
         var item = criticalItems[i];
-        item.shapeStyle = 'stroke: Red; fill: White';
+        item.shapeStyle = 'stroke: #e31d3b; fill: White';
         networkDiagramView.refreshItem(item);
     }
     // Optionally, reposition end nodes in order to get better visualization.
