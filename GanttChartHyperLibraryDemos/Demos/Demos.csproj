@@ -24,6 +24,7 @@
   <ItemGroup>
     <Content Include="app.css" />
     <Content Include="index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\templates.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\themes.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\AddNew.png" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\Baseline.png" />

@@ -20,9 +20,9 @@ angular.module('Demos', [])
             {
                 component: 'GanttChartView', feature: 'MainFeatures', title: 'Main features',
                 sourceCodeFiles: {
-                    'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js'],
-                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.ts'],
-                    'AngularJS': ['index.html', 'app.css', 'app.js', 'themes.js']
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.ts', 'templates.js'],
+                    'AngularJS': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
                 }
             },
             { component: 'GanttChartView', feature: 'CustomScales', title: 'Custom scales' },

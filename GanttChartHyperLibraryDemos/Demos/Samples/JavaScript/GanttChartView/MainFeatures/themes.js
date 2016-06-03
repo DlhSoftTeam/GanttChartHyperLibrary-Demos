@@ -1,5 +1,4 @@
-﻿// Support for initializing custom themes.
-function initializeTheme(ganttChartView, settings, theme) {
+﻿function initializeTheme(ganttChartView, settings, theme) {
     if (theme == 'Default')
         return;
     settings.headerHeight = 31 * 2;
@@ -8,6 +7,8 @@ function initializeTheme(ganttChartView, settings, theme) {
                         { scaleType: 'Days', headerTextFormat: 'DayOfWeekAbbreviation', headerStyle: 'padding: 7px 2.25px; border-right: 1px solid #e8e8e8' },
                         { scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: red; stroke-width: 0.5px' }];
     settings.itemHeight = 28;
+    settings.barCornerRadius = 1;
+    settings.completedBarCornerRadius = 1;
     settings.hourWidth = 5;
     switch (theme)
     {
