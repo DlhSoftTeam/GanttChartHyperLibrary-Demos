@@ -82,15 +82,15 @@
                                             <a class="theme-menu-item color-primary" href="javascript:">{{ selectedTheme }} theme</a>
                                             <ul>
                                                 <li ng-repeat="theme in themes">
-                                                    <a href="javascript:" ng-click="selectTheme(theme)">{{ theme }} theme</a>
+                                                    <a href="javascript:" ng-click="selectTheme(theme)">{{ theme }}</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <a class="technology-menu-item text-right" href="javascript:">{{ selectedTechnology != null ? selectedTechnology.title : "Refreshing" }} demo</a>
+                                            <a class="technology-menu-item text-right" href="javascript:">{{ selectedTechnology != null ? selectedTechnology.title : "Refreshing" }}</a>
                                             <ul>
                                                 <li ng-repeat="technology in technologies">
-                                                    <a href="javascript:" ng-click="selectTechnology(technology)">{{ technology.title }} demo</a>
+                                                    <a href="javascript:" ng-click="selectTechnology(technology)">{{ technology.title }}</a>
                                                 </li>
                                             </ul>
                                         </li>
