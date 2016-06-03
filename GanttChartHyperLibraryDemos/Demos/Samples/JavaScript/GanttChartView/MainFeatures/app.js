@@ -22,6 +22,7 @@ items[7].predecessors = [{ item: items[6], lag: 2 * 60 * 60 * 1000 }];
 items[8].predecessors = [{ item: items[4] }, { item: items[5] }];
 for (var i = 4; i <= 16; i++)
     items.push({ content: 'Task ' + i, indentation: i >= 8 && i % 3 == 2 ? 0 : 1, start: new Date(year, month, 1 + (i <= 8 ? (i - 4) * 3 : i - 8), 8, 0, 0), finish: new Date(year, month, 1 + (i <= 8 ? (i - 4) * 3 + (i > 8 ? 6 : 1) : i - 2), 16, 0, 0) });
+items[9].assignmentsContent = 'Resource 1';
 items[10].predecessors = [{ item: items[9] }];
 
 // Prepare control settings.
@@ -419,6 +420,7 @@ function pertChart() {
     var pertChartItems = ganttChartView.getPertChartItems();
     var pertChartSettings = { chartMargin: 2, snapRearrangedItemsToGuidelines: false };
     var pertChartView = document.querySelector('#pertChartView');
+    initializePertChartTheme(pertChartView, pertChartSettings, theme);
     DlhSoft.Controls.Pert.PertChartView.initialize(pertChartView, pertChartItems, pertChartSettings);
     var criticalItems = pertChartView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {
@@ -440,6 +442,7 @@ function networkDiagram() {
     var networkDiagramItems = ganttChartView.getNetworkDiagramItems();
     var networkDiagramSettings = { diagramMargin: 2, snapRearrangedItemsToGuidelines: false };
     var networkDiagramView = document.querySelector('#networkDiagramView');
+    initializePertChartTheme(networkDiagramView, networkDiagramSettings, theme);
     DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramView, networkDiagramItems, networkDiagramSettings);
     var criticalItems = networkDiagramView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {
