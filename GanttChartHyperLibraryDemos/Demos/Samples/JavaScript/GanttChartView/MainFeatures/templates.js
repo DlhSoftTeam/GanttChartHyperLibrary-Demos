@@ -1,7 +1,7 @@
 ﻿function initializeGanttChartTemplates(ganttChartView, settings, theme) {
     if (theme == 'Default')
         return;
-    // Override settings for standard task items.
+    // Override settings (partial).
     var barMargin = 4;
     var barHeight = settings.itemHeight - 2 * barMargin;
     var completedBarMargin = 1;
@@ -48,11 +48,11 @@
         arrowMarker.setAttribute('refX', '0');
         arrowMarker.setAttribute('refY', '5');
         arrowMarker.setAttribute('markerUnits', 'strokeWidth');
-        arrowMarker.setAttribute('markerWidth', '10');
-        arrowMarker.setAttribute('markerHeight', '8');
+        arrowMarker.setAttribute('markerWidth', 5 * (settings.arrowSize ? settings.arrowSize : 1));
+        arrowMarker.setAttribute('markerHeight', 4 * (settings.arrowSize ? settings.arrowSize : 1));
         arrowMarker.setAttribute('orient', 'auto');
         var arrowPath = document.createElementNS(svgns, 'path');
-        arrowPath.setAttribute('fill', '#3b87d9');
+        arrowPath.setAttribute('fill', settings.arrowFill ? settings.arrowFill : '#3b87d9');
         arrowPath.setAttribute('d', 'M 0 0 L 10 5 L 0 10 z');
         arrowMarker.appendChild(arrowPath);
         defs.appendChild(arrowMarker);

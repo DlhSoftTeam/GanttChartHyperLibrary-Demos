@@ -1,14 +1,14 @@
 ﻿declare var angular;
 angular.module('Demos', [])
     .controller('MainController', ($scope, $http, $timeout) => {
-        var themes = ['Generic-blue', 'Default'];
+        var themes = ['X', 'Purple-green', 'Blue-navy', 'Orange-brown', 'Teal-green', 'Steel-blue', 'Generic-blue', 'Default'];
         $scope.themes = themes;
         $scope.selectedTheme = themes[0];
         $scope.selectTheme = (theme) => {
             $scope.selectedTheme = theme;
             $scope.run();
         };
-        var technologies = [{ name: 'JavaScript', title: 'JavaScript®' }, { name: 'TypeScript', title: 'TypeScript' }, { name: 'AngularJS', title: 'AngularJS' }];
+        var technologies = [{ name: 'JavaScript', title: 'HTML + JavaScript®' }, { name: 'TypeScript', title: 'HTML + TypeScript' }, { name: 'AngularJS', title: 'Angular + JQuery' }];
         $scope.technologies = technologies;
         $scope.selectedTechnology = technologies[0];
         $scope.selectTechnology = (technology) => {
