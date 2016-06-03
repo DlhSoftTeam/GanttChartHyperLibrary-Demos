@@ -14,14 +14,15 @@ var items = [{ content: 'Task 1', isExpanded: false },
              { content: 'Task 2', isExpanded: true },
              { content: 'Task 2.1', indentation: 1, start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: 'Resource 1, Resource 2 [50%]' },
              { content: 'Task 2.2', indentation: 1 },
-             { content: 'Task 2.2.1', indentation: 2, start: new Date(year, month, 11, 8, 0, 0), finish: new Date(year, month, 12, 16, 0, 0), completedFinish: new Date(year, month, 12, 16, 0, 0), assignmentsContent: 'Resource 2' },
+             { content: 'Task 2.2.1', indentation: 2, start: new Date(year, month, 11, 8, 0, 0), finish: new Date(year, month, 14, 16, 0, 0), completedFinish: new Date(year, month, 14, 16, 0, 0), assignmentsContent: 'Resource 2' },
              { content: 'Task 2.2.2', indentation: 2, start: new Date(year, month, 12, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0), assignmentsContent: 'Resource 2' },
              { content: 'Task 3', indentation: 1, start: new Date(year, month, 15, 16, 0, 0), isMilestone: true }];
 items[3].predecessors = [{ item: items[0], dependencyType: 'SS' }];
 items[7].predecessors = [{ item: items[6], lag: 2 * 60 * 60 * 1000 }];
 items[8].predecessors = [{ item: items[4] }, { item: items[5] }];
 for (var i = 4; i <= 16; i++)
-    items.push({ content: 'Task ' + i, indentation: i % 3 ? 1 : 0, start: new Date(year, month, 2 + i, 8, 0, 0), finish: new Date(year, month, 8 + i, 16, 0, 0) });
+    items.push({ content: 'Task ' + i, indentation: i >= 8 && i % 3 == 2 ? 0 : 1, start: new Date(year, month, 1 + (i <= 8 ? (i - 4) * 3 : i - 8), 8, 0, 0), finish: new Date(year, month, 1 + (i <= 8 ? (i - 4) * 3 + (i > 8 ? 6 : 1) : i - 2), 16, 0, 0) });
+items[10].predecessors = [{ item: items[9] }];
 
 // Prepare control settings.
 var settings = {
@@ -214,9 +215,9 @@ settings.areTaskDependencyConstraintsEnabled = true;
 // settings.areDependencyConstraintsAppliedOnStartedTasks = false;
 // settings.areDependencyConstraintsAppliedOnMilestones = false;
 
-// Optionally, initialize custom theme.
-if (initializeTheme && theme)
-    initializeTheme(ganttChartView, settings, theme);
+// Optionally, initialize custom theme and templates (themes.js, templates.js).
+initializeTheme(ganttChartView, settings, theme);
+initializeTemplates(ganttChartView, settings, theme);
 
 // Initialize the component.
 DlhSoft.Controls.GanttChartView.initialize(ganttChartView, items, settings);
@@ -269,7 +270,8 @@ function setCustomBarColorToItem() {
     if (ganttChartView.selectedItem == null)
         return;
     var item = ganttChartView.selectedItem;
-    item.barStyle = 'stroke: Red; fill: Yellow';
+    item.barStyle = 'stroke: Green; fill: LightGreen';
+    item.completedBarStyle = 'stroke: Gray; fill: Gray';
     ganttChartView.refreshChartItem(item);
     refreshOtherViews();
 }
@@ -350,7 +352,7 @@ function highlightCriticalPath() {
         var item = ganttChartView.items[i];
         delete item.barStyle;
         if (!item.hasChildren && ganttChartView.isItemCritical(item))
-            item.barStyle = 'stroke: Red; fill: Red';
+            item.barStyle = 'stroke: #e31d3b; fill: #e31d3b';
         ganttChartView.refreshChartItem(item);
     }
 }
@@ -383,6 +385,8 @@ function scheduleChart() {
     var scheduleChartSettings = { isReadOnly: true, selectionMode: 'None', isMouseWheelZoomEnabled: false };
     ganttChartView.copyCommonSettings(scheduleChartSettings);
     var scheduleChartView = document.querySelector('#scheduleChartView');
+    initializeTheme(scheduleChartView, scheduleChartSettings, theme);
+    initializeTemplates(scheduleChartView, scheduleChartSettings, theme);
     DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartView, scheduleChartItems, scheduleChartSettings);
     scheduleChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('ScheduleChart', displayedTime); }
     scheduleChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('ScheduleChart', gridWidth, chartWidth); }
