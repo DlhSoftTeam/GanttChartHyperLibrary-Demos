@@ -42,9 +42,11 @@
             settings.diamondStroke = '#222222';
             break;
         case 'Steel-blue':
+            settings.border = '#4b5d6b';
             settings.headerBackground = '#4b5d6b';
             settings.headerForeground = 'white';
             settings.containerBackground = '#a5b5c2';
+            settings.chartBackground = '#bfcfda';
             settings.gridForeground = 'gray';
             settings.toggleFill = 'gray';
             settings.selectedGridForeground = '#4b5d6b';
@@ -55,6 +57,27 @@
             settings.accentFill = '#4c7f3d';
             settings.diamondFill = '#4b5d6b';
             settings.diamondStroke = '#222222';
+            break;
+        case 'Dark-black':
+            settings.containerClass = 'dark'; // CSS class for dynamically generated elements, e.g. input (app.css)
+            settings.border = '#222222';
+            settings.headerBackground = '#111111';
+            settings.headerForeground = '#eeeeee';
+            settings.headerBorder = '#505050';
+            settings.containerBackground = '#222222';
+            settings.gridForeground = '#dddddd';
+            settings.chartForeground = '#dddddd';
+            settings.scaleSeparatorBorder = '#505050';
+            settings.toggleFill = '#808080';
+            settings.toggleHoveringFill = 'white';
+            settings.selectedGridForeground = 'white';
+            settings.selectedGridBackground = '#404040';
+            settings.nonworkingBackground = '#333333';
+            settings.mainStroke = 'gray';
+            settings.accentFill = '#ffbb00';
+            settings.summaryFill = '#505050';
+            settings.diamondFill = '#ffbb00';
+            settings.currentTimeStroke = '#289451';
             break;
     }
     if (settings.containerBackground)
@@ -68,14 +91,22 @@
     };
     if (settings.toggleFill)
         settings.toggleButtonStyle = 'fill: ' + settings.toggleFill;
+    if (settings.toggleHoveringFill)
+        settings.toggleButtonHoveringStyle = 'fill: ' + settings.toggleHoveringFill;
     settings.scales = [{ scaleType: 'NonworkingTime', isHeaderVisible: false, isHighlightingVisible: true, highlightingStyle: 'stroke-width: 0; fill: ' + (settings.nonworkingBackground ? settings.nonworkingBackground : '#f8f8f8') + '; fill-opacity: 0.65' },
-                       { scaleType: 'Weeks', headerTextFormat: 'Date', headerStyle: 'padding: 7px 5px; border-right: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8' + (settings.headerForeground ? '; color: ' + settings.headerForeground : ''), isSeparatorVisible: true, separatorStyle: 'stroke: #c8bfe7; stroke-width: 0.5px' },
-                       { scaleType: 'Days', headerTextFormat: 'DayOfWeekAbbreviation', headerStyle: 'padding: 7px 5px; border-right: 1px solid #e8e8e8' + (settings.headerForeground ? '; color: ' + settings.headerForeground : '') },
-                       { scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: #e31d3b; stroke-width: 0.5px' }];
-    if (settings.mainFill)
+                       { scaleType: 'Weeks', headerTextFormat: 'Date', headerStyle: 'padding: 7px 5px; border-right: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + '; border-bottom: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + (settings.headerForeground ? '; color: ' + settings.headerForeground : ''), isSeparatorVisible: true, separatorStyle: 'stroke: ' + (settings.scaleSeparatorBorder ? settings.scaleSeparatorBorder : '#c8bfe7') + '; stroke-width: 0.5px' },
+                       { scaleType: 'Days', headerTextFormat: 'DayOfWeekAbbreviation', headerStyle: 'padding: 7px 5px; border-right: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + (settings.headerForeground ? '; color: ' + settings.headerForeground : '') },
+                       { scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: ' + (settings.currentTimeStroke ? settings.currentTimeStroke : '#e31d3b') + '; stroke-width: 0.5px' }];
+    if (settings.chartBackground)
+        settings.scales.splice(0, 0, { scaleType: 'Custom', isHeaderVisible: false, intervals: [{ start: new Date(1, 0, 1), finish: new Date(10000, 11, 31, 23, 59, 59, 999) }], isHighlightingVisible: true, highlightingStyle: 'fill: ' + settings.chartBackground });
+    if (settings.mainFill) {
         settings.standardBarStyle = 'stroke: ' + (settings.mainStroke ? settings.mainStroke : settings.mainFill) + '; fill: ' + settings.mainFill;
+        settings.collapsedSummaryLineStyle = 'stroke: ' + settings.mainFill + '; stroke-width: 0.65px; stroke-dasharray: 2 2';
+    }
     if (settings.accentFill)
         settings.standardCompletedBarStyle = 'stroke: ' + settings.accentFill + '; fill: ' + settings.accentFill;
+    if (settings.summaryFill)
+        settings.summaryBarStyle = 'stroke: ' + (settings.summaryStroke ? settings.summaryStroke : settings.summaryFill) + '; fill: ' + settings.summaryFill;
     if (settings.diamondFill)
         settings.milestoneBarStyle = 'stroke: ' + (settings.diamondStroke ? settings.diamondStroke : settings.diamondFill) + '; fill: ' + settings.diamondFill;
     if (settings.mainStroke) {
@@ -83,6 +114,8 @@
         settings.arrowFill = settings.mainStroke;
         settings.dependencyLineStyle = 'stroke: ' + settings.arrowFill + '; stroke-width: 0.65px; fill: none; marker-end: url(#ArrowMarker)';
     }
+    if (settings.chartForeground)
+        settings.assignmentsStyle = 'font-size: x-small; fill: ' + settings.chartForeground;
     if (settings.alternativeBackground) {
         settings.alternativeGridBackground = settings.alternativeBackground;
         settings.alternativeChartBackground = settings.alternativeBackground;
