@@ -1,13 +1,15 @@
 ﻿declare var angular;
 angular.module('Demos', [])
     .controller('MainController', ($scope, $http, $timeout) => {
-        var themes = ['Generic-bright', 'Generic-blue', 'Purple-green', 'Purple-beige', 'Steel-blue', 'Dark-black', 'Blue-navy', 'Orange-brown', 'Teal-green', 'Cyan-green', 'Default'];
+        var themes = ['Default', 'Generic-bright', 'Generic-blue', 'DlhSoft-gray', 'Purple-green', 'Steel-blue', 'Dark-black', 'Cyan-green', 'Blue-navy', 'Orange-brown', 'Teal-green', 'Purple-beige', 'Gray-blue', 'Aero'];
         $scope.themes = themes;
-        $scope.selectedTheme = themes[0];
+        $scope.selectedTheme = themes[1];
         $scope.selectTheme = (theme) => {
+            $scope.applyingTheme = theme;
             $scope.selectedTheme = null;
             $timeout(() => {
                 $scope.selectedTheme = theme;
+                $scope.applyingTheme = null;
             });
         };
         var technologies = [{ name: 'JavaScript', title: 'HTML + JavaScript®' }, { name: 'TypeScript', title: 'HTML + TypeScript' }, { name: 'AngularJS', title: 'Angular + JQuery' }];
@@ -90,7 +92,7 @@ angular.module('Demos', [])
             $scope.selectedSourceCodeFileContents = null;
         };
         $scope.getSampleUrl = (selectedSample, selectedTechnology, selectedTheme) => {
-            return 'Samples/' + (selectedTechnology ? selectedTechnology.name : '') + '/' + selectedSample.component + '/' + selectedSample.feature + '/index.html?' + selectedTheme;
+            return 'Samples/' + (selectedTechnology ? selectedTechnology.name : '') + '/' + selectedSample.component + '/' + selectedSample.feature + '/index.html?' + (selectedTheme ? selectedTheme : $scope.applyingTheme);
         };
         var endsWith = (value, suffix) => {
             return value.indexOf(suffix, value.length - suffix.length) !== -1;
