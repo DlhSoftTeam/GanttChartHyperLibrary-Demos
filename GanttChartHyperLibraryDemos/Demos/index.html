@@ -79,7 +79,7 @@
                                 <div class="module widget-handle left">
                                     <ul class="menu">
                                         <li>
-                                            <a class="theme-menu-item color-primary" href="javascript:">{{ selectedTheme }} theme</a>
+                                            <a class="theme-menu-item color-primary" href="javascript:">{{ selectedTheme != null ? selectedTheme : "Applying" }} theme</a>
                                             <ul>
                                                 <li ng-repeat="theme in themes">
                                                     <a href="javascript:" ng-click="selectTheme(theme)">{{ theme }}</a>
