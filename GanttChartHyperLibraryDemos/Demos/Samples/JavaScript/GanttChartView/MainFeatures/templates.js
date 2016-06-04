@@ -1,5 +1,5 @@
 ﻿function initializeGanttChartTemplates(ganttChartView, settings, theme) {
-    if (theme == 'Default')
+    if (theme == 'Default' || theme == 'Aero')
         return;
     // Override settings (partial).
     var barMargin = 4;

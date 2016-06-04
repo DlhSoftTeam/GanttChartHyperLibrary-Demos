@@ -1,6 +1,10 @@
 ﻿function initializeGanttChartTheme(ganttChartView, settings, theme) {
     if (theme == 'Default')
         return;
+    if (theme == 'Aero') {
+        settings.theme = 'Aero';
+        return;
+    }
     settings.headerHeight = 31 * 2; // 2 scale rows
     settings.itemHeight = 28;
     settings.barCornerRadius = 1;
@@ -13,7 +17,7 @@
             settings.mainStroke = '#005c9e';
             settings.mainFill = 'white';
             settings.accentFill = '#005c9e';
-            settings.diamondFill = '#ee071d';
+            settings.diamondFill = '#e31d3b';
             settings.diamondStroke = '#005c9e';
             break;
         case 'Generic-blue':
@@ -27,6 +31,7 @@
             break;
         case 'Blue-navy':
             settings.headerBackground = '#eeeeee';
+            settings.selectedGridBackground = '#e8e8e8';
             settings.mainStroke = '#6534ff';
             settings.mainFill = '#369bf9';
             settings.accentFill = '#227fd5';
@@ -34,6 +39,7 @@
             break;
         case 'Orange-brown':
             settings.headerBackground = '#eeeeee';
+            settings.selectedGridBackground = '#e8e8e8';
             settings.mainStroke = '#6534ff';
             settings.mainFill = '#ffbf5a';
             settings.accentFill = '#d5a05a';
@@ -50,9 +56,10 @@
             settings.diamondStroke = '#222222';
             break;
         case 'Steel-blue':
-            settings.border = '#4b5d6b';
+            settings.border = '#aaaaaa';
             settings.headerBackground = '#4b5d6b';
             settings.headerForeground = 'white';
+            settings.headerBorder = '#aaaaaa';
             settings.containerBackground = '#a5b5c2';
             settings.chartBackground = '#bfcfda';
             settings.gridForeground = 'gray';
@@ -75,6 +82,7 @@
             settings.diamondStroke = '#222222';
             break;
         case 'Purple-beige':
+            settings.selectedGridBackground = '#e8e8e8';
             settings.mainStroke = '#005c9e';
             settings.mainFill = '#a68b99';
             settings.accentFill = '#bfb8a4';
@@ -87,7 +95,7 @@
             settings.border = '#222222';
             settings.headerBackground = '#111111';
             settings.headerForeground = '#eeeeee';
-            settings.headerBorder = '#505050';
+            settings.headerBorder = '#222222';
             settings.containerBackground = '#222222';
             settings.gridForeground = '#dddddd';
             settings.chartForeground = '#dddddd';
@@ -103,6 +111,31 @@
             settings.diamondFill = '#ffbb00';
             settings.currentTimeStroke = '#289451';
             break;
+        case 'Gray-blue':
+            settings.headerBackground = 'white';
+            settings.containerBackground = '#f0f0f0';
+            settings.selectedGridBackground = 'white';
+            settings.mainStroke = '#005c9e';
+            settings.mainFill = 'white';
+            settings.accentFill = '#0087be';
+            settings.diamondFill = '#607080';
+            settings.diamondStroke = '#005c9e';
+            break;
+        case 'DlhSoft-gray':
+            settings.border = '#aaaaaa';
+            settings.headerBackground = '#e31d3b';
+            settings.headerForeground = 'white';
+            settings.headerBorder = 'transparent';
+            settings.selectedGridBackground = '#e8e8e8';
+            settings.mainStroke = '#666';
+            settings.mainFill = '#f0f0f0';
+            settings.accentFill = '#ad927f';
+            settings.summaryFill = '#666';
+            settings.diamondFill = '#82a0b3';
+            settings.diamondStroke = '#666';
+            settings.alternativeGridBackground = '#f8f8f8';
+            settings.currentTimeStroke = '#82a0b3';
+            break;
     }
     if (settings.containerBackground)
         settings.containerStyle = 'background-color: ' + settings.containerBackground;
@@ -112,7 +145,11 @@
         settings.itemStyle = 'color: ' + settings.gridForeground + (settings.gridBackground ? '; background-color: ' + settings.gridBackground : '');
         if (settings.selectedGridForeground)
             settings.selectedItemStyle = 'color: ' + settings.selectedGridForeground + '; background-color: ' + (settings.selectedGridBackground ? settings.selectedGridBackground : settings.gridForeground);
-    };
+    }
+    else {
+        if (settings.selectedGridForeground || settings.selectedGridBackground)
+            settings.selectedItemStyle = 'color: ' + (settings.selectedGridForeground ? settings.selectedGridForeground : 'black') + '; background-color: ' + (settings.selectedGridBackground ? settings.selectedGridBackground : '#f0f0f0');
+    }
     if (settings.toggleFill)
         settings.toggleButtonStyle = 'fill: ' + settings.toggleFill;
     if (settings.toggleHoveringFill)
