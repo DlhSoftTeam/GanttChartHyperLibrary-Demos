@@ -5,8 +5,10 @@ angular.module('Demos', [])
         $scope.themes = themes;
         $scope.selectedTheme = themes[0];
         $scope.selectTheme = (theme) => {
-            $scope.selectedTheme = theme;
-            $scope.run();
+            $scope.selectedTheme = null;
+            $timeout(() => {
+                $scope.selectedTheme = theme;
+            });
         };
         var technologies = [{ name: 'JavaScript', title: 'HTML + JavaScript®' }, { name: 'TypeScript', title: 'HTML + TypeScript' }, { name: 'AngularJS', title: 'Angular + JQuery' }];
         $scope.technologies = technologies;
