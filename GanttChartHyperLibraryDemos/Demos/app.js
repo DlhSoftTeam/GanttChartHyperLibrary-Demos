@@ -1,6 +1,6 @@
 angular.module('Demos', [])
     .controller('MainController', function ($scope, $http, $timeout) {
-    var themes = ['X', 'Purple-green', 'Blue-navy', 'Orange-brown', 'Teal-green', 'Steel-blue', 'Dark-black', 'Generic-blue', 'Default'];
+    var themes = ['Generic-bright', 'Generic-blue', 'Purple-green', 'Purple-beige', 'Steel-blue', 'Dark-black', 'Blue-navy', 'Orange-brown', 'Teal-green', 'Cyan-green', 'Default'];
     $scope.themes = themes;
     $scope.selectedTheme = themes[0];
     $scope.selectTheme = function (theme) {
