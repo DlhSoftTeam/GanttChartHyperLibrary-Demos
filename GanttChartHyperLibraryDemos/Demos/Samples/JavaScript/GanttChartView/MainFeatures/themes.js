@@ -8,6 +8,14 @@
     settings.arrowSize = 2;
     settings.hourWidth = 5;
     switch (theme) {
+        case 'Generic-bright':
+            settings.headerBackground = 'white';
+            settings.mainStroke = '#005c9e';
+            settings.mainFill = 'white';
+            settings.accentFill = '#005c9e';
+            settings.diamondFill = '#ee071d';
+            settings.diamondStroke = '#005c9e';
+            break;
         case 'Generic-blue':
             settings.headerBackground = 'white';
             break;
@@ -57,6 +65,22 @@
             settings.accentFill = '#4c7f3d';
             settings.diamondFill = '#4b5d6b';
             settings.diamondStroke = '#222222';
+            break;
+        case 'Cyan-green':
+            settings.headerBackground = '#dddddd';
+            settings.mainStroke = '#6534ff';
+            settings.mainFill = '#1fb5ce';
+            settings.accentFill = '#1fce43';
+            settings.diamondFill = '#d6485b';
+            settings.diamondStroke = '#222222';
+            break;
+        case 'Purple-beige':
+            settings.mainStroke = '#005c9e';
+            settings.mainFill = '#a68b99';
+            settings.accentFill = '#bfb8a4';
+            settings.alternativeBackground = '#f9f9f9';
+            settings.diamondFill = '#bfb8a4';
+            settings.diamondStroke = '#005c9e';
             break;
         case 'Dark-black':
             settings.containerClass = 'dark'; // CSS class for dynamically generated elements, e.g. input (app.css)
