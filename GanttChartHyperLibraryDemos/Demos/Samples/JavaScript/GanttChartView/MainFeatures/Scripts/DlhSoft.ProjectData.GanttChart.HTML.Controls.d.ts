@@ -1,7 +1,7 @@
 ﻿/* Assembly: DlhSoft.ProjectData.GanttChart.HTML.Controls,
    Company: DlhSoft,
    Product: Project Data Modern Library,
-   Version: 5.3.5.1,
+   Version: 5.3.7.4,
    Copyright: Copyright © 2012-2016 DlhSoft,
    Title: Project Data Gantt Chart HTML Controls,
    Description: Project Data Gantt Chart related HTML client components */
@@ -453,7 +453,7 @@ declare module DlhSoft.Controls {
             barMargin?: number; barHeight?: number; barCornerRadius?: number;
             completedBarMargin?: number; completedBarHeight?: number; completedBarCornerRadius?: number;
 
-            styleDefinitionTemplate? (): SVGDefsElement;
+            styleDefinitionTemplate? (ganttChartView?: Element): SVGDefsElement;
             standardBarClass?: string; summaryBarClass?: string; milestoneBarClass?: string; standardBarStyle?: string; summaryBarStyle?: string; milestoneBarStyle?: string;
             standardCompletedBarClass?: string; standardCompletedBarStyle?: string;
             collapsedSummaryLineClass?: string; collapsedSummaryLineStyle?: string;

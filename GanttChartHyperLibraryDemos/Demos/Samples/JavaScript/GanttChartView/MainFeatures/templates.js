@@ -39,7 +39,7 @@
         }
     };
     // Template definitions.
-    settings.styleDefinitionTemplate = function () {
+    settings.styleDefinitionTemplate = function (ganttChartView) {
         var document = ganttChartView.ownerDocument;
         var defs = document.createElementNS(svgns, 'defs');
         var arrowMarker = document.createElementNS(svgns, 'marker');

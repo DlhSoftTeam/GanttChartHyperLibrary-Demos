@@ -100,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="LicenseManager, Version=4.3.1.1, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.GanttChartHyperLibrary.5.3.7.2\lib\JavaScript\LicenseManagement\LicenseManager.exe</HintPath>
+      <HintPath>..\packages\DlhSoft.GanttChartHyperLibrary.5.3.7.5\lib\JavaScript\LicenseManagement\LicenseManager.exe</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
