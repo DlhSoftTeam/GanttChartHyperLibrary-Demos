@@ -82,13 +82,14 @@
             settings.diamondStroke = '#222222';
             break;
         case 'Purple-beige':
-            settings.selectedGridBackground = '#e8e8e8';
+            settings.selectedGridBackground = '#bfb8a4';
             settings.mainStroke = '#005c9e';
             settings.mainFill = '#a68b99';
             settings.accentFill = '#bfb8a4';
-            settings.alternativeBackground = '#f9f9f9';
             settings.diamondFill = '#bfb8a4';
             settings.diamondStroke = '#005c9e';
+            settings.alternativeGridBackground = '#f0eeeb';
+            settings.alternativeChartBackground = '#f9f9f9';
             break;
         case 'Dark-black':
             settings.containerClass = 'dark'; // CSS class for dynamically generated elements, e.g. input (app.css)
