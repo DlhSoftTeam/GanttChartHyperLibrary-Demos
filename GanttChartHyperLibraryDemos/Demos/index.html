@@ -113,7 +113,7 @@
                             <div class="content bg-secondary">
                                 <p>
                                     <span ng-repeat="sample in getSamples(component, selectedTechnology)" class="{{ selectedSample == sample ? '' : 'fade-on-hover' }}">
-                                        <a href="javascript:" ng-click="selectSample(sample)">{{ sample.title }}</a>
+                                        <a href="javascript:" ng-click="selectSample(sample)" title="{{ sample.description }}">{{ sample.title }}</a>
                                         <br />
                                     </span>
                                 </p>

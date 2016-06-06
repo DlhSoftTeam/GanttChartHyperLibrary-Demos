@@ -48,7 +48,10 @@
     opacity: 1;
 }
 
-/* Default overrides */
+/* Overrides */
+body {
+    margin: 0;
+}
 input {
     font-size: 12px;
 }
