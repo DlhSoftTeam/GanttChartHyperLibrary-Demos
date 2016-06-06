@@ -1,7 +1,7 @@
 ﻿declare var angular;
 angular.module('Demos', [])
     .controller('MainController', ($scope, $http, $timeout) => {
-        var components = ['GanttChartView', 'ScheduleChartView'];
+        var components = ['GanttChartView', 'ScheduleChartView', 'LoadChartView', 'PertChartView', 'NetworkDiagramView'];
         var samples = [
             {
                 component: 'GanttChartView', feature: 'MainFeatures', title: 'Main features',
