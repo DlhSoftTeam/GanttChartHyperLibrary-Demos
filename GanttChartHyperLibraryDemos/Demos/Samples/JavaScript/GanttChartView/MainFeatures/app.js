@@ -217,8 +217,10 @@ settings.areTaskDependencyConstraintsEnabled = true;
 // settings.areDependencyConstraintsAppliedOnMilestones = false;
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-initializeGanttChartTheme(ganttChartView, settings, theme);
-initializeGanttChartTemplates(ganttChartView, settings, theme);
+if (initializeGanttChartTheme)
+    initializeGanttChartTheme(ganttChartView, settings, theme);
+if (initializeGanttChartTemplates)
+    initializeGanttChartTemplates(ganttChartView, settings, theme);
 
 // Initialize the component.
 DlhSoft.Controls.GanttChartView.initialize(ganttChartView, items, settings);
@@ -320,9 +322,9 @@ function setCustomScales() {
     var settings = ganttChartView.settings;
     settings.headerHeight = 21 * 3;
     settings.scales = [{ scaleType: 'NonworkingTime', isHeaderVisible: false, isHighlightingVisible: true, highlightingStyle: 'stroke-width: 0; fill: #f8f8f8; fill-opacity: 0.65' },
-                       { scaleType: 'Months', headerTextFormat: 'Month', headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White', isSeparatorVisible: true, separatorStyle: 'stroke: #c8bfe7; stroke-width: 0.5px' },
-                       { scaleType: 'Weeks', headerTextFormat: 'Date', headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White', isSeparatorVisible: true, separatorStyle: 'stroke: #c8bfe7; stroke-width: 0.5px' },
-                       { scaleType: 'Days', headerTextFormat: 'Day', headerStyle: 'padding: 2.25px; border-right: solid 1px White' },
+                       { scaleType: 'Months', headerTextFormat: 'Month', headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White; color: gray', isSeparatorVisible: true, separatorStyle: 'stroke: #c8bfe7; stroke-width: 0.5px' },
+                       { scaleType: 'Weeks', headerTextFormat: 'Date', headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White; color: gray', isSeparatorVisible: true, separatorStyle: 'stroke: #c8bfe7; stroke-width: 0.5px' },
+                       { scaleType: 'Days', headerTextFormat: 'Day', headerStyle: 'padding: 2.25px; border-right: solid 1px White; color: gray' },
                        { scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: #e31d3b; stroke-width: 0.5px' }];
     settings.updateScale = 60 * 60 * 1000; // 1 hour
     settings.hourWidth = 5;
@@ -386,8 +388,10 @@ function scheduleChart() {
     var scheduleChartSettings = { isReadOnly: true, selectionMode: 'None', isMouseWheelZoomEnabled: false };
     ganttChartView.copyCommonSettings(scheduleChartSettings);
     var scheduleChartView = document.querySelector('#scheduleChartView');
-    initializeGanttChartTheme(scheduleChartView, scheduleChartSettings, theme);
-    initializeGanttChartTemplates(scheduleChartView, scheduleChartSettings, theme);
+    if (initializeGanttChartTheme)
+        initializeGanttChartTheme(scheduleChartView, scheduleChartSettings, theme);
+    if (initializeGanttChartTemplates)
+        initializeGanttChartTemplates(scheduleChartView, scheduleChartSettings, theme);
     DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartView, scheduleChartItems, scheduleChartSettings);
     scheduleChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('ScheduleChart', displayedTime); }
     scheduleChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('ScheduleChart', gridWidth, chartWidth); }
@@ -403,7 +407,8 @@ function loadChart() {
     var loadChartSettings = { selectionMode: 'None', isMouseWheelZoomEnabled: false };
     ganttChartView.copyCommonSettings(loadChartSettings);
     var loadChartView = document.querySelector('#loadChartView');
-    initializeLoadChartTheme(loadChartView, loadChartSettings, theme);
+    if (initializeLoadChartTheme)
+        initializeLoadChartTheme(loadChartView, loadChartSettings, theme);
     DlhSoft.Controls.LoadChartView.initialize(loadChartView, loadChartItems, loadChartSettings);
     loadChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('LoadChart', displayedTime); }
     loadChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('LoadChart', gridWidth, chartWidth); }
@@ -420,7 +425,8 @@ function pertChart() {
     var pertChartItems = ganttChartView.getPertChartItems();
     var pertChartSettings = { chartMargin: 2, snapRearrangedItemsToGuidelines: false };
     var pertChartView = document.querySelector('#pertChartView');
-    initializePertChartTheme(pertChartView, pertChartSettings, theme);
+    if (initializePertChartTheme)
+        initializePertChartTheme(pertChartView, pertChartSettings, theme);
     DlhSoft.Controls.Pert.PertChartView.initialize(pertChartView, pertChartItems, pertChartSettings);
     var criticalItems = pertChartView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {
@@ -442,7 +448,8 @@ function networkDiagram() {
     var networkDiagramItems = ganttChartView.getNetworkDiagramItems();
     var networkDiagramSettings = { diagramMargin: 2, snapRearrangedItemsToGuidelines: false };
     var networkDiagramView = document.querySelector('#networkDiagramView');
-    initializePertChartTheme(networkDiagramView, networkDiagramSettings, theme);
+    if (initializePertChartTheme)
+        initializePertChartTheme(networkDiagramView, networkDiagramSettings, theme);
     DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramView, networkDiagramItems, networkDiagramSettings);
     var criticalItems = networkDiagramView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {
@@ -568,13 +575,13 @@ function refreshLoadChartView() {
             var resourceFilterValue = loadChartResourceFilter.value;
             if (resourceFilterValue == '') {
                 loadChartView.loadChartItems = ganttChartView.getLoadChartItems();
-                loadChartView.settings.itemHeight = 21;
-                loadChartView.settings.barHeight = 10.5;
+                loadChartView.settings.itemHeight = 28;
+                loadChartView.settings.barHeight = 20;
             }
             else {
                 loadChartView.loadChartItems = ganttChartView.getLoadChartItems([resourceFilterValue]);
-                loadChartView.settings.itemHeight = 63;
-                loadChartView.settings.barHeight = 52.5;
+                loadChartView.settings.itemHeight = 112;
+                loadChartView.settings.barHeight = 104;
             }
             ganttChartView.copyCommonSettings(loadChartView.settings);
             loadChartView.refresh();

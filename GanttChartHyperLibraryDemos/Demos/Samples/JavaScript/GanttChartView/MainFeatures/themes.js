@@ -191,23 +191,15 @@ function initializeLoadChartTheme(loadChartView, settings, theme) {
     initializeGanttChartTheme(loadChartView, settings, theme);
     if (theme == 'Default')
         return;
-    delete settings.itemHeight;
-    switch (theme) {
-        case 'Generic-blue':
-            settings.normalAllocationBarStyle = settings.underAllocationBarStyle = 'stroke: #8abbed; fill: #8abbed';
-            settings.overAllocationBarStyle = 'stroke: #e31d3b; fill: #e31d3b';
-            break;
-    }
+    settings.barHeight = 20;
+    settings.normalAllocationBarStyle = settings.underAllocationBarStyle = 'stroke: #8abbed; fill: #8abbed';
+    settings.overAllocationBarStyle = 'stroke: #e31d3b; fill: #e31d3b';
 }
 function initializePertChartTheme(pertChartView, settings, theme) {
     if (theme == 'Default')
         return;
-    switch (theme) {
-        case 'Generic-blue':
-            settings.shapeStyle = 'fill: White; stroke: #606060; stroke-width: 1px';
-            settings.milestoneStyle = 'fill: White; stroke: #606060; stroke-width: 1px';
-            settings.dependencyLineStyle = 'stroke: #8abbed; stroke-width: 0.65px; fill: none; marker-end: url(#ArrowMarker)';
-            settings.virtualEffortDependencyLineStyle = 'stroke: #8abbed; stroke-width: 0.65px; stroke-dasharray: 2, 2; fill: none; marker-end: url(#ArrowMarker)';
-            break;
-    }
+    settings.shapeStyle = 'fill: White; stroke: #606060; stroke-width: 1px';
+    settings.milestoneStyle = 'fill: White; stroke: #606060; stroke-width: 1px';
+    settings.dependencyLineStyle = 'stroke: #8abbed; stroke-width: 0.65px; fill: none; marker-end: url(#ArrowMarker)';
+    settings.virtualEffortDependencyLineStyle = 'stroke: #8abbed; stroke-width: 0.65px; stroke-dasharray: 2, 2; fill: none; marker-end: url(#ArrowMarker)';
 }
