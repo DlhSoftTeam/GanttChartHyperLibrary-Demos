@@ -24,6 +24,27 @@
   <ItemGroup>
     <Content Include="app.css" />
     <Content Include="index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\Columns\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\Columns\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\Columns\Images\AddNew.png" />
+    <Content Include="Samples\JavaScript\GanttChartView\Columns\Images\DecreaseIndentation.png" />
+    <Content Include="Samples\JavaScript\GanttChartView\Columns\Images\Delete.png" />
+    <Content Include="Samples\JavaScript\GanttChartView\Columns\Images\IncreaseIndentation.png" />
+    <Content Include="Samples\JavaScript\GanttChartView\Columns\Images\InsertNew.png" />
+    <Content Include="Samples\JavaScript\GanttChartView\Columns\Images\Task.Icon.png" />
+    <Content Include="Samples\JavaScript\GanttChartView\Columns\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\Columns\templates.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\Columns\themes.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\CustomScale\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\CustomScale\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\CustomScale\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\CustomScale\templates.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\CustomScale\themes.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\HierarchicalVirtualization\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\HierarchicalVirtualization\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\HierarchicalVirtualization\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\HierarchicalVirtualization\templates.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\HierarchicalVirtualization\themes.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\templates.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\themes.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\AddNew.png" />
@@ -56,6 +77,11 @@
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\index.html" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\Styling\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\Styling\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\Styling\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\Styling\templates.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\Styling\themes.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -90,13 +116,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Samples\AngularJS\GanttChartView\" />
+    <Folder Include="Samples\AngularJS\GanttChartView\Scripts\" />
+    <Folder Include="Samples\JavaScript\GanttChartView\Columns\Scripts\" />
+    <Folder Include="Samples\JavaScript\GanttChartView\CustomScale\Scripts\" />
+    <Folder Include="Samples\JavaScript\GanttChartView\HierarchicalVirtualization\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\MainFeatures\Scripts\" />
-    <Folder Include="Samples\JavaScript\LoadChartView\" />
-    <Folder Include="Samples\JavaScript\NetworkDiagramView\" />
-    <Folder Include="Samples\JavaScript\PertChartView\" />
-    <Folder Include="Samples\JavaScript\ScheduleChartView\" />
-    <Folder Include="Samples\TypeScript\GanttChartView\" />
+    <Folder Include="Samples\JavaScript\GanttChartView\Styling\Scripts\" />
+    <Folder Include="Samples\JavaScript\LoadChartView\MainFeatures\Scripts\" />
+    <Folder Include="Samples\JavaScript\NetworkDiagramView\MainFeatures\Scripts\" />
+    <Folder Include="Samples\JavaScript\PertChartView\MainFeatures\Scripts\" />
+    <Folder Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Scripts\" />
+    <Folder Include="Samples\TypeScript\GanttChartView\Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="LicenseManager, Version=4.3.1.1, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
@@ -140,6 +170,17 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <PropertyGroup>
-    <PreBuildEvent>xcopy /y "$(ProjectDir)\Scripts\DlhSoft*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures\Scripts"</PreBuildEvent>
+    <PreBuildEvent>xcopy /y "$(ProjectDir)\Scripts\DlhSoft*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\DlhSoft*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\Columns\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\DlhSoft*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\CustomScales\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\DlhSoft*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\Styles\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\DlhSoft*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\HierarchicalVirtualization\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\DlhSoft*.*" "$(ProjectDir)\Samples\JavaScript\ScheduleChartView\MainFeatures\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\DlhSoft*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\MainFeatures\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\DlhSoft*.*" "$(ProjectDir)\Samples\JavaScript\PertChartView\MainFeatures\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\DlhSoft*.*" "$(ProjectDir)\Samples\JavaScript\NetworkDiagramView\MainFeatures\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\DlhSoft*.*" "$(ProjectDir)\Samples\TypeScript\GanttChartView\MainFeatures\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\DlhSoft*.*" "$(ProjectDir)\Samples\AngularJS\GanttChartView\MainFeatures\Scripts\"
+</PreBuildEvent>
   </PropertyGroup>
 </Project>
