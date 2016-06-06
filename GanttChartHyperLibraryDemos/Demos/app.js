@@ -1,9 +1,70 @@
 angular.module('Demos', [])
     .controller('MainController', function ($scope, $http, $timeout) {
+    var components = ['GanttChartView', 'ScheduleChartView'];
+    var samples = [
+        {
+            component: 'GanttChartView', feature: 'MainFeatures', title: 'Main features',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.js', 'templates.js'],
+                'AngularJS': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'Columns', title: 'Columns',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'CustomScales', title: 'Custom scales',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'Styling', title: 'Styling',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'HierarchicalVirtualization', title: 'Hierarchical virtualization',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'MainFeatures', title: 'Main features',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+            }
+        },
+        {
+            component: 'LoadChartView', feature: 'MainFeatures', title: 'Main features',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+            }
+        },
+        {
+            component: 'PertChartView', feature: 'MainFeatures', title: 'Main features',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+            }
+        },
+        {
+            component: 'NetworkDiagramView', feature: 'MainFeatures', title: 'Main features',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+            }
+        }
+    ];
     var themes = ['Default', 'Generic-bright', 'Generic-blue', 'DlhSoft-gray', 'Purple-green', 'Steel-blue', 'Dark-black', 'Cyan-green', 'Blue-navy', 'Orange-brown', 'Teal-green', 'Purple-beige', 'Gray-blue', 'Aero'];
     $scope.themes = themes;
     $scope.selectedTheme = themes[1];
     $scope.selectTheme = function (theme) {
+        if (theme == $scope.selectedTheme)
+            return;
         $scope.applyingTheme = theme;
         $scope.selectedTheme = null;
         $timeout(function () {
@@ -14,43 +75,30 @@ angular.module('Demos', [])
     var technologies = [{ name: 'JavaScript', title: 'HTML + JavaScript®' }, { name: 'TypeScript', title: 'HTML + TypeScript' }, { name: 'AngularJS', title: 'Angular + JQuery' }];
     $scope.technologies = technologies;
     $scope.selectedTechnology = technologies[0];
-    $scope.selectTechnology = function (technology) {
-        $scope.selectedTechnology = technology;
-        $scope.run();
-    };
-    var components = ['GanttChartView', 'ScheduleChartView'];
-    var samples = [
-        {
-            component: 'GanttChartView', feature: 'MainFeatures', title: 'Main features',
-            sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.ts', 'templates.js'],
-                'AngularJS': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
-            }
-        },
-        { component: 'GanttChartView', feature: 'CustomScales', title: 'Custom scales' },
-        { component: 'GanttChartView', feature: 'CustomAppearance', title: 'Custom appearance' },
-        { component: 'ScheduleChartView', feature: 'MainFeatures', title: 'Main features' },
-        { component: 'ScheduleChartView', feature: 'CustomScales', title: 'Custom scales' }
-    ];
-    $scope.components = components;
-    $scope.samples = samples;
-    $scope.selectedSample = samples[0];
-    $scope.getSamples = function (component) {
+    var getSamples = function (component, selectedTechnology) {
         var componentSamples = [];
         for (var i = 0; i < samples.length; i++) {
             var sample = samples[i];
-            if (sample.component == component)
+            if (sample.component == component && sample.sourceCodeFiles[selectedTechnology.name])
                 componentSamples.push(sample);
         }
         return componentSamples;
+    };
+    var getComponents = function (selectedTechnology) {
+        var components = [];
+        for (var i = 0; i < samples.length; i++) {
+            var sample = samples[i];
+            var component = sample.component;
+            if (components.indexOf(component) < 0 && sample.sourceCodeFiles[selectedTechnology.name])
+                components.push(component);
+        }
+        return components;
     };
     var selectSample = function (sample) {
         $scope.selectedSample = sample;
         $scope.run();
     };
-    $scope.selectSample = selectSample;
-    $scope.selectComponent = function (component) {
+    var selectComponent = function (component) {
         var firstComponentSample;
         for (var i = 0; i < samples.length; i++) {
             var sample = samples[i];
@@ -65,6 +113,33 @@ angular.module('Demos', [])
         }
         selectSample(firstComponentSample);
     };
+    $scope.selectTechnology = function (technology) {
+        if (technology == $scope.selectedTechnology)
+            return;
+        $scope.selectedTechnology = technology;
+        var selectedComponent = $scope.selectedComponent;
+        if (getComponents(technology).indexOf(selectedComponent) < 0)
+            selectComponent(selectedComponent = components[0]);
+        var componentSamples = getSamples(selectedComponent, technology);
+        var featureSampleFound = false;
+        for (var i = 0; i < samples.length; i++) {
+            if (samples[i].feature == $scope.selectedFeature && samples[i].sourceCodeFiles[technology]) {
+                featureSampleFound = true;
+                selectSample(samples[i]);
+                break;
+            }
+        }
+        if (!featureSampleFound)
+            selectSample(samples[0]);
+        $scope.run();
+    };
+    $scope.components = components;
+    $scope.samples = samples;
+    $scope.selectedSample = samples[0];
+    $scope.getComponents = getComponents;
+    $scope.getSamples = getSamples;
+    $scope.selectSample = selectSample;
+    $scope.selectComponent = selectComponent;
     $scope.getSourceCodeFiles = function (selectedSample, selectedTechnology) {
         return selectedSample.sourceCodeFiles[selectedTechnology.name];
     };
