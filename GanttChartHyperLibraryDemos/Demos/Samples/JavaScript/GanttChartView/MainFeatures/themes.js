@@ -192,7 +192,8 @@ function initializeLoadChartTheme(loadChartView, settings, theme) {
     if (theme == 'Default')
         return;
     settings.barHeight = 20;
-    settings.normalAllocationBarStyle = settings.underAllocationBarStyle = 'stroke: #8abbed; fill: #8abbed';
+    settings.allocationFill = settings.mainFill ? (settings.mainFill != 'white' ? settings.mainFill : settings.mainStroke) : '#8abbed';
+    settings.normalAllocationBarStyle = settings.underAllocationBarStyle = 'stroke: ' + settings.allocationFill + '; fill: ' + settings.allocationFill;
     settings.overAllocationBarStyle = 'stroke: #e31d3b; fill: #e31d3b';
 }
 function initializePertChartTheme(pertChartView, settings, theme) {
