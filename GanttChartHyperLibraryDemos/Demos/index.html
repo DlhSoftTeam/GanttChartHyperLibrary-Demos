@@ -106,13 +106,13 @@
             <div class="col-xs-12 col-sm-3">
                 <nav>
                     <ul class="accordion accordion-1 one-open">
-                        <li ng-repeat="component in components" class="{{ selectedSample.component == component ? 'active' : '' }}">
+                        <li ng-repeat="component in getComponents(selectedTechnology)" class="{{ selectedSample.component == component ? 'active' : '' }}">
                             <div class="title" ng-click="selectComponent(component)">
                                 <span>{{ component }}</span>
                             </div>
                             <div class="content bg-secondary">
                                 <p>
-                                    <span ng-repeat="sample in getSamples(component)" class="{{ selectedSample == sample ? '' : 'fade-on-hover' }}">
+                                    <span ng-repeat="sample in getSamples(component, selectedTechnology)" class="{{ selectedSample == sample ? '' : 'fade-on-hover' }}">
                                         <a href="javascript:" ng-click="selectSample(sample)">{{ sample.title }}</a>
                                         <br />
                                     </span>
