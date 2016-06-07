@@ -218,9 +218,9 @@ settings.areTaskDependencyConstraintsEnabled = true;
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
 if (initializeGanttChartTheme)
-    initializeGanttChartTheme(ganttChartView, settings, theme);
+    initializeGanttChartTheme(settings, theme);
 if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(ganttChartView, settings, theme);
+    initializeGanttChartTemplates(settings, theme);
 
 // Initialize the component.
 DlhSoft.Controls.GanttChartView.initialize(ganttChartView, items, settings);
@@ -389,9 +389,9 @@ function scheduleChart() {
     ganttChartView.copyCommonSettings(scheduleChartSettings);
     var scheduleChartView = document.querySelector('#scheduleChartView');
     if (initializeGanttChartTheme)
-        initializeGanttChartTheme(scheduleChartView, scheduleChartSettings, theme);
+        initializeGanttChartTheme(scheduleChartSettings, theme);
     if (initializeGanttChartTemplates)
-        initializeGanttChartTemplates(scheduleChartView, scheduleChartSettings, theme);
+        initializeGanttChartTemplates(scheduleChartSettings, theme);
     DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartView, scheduleChartItems, scheduleChartSettings);
     scheduleChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('ScheduleChart', displayedTime); }
     scheduleChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('ScheduleChart', gridWidth, chartWidth); }
@@ -408,7 +408,7 @@ function loadChart() {
     ganttChartView.copyCommonSettings(loadChartSettings);
     var loadChartView = document.querySelector('#loadChartView');
     if (initializeLoadChartTheme)
-        initializeLoadChartTheme(loadChartView, loadChartSettings, theme);
+        initializeLoadChartTheme(loadChartSettings, theme);
     DlhSoft.Controls.LoadChartView.initialize(loadChartView, loadChartItems, loadChartSettings);
     loadChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('LoadChart', displayedTime); }
     loadChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('LoadChart', gridWidth, chartWidth); }
@@ -426,7 +426,7 @@ function pertChart() {
     var pertChartSettings = { chartMargin: 2, snapRearrangedItemsToGuidelines: false };
     var pertChartView = document.querySelector('#pertChartView');
     if (initializePertChartTheme)
-        initializePertChartTheme(pertChartView, pertChartSettings, theme);
+        initializePertChartTheme(pertChartSettings, theme);
     DlhSoft.Controls.Pert.PertChartView.initialize(pertChartView, pertChartItems, pertChartSettings);
     var criticalItems = pertChartView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {
@@ -449,7 +449,7 @@ function networkDiagram() {
     var networkDiagramSettings = { diagramMargin: 2, snapRearrangedItemsToGuidelines: false };
     var networkDiagramView = document.querySelector('#networkDiagramView');
     if (initializePertChartTheme)
-        initializePertChartTheme(networkDiagramView, networkDiagramSettings, theme);
+        initializePertChartTheme(networkDiagramSettings, theme);
     DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramView, networkDiagramItems, networkDiagramSettings);
     var criticalItems = networkDiagramView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {

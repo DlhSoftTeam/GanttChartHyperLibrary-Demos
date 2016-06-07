@@ -1,4 +1,4 @@
-﻿function initializeGanttChartTheme(ganttChartView, settings, theme) {
+﻿function initializeGanttChartTheme(settings, theme) {
     if (theme == 'Default')
         return;
     if (theme == 'Aero') {
@@ -187,8 +187,8 @@
     if (settings.alternativeChartBackground)
         settings.alternativeChartItemStyle = 'fill: ' + settings.alternativeChartBackground;
 }
-function initializeLoadChartTheme(loadChartView, settings, theme) {
-    initializeGanttChartTheme(loadChartView, settings, theme);
+function initializeLoadChartTheme(settings, theme) {
+    initializeGanttChartTheme(settings, theme);
     if (theme == 'Default')
         return;
     settings.barHeight = 20;
@@ -196,7 +196,7 @@ function initializeLoadChartTheme(loadChartView, settings, theme) {
     settings.normalAllocationBarStyle = settings.underAllocationBarStyle = 'stroke: ' + settings.allocationFill + '; fill: ' + settings.allocationFill;
     settings.overAllocationBarStyle = 'stroke: #e31d3b; fill: #e31d3b';
 }
-function initializePertChartTheme(pertChartView, settings, theme) {
+function initializePertChartTheme(settings, theme) {
     if (theme == 'Default')
         return;
     settings.shapeStyle = 'fill: White; stroke: #606060; stroke-width: 1px';

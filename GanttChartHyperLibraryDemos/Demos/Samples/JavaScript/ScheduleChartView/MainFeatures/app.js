@@ -126,9 +126,9 @@ var settings = {
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
 if (initializeGanttChartTheme)
-    initializeGanttChartTheme(scheduleChartView, settings, theme);
+    initializeGanttChartTheme(settings, theme);
 if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(scheduleChartView, settings, theme);
+    initializeGanttChartTemplates(settings, theme);
 
 // Initialize the component.
 DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartView, scheduleChartItems, settings);
@@ -161,6 +161,7 @@ function setCustomBarColorToItem12() {
         return;
     var item = scheduleChartItem.ganttChartItems[2];
     item.barStyle = 'stroke: Green; fill: LightGreen';
+    item.completedBarStyle = 'stroke: Gray; fill: Gray';
     scheduleChartView.refreshChartItem(item);
     scheduleChartView.scrollToItem(scheduleChartItem);
 }
