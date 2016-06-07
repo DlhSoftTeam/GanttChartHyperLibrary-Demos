@@ -44,16 +44,16 @@
         var defs = document.createElementNS(svgns, 'defs');
         var arrowMarker = document.createElementNS(svgns, 'marker');
         arrowMarker.setAttribute('id', 'ArrowMarker');
-        arrowMarker.setAttribute('viewBox', '0 0 10 10');
+        arrowMarker.setAttribute('viewBox', '0 0 9 9');
         arrowMarker.setAttribute('refX', '0');
-        arrowMarker.setAttribute('refY', '5');
+        arrowMarker.setAttribute('refY', '4.5');
         arrowMarker.setAttribute('markerUnits', 'strokeWidth');
-        arrowMarker.setAttribute('markerWidth', 5 * (settings.arrowSize ? settings.arrowSize : 1));
-        arrowMarker.setAttribute('markerHeight', 4 * (settings.arrowSize ? settings.arrowSize : 1));
+        arrowMarker.setAttribute('markerWidth', 4.5 * (settings.arrowSize ? settings.arrowSize : 1));
+        arrowMarker.setAttribute('markerHeight', 3.5 * (settings.arrowSize ? settings.arrowSize : 1));
         arrowMarker.setAttribute('orient', 'auto');
         var arrowPath = document.createElementNS(svgns, 'path');
         arrowPath.setAttribute('fill', settings.arrowFill ? settings.arrowFill : '#3b87d9');
-        arrowPath.setAttribute('d', 'M 0 0 L 10 5 L 0 10 z');
+        arrowPath.setAttribute('d', 'M 0 0 L 9 4.5 L 0 9 z');
         arrowMarker.appendChild(arrowPath);
         defs.appendChild(arrowMarker);
         return defs;
@@ -201,96 +201,6 @@
         }
         return group;
     };
-    settings.summaryTaskTemplate = function (item) {
-        var ganttChartView = item.ganttChartView;
-        var settings = ganttChartView.settings;
-        var items = ganttChartView.items;
-        var document = ganttChartView.ownerDocument;
-        var group = getChartItemArea(item);
-        var itemLeft = ganttChartView.getChartPosition(item.start);
-        var itemRight = ganttChartView.getChartPosition(item.finish);
-        var height = settings.barHeight * 2.15 / 2.65;
-        var bar = document.createElementNS(svgns, 'rect');
-        bar.setAttribute('x', itemLeft);
-        bar.setAttribute('y', settings.barMargin);
-        bar.setAttribute('width', Math.max(0, itemRight - itemLeft - 1));
-        bar.setAttribute('height', height);
-        var barClass = settings.summaryBarClass;
-        if (typeof item.summaryBarClass !== undefinedType)
-            barClass = item.summaryBarClass;
-        if (typeof item.barClass !== undefinedType)
-            barClass = item.barClass;
-        if (typeof barClass !== undefinedType)
-            bar.setAttribute('class', barClass);
-        else {
-            var barStyle = settings.summaryBarStyle;
-            if (typeof item.summaryBarStyle !== undefinedType)
-                barStyle = item.summaryBarStyle;
-            if (typeof item.barStyle !== undefinedType)
-                barStyle = item.barStyle;
-            if (typeof barStyle !== undefinedType)
-                bar.setAttribute('style', barStyle);
-        }
-        group.appendChild(bar);
-        if (!item.isExpanded) {
-            var line = document.createElementNS(svgns, 'line');
-            line.setAttribute('x1', itemLeft);
-            line.setAttribute('y1', settings.barMargin + height + 2.5);
-            line.setAttribute('x2', itemRight - 1);
-            line.setAttribute('y2', settings.barMargin + height + 2.5);
-            var lineClass = settings.collapsedSummaryLineClass;
-            if (typeof item.collapsedSummaryLineClass !== undefinedType)
-                lineClass = item.collapsedSummaryLineClass;
-            if (typeof lineClass !== undefinedType)
-                line.setAttribute('class', lineClass);
-            else {
-                var lineStyle = settings.collapsedSummaryLineStyle;
-                if (typeof item.collapsedSummaryLineStyle !== undefinedType)
-                    lineStyle = item.collapsedSummaryLineStyle;
-                if (typeof lineStyle !== undefinedType)
-                    line.setAttribute('style', lineStyle);
-            }
-            group.appendChild(line);
-        }
-        var startTriangle = document.createElementNS(svgns, 'polygon'), x;
-        var y = settings.barMargin - 0.25, h = height + 1.5, tw = settings.barHeight * 3 / 4, teh = settings.barHeight / 4;
-        x = itemLeft - 1 - settings.barHeight / 3;
-        startTriangle.setAttribute('points', x + ',' + y + ' ' + x + ',' + (y + h) + ' ' + (x + tw / 2) + ',' + (y + h + teh) + ' ' + (x + tw) + ',' + (y + h) + ' ' + (x + tw) + ',' + y);
-        if (typeof barClass !== undefinedType)
-            startTriangle.setAttribute('class', barClass);
-        if (typeof barStyle !== undefinedType)
-            startTriangle.setAttribute('style', barStyle);
-        group.appendChild(startTriangle);
-        var endTriangle = document.createElementNS(svgns, 'polygon');
-        x = itemRight + settings.barHeight / 3;
-        endTriangle.setAttribute('points', x + ',' + y + ' ' + x + ',' + (y + h) + ' ' + (x - tw / 2) + ',' + (y + h + teh) + ' ' + (x - tw) + ',' + (y + h) + ' ' + (x - tw) + ',' + y);
-        if (typeof barClass !== undefinedType)
-            endTriangle.setAttribute('class', barClass);
-        if (typeof barStyle !== undefinedType)
-            endTriangle.setAttribute('style', barStyle);
-        group.appendChild(endTriangle);
-        if (!settings.isReadOnly && !settings.isChartReadOnly && (typeof item.isReadOnly === undefinedType || !item.isReadOnly) && (typeof item.isBarReadOnly === undefinedType || !item.isBarReadOnly)) {
-            if (settings.areTaskDependenciesVisible && !settings.areTaskPredecessorsReadOnly && !item.isPart) {
-                var startDependencyThumb = null;
-                if (typeof settings.allowCreatingStartDependencies === undefinedType || settings.allowCreatingStartDependencies) {
-                    startDependencyThumb = document.createElementNS(svgns, 'circle');
-                    startDependencyThumb.setAttribute('cx', itemLeft - 0.5);
-                    startDependencyThumb.setAttribute('cy', settings.barMargin + settings.barHeight / 2);
-                    startDependencyThumb.setAttribute('r', settings.barHeight / 4);
-                    startDependencyThumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: pointer');
-                    group.appendChild(startDependencyThumb);
-                }
-                var dependencyThumb = document.createElementNS(svgns, 'circle');
-                dependencyThumb.setAttribute('cx', itemRight - 0.5);
-                dependencyThumb.setAttribute('cy', settings.barMargin + settings.barHeight / 2);
-                dependencyThumb.setAttribute('r', 2.5);
-                dependencyThumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: pointer');
-                group.appendChild(dependencyThumb);
-                ganttChartView.initializeDependencyDraggingThumbs(dependencyThumb, startDependencyThumb, group, item, settings.barMargin + settings.barHeight / 2, itemRight - 1.5, itemLeft);
-            }
-        }
-        return group;
-    };
     settings.milestoneTaskTemplate = function (item) {
         var ganttChartView = item.ganttChartView;
         var settings = ganttChartView.settings;
@@ -355,163 +265,6 @@
                 ganttChartView.initializeDependencyDraggingThumbs(dependencyThumb, null, group, item, settings.barMargin + settings.barHeight / 2, x, x);
             }
         }
-        return group;
-    };
-    settings.dependencyLineTemplate = function (item, predecessorItem) {
-        var ganttChartView = item.ganttChartView;
-        var settings = ganttChartView.settings;
-        var items = ganttChartView.items;
-        var document = ganttChartView.ownerDocument;
-        function getDependencyLinePathData(item, predecessorItem) {
-            var y = ganttChartView.getItemTop(predecessorItem.item);
-            var y1 = ganttChartView.getItemTop(item);
-            var d = 'M ', x, x1, x2, y, h = settings.itemHeight, h2 = h / 2, extraLineLength = h / 3.5, arrowSpace = 4, horizontal = false, x0;
-            if (y == y1 && typeof predecessorItem.dependencyType === undefinedType || predecessorItem.dependencyType == 'FinishStart' || predecessorItem.dependencyType == 'FS' || predecessorItem.dependencyType == 'StartFinish' || predecessorItem.dependencyType == 'SF') {
-                if (typeof predecessorItem.dependencyType === undefinedType || predecessorItem.dependencyType == 'FinishStart' || predecessorItem.dependencyType == 'FS') {
-                    x = ganttChartView.getChartPosition(predecessorItem.item.finish);
-                    x1 = ganttChartView.getChartPosition(item.start);
-                }
-                else {
-                    x = ganttChartView.getChartPosition(predecessorItem.item.start);
-                    x1 = ganttChartView.getChartPosition(item.finish);
-                }
-                y = y - y1 + 0.5;
-                d += x + ' ' + (y + h2) + ' L ' + (x1 + (x1 > x ? -1 : +1) * (h / 5 - 1)) + ' ' + (y + h2);
-            }
-            else {
-                if (typeof predecessorItem.dependencyType !== undefinedType && (predecessorItem.dependencyType == 'StartStart' || predecessorItem.dependencyType == 'SS' || predecessorItem.dependencyType == 'StartFinish' || predecessorItem.dependencyType == 'SF')) {
-                    x = ganttChartView.getChartPosition(predecessorItem.item.start);
-                    if ((predecessorItem.item.hasChildren && (typeof predecessorItem.item.isSummaryEnabled === undefinedType || predecessorItem.item.isSummaryEnabled)))
-                        x -= h / 5 + 0.25;
-                    else if (predecessorItem.item.isMilestone)
-                        x -= h / 4;
-                    x1 = x - extraLineLength;
-                }
-                else {
-                    x = ganttChartView.getChartPosition(predecessorItem.item.finish) - 1;
-                    if (predecessorItem.item.hasChildren && (typeof predecessorItem.item.isSummaryEnabled === undefinedType || predecessorItem.item.isSummaryEnabled))
-                        x += h / 5 + 0.25;
-                    else if (predecessorItem.item.isMilestone)
-                        x += h / 4;
-                    else {
-                        x0 = ganttChartView.getChartPosition(predecessorItem.item.start) + 4 - 1;
-                        if (x < x0)
-                            x = x0;
-                    }
-                    x1 = x + extraLineLength;
-                }
-                y = y - y1 + 0.5;
-                d += x + ' ' + (y + h2) + ' L ' + x1 + ' ' + (y + h2);
-                if (typeof predecessorItem.dependencyType !== undefinedType && (predecessorItem.dependencyType == 'FinishFinish' || predecessorItem.dependencyType == 'FF' || predecessorItem.dependencyType == 'StartFinish' || predecessorItem.dependencyType == 'SF')) {
-                    x = ganttChartView.getChartPosition(item.finish) - 1;
-                    if (typeof predecessorItem.dependencyType !== undefinedType && (predecessorItem.dependencyType == 'FinishFinish' || predecessorItem.dependencyType == 'FF')) {
-                        horizontal = true;
-                        if (item.hasChildren && (typeof item.isSummaryEnabled === undefinedType || item.isSummaryEnabled))
-                            x += h / 5 + 1;
-                        else if (item.isMilestone)
-                            x += h / 4 + 1;
-                        else {
-                            x0 = ganttChartView.getChartPosition(item.start) + 4 - 1;
-                            if (x < x0)
-                                x = x0;
-                        }
-                        x2 = x + extraLineLength;
-                    }
-                    else {
-                        if (item.isMilestone)
-                            x2 = x;
-                        else {
-                            x0 = ganttChartView.getChartPosition(item.start) + 4;
-                            if (x < x0)
-                                x = x0;
-                            x2 = x - 2.5;
-                        }
-                    }
-                }
-                else {
-                    x = ganttChartView.getChartPosition(item.start);
-                    if (typeof predecessorItem.dependencyType !== undefinedType && (predecessorItem.dependencyType == 'StartStart' || predecessorItem.dependencyType == 'SS')) {
-                        horizontal = true;
-                        if (item.hasChildren && (typeof item.isSummaryEnabled === undefinedType || item.isSummaryEnabled))
-                            x -= h / 5 + 1;
-                        else if (item.isMilestone)
-                            x -= h / 4 + 1;
-                        x2 = x - extraLineLength;
-                    }
-                    else {
-                        if (item.isMilestone)
-                            x2 = x - 1;
-                        else {
-                            x2 = x + 1.5;
-                            var xf = ganttChartView.getChartPosition(item.finish);
-                            if (x2 < x1 && xf - x1 > extraLineLength * 2 && item.start >= predecessorItem.item.finish)
-                                x2 = x1;
-                        }
-                    }
-                }
-                if (typeof predecessorItem.dependencyType !== undefinedType && (predecessorItem.dependencyType == 'StartStart' || predecessorItem.dependencyType == 'SS' || predecessorItem.dependencyType == 'StartFinish' || predecessorItem.dependencyType == 'SF')) {
-                    if (x2 > x1) {
-                        y -= extraLineLength / 6;
-                        if (y <= 0)
-                            y += h2;
-                        else
-                            y -= h2;
-                        d += ' ' + x1 + ' ' + (y + h2);
-                    }
-                    d += ' ' + x2 + ' ' + (y + h2);
-                }
-                else {
-                    if (x2 < x1) {
-                        y -= extraLineLength / 6;
-                        if (y <= 0)
-                            y += h2;
-                        else
-                            y -= h2;
-                        d += ' ' + x1 + ' ' + (y + h2);
-                    }
-                    d += ' ' + x2 + ' ' + (y + h2);
-                }
-                if (horizontal)
-                    y = h2 + 0.5;
-                else if (y <= 0)
-                    y = h / 4 - (!item.isMilestone && !item.hasChildren ? barMargin : 1) - arrowSpace;
-                else
-                    y = h - h / 4 + (!item.isMilestone && !item.hasChildren ? barMargin : 1) + arrowSpace;
-                if (horizontal) {
-                    if (x2 > x - arrowSpace)
-                        arrowSpace = -arrowSpace;
-                    x -= arrowSpace;
-                }
-                d += ' ' + x2 + ' ' + y;
-                if (horizontal)
-                    d += ' ' + x + ' ' + y;
-            }
-            return d;
-        }
-        var group = document.createElementNS(svgns, 'g');
-        var data = getDependencyLinePathData(item, predecessorItem);
-        var polylineZone = document.createElementNS(svgns, 'path');
-        polylineZone.setAttribute('d', data);
-        if (typeof settings.dependencyLineZoneClass !== undefinedType)
-            polylineZone.setAttribute('class', settings.dependencyLineZoneClass);
-        if (typeof settings.dependencyLineZoneStyle !== undefinedType)
-            polylineZone.setAttribute('style', settings.dependencyLineZoneStyle);
-        group.appendChild(polylineZone);
-        var polyline = document.createElementNS(svgns, 'path');
-        polyline.setAttribute('d', data);
-        var polylineClass = settings.dependencyLineClass;
-        if (typeof predecessorItem.dependencyLineClass !== undefinedType)
-            polylineClass = predecessorItem.dependencyLineClass;
-        if (typeof polylineClass !== undefinedType)
-            polyline.setAttribute('class', polylineClass);
-        else {
-            var polylineStyle = settings.dependencyLineStyle;
-            if (typeof predecessorItem.dependencyLineStyle !== undefinedType)
-                polylineStyle = predecessorItem.dependencyLineStyle;
-            if (typeof polylineStyle !== undefinedType)
-                polyline.setAttribute('style', polylineStyle);
-        }
-        group.appendChild(polyline);
         return group;
     };
     settings.assignmentsTemplate = function (item) {
@@ -591,23 +344,6 @@
             else if (!isNaN(item.units)) {
                 toolTip.appendChild(document.createElement('br'));
                 toolTip.appendChild(document.createTextNode('Allocation: ' + (Math.round(item.units * 100 * 100) / 100) + '%  '));
-            }
-        }
-        return toolTip;
-    };
-    settings.predecessorItemTemplate = function (item, predecessorItem) {
-        var document = item.ganttChartView.ownerDocument;
-        var toolTip = document.createElementNS(svgns, 'title');
-        toolTip.appendChild(getTextNode(document, predecessorItem.item.content + ' - ' + item.content));
-        if (typeof settings.areToolTipsSimplified === undefinedType || !settings.areToolTipsSimplified) {
-            toolTip.appendChild(document.createTextNode('  '));
-            if (predecessorItem.dependencyType) {
-                toolTip.appendChild(document.createElement('br'));
-                toolTip.appendChild(getTextNode(document, 'Type: ' + getDependencyTypeString(predecessorItem.dependencyType) + '  '));
-            }
-            if (predecessorItem.lag) {
-                toolTip.appendChild(document.createElement('br'));
-                toolTip.appendChild(getTextNode(document, 'Lag: ' + (predecessorItem.lag / hourDuration) + 'h' + '  '));
             }
         }
         return toolTip;

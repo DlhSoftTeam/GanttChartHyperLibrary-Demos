@@ -44,16 +44,16 @@
         var defs = document.createElementNS(svgns, 'defs');
         var arrowMarker = document.createElementNS(svgns, 'marker');
         arrowMarker.setAttribute('id', 'ArrowMarker');
-        arrowMarker.setAttribute('viewBox', '0 0 10 10');
+        arrowMarker.setAttribute('viewBox', '0 0 9 9');
         arrowMarker.setAttribute('refX', '0');
-        arrowMarker.setAttribute('refY', '5');
+        arrowMarker.setAttribute('refY', '4.5');
         arrowMarker.setAttribute('markerUnits', 'strokeWidth');
-        arrowMarker.setAttribute('markerWidth', 5 * (settings.arrowSize ? settings.arrowSize : 1));
-        arrowMarker.setAttribute('markerHeight', 4 * (settings.arrowSize ? settings.arrowSize : 1));
+        arrowMarker.setAttribute('markerWidth', 4.5 * (settings.arrowSize ? settings.arrowSize : 1));
+        arrowMarker.setAttribute('markerHeight', 3.5 * (settings.arrowSize ? settings.arrowSize : 1));
         arrowMarker.setAttribute('orient', 'auto');
         var arrowPath = document.createElementNS(svgns, 'path');
         arrowPath.setAttribute('fill', settings.arrowFill ? settings.arrowFill : '#3b87d9');
-        arrowPath.setAttribute('d', 'M 0 0 L 10 5 L 0 10 z');
+        arrowPath.setAttribute('d', 'M 0 0 L 9 4.5 L 0 9 z');
         arrowMarker.appendChild(arrowPath);
         defs.appendChild(arrowMarker);
         return defs;
@@ -365,7 +365,7 @@
         function getDependencyLinePathData(item, predecessorItem) {
             var y = ganttChartView.getItemTop(predecessorItem.item);
             var y1 = ganttChartView.getItemTop(item);
-            var d = 'M ', x, x1, x2, y, h = settings.itemHeight, h2 = h / 2, extraLineLength = h / 3.5, arrowSpace = 4, horizontal = false, x0;
+            var d = 'M ', x, x1, x2, y, h = settings.itemHeight, h2 = h / 2, extraLineLength = h / 3.5, arrowSpace = 3.5, horizontal = false, x0;
             if (y == y1 && typeof predecessorItem.dependencyType === undefinedType || predecessorItem.dependencyType == 'FinishStart' || predecessorItem.dependencyType == 'FS' || predecessorItem.dependencyType == 'StartFinish' || predecessorItem.dependencyType == 'SF') {
                 if (typeof predecessorItem.dependencyType === undefinedType || predecessorItem.dependencyType == 'FinishStart' || predecessorItem.dependencyType == 'FS') {
                     x = ganttChartView.getChartPosition(predecessorItem.item.finish);
@@ -400,7 +400,7 @@
                     }
                     x1 = x + extraLineLength;
                 }
-                y = y - y1 + 0.5;
+                y = y - y1;
                 d += x + ' ' + (y + h2) + ' L ' + x1 + ' ' + (y + h2);
                 if (typeof predecessorItem.dependencyType !== undefinedType && (predecessorItem.dependencyType == 'FinishFinish' || predecessorItem.dependencyType == 'FF' || predecessorItem.dependencyType == 'StartFinish' || predecessorItem.dependencyType == 'SF')) {
                     x = ganttChartView.getChartPosition(item.finish) - 1;
