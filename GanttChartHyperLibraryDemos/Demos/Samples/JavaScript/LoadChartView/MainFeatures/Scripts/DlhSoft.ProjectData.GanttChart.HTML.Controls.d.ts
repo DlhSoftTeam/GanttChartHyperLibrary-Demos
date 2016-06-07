@@ -302,7 +302,7 @@ declare module DlhSoft.Controls {
             parts?: Item[];
 
             "class"?: string; style?: string;
-            barClass?: string; standardBarClass?: string; completedStandardBarClass?: string; summaryBarClass?: string; milestoneBarClass?: string; baselineBarClass?: string; barStyle?: string; standardBarStyle?: string; completedStandardBarStyle?: string; summaryBarStyle?: string; milestoneBarStyle?: string; baselineBarStyle?: string;
+            barClass?: string; standardBarClass?: string; completedBarClass?: string; summaryBarClass?: string; milestoneBarClass?: string; baselineBarClass?: string; barStyle?: string; standardBarStyle?: string; completedBarStyle?: string; summaryBarStyle?: string; milestoneBarStyle?: string; baselineBarStyle?: string;
             taskTemplate? (item: Item): SVGElement;
             template? (item: Item): SVGElement;
 

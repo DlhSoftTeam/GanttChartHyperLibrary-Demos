@@ -498,7 +498,7 @@ function saveProjectXml() {
     saveProjectXmlPanel.style.display = 'inherit';
     var projectXmlSerializerSettings = { compact: true, spaceSeparated: true };
     var projectSerializer = DlhSoft.Controls.GanttChartView.ProjectSerializer.initialize(ganttChartView, projectXmlSerializerSettings);
-    var saveProjectXmlInput = document.querySelector('#saveProjectXmlInput');
+    var saveProjectXmlOutput = document.querySelector('#saveProjectXmlOutput');
     saveProjectXmlOutput.value = projectSerializer.getXml();
     saveProjectXmlOutput.focus();
     saveProjectXmlOutput.select();
