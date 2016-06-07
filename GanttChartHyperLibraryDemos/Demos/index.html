@@ -71,8 +71,15 @@
                                         <li>
                                             <a class="{{ selectedSourceCodeFile == null ? 'color-primary' : '' }}" href="javascript:" ng-click="run(true)">Run</a>
                                         </li>
+                                    </ul>
+                                </div>
+                                <div class="module widget-handle left">
+                                    <ul class="menu">
                                         <li ng-repeat="sourceCodeFile in getSourceCodeFiles(selectedSample, selectedTechnology)">
                                             <a class="{{ selectedSourceCodeFile == sourceCodeFile ? 'color-primary' : '' }}" href="javascript:" ng-click="selectSourceCodeFile(selectedSample, selectedTechnology, sourceCodeFile)">{{ sourceCodeFile }}</a>
+                                        </li>
+                                        <li ng-if="selectedSample.downloadUrl">
+                                            <a ng-href="{{ selectedSample.downloadUrl }}" title="Download">Sample.zip</a>
                                         </li>
                                     </ul>
                                 </div>
