@@ -17,9 +17,9 @@ var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
 if (initializeGanttChartTheme)
-    initializeGanttChartTheme(ganttChartView, settings, theme);
+    initializeGanttChartTheme(settings, theme);
 if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(ganttChartView, settings, theme);
+    initializeGanttChartTemplates(settings, theme);
 
 // Initiate loading sub-item hierarchies for summary items on demand upon expanding them.
 settings.itemExpansionChangeHandler = function (item, isExpanded) {

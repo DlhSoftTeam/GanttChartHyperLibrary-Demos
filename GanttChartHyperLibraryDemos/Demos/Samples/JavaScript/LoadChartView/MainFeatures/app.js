@@ -79,7 +79,7 @@ var settings = {
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
 if (initializeLoadChartTheme)
-    initializeLoadChartTheme(loadChartView, settings, theme);
+    initializeLoadChartTheme(settings, theme);
 
 // Initialize the component.
 DlhSoft.Controls.LoadChartView.initialize(loadChartView, loadChartItems, settings);

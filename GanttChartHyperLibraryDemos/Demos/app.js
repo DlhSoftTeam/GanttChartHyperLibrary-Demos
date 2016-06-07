@@ -5,57 +5,57 @@ angular.module('Demos', [])
         {
             component: 'GanttChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.js', 'templates.js'],
-                'AngularJS': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts', 'app.js', 'templates.js', 'themes.js'],
+                'AngularJS': ['index.html', 'app.css', 'app.ts', 'app.js', 'templates.js', 'themes.js']
             }
         },
         {
             component: 'GanttChartView', feature: 'Columns', title: 'Columns', description: 'Shows how to add supplemental built-in and custom grid columns including a column presenting task icon thumbs that offer vertical drag and drop support',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
             }
         },
         {
             component: 'GanttChartView', feature: 'CustomScale', title: 'Custom scale', description: 'Shows how to define a fully custom chart scale with special time intervals and text headers',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
             }
         },
         {
             component: 'GanttChartView', feature: 'Styling', title: 'Styling', description: 'Shows how to style up elements defined by the component using CSS classes',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
             }
         },
         {
             component: 'GanttChartView', feature: 'HierarchicalVirtualization', title: 'Hierarchical virtualization', description: 'Shows how to develop summary task virtualization and lazy load child tasks only upon parent node expansion',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
             }
         },
         {
             component: 'ScheduleChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
             }
         },
         {
             component: 'LoadChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']
             }
         },
         {
             component: 'PertChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']
             }
         },
         {
             component: 'NetworkDiagramView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js', 'templates.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']
             }
         }
     ];

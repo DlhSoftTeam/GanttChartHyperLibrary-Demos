@@ -43,7 +43,7 @@ var settings = {
 // settings.target = 'Phone'; // Supported values: Standard, Phone.
 
 if (initializePertChartTheme)
-    initializePertChartTheme(pertChartView, settings, theme);
+    initializePertChartTheme(settings, theme);
 
 // Initialize the component.
 DlhSoft.Controls.Pert.PertChartView.initialize(pertChartView, items, settings);

@@ -47,7 +47,7 @@ var settings = {
 };
 
 if (initializePertChartTheme)
-    initializePertChartTheme(networkDiagramView, settings, theme);
+    initializePertChartTheme(settings, theme);
 
 // Initialize the component.
 DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramView, items, settings);

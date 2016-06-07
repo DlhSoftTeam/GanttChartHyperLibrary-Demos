@@ -1,4 +1,4 @@
-﻿function initializeGanttChartTemplates(ganttChartView, settings, theme) {
+﻿function initializeGanttChartTemplates(settings, theme) {
     if (theme == 'Default' || theme == 'Aero')
         return;
     // Override settings (partial).

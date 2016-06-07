@@ -25,9 +25,9 @@ var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
 if (initializeGanttChartTheme)
-    initializeGanttChartTheme(ganttChartView, settings, theme);
+    initializeGanttChartTheme(settings, theme);
 if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(ganttChartView, settings, theme);
+    initializeGanttChartTemplates(settings, theme);
 
 // Ensure timelineStart and timelineFinish are set to Sundays, as the timline needs to present entire weeks.
 settings.timelineStart = new Date(year, month - 1, 27); // Sunday, January 27, 2013
