@@ -215,17 +215,17 @@ function addNewItem() {
     refreshOtherViews();
 }
 function insertNewItem() {
-    if (ganttChartView.selectedItem == null)
+    if (ganttChartView.getSelectedItem() == null)
         return;
     var item = { content: 'New task', start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 4, 16, 0, 0) };
-    ganttChartView.insertItem(ganttChartView.selectedItem.index, item);
+    ganttChartView.insertItem(ganttChartView.getSelectedItem().index, item);
     ganttChartView.selectItem(item);
     ganttChartView.scrollToItem(item);
     ganttChartView.scrollToDateTime(new Date(year, month, 1));
     refreshOtherViews();
 }
 function increaseItemIndentation() {
-    var item = ganttChartView.selectedItem;
+    var item = ganttChartView.getSelectedItem();
     if (item == null)
         return;
     ganttChartView.increaseItemIndentation(item);
@@ -233,7 +233,7 @@ function increaseItemIndentation() {
     refreshOtherViews();
 }
 function decreaseItemIndentation() {
-    var item = ganttChartView.selectedItem;
+    var item = ganttChartView.getSelectedItem();
     if (item == null)
         return;
     ganttChartView.decreaseItemIndentation(item);
@@ -241,48 +241,51 @@ function decreaseItemIndentation() {
     refreshOtherViews();
 }
 function deleteItem() {
-    if (ganttChartView.selectedItem == null)
+    var item = ganttChartView.getSelectedItem();
+    if (item == null)
         return;
-    ganttChartView.removeItem(ganttChartView.selectedItem, true); // Also remove successors' predecessor information.
+    ganttChartView.removeItem(item);
     refreshOtherViews();
 }
 function setCustomBarColorToItem() {
-    if (ganttChartView.selectedItem == null)
+    var item = ganttChartView.getSelectedItem();
+    if (item == null)
         return;
-    var item = ganttChartView.selectedItem;
     item.barStyle = 'stroke: Green; fill: LightGreen';
     item.completedBarStyle = 'stroke: Gray; fill: Gray';
     ganttChartView.refreshChartItem(item);
     refreshOtherViews();
 }
 function copyItem() {
-    if (ganttChartView.selectedItem == null)
+    var item = ganttChartView.getSelectedItem();
+    if (item == null)
         return;
-    copiedItem = ganttChartView.selectedItem;
+    copiedItem = item;
 }
 var copiedItem = null;
 function pasteItem() {
-    if (copiedItem == null || ganttChartView.selectedItem == null)
+    var selectedItem = ganttChartView.getSelectedItem();
+    if (copiedItem == null || selectedItem == null)
         return;
     var item = { content: copiedItem.content, start: copiedItem.start, finish: copiedItem.finish, completedFinish: copiedItem.completedFinish, isMilestone: copiedItem.isMilestone, assignmentsContent: copiedItem.assignmentsContent, isRelativeToTimezone: copiedItem.isRelativeToTimezone };
-    ganttChartView.insertItem(ganttChartView.selectedItem.index + 1, item);
+    ganttChartView.insertItem(selectedItem.index + 1, item);
     ganttChartView.selectItem(item);
     ganttChartView.scrollToItem(item);
     ganttChartView.scrollToDateTime(item.start);
     refreshOtherViews();
 }
 function moveItemUp() {
-    if (ganttChartView.selectedItem == null)
+    var item = ganttChartView.getSelectedItem();
+    if (item == null)
         return;
-    var item = ganttChartView.selectedItem;
     ganttChartView.moveItemHierarchyUp(item);
     ganttChartView.scrollToItem(item);
     refreshOtherViews();
 }
 function moveItemDown() {
-    if (ganttChartView.selectedItem == null)
+    var item = ganttChartView.getSelectedItem();
+    if (item == null)
         return;
-    var item = ganttChartView.selectedItem;
     ganttChartView.moveItemHierarchyDown(item);
     ganttChartView.scrollToItem(item);
     refreshOtherViews();
@@ -321,12 +324,14 @@ function zoomIn() {
     refreshOtherViews();
 }
 function toggleBaseline() {
+    var toggleBaselineCommand = document.querySelector('#toggleBaselineCommand');
     var settings = ganttChartView.settings;
     settings.isBaselineVisible = !settings.isBaselineVisible;
     toggleBaselineCommand.className = settings.isBaselineVisible ? 'ribbonCommand toggle pressed' : 'ribbonCommand toggle';
     ganttChartView.refresh();
 }
 function highlightCriticalPath() {
+    var highlightCriticalPathCommand = document.querySelector('#highlightCriticalPathCommand');
     highlightCriticalPathCommand.className = 'ribbonCommand toggle pressed';
     for (var i = 0; i < ganttChartView.items.length; i++) {
         var item = ganttChartView.items[i];
@@ -337,15 +342,16 @@ function highlightCriticalPath() {
     }
 }
 function splitRemainingWork() {
-    if (ganttChartView.selectedItem == null)
+    var item = ganttChartView.getSelectedItem();
+    if (item == null)
         return;
-    var remainingWorkItem = ganttChartView.splitRemainingWork(ganttChartView.selectedItem, ' (rem. work)', ' (compl. work)');
+    var remainingWorkItem = ganttChartView.splitRemainingWork(item);
     if (remainingWorkItem == null)
         return;
-    ganttChartView.scrollToItem(remainingWorkItem);
     refreshOtherViews();
 }
 function toggleDependencyConstraints() {
+    var toggleDependencyConstraintsCommand = document.querySelector('#toggleDependencyConstraintsCommand');
     var settings = ganttChartView.settings;
     settings.areTaskDependencyConstraintsEnabled = !settings.areTaskDependencyConstraintsEnabled;
     toggleDependencyConstraintsCommand.className = settings.areTaskDependencyConstraintsEnabled ? 'ribbonCommand toggle pressed' : 'ribbonCommand toggle';
@@ -358,8 +364,9 @@ function levelResources() {
     // Alternatively, optimize work to obtain the minimum project finish date and time assuming unlimited resource availability:
     // ganttChartView.optimizeWork(false, true, ganttChartView.settings.currentTime);
 }
+var scheduleChartPanel = document.querySelector('#scheduleChartPanel');
+var scheduleChartView;
 function scheduleChart() {
-    var scheduleChartPanel = document.querySelector('#scheduleChartPanel');
     scheduleChartPanel.style.display = 'inherit';
     var scheduleChartItems = ganttChartView.getScheduleChartItems();
     var scheduleChartSettings = { isReadOnly: true, selectionMode: 'None', isMouseWheelZoomEnabled: false };
@@ -369,16 +376,16 @@ function scheduleChart() {
         initializeGanttChartTheme(scheduleChartSettings, theme);
     if (initializeGanttChartTemplates)
         initializeGanttChartTemplates(scheduleChartSettings, theme);
-    var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, scheduleChartItems, scheduleChartSettings);
+    scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, scheduleChartItems, scheduleChartSettings);
     scheduleChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('ScheduleChart', displayedTime); };
     scheduleChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('ScheduleChart', gridWidth, chartWidth); };
 }
 function closeScheduleChartView() {
-    var scheduleChartPanel = document.querySelector('#scheduleChartPanel');
     scheduleChartPanel.style.display = 'none';
 }
+var loadChartPanel = document.querySelector('#loadChartPanel');
+var loadChartView;
 function loadChart() {
-    var loadChartPanel = document.querySelector('#loadChartPanel');
     loadChartPanel.style.display = 'inherit';
     var loadChartItems = ganttChartView.getLoadChartItems();
     var loadChartSettings = { selectionMode: 'None', isMouseWheelZoomEnabled: false };
@@ -386,17 +393,17 @@ function loadChart() {
     var loadChartViewElement = document.querySelector('#loadChartView');
     if (initializeLoadChartTheme)
         initializeLoadChartTheme(loadChartSettings, theme);
-    DlhSoft.Controls.LoadChartView.initialize(loadChartViewElement, loadChartItems, loadChartSettings);
+    loadChartView = DlhSoft.Controls.LoadChartView.initialize(loadChartViewElement, loadChartItems, loadChartSettings);
     loadChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('LoadChart', displayedTime); };
     loadChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('LoadChart', gridWidth, chartWidth); };
     refreshLoadChartResourceSelector();
 }
 function closeLoadChartView() {
-    var loadChartPanel = document.querySelector('#loadChartPanel');
     loadChartPanel.style.display = 'none';
 }
+var pertChartPanel = document.querySelector('#pertChartPanel');
+var pertChartView;
 function pertChart() {
-    var pertChartPanel = document.querySelector('#pertChartPanel');
     pertChartPanel.style.display = 'inherit';
     // Optionally, pass 0 as method parameter to generate a lighter diagram for root tasks only.
     var pertChartItems = ganttChartView.getPertChartItems();
@@ -404,7 +411,7 @@ function pertChart() {
     var pertChartViewElement = document.querySelector('#pertChartView');
     if (initializePertChartTheme)
         initializePertChartTheme(pertChartSettings, theme);
-    var pertChartView = DlhSoft.Controls.Pert.PertChartView.initialize(pertChartView, pertChartItems, pertChartSettings);
+    pertChartView = DlhSoft.Controls.Pert.PertChartView.initialize(pertChartViewElement, pertChartItems, pertChartSettings);
     var criticalItems = pertChartView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {
         var item = criticalItems[i];
@@ -415,11 +422,11 @@ function pertChart() {
     // pertChartView.repositionEnds();
 }
 function closePertChartView() {
-    var pertChartPanel = document.querySelector('#pertChartPanel');
     pertChartPanel.style.display = 'none';
 }
+var networkDiagramPanel = document.querySelector('#networkDiagramPanel');
+var networkDiagramView;
 function networkDiagram() {
-    var networkDiagramPanel = document.querySelector('#networkDiagramPanel');
     networkDiagramPanel.style.display = 'inherit';
     // Optionally, pass 0 as method parameter to generate a lighter diagram for root tasks only.
     var networkDiagramItems = ganttChartView.getNetworkDiagramItems();
@@ -427,7 +434,7 @@ function networkDiagram() {
     var networkDiagramViewElement = document.querySelector('#networkDiagramView');
     if (initializePertChartTheme)
         initializePertChartTheme(networkDiagramSettings, theme);
-    var networkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramViewElement, networkDiagramItems, networkDiagramSettings);
+    networkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramViewElement, networkDiagramItems, networkDiagramSettings);
     var criticalItems = networkDiagramView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {
         var item = criticalItems[i];
@@ -438,7 +445,6 @@ function networkDiagram() {
     // networkDiagramView.repositionEnds();
 }
 function closeNetworkDiagramView() {
-    var networkDiagramPanel = document.querySelector('#networkDiagramPanel');
     networkDiagramPanel.style.display = 'none';
 }
 function projectStatistics() {
@@ -515,15 +521,15 @@ function refreshScheduleChartView() {
         isWaitingToRefreshScheduleChartView = true;
         setTimeout(function () {
             isWaitingToRefreshScheduleChartView = false;
-            var scheduleChartView = document.querySelector('#scheduleChartView');
             scheduleChartView.scheduleChartItems = ganttChartView.getScheduleChartItems();
             ganttChartView.copyCommonSettings(scheduleChartView.settings);
             scheduleChartView.refresh();
         });
     }
 }
+var loadChartResourceFilter = document.querySelector('#loadChartResourceFilter');
 function refreshLoadChartResourceSelector() {
-    var loadChartResourceFilter = document.querySelector('#loadChartResourceFilter'), i;
+    var i;
     var previouslySelectedResource = loadChartResourceFilter.value;
     for (i = loadChartResourceFilter.childNodes.length; i-- > 2;)
         loadChartResourceFilter.removeChild(loadChartResourceFilter.childNodes[i]);
@@ -544,8 +550,6 @@ function refreshLoadChartView() {
     if (loadChartPanel.style.display != 'none' && !isWaitingToRefreshLoadChartView) {
         isWaitingToRefreshLoadChartView = true;
         setTimeout(function () {
-            var loadChartView = document.querySelector('#loadChartView');
-            var loadChartResourceFilter = document.querySelector('#loadChartResourceFilter');
             var resourceFilterValue = loadChartResourceFilter.value;
             if (resourceFilterValue == '') {
                 loadChartView.loadChartItems = ganttChartView.getLoadChartItems();
@@ -567,7 +571,6 @@ function refreshViewsDisplayedTime(sourceControlType, displayedTime) {
     if (sourceControlType != 'ScheduleChart' && scheduleChartPanel.style.display != 'none' && !isWaitingToRefreshScheduleChartViewDisplayedTime) {
         isWaitingToRefreshScheduleChartViewDisplayedTime = true;
         setTimeout(function () {
-            var scheduleChartView = document.querySelector('#scheduleChartView');
             scheduleChartView.scrollToDateTime(displayedTime);
             isWaitingToRefreshScheduleChartViewDisplayedTime = false;
         });
@@ -575,7 +578,6 @@ function refreshViewsDisplayedTime(sourceControlType, displayedTime) {
     if (sourceControlType != 'LoadChart' && loadChartPanel.style.display != 'none' && !isWaitingToRefreshLoadChartViewDisplayedTime) {
         isWaitingToRefreshLoadChartViewDisplayedTime = true;
         setTimeout(function () {
-            var loadChartView = document.querySelector('#loadChartView');
             loadChartView.scrollToDateTime(displayedTime);
             isWaitingToRefreshLoadChartViewDisplayedTime = false;
         });
@@ -592,7 +594,6 @@ function refreshViewsSplitterPosition(sourceControlType, gridWidth, chartWidth) 
     if (sourceControlType != 'ScheduleChart' && scheduleChartPanel.style.display != 'none' && !isWaitingToRefreshScheduleChartViewSplitterPosition) {
         isWaitingToRefreshScheduleChartViewSplitterPosition = true;
         setTimeout(function () {
-            var scheduleChartView = document.querySelector('#scheduleChartView');
             scheduleChartView.setSplitterPosition(gridWidth, chartWidth);
             isWaitingToRefreshScheduleChartViewSplitterPosition = false;
         });
@@ -600,7 +601,6 @@ function refreshViewsSplitterPosition(sourceControlType, gridWidth, chartWidth) 
     if (sourceControlType != 'LoadChart' && loadChartPanel.style.display != 'none' && !isWaitingToRefreshLoadChartViewSplitterPosition) {
         isWaitingToRefreshLoadChartViewSplitterPosition = true;
         setTimeout(function () {
-            var loadChartView = document.querySelector('#loadChartView');
             loadChartView.setSplitterPosition(gridWidth, chartWidth);
             isWaitingToRefreshLoadChartViewSplitterPosition = false;
         });
