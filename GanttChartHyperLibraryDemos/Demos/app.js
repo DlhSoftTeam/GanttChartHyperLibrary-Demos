@@ -70,6 +70,7 @@ angular.module('Demos', [])
         $timeout(function () {
             $scope.selectedTheme = theme;
             $scope.applyingTheme = null;
+            $scope.run();
         });
     };
     var technologies = [{ name: 'JavaScript', title: 'HTML + JavaScript®' }, { name: 'TypeScript', title: 'HTML + TypeScript' }, { name: 'AngularJS', title: 'Angular + JQuery' }];
