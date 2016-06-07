@@ -157,6 +157,38 @@
     <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\app.css" />
     <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\templates.js" />
     <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\themes.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\app.css" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\app.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\AddNew.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\Baseline.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\Copy.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\CriticalPath.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\CustomScales.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\DecreaseIndentation.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\DecreaseTimelinePage.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\Delete.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\DependencyConstraints.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\IncreaseIndentation.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\IncreaseTimelinePage.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\InsertNew.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\LevelResources.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\LoadChart.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\LoadProjectXml.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\MoveDown.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\MoveUp.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\NetworkDiagram.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\Paste.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\PertChart.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\Print.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\ProjectStatistics.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\SaveProjectXml.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\ScheduleChart.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\SetColor.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\SplitRemainingWork.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\ZoomIn.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\index.html" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\templates.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\themes.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -175,6 +207,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
     <None Include="Samples\AngularJS\GanttChartView\MainFeatures\app.ts" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\app.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.Data.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.HierarchicalData.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts" />
@@ -206,7 +239,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="LicenseManager, Version=4.3.1.1, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.GanttChartHyperLibrary.5.3.7.5\lib\JavaScript\LicenseManagement\LicenseManager.exe</HintPath>
+      <HintPath>..\packages\DlhSoft.GanttChartHyperLibrary.5.3.7.6\lib\JavaScript\LicenseManagement\LicenseManager.exe</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

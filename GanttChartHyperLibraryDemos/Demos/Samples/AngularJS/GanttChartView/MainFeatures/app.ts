@@ -207,7 +207,7 @@ angular.module('GanttChartViewSample', ['DlhSoft.ProjectData.GanttChart.Directiv
                 return;
             // Note: You can use barClass instead of barStyle fields to point to custom CSS classes.
             item.barStyle = 'stroke: Green; fill: LightGreen';
-            item.completedStandardBarStyle = 'stroke: Gray; fill: Gray';
+            item.completedBarStyle = 'stroke: Gray; fill: Gray';
         };
         var copiedItem: GanttChartItem = null;
         $scope.copyItem = () => {
