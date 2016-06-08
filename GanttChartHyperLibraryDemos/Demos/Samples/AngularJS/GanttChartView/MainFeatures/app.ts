@@ -1,4 +1,5 @@
 ﻿/// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts'/>
+/// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.Extras.d.ts'/>
 import GanttChartView = DlhSoft.Controls.GanttChartView;
 import GanttChartItem = GanttChartView.Item;
 import PredecessorItem = GanttChartView.PredecessorItem;
