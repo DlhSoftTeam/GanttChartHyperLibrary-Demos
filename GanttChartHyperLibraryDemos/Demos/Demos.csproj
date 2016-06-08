@@ -204,6 +204,8 @@
     <Content Include="Scripts\DlhSoft.ProjectData.PertChart.HTML.Controls.js" />
     <Content Include="Templates\SourceCode.html" />
     <Content Include="Templates\Sample.html" />
+    <Content Include="Tools\ArchiveBuilder.exe" />
+    <Content Include="Tools\Interop.Shell32.dll" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -308,32 +310,32 @@ xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\AngularJS\GanttChart
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>cd "$(ProjectDir)\Samples\JavaScript\GanttChartView"
-"$(ProjectDir)\bin\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
-"$(ProjectDir)\bin\ArchiveBuilder.exe" Columns.zip Columns
-"$(ProjectDir)\bin\ArchiveBuilder.exe" CustomScale.zip CustomScale
-"$(ProjectDir)\bin\ArchiveBuilder.exe" Styling.zip Styling
-"$(ProjectDir)\bin\ArchiveBuilder.exe" HierarchicalVirtualization.zip HierarchicalVirtualization
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" Columns.zip Columns
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" CustomScale.zip CustomScale
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" Styling.zip Styling
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" HierarchicalVirtualization.zip HierarchicalVirtualization
 
 cd "$(ProjectDir)\Samples\JavaScript\ScheduleChartView"
-"$(ProjectDir)\bin\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
 
 cd "$(ProjectDir)\Samples\JavaScript\LoadChartView"
-"$(ProjectDir)\bin\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
 
 cd "$(ProjectDir)\Samples\JavaScript\LoadChartView"
-"$(ProjectDir)\bin\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
 
 cd "$(ProjectDir)\Samples\JavaScript\PertChartView"
-"$(ProjectDir)\bin\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
 
 cd "$(ProjectDir)\Samples\JavaScript\NetworkDiagramView"
-"$(ProjectDir)\bin\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
 
 cd "$(ProjectDir)\Samples\TypeScript\GanttChartView"
-"$(ProjectDir)\bin\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
 
 cd "$(ProjectDir)\Samples\AngularJS\GanttChartView"
-"$(ProjectDir)\bin\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
