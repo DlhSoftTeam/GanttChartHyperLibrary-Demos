@@ -78,8 +78,8 @@
                                         <li ng-repeat="sourceCodeFile in getSourceCodeFiles(selectedSample, selectedTechnology)">
                                             <a class="{{ selectedSourceCodeFile == sourceCodeFile ? 'color-primary' : '' }}" href="javascript:" ng-click="selectSourceCodeFile(selectedSample, selectedTechnology, sourceCodeFile)">{{ sourceCodeFile }}</a>
                                         </li>
-                                        <li ng-if="selectedSample.downloadUrl">
-                                            <a ng-href="{{ selectedSample.downloadUrl }}" title="Download">Sample.zip</a>
+                                        <li>
+                                            <a ng-href="{{ 'Samples/' + selectedTechnology.name + '/' + selectedSample.component + '/' + selectedSample.feature + '.zip' }}" title="Download">.zip</a>
                                         </li>
                                     </ul>
                                 </div>

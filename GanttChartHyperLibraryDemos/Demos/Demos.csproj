@@ -157,6 +157,8 @@
     <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\app.css" />
     <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\templates.js" />
     <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\themes.js" />
+    <Content Include="Samples\templates.js" />
+    <Content Include="Samples\themes.js" />
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\app.css" />
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\app.js" />
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\AddNew.png" />
@@ -281,8 +283,8 @@
   <PropertyGroup>
     <PreBuildEvent>xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\Columns\Scripts\"
-xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\CustomScales\Scripts\"
-xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\Styles\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\CustomScale\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\Stylubg\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\HierarchicalVirtualization\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\ScheduleChartView\MainFeatures\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\MainFeatures\Scripts\"
@@ -290,6 +292,48 @@ xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\PertChart
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\NetworkDiagramView\MainFeatures\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\TypeScript\GanttChartView\MainFeatures\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\AngularJS\GanttChartView\MainFeatures\Scripts\"
+
+xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures\"
+xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\Columns\"
+xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\CustomScale\"
+xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\Styling\"
+xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\HierarchicalVirtualization\"
+xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\ScheduleChartView\MainFeatures\"
+xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\MainFeatures\"
+xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\PertChartView\MainFeatures\"
+xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\NetworkDiagramView\MainFeatures\"
+xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\TypeScript\GanttChartView\MainFeatures\"
+xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\AngularJS\GanttChartView\MainFeatures\"
 </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>cd "$(ProjectDir)\Samples\JavaScript\GanttChartView"
+"$(ProjectDir)\bin\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+"$(ProjectDir)\bin\ArchiveBuilder.exe" Columns.zip Columns
+"$(ProjectDir)\bin\ArchiveBuilder.exe" CustomScale.zip CustomScale
+"$(ProjectDir)\bin\ArchiveBuilder.exe" Styling.zip Styling
+"$(ProjectDir)\bin\ArchiveBuilder.exe" HierarchicalVirtualization.zip HierarchicalVirtualization
+
+cd "$(ProjectDir)\Samples\JavaScript\ScheduleChartView"
+"$(ProjectDir)\bin\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+
+cd "$(ProjectDir)\Samples\JavaScript\LoadChartView"
+"$(ProjectDir)\bin\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+
+cd "$(ProjectDir)\Samples\JavaScript\LoadChartView"
+"$(ProjectDir)\bin\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+
+cd "$(ProjectDir)\Samples\JavaScript\PertChartView"
+"$(ProjectDir)\bin\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+
+cd "$(ProjectDir)\Samples\JavaScript\NetworkDiagramView"
+"$(ProjectDir)\bin\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+
+cd "$(ProjectDir)\Samples\TypeScript\GanttChartView"
+"$(ProjectDir)\bin\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+
+cd "$(ProjectDir)\Samples\AngularJS\GanttChartView"
+"$(ProjectDir)\bin\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+</PostBuildEvent>
   </PropertyGroup>
 </Project>
