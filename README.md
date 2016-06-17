@@ -1,2 +1,2 @@
 # GanttChartHyperLibrary-Demos
-Sample applications for DlhSoft Gantt Chart Hyper Library
+Sample applications with custom themes and templates for DlhSoft Gantt Chart Hyper Library
