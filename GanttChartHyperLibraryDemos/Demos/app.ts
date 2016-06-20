@@ -4,7 +4,7 @@ angular.module('Demos', [])
         var components = ['GanttChartView', 'ScheduleChartView', 'LoadChartView', 'PertChartView', 'NetworkDiagramView'];
         var samples = [
             {
-                component: 'GanttChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
+                component: 'GanttChartView', feature: 'MainFeatures-screenshots', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
                     'TypeScript': ['index.html', 'app.css', 'app.ts', 'app.js', 'templates.js', 'themes.js'],
