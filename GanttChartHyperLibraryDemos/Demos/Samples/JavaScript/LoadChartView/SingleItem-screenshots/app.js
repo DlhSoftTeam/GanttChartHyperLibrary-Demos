@@ -12,7 +12,8 @@ var loadChartItems = [{ content: 'Resource 1', ganttChartItems: [{ content: 'Tas
                                                                  { content: 'Task 3 (Resource 1)', start: new Date(year, month, 6, 8, 0, 0), finish: new Date(year, month, 6, 16, 0, 0) }] }];
 
 var settings = {
-    currentTime: new Date(year, month, 2, 12, 0, 0)
+    currentTime: new Date(year, month, 2, 12, 0, 0),
+    displayedTime: new Date(year, month, 1, 12, 0, 0)
 };
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
