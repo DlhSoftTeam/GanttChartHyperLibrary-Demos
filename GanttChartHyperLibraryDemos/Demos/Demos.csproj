@@ -57,7 +57,6 @@
     <Content Include="Samples\AngularJS\GanttChartView\MainFeatures\index.html" />
     <Content Include="Samples\AngularJS\GanttChartView\MainFeatures\templates.js" />
     <Content Include="Samples\AngularJS\GanttChartView\MainFeatures\themes.js" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-screeenshot.png" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-screenshots\app.css" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-screenshots\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-screenshots\index.html" />
