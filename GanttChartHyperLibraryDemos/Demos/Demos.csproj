@@ -126,6 +126,10 @@
     <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\index.html" />
     <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\app.css" />
     <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\themes.js" />
+    <Content Include="Samples\JavaScript\LoadChartView\SingleItem\app.css" />
+    <Content Include="Samples\JavaScript\LoadChartView\SingleItem\app.js" />
+    <Content Include="Samples\JavaScript\LoadChartView\SingleItem\index.html" />
+    <Content Include="Samples\JavaScript\LoadChartView\SingleItem\themes.js" />
     <Content Include="Samples\JavaScript\NetworkDiagramView\MainFeatures\app.css" />
     <Content Include="Samples\JavaScript\NetworkDiagramView\MainFeatures\app.js" />
     <Content Include="Samples\JavaScript\NetworkDiagramView\MainFeatures\Images\CriticalPath.png" />
@@ -290,6 +294,7 @@ xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChar
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\HierarchicalVirtualization\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\ScheduleChartView\MainFeatures\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\MainFeatures\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\SingleItem\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\PertChartView\MainFeatures\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\NetworkDiagramView\MainFeatures\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\TypeScript\GanttChartView\MainFeatures\Scripts\"
@@ -302,6 +307,7 @@ xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChar
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\HierarchicalVirtualization\"
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\ScheduleChartView\MainFeatures\"
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\MainFeatures\"
+xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\SingleItem\"
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\PertChartView\MainFeatures\"
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\NetworkDiagramView\MainFeatures\"
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\TypeScript\GanttChartView\MainFeatures\"
@@ -324,6 +330,7 @@ cd "$(ProjectDir)\Samples\JavaScript\LoadChartView"
 
 cd "$(ProjectDir)\Samples\JavaScript\LoadChartView"
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" SingleItem.zip SingleItem
 
 cd "$(ProjectDir)\Samples\JavaScript\PertChartView"
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
