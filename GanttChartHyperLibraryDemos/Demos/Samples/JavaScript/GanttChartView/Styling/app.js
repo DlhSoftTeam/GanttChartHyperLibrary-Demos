@@ -39,7 +39,8 @@ var settings =
     summaryBarClass: 'darkBar', milestoneBarClass: 'darkBar',
     assignmentsClass: 'assignments', dependencyLineClass: 'dependencyLine',
     baselineBarClass: 'baselineBar',
-    alternativeItemClass: 'alternativeGridItem', alternativeChartItemClass: 'alternativeChartItem'
+    alternativeItemClass: (theme == 'Dark-black' ? 'alternativeGridItem-dark' : (theme == 'Steel-blue' ? 'alternativeGridItem-steel' : 'alternativeGridItem')),
+    alternativeChartItemClass: theme == 'Dark-black' ? 'alternativeChartItem-dark' : 'alternativeChartItem'
 };
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
