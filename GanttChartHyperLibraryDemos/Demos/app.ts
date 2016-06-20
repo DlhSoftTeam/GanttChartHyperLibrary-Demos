@@ -12,6 +12,12 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'GanttChartView', feature: 'MainFeatures-screenshots-item', title: 'Main features item', description: 'Complex sample application showing how to use the most important features of the component',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
+                }
+            },
+            {
                 component: 'GanttChartView', feature: 'Columns', title: 'Columns', description: 'Shows how to add supplemental built-in and custom grid columns including a column presenting task icon thumbs that offer vertical drag and drop support',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
@@ -36,7 +42,7 @@ angular.module('Demos', [])
                 }
             },
             {
-                component: 'ScheduleChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
+                component: 'ScheduleChartView', feature: 'MainFeatures-screenshots', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
                 }
