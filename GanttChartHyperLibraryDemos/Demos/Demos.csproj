@@ -351,7 +351,6 @@ xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChart
 
 cd "$(ProjectDir)\Samples\JavaScript\ScheduleChartView"
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
-"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures-screenshots.zip MainFeatures-screenshots
 
 cd "$(ProjectDir)\Samples\JavaScript\LoadChartView"
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
