@@ -327,9 +327,6 @@ cd "$(ProjectDir)\Samples\JavaScript\ScheduleChartView"
 
 cd "$(ProjectDir)\Samples\JavaScript\LoadChartView"
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
-
-cd "$(ProjectDir)\Samples\JavaScript\LoadChartView"
-"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" SingleItem.zip SingleItem
 
 cd "$(ProjectDir)\Samples\JavaScript\PertChartView"
