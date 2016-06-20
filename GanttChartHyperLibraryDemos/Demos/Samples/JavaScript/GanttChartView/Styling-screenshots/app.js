@@ -52,6 +52,3 @@ if (initializeGanttChartTemplates)
     initializeGanttChartTemplates(settings, theme);
 
 DlhSoft.Controls.GanttChartView.initialize(ganttChartView, items, settings);
-
-var item = items[4];
-ganttChartView.selectItem(item);
