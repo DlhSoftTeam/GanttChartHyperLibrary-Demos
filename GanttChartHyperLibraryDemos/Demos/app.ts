@@ -48,7 +48,7 @@ angular.module('Demos', [])
                 }
             },
             {
-                component: 'LoadChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
+                component: 'LoadChartView', feature: 'MainFeatures-screenshots', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']
                 }
