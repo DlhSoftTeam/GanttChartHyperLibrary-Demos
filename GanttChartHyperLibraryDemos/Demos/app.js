@@ -53,7 +53,7 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'LoadChartView', feature: 'SingleItem', title: 'Single item', description: 'Sample application showing how to display a single item with multiple allocations',
+            component: 'LoadChartView', feature: 'SingleItem-screenshots', title: 'Single item', description: 'Sample application showing how to display a single item with multiple allocations',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']
             }

@@ -135,6 +135,9 @@
     <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\index.html" />
     <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\app.css" />
     <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\themes.js" />
+    <Content Include="Samples\JavaScript\LoadChartView\SingleItem-screenshots\app.css" />
+    <Content Include="Samples\JavaScript\LoadChartView\SingleItem-screenshots\app.js" />
+    <Content Include="Samples\JavaScript\LoadChartView\SingleItem-screenshots\index.html" />
     <Content Include="Samples\JavaScript\LoadChartView\SingleItem\app.css" />
     <Content Include="Samples\JavaScript\LoadChartView\SingleItem\app.js" />
     <Content Include="Samples\JavaScript\LoadChartView\SingleItem\index.html" />
@@ -315,6 +318,7 @@ xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChar
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures-screenshots-item\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\ScheduleChartView\MainFeatures-screenshots\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\MainFeatures-screenshots\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\SingleItem-screenshots\Scripts\"
 
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures\"
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\Columns\"
@@ -332,6 +336,7 @@ xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChar
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures-screenshots-item\"
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\ScheduleChartView\MainFeatures-screenshots\"
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\MainFeatures-screenshots\"
+xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\SingleItem-screenshots\"
 </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
@@ -350,11 +355,9 @@ cd "$(ProjectDir)\Samples\JavaScript\ScheduleChartView"
 
 cd "$(ProjectDir)\Samples\JavaScript\LoadChartView"
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
-"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures-screenshots.zip MainFeatures-screenshots
-
-cd "$(ProjectDir)\Samples\JavaScript\LoadChartView"
-"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" SingleItem.zip SingleItem
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures-screenshots.zip MainFeatures-screenshots
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" SingleItem-screenshots.zip SingleItem-screenshots
 
 cd "$(ProjectDir)\Samples\JavaScript\PertChartView"
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
