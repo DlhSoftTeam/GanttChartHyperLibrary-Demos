@@ -57,12 +57,6 @@
     <Content Include="Samples\AngularJS\GanttChartView\MainFeatures\index.html" />
     <Content Include="Samples\AngularJS\GanttChartView\MainFeatures\templates.js" />
     <Content Include="Samples\AngularJS\GanttChartView\MainFeatures\themes.js" />
-    <Content Include="Samples\JavaScript\GanttChartView\CustomScale-screenshots\app.css" />
-    <Content Include="Samples\JavaScript\GanttChartView\CustomScale-screenshots\app.js" />
-    <Content Include="Samples\JavaScript\GanttChartView\CustomScale-screenshots\index.html" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-screenshots\app.css" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-screenshots\app.js" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-screenshots\index.html" />
     <Content Include="Samples\JavaScript\GanttChartView\Columns\app.css" />
     <Content Include="Samples\JavaScript\GanttChartView\Columns\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\Columns\Images\AddNew.png" />
@@ -86,98 +80,34 @@
     <Content Include="Samples\JavaScript\GanttChartView\HierarchicalVirtualization\themes.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\templates.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\themes.js" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\AddNew.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\Baseline.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\Copy.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\CriticalPath.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\CustomScales.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\DecreaseIndentation.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\DecreaseTimelinePage.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\Delete.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\DependencyConstraints.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\IncreaseIndentation.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\IncreaseTimelinePage.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\InsertNew.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\LevelResources.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\LoadChart.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\LoadProjectXml.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\MoveDown.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\MoveUp.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\NetworkDiagram.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\Paste.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\PertChart.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\Print.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\ProjectStatistics.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\SaveProjectXml.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\ScheduleChart.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\SetColor.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\SplitRemainingWork.png" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\ZoomIn.png" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\index.html" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\app.css" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-screenshots-item\app.css" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-screenshots-item\app.js" />
-    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-screenshots-item\index.html" />
-    <Content Include="Samples\JavaScript\GanttChartView\Styling-screenshots\app.css" />
-    <Content Include="Samples\JavaScript\GanttChartView\Styling-screenshots\app.js" />
-    <Content Include="Samples\JavaScript\GanttChartView\Styling-screenshots\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-item\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-item\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-item\index.html" />
     <Content Include="Samples\JavaScript\GanttChartView\Styling\app.css" />
     <Content Include="Samples\JavaScript\GanttChartView\Styling\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\Styling\index.html" />
     <Content Include="Samples\JavaScript\GanttChartView\Styling\templates.js" />
     <Content Include="Samples\JavaScript\GanttChartView\Styling\themes.js" />
-    <Content Include="Samples\JavaScript\LoadChartView\MainFeatures-screenshots\app.css" />
-    <Content Include="Samples\JavaScript\LoadChartView\MainFeatures-screenshots\app.js" />
-    <Content Include="Samples\JavaScript\LoadChartView\MainFeatures-screenshots\index.html" />
     <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\app.js" />
-    <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\Images\CustomScales.png" />
-    <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\Images\DecreaseTimelinePage.png" />
-    <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\Images\IncreaseTimelinePage.png" />
-    <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\Images\MoveDown.png" />
-    <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\Images\MoveUp.png" />
-    <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\Images\Print.png" />
-    <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\Images\ZoomIn.png" />
     <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\index.html" />
     <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\app.css" />
     <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\themes.js" />
-    <Content Include="Samples\JavaScript\LoadChartView\SingleItem-screenshots\app.css" />
-    <Content Include="Samples\JavaScript\LoadChartView\SingleItem-screenshots\app.js" />
-    <Content Include="Samples\JavaScript\LoadChartView\SingleItem-screenshots\index.html" />
     <Content Include="Samples\JavaScript\LoadChartView\SingleItem\app.css" />
     <Content Include="Samples\JavaScript\LoadChartView\SingleItem\app.js" />
     <Content Include="Samples\JavaScript\LoadChartView\SingleItem\index.html" />
     <Content Include="Samples\JavaScript\LoadChartView\SingleItem\themes.js" />
     <Content Include="Samples\JavaScript\NetworkDiagramView\MainFeatures\app.css" />
     <Content Include="Samples\JavaScript\NetworkDiagramView\MainFeatures\app.js" />
-    <Content Include="Samples\JavaScript\NetworkDiagramView\MainFeatures\Images\CriticalPath.png" />
-    <Content Include="Samples\JavaScript\NetworkDiagramView\MainFeatures\Images\Print.png" />
-    <Content Include="Samples\JavaScript\NetworkDiagramView\MainFeatures\Images\SetColor.png" />
     <Content Include="Samples\JavaScript\NetworkDiagramView\MainFeatures\index.html" />
     <Content Include="Samples\JavaScript\NetworkDiagramView\MainFeatures\themes.js" />
     <Content Include="Samples\JavaScript\PertChartView\MainFeatures\app.js" />
-    <Content Include="Samples\JavaScript\PertChartView\MainFeatures\Images\CriticalPath.png" />
-    <Content Include="Samples\JavaScript\PertChartView\MainFeatures\Images\Print.png" />
-    <Content Include="Samples\JavaScript\PertChartView\MainFeatures\Images\SetColor.png" />
-    <Content Include="Samples\JavaScript\PertChartView\MainFeatures\Images\SetDependencyColor.png" />
     <Content Include="Samples\JavaScript\PertChartView\MainFeatures\index.html" />
     <Content Include="Samples\JavaScript\PertChartView\MainFeatures\app.css" />
     <Content Include="Samples\JavaScript\PertChartView\MainFeatures\themes.js" />
-    <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures-screenshots\app.css" />
-    <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures-screenshots\app.js" />
-    <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures-screenshots\index.html" />
     <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\app.js" />
-    <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Images\AddNew.png" />
-    <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Images\CustomScales.png" />
-    <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Images\DecreaseTimelinePage.png" />
-    <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Images\Delete.png" />
-    <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Images\IncreaseTimelinePage.png" />
-    <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Images\InsertNew.png" />
-    <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Images\MoveDown.png" />
-    <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Images\MoveUp.png" />
-    <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Images\Print.png" />
-    <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Images\SetColor.png" />
-    <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Images\ZoomIn.png" />
     <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\index.html" />
     <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\app.css" />
     <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\templates.js" />
@@ -320,13 +250,7 @@ xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\PertChart
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\NetworkDiagramView\MainFeatures\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\TypeScript\GanttChartView\MainFeatures\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\AngularJS\GanttChartView\MainFeatures\Scripts\"
-xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures-screenshots\Scripts\"
-xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures-screenshots-item\Scripts\"
-xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\CustomScale-screenshots\Scripts\"
-xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\Styling-screenshots\Scripts\"
-xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\ScheduleChartView\MainFeatures-screenshots\Scripts\"
-xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\MainFeatures-screenshots\Scripts\"
-xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\SingleItem-screenshots\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures-item\Scripts\"
 
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures\"
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\Columns\"
@@ -340,13 +264,7 @@ xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\PertChart
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\NetworkDiagramView\MainFeatures\"
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\TypeScript\GanttChartView\MainFeatures\"
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\AngularJS\GanttChartView\MainFeatures\"
-xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures-screenshots\"
-xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures-screenshots-item\"
-xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\CustomScale-screenshots\"
-xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\Styling-screenshots\"
-xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\ScheduleChartView\MainFeatures-screenshots\"
-xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\MainFeatures-screenshots\"
-xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\SingleItem-screenshots\"
+xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures-item\"
 </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
@@ -356,10 +274,7 @@ xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChart
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" CustomScale.zip CustomScale
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" Styling.zip Styling
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" HierarchicalVirtualization.zip HierarchicalVirtualization
-"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures-screenshots.zip MainFeatures-screenshots
-"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures-screenshots-item.zip MainFeatures-screenshots-item
-"$(ProjectDir)\Tools\ArchiveBuilder.exe" CustomScale-screenshots.zip CustomScale-screenshots
-"$(ProjectDir)\Tools\ArchiveBuilder.exe" Styling-screenshots.zip Styling-screenshots
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures-item.zip MainFeatures-item
 
 cd "$(ProjectDir)\Samples\JavaScript\ScheduleChartView"
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
@@ -367,8 +282,6 @@ cd "$(ProjectDir)\Samples\JavaScript\ScheduleChartView"
 cd "$(ProjectDir)\Samples\JavaScript\LoadChartView"
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" SingleItem.zip SingleItem
-"$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures-screenshots.zip MainFeatures-screenshots
-"$(ProjectDir)\Tools\ArchiveBuilder.exe" SingleItem-screenshots.zip SingleItem-screenshots
 
 cd "$(ProjectDir)\Samples\JavaScript\PertChartView"
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures

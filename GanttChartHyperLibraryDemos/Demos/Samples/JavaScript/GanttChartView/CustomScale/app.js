@@ -21,7 +21,11 @@ items[8].predecessors = [{ item: items[4] }, { item: items[5] }];
 for (var i = 4; i <= 20; i++)
     items.push({ content: 'Task ' + i, start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 4, 16, 0, 0) });
 
-var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
+var settings = {
+    currentTime: new Date(year, month, 2, 12, 0, 0),
+    displayedTime: new Date(year, month, 1, 0, 0, 0),
+    isGridRowClickTimeScrollingEnabled: false
+};
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
 if (initializeGanttChartTheme)

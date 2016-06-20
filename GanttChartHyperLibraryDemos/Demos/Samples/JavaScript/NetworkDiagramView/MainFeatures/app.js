@@ -3,10 +3,8 @@
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 
-// Retrieve and store the control element for reference purposes.
 var networkDiagramView = document.querySelector('#networkDiagramView');
 
-// Prepare data items.
 var date = new Date(), year = date.getFullYear(), month = date.getMonth(), secondDuration = 1000, minuteDuration = 60 * secondDuration, hourDuration = 60 * minuteDuration;
 var items = [{ content: 'Start milestone', displayedText: 'Start', isMilestone: true, earlyStart: new Date(year, month, 2, 8, 0, 0), earlyFinish: new Date(year, month, 2, 8, 0, 0), lateStart: new Date(year, month, 2, 8, 0, 0), lateFinish: new Date(year, month, 2, 8, 0, 0), assignmentsContent: 'N/A' },
              { content: 'First task', displayedText: 'Task 1', effort: 8 * hourDuration, earlyStart: new Date(year, month, 2, 8, 0, 0), earlyFinish: new Date(year, month, 2, 16, 0, 0), lateStart: new Date(year, month, 2, 8, 0, 0), lateFinish: new Date(year, month, 2, 8, 0, 0), slack: 0, assignmentsContent: 'Resource 1' },
@@ -26,38 +24,14 @@ items[6].predecessors = [{ item: items[5] }];
 items[7].predecessors = [{ item: items[5] }];
 items[8].predecessors = [{ item: items[6] }, { item: items[7] }];
 
-// Prepare control settings.
 var settings = {
-    // Optionally, clear user rearranging settings.
-    // canUserRearrangeItems: false,
-    // snapRearrangedItemsToGuidelines: false,
-
-    // Optionally, set application target, and theme and/or custom styles.
-    // target: 'Phone', // Supported values: Standard, Phone.
-    // theme: 'Aero', // Supported values: Modern, ModernBordered, Aero.
-    // border: 'Gray',
-
-    // Optionally, set item template used when displaying task bar tool tips in the chart area.
-    // itemTemplate: function (item) {
-    //     var toolTip = document.createElementNS('http://www.w3.org/2000/svg', 'title');
-    //     var toolTipContent = item.content + ' • ' + item.start.toLocaleString() + '-' + 'Finish: ' + item.finish.toLocaleString();
-    //     toolTip.appendChild(document.createTextNode(toolTipContent));
-    //     return toolTip;
-    // },
 };
 
 if (initializePertChartTheme)
     initializePertChartTheme(settings, theme);
 
-// Initialize the component.
 DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramView, items, settings);
 
-// Define user command functions.
-function setCustomBarColorToItem() {
-    var item = networkDiagramView.items[2];
-    item.shapeStyle = 'stroke: DarkMagenta; fill: LightYellow';
-    networkDiagramView.refreshItem(item);
-}
 function highlightCriticalPath() {
     var i;
     for (i = 0; i < networkDiagramView.items.length; i++)
@@ -69,6 +43,5 @@ function highlightCriticalPath() {
     }
     networkDiagramView.refreshChartItems();
 }
-function print() {
-    networkDiagramView.print({ title: 'Network Diagram (printable)', preparingMessage: '...' });
-}
+
+highlightCriticalPath();
