@@ -23,13 +23,13 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'CustomScale', title: 'Custom scale', description: 'Shows how to define a fully custom chart scale with special time intervals and text headers',
+            component: 'GanttChartView', feature: 'CustomScale-screenshots', title: 'Custom scale', description: 'Shows how to define a fully custom chart scale with special time intervals and text headers',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
             }
         },
         {
-            component: 'GanttChartView', feature: 'Styling', title: 'Styling', description: 'Shows how to style up elements defined by the component using CSS classes',
+            component: 'GanttChartView', feature: 'Styling-screenshots', title: 'Styling', description: 'Shows how to style up elements defined by the component using CSS classes',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
             }

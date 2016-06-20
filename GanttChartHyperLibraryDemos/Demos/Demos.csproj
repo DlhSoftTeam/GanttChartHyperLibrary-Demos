@@ -57,6 +57,9 @@
     <Content Include="Samples\AngularJS\GanttChartView\MainFeatures\index.html" />
     <Content Include="Samples\AngularJS\GanttChartView\MainFeatures\templates.js" />
     <Content Include="Samples\AngularJS\GanttChartView\MainFeatures\themes.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\CustomScale-screenshots\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\CustomScale-screenshots\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\CustomScale-screenshots\index.html" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-screenshots\app.css" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-screenshots\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-screenshots\index.html" />
@@ -116,6 +119,9 @@
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-screenshots-item\app.css" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-screenshots-item\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures-screenshots-item\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\Styling-screenshots\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\Styling-screenshots\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\Styling-screenshots\index.html" />
     <Content Include="Samples\JavaScript\GanttChartView\Styling\app.css" />
     <Content Include="Samples\JavaScript\GanttChartView\Styling\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\Styling\index.html" />
@@ -316,6 +322,8 @@ xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\TypeScript\GanttChar
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\AngularJS\GanttChartView\MainFeatures\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures-screenshots\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures-screenshots-item\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\CustomScale-screenshots\Scripts\"
+xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\Styling-screenshots\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\ScheduleChartView\MainFeatures-screenshots\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\MainFeatures-screenshots\Scripts\"
 xcopy /y "$(ProjectDir)\Scripts\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\SingleItem-screenshots\Scripts\"
@@ -334,6 +342,8 @@ xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\TypeScript\GanttChar
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\AngularJS\GanttChartView\MainFeatures\"
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures-screenshots\"
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\MainFeatures-screenshots-item\"
+xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\CustomScale-screenshots\"
+xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\GanttChartView\Styling-screenshots\"
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\ScheduleChartView\MainFeatures-screenshots\"
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\MainFeatures-screenshots\"
 xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChartView\SingleItem-screenshots\"
@@ -348,6 +358,8 @@ xcopy /y "$(ProjectDir)\Samples\*.*" "$(ProjectDir)\Samples\JavaScript\LoadChart
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" HierarchicalVirtualization.zip HierarchicalVirtualization
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures-screenshots.zip MainFeatures-screenshots
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures-screenshots-item.zip MainFeatures-screenshots-item
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" CustomScale-screenshots.zip CustomScale-screenshots
+"$(ProjectDir)\Tools\ArchiveBuilder.exe" Styling-screenshots.zip Styling-screenshots
 
 cd "$(ProjectDir)\Samples\JavaScript\ScheduleChartView"
 "$(ProjectDir)\Tools\ArchiveBuilder.exe" MainFeatures.zip MainFeatures
