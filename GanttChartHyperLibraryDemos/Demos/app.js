@@ -69,6 +69,22 @@ angular.module('Demos', [])
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']
             }
+        },
+        {
+            component: 'GanttChartView', feature: 'SinglePageDatabase', title: 'SQL Server® + ASP .NET WebAPI', description: 'Single page app accessing data using ASP .NET WebAPI from a SQL Server® database',
+            sourceCodeUrl: 'http://DlhSoft.com/KnowledgeBase/GanttChartSinglePageDatabaseSample.zip'
+        },
+        {
+            component: 'GanttChartView', feature: 'LightSwitch', title: 'LightSwitch® (HTML)', description: 'HTML based LightSwitch® app',
+            sourceCodeUrl: 'http://DlhSoft.com/KnowledgeBase/GanttChartHtmlSample.zip'
+        },
+        {
+            component: 'GanttChartView', feature: 'WindowsStoreApp', title: 'Windows® Store app (UWP)', description: 'Windows® Universal Platform (UWP) app using JavaScript®',
+            sourceCodeUrl: 'http://DlhSoft.com/KnowledgeBase/GanttChartJavaScriptStoreAppSample.zip'
+        },
+        {
+            component: 'GanttChartView', feature: 'Cordova', title: 'Multi-platform app (Cordova™ tools)', description: 'Multi-device hybrid app for Windows®, Android™, and iOS™ designed with Visual Studio® tools for Apache® Cordova™',
+            sourceCodeUrl: 'http://DlhSoft.com/KnowledgeBase/GanttChartMDHASample.zip'
         }
     ];
     var themes = ['Default', 'Generic-bright', 'Generic-blue', 'DlhSoft-gray', 'Purple-green', 'Steel-blue', 'Dark-black', 'Cyan-green', 'Blue-navy', 'Orange-brown', 'Teal-green', 'Purple-beige', 'Gray-blue', 'Aero'];
@@ -92,7 +108,7 @@ angular.module('Demos', [])
         var componentSamples = [];
         for (var i = 0; i < samples.length; i++) {
             var sample = samples[i];
-            if (sample.component == component && sample.sourceCodeFiles[selectedTechnology.name])
+            if (sample.component == component && ((sample.sourceCodeFiles && sample.sourceCodeFiles[selectedTechnology.name]) || sample.sourceCodeUrl))
                 componentSamples.push(sample);
         }
         return componentSamples;
@@ -102,7 +118,7 @@ angular.module('Demos', [])
         for (var i = 0; i < samples.length; i++) {
             var sample = samples[i];
             var component = sample.component;
-            if (components.indexOf(component) < 0 && sample.sourceCodeFiles[selectedTechnology.name])
+            if (components.indexOf(component) < 0 && sample.sourceCodeFiles && sample.sourceCodeFiles[selectedTechnology.name])
                 components.push(component);
         }
         return components;
@@ -136,9 +152,10 @@ angular.module('Demos', [])
         var componentSamples = getSamples(selectedComponent, technology);
         var featureSampleFound = false;
         for (var i = 0; i < samples.length; i++) {
-            if (samples[i].feature == $scope.selectedFeature && samples[i].sourceCodeFiles[technology]) {
+            var sample = samples[i];
+            if (sample.feature == $scope.selectedFeature && sample.sourceCodeFiles && sample.sourceCodeFiles[technology]) {
                 featureSampleFound = true;
-                selectSample(samples[i]);
+                selectSample(sample);
                 break;
             }
         }
@@ -154,7 +171,7 @@ angular.module('Demos', [])
     $scope.selectSample = selectSample;
     $scope.selectComponent = selectComponent;
     $scope.getSourceCodeFiles = function (selectedSample, selectedTechnology) {
-        return selectedSample.sourceCodeFiles[selectedTechnology.name];
+        return selectedSample.sourceCodeFiles ? selectedSample.sourceCodeFiles[selectedTechnology.name] : null;
     };
     $scope.selectedSourceCodeFile = null;
     $scope.selectedSourceCodeFileContents = null;
