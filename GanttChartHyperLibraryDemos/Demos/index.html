@@ -121,7 +121,7 @@
                                 <p>
                                     <span ng-repeat="sample in getSamples(component, selectedTechnology)" class="{{ selectedSample == sample ? '' : 'fade-on-hover' }}">
                                         <a ng-show="sample.sourceCodeFiles" href="javascript:" ng-click="selectSample(sample)" title="{{ sample.description }}">{{ sample.title }}</a>
-                                        <a ng-show="sample.sourceCodeUrl" class="download-link" href="javascript:" ng-href="{{ sample.sourceCodeUrl }}" title="{{ sample.description + ' – download (.zip)' }}">{{ sample.title }}</a>
+                                        <a ng-show="sample.sourceCodeUrls" class="download-link" href="javascript:" ng-href="{{ sample.sourceCodeUrls[selectedTechnology.name] }}" title="{{ sample.description + ' – download (.zip)' }}">{{ sample.title }}</a>
                                         <br/>
                                     </span>
                                 </p>

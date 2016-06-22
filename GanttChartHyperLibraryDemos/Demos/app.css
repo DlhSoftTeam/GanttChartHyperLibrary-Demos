@@ -12,6 +12,7 @@
 }
 .download-link {
     color: #292929;
+    opacity: 0.85;
 }
 .sample {
     width: 100%;
