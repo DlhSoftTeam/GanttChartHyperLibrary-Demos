@@ -10,6 +10,9 @@
 .selected-menu-item {
     opacity: 1 !important;
 }
+.accordion .content {
+    overflow-y: auto;
+}
 .download-link {
     color: #292929;
     opacity: 0.85;
