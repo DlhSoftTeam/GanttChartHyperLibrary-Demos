@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>GanttChartView Automatic Scheduling Sample</title>
+    <link rel="Stylesheet" href="app.css" type="text/css"/>
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.js" type="text/javascript"></script>
+    <script src="Scripts/DlhSoft.Data.HTML.Controls.js" type="text/javascript"></script>
+    <script src="templates.js" type="text/javascript"></script>
+    <script src="themes.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript" defer="defer"></script>
+</head>
+<body>
+    <div class="ribbonContainer">
+        <div class="ribbonPanel">
+            <div class="ribbonHeader">Command</div>
+            <div class="ribbonCommandsArea">
+                <div class="ribbonCommand toggle pressed" id="toggleDependencyConstraintsCommand"><a href="javascript:toggleDependencyConstraints();" title="Disable/enable automatic scheduling"><img src="Images/DependencyConstraints.png" alt="Dependency constraints" /></a></div>
+            </div>
+        </div>
+        <div class="content">
+            Click the command button to toggle automatic schedule mode on and off. Task dependency constraints are enabled when auto-scheduling mode is on.
+        </div>
+    </div>
+    <div id="ganttChartView" style="height: 388px">...</div>
+</body>
+</html>

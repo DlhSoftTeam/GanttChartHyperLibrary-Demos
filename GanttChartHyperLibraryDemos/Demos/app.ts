@@ -21,6 +21,18 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'GanttChartView', feature: 'AssigningResources', title: 'Assigning resources', description: 'Shows how resource assignments work and includes code providing automatic Load Chart synchronization',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'AutomaticScheduling', title: 'Automatic scheduling', description: 'Shows how task dependency constraints can be enabled to automatically schedule tasks upon all changes',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
+                }
+            },
+            {
                 component: 'GanttChartView', feature: 'Columns', title: 'Columns', description: 'Shows how to add supplemental built-in and custom grid columns including a column presenting task icon thumbs that offer vertical drag and drop support',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
@@ -33,13 +45,37 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'GanttChartView', feature: 'Baseline', title: 'Baseline', description: 'Shows how you can define and display estimation bars for tasks (i.e. project baseline)',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
+                }
+            },
+            {
                 component: 'GanttChartView', feature: 'Styling', title: 'Styling', description: 'Shows how to style up elements defined by the component using CSS classes',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
                 }
             },
             {
+                component: 'GanttChartView', feature: 'ProjectXml', title: 'Importing and exporting Microsoft® Project XML', description: 'Shows how you can import and export Microsoft® Project XML schema based content, providing maximum compatibility with other applications',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'Printing', title: 'Printing (virtual printers, e.g. Print to PDF, supported)', description: 'Includes code that initiates a print operation; end user can select the printer to use (virtual printers such as Print to PDF are supported as well)',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
+                }
+            },
+            {
                 component: 'GanttChartView', feature: 'HierarchicalVirtualization', title: 'Hierarchical virtualization', description: 'Shows how to develop summary task virtualization and lazy load child tasks only upon parent node expansion',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'AssignmentsTree-HL', title: 'Assignments tree (using TreeGrid from Hyper Library)', description: 'Shows how to show a custom popup allowing the end user to select assigned resources (or departments) from an organizational hierarchy – using TreeGrid control from DlhSoft Hyper Library, sold separately',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
                 }
