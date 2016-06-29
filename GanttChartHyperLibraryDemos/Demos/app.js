@@ -41,6 +41,12 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'GanttChartView', feature: 'CriticalPath', title: 'Critical path', description: 'Shows how you can determine and highlight critical tasks in your project (i.e. those that would affect the project finish date if their duration would increase)',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
+            }
+        },
+        {
             component: 'GanttChartView', feature: 'Styling', title: 'Styling', description: 'Shows how to style up elements defined by the component using CSS classes',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
