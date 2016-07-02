@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>GanttChartView Assign Resources Sample</title>
+    <link rel="Stylesheet" href="app.css" type="text/css"/>
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.js" type="text/javascript"></script>
+    <script src="Scripts/DlhSoft.Data.HTML.Controls.js" type="text/javascript"></script>
+    <script src="templates.js" type="text/javascript"></script>
+    <script src="themes.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript" defer="defer"></script>
+</head>
+<body>
+    <div class="ribbonContainer">
+        <div class="ribbonPanel">
+            <div class="ribbonHeader">Items</div>
+            <div class="ribbonCommandsArea">
+                <div class="ribbonCommand"><a href="javascript:addNewItem();" title="Add new item"><img src="Images/AddNew.png" alt="Add new"/></a></div>
+                <div class="ribbonCommand"><a href="javascript:insertNewItem();" title="Insert new item before selection"><img src="Images/InsertNew.png" alt="Insert new"/></a></div>
+                <div class="ribbonCommand"><a href="javascript:decreaseItemIndentation();" title="Decrease selected item indentation"><img src="Images/DecreaseIndentation.png" alt="Increase indentation"/></a></div>
+                <div class="ribbonCommand"><a href="javascript:increaseItemIndentation();" title="Increase selected item indentation"><img src="Images/IncreaseIndentation.png" alt="Increase indentation"/></a></div>
+                <div class="ribbonCommand"><a href="javascript:deleteItem();" title="Delete selected item"><img src="Images/Delete.png" alt="Delete selected item"/></a></div>
+            </div>
+        </div>
+        <div class="ribbonPanel">
+            <div class="ribbonHeader">Other views</div>
+            <div class="ribbonCommandsArea">
+                <div class="ribbonCommand"><a href="javascript:loadChart();" title="Load Chart"><img src="Images/LoadChart.png" alt="Load Chart" /></a></div>
+            </div>
+        </div>
+        <div class="content">
+            Click an Assignments cell value to display the resource selection combo-box (note that it uses MultiSelectorComboBox component available with the Gantt Chart library).
+        </div>
+    </div>
+    <div id="ganttChartView" style="height: 388px">...</div>
+    <div id="loadChartPanel" style="display: none">
+        <div class="extraPanel">
+            <div class="extraPanelCommandsArea">
+                <div><a href="javascript:closeLoadChartView();">Close</a></div>
+            </div>
+            <div class="extraPanelHeader">Load Chart</div>
+            <div class="extraPanelContent">
+                Resource filter:
+                <select id="loadChartResourceFilter" style="margin: 2px 0px" onchange="loadChartResourceFilterChanged()">
+                    <option value="">(All)</option>
+                </select>
+            </div>
+        </div>
+        <div id="loadChartView" style="height: 190px">...</div>
+    </div>
+</body>
+</html>
