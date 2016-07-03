@@ -385,7 +385,6 @@
     <Folder Include="Samples\TypeScript\GanttChartView\Printing\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\ProjectXml\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\Styling\Scripts\" />
-    <Folder Include="Samples\TypeScript\ScheduleChartView\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="DlhSoft.HierarchicalData.LightWPF.Controls, Version=4.0.8.5, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
