@@ -22,16 +22,18 @@ namespace Demos.Samples.TypeScript.GanttChartView.ExportPngImage_PMF
             // Initialize GanttChartExporter based on TaskManager component.
             using (var ganttChartExporter = new GanttChartExporter(taskManager, (GanttChartDataGrid control) =>
             {
+                // Configure internal provider control to support custom themes.
+                control.HeaderHeight = 80;
+                control.ScaleHeaderHeight = 40;
+                control.ItemHeight = 40;
+                control.HourWidth = 5;
                 if (theme == null || theme == "null" || theme == "Default" || theme == "Aero")
                     return;
-                // Configure internal provider control to support custom themes.
                 // Optionally, also set StandardBarFill, StandardBarStroke, and other appearance settings depending on the theme.
-                control.ItemHeight = 28;
                 control.BarHeight = 24;
                 control.CompletedBarHeight = control.BarHeight - 1;
                 control.StandardBarCornerRadius = 1;
                 control.StandardCompletedBarCornerRadius = 0;
-                control.HourWidth = 5;
                 control.StandardBarFill = Brushes.White;
                 control.StandardBarStroke = new SolidColorBrush(Color.FromRgb(0x00, 0x5c, 0x9e));
                 control.StandardCompletedBarFill = control.StandardBarStroke;

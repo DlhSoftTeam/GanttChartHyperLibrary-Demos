@@ -73,7 +73,7 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'ExportPngImage-PMF', title: 'Export PNG image', description: 'Shows how to generate PNG images for the current Gantt Chart – using TaskManager component from DlhSoft Project Management Framework, available separately for free to Gantt Chart Hyper Library licensees',
+            component: 'GanttChartView', feature: 'ExportPngImage-PMF', title: 'Export image (using Project Management Framework)', description: 'Shows how to generate PNG images for the current Gantt Chart – using TaskManager component from DlhSoft Project Management Framework, available separately for free to Gantt Chart Hyper Library licensees',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js', 'GetPng.aspx', 'GetPng.aspx.cs'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts', 'GetPng.aspx', 'GetPng.aspx.cs']
@@ -294,4 +294,3 @@ angular.module('Demos', [])
         templateUrl: 'Templates/SourceCode.html'
     };
 });
-//# sourceMappingURL=app.js.map
