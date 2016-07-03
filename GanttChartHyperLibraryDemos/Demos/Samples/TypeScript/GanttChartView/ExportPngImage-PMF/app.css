@@ -20,6 +20,15 @@
 .ribbonCommand img {
     border: 0px;
 }
+.ribbonContainer .content {
+    color: white;
+    display: inline-block;
+    margin: 8px;
+    padding: 10px;
+}
+.ribbonContainer .content a {
+    color: white;
+}
 
 /* Overrides */
 body {
