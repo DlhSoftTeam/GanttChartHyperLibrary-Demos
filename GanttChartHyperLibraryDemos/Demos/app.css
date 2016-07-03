@@ -12,6 +12,7 @@
 }
 .accordion .content {
     overflow-y: auto;
+    line-height: 23.25px;
 }
 .download-link {
     color: #292929;
