@@ -214,6 +214,17 @@
     <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\themes.js" />
     <Content Include="Samples\templates.js" />
     <Content Include="Samples\themes.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\AutomaticScheduling\app.css" />
+    <Content Include="Samples\TypeScript\GanttChartView\AutomaticScheduling\app.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\AutomaticScheduling\Images\DependencyConstraints.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\AutomaticScheduling\index.html" />
+    <Content Include="Samples\TypeScript\GanttChartView\AutomaticScheduling\templates.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\AutomaticScheduling\themes.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\Baseline\app.css" />
+    <Content Include="Samples\TypeScript\GanttChartView\Baseline\app.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\Baseline\index.html" />
+    <Content Include="Samples\TypeScript\GanttChartView\Baseline\templates.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\Baseline\themes.js" />
     <Content Include="Samples\TypeScript\GanttChartView\Columns\app.css" />
     <Content Include="Samples\TypeScript\GanttChartView\Columns\app.js" />
     <Content Include="Samples\TypeScript\GanttChartView\Columns\Images\AddNew.png" />
@@ -267,6 +278,12 @@
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\index.html" />
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\templates.js" />
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\themes.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\Printing\app.css" />
+    <Content Include="Samples\TypeScript\GanttChartView\Printing\app.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\Printing\Images\Print.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\Printing\index.html" />
+    <Content Include="Samples\TypeScript\GanttChartView\Printing\templates.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\Printing\themes.js" />
     <Content Include="Samples\TypeScript\GanttChartView\ProjectXml\app.css" />
     <Content Include="Samples\TypeScript\GanttChartView\ProjectXml\app.js" />
     <Content Include="Samples\TypeScript\GanttChartView\ProjectXml\Images\LoadProjectXml.png" />
@@ -274,6 +291,11 @@
     <Content Include="Samples\TypeScript\GanttChartView\ProjectXml\index.html" />
     <Content Include="Samples\TypeScript\GanttChartView\ProjectXml\templates.js" />
     <Content Include="Samples\TypeScript\GanttChartView\ProjectXml\themes.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\Styling\app.css" />
+    <Content Include="Samples\TypeScript\GanttChartView\Styling\app.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\Styling\index.html" />
+    <Content Include="Samples\TypeScript\GanttChartView\Styling\templates.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\Styling\themes.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -299,6 +321,10 @@
     <Content Include="Samples\TypeScript\GanttChartView\CustomScale\app.ts" />
     <Content Include="Samples\TypeScript\GanttChartView\CriticalPath\app.ts" />
     <Content Include="Samples\TypeScript\GanttChartView\ProjectXml\app.ts" />
+    <Content Include="Samples\TypeScript\GanttChartView\Baseline\app.ts" />
+    <Content Include="Samples\TypeScript\GanttChartView\AutomaticScheduling\app.ts" />
+    <Content Include="Samples\TypeScript\GanttChartView\Printing\app.ts" />
+    <Content Include="Samples\TypeScript\GanttChartView\Styling\app.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.Data.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.HierarchicalData.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts" />
@@ -333,11 +359,15 @@
     <Folder Include="Samples\JavaScript\NetworkDiagramView\MainFeatures\Scripts\" />
     <Folder Include="Samples\JavaScript\PertChartView\MainFeatures\Scripts\" />
     <Folder Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Scripts\" />
+    <Folder Include="Samples\TypeScript\GanttChartView\AutomaticScheduling\Scripts\" />
+    <Folder Include="Samples\TypeScript\GanttChartView\Baseline\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\Columns\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\CriticalPath\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\CustomScale\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\MainFeatures\Scripts\" />
+    <Folder Include="Samples\TypeScript\GanttChartView\Printing\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\ProjectXml\Scripts\" />
+    <Folder Include="Samples\TypeScript\GanttChartView\Styling\Scripts\" />
     <Folder Include="Samples\TypeScript\ScheduleChartView\" />
   </ItemGroup>
   <ItemGroup>
