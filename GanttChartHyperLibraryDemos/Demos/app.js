@@ -31,6 +31,13 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'GanttChartView', feature: 'BuiltinScales', title: 'Built-in scales', description: 'Shows how you can combine and use built-in scale types, text header formats, and related settings',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
             component: 'GanttChartView', feature: 'CustomScale', title: 'Custom scale', description: 'Shows how to define a fully custom chart scale with special time intervals and text headers',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
