@@ -354,10 +354,10 @@ declare module DlhSoft.Controls {
             /** The finish day of the working week interval, used when computing task effort values and when dragging and dropping task bars; by default it is set to Friday (5); next days of the week are considered nonworking time and by default they are highlighted in the chart area. */
             workingWeekFinish?: number;
 
-            /** The start time of the visible day interval, in milliseconds passed since midnight; by default it is set to 8 AM; the start of the working time interval of the day is also defined using the same value. */
-            visibleDayStart?: number;
-            /** The finish time of the visible day interval, in milliseconds passed since midnight; by default it is set to 4 PM; the finish of the working time interval of the day is also defined using the same value. */
-            visibleDayFinish?: number;
+            /** The start time of the working day interval, in milliseconds passed since midnight; by default it is set to 8 AM; the start of the visible time interval of the day is also defined using the same value. */
+            workingDayStart?: number;
+            /** The finish time of the working day interval, in milliseconds passed since midnight; by default it is set to 4 PM; the finish of the visible time interval of the day is also defined using the same value. */
+            workingDayFinish?: number;
 
             /** Optional collection of special nonworking days, such as holidays. */
             specialNonworkingDays?: Date[];

@@ -41,10 +41,12 @@ var mondayBasedCheckBox = document.querySelector('#mondayBasedCheckBox');
 var nonworkingDaysCheckBox = document.querySelector('#nonworkingDaysCheckBox');
 var currentTimeCheckBox = document.querySelector('#currentTimeCheckBox');
 var zoomLevelTextBox = document.querySelector('#zoomLevelTextBox');
-// Prepare supported scale types and header formats.
+var updateScaleSelect = document.querySelector('#updateScaleSelect');
+// Prepare supported scale types and header formats, and a few available udpate scale options.
 var availableScaleTypes = ['Years', 'Months', 'Weeks', 'Days', 'Hours'];
 var availableHeaderFormats = ['DateTime', 'Date', 'Hour', 'DayOfWeek', 'DayOfWeekAbbreviation', 'Day', 'Month', 'MonthAbbreviation', 'Year', 'MonthYear', 'Localized'];
-// Initialize available and selected options for scale type and header format select elements, and values for check box and text box elements.
+var availableUpdateScaleItems = { 'Free': 1, '15 min': 15 * 60 * 1000, 'Hour': 60 * 60 * 1000, 'Day': 24 * 60 * 60 * 1000 };
+// Initialize available and selected options for scale type and header format select elements, and values for other input and select elements.
 for (var i = 0; i < availableScaleTypes.length; i++) {
     var scaleType = availableScaleTypes[i];
     var option = document.createElement('option');
@@ -81,6 +83,13 @@ for (var i = 0; i < availableHeaderFormats.length; i++) {
 nonworkingDaysCheckBox.checked = true;
 currentTimeCheckBox.checked = true;
 zoomLevelTextBox.value = '5';
+for (var key in availableUpdateScaleItems) {
+    var option = document.createElement('option');
+    option.appendChild(document.createTextNode(key));
+    option.value = availableUpdateScaleItems[key];
+    option.selected = key == '15 min';
+    updateScaleSelect.appendChild(option);
+}
 // Handle change chains.
 function updateFromSelectedMajorScaleType() {
     switch (majorScaleTypeSelect.value) {
@@ -143,6 +152,7 @@ function initializeScales() {
     if (currentTimeCheckBox.checked)
         scales.push({ scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: Red; stroke-width: 0.5px' });
     settings.scales = scales;
+    settings.updateScale = updateScaleSelect.value;
     settings.weekStartDay = !mondayBasedCheckBox.checked ? 0 : 1;
     var hourWidth = parseFloat(zoomLevelTextBox.value);
     if (hourWidth > 0)
@@ -167,3 +177,4 @@ nonworkingDaysCheckBox.addEventListener('change', initializeScales);
 currentTimeCheckBox.addEventListener('change', initializeScales);
 zoomLevelTextBox.addEventListener('change', initializeScales);
 zoomLevelTextBox.addEventListener('keyup', initializeScales);
+updateScaleSelect.addEventListener('change', initializeScales);
