@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>GanttChartView Date-Time Formats Sample</title>
+    <link rel="Stylesheet" href="app.css" type="text/css" />
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.js" type="text/javascript"></script>
+    <script src="Scripts/DlhSoft.Data.HTML.Controls.js" type="text/javascript"></script>
+    <script src="templates.js" type="text/javascript"></script>
+    <script src="themes.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript" defer="defer"></script>
+</head>
+<body>
+    <div class="command-area">
+        <table>
+            <tr>
+                <td>Date format</td>
+                <td>Hide time of day</td>
+                <td>Duration format</td>
+            </tr>
+            <tr>
+                <td>
+                    <select id="dateFormatSelect">
+                        <option selected="selected">Standard</option>
+                        <option value="DD.MM.YYYY">DD.MM.YYYY</option>
+                        <option value="Numeric">Numeric</option>
+                   </select>
+                </td>
+                <td><input id="hideTimeOfDayCheckBox" type="checkbox" /></td>
+                <td>
+                    <select id="durationFormatSelect">
+                        <option value="h">Hours</option>
+                        <option value="d" selected="selected">Days</option>
+                        <option value="w">Weeks</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="ganttChartView" style="height: 388px">...</div>
+</body>
+</html>

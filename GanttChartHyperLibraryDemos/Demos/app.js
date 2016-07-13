@@ -66,6 +66,20 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'GanttChartView', feature: 'CustomSchedules', title: 'Custom schedules', description: 'Shows how to define custom working time and special nonworking days for all tasks with individual exceptions',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'DateTimeFormats', title: 'Date and time formats', description: 'Shows how to set up custom formatting for dates, times, and durations',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
             component: 'GanttChartView', feature: 'Styling', title: 'Styling', description: 'Shows how to style up elements defined by the component using CSS classes',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
