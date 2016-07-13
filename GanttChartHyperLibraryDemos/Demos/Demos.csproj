@@ -121,6 +121,11 @@
     <Content Include="Samples\JavaScript\GanttChartView\CustomScale\index.html" />
     <Content Include="Samples\JavaScript\GanttChartView\CustomScale\templates.js" />
     <Content Include="Samples\JavaScript\GanttChartView\CustomScale\themes.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\CustomSchedules\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\CustomSchedules\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\CustomSchedules\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\CustomSchedules\templates.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\CustomSchedules\themes.js" />
     <Content Include="Samples\JavaScript\GanttChartView\ExportPngImage-PMF\app.css" />
     <Content Include="Samples\JavaScript\GanttChartView\ExportPngImage-PMF\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\ExportPngImage-PMF\GetPng.aspx" />
@@ -253,6 +258,11 @@
     <Content Include="Samples\TypeScript\GanttChartView\Columns\index.html" />
     <Content Include="Samples\TypeScript\GanttChartView\Columns\templates.js" />
     <Content Include="Samples\TypeScript\GanttChartView\Columns\themes.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\CustomSchedules\app.css" />
+    <Content Include="Samples\TypeScript\GanttChartView\CustomSchedules\app.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\CustomSchedules\index.html" />
+    <Content Include="Samples\TypeScript\GanttChartView\CustomSchedules\templates.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\CustomSchedules\themes.js" />
     <Content Include="Samples\TypeScript\GanttChartView\ContinuousSchedule\app.css" />
     <Content Include="Samples\TypeScript\GanttChartView\ContinuousSchedule\app.js" />
     <Content Include="Samples\TypeScript\GanttChartView\ContinuousSchedule\index.html" />
@@ -362,6 +372,7 @@
     <Content Include="Samples\TypeScript\GanttChartView\ExportPngImage-PMF\app.ts" />
     <Content Include="Samples\TypeScript\GanttChartView\BuiltinScales\app.ts" />
     <Content Include="Samples\TypeScript\GanttChartView\ContinuousSchedule\app.ts" />
+    <Content Include="Samples\TypeScript\GanttChartView\CustomSchedules\app.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.Data.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.HierarchicalData.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts" />
@@ -389,6 +400,7 @@
     <Folder Include="Samples\JavaScript\GanttChartView\ContinuousSchedule\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\CriticalPath\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\CustomScale\Scripts\" />
+    <Folder Include="Samples\JavaScript\GanttChartView\CustomSchedules\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\ExportPngImage-PMF\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\HierarchicalVirtualization\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\MainFeatures\Scripts\" />
@@ -406,6 +418,7 @@
     <Folder Include="Samples\TypeScript\GanttChartView\ContinuousSchedule\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\CriticalPath\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\CustomScale\Scripts\" />
+    <Folder Include="Samples\TypeScript\GanttChartView\CustomSchedules\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\ExportPngImage-PMF\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\MainFeatures\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\Printing\Scripts\" />
