@@ -42,19 +42,25 @@ settings.schedule = {
     specialNonworkingDays: [new Date(year, month, 15), new Date(year, month, 16), new Date(year, month, 19)] // Common holidays
 };
 // Set up specific item schedules (Task 2.2.1, and Task 2.2.2). They can partially overlap the main schedule.
-items[6].schedule = {
+var specialItem1 = items[6], specialItem2 = items[7];
+specialItem1.schedule = {
     workingWeekStart: 3,
     workingWeekFinish: 6,
     workingDayStart: 11.5 * 60 * 60 * 1000,
     workingDayFinish: 19.75 * 60 * 60 * 1000,
-    specialNonworkingDays: [new Date(year, month, 18), new Date(year, month, 19), new Date(year, month, 22)] // One common, more holidays
+    specialNonworkingDays: [new Date(year, month, 18), new Date(year, month, 19), new Date(year, month, 22), new Date(year, month, 23)] // One common, more holidays
 };
-items[7].schedule = {
+specialItem2.schedule = {
     workingWeekStart: 0,
     workingWeekFinish: 6 // Saturday
 };
 // Optionally, visually indicate tasks with special schedules.
-items[6].content += '* Wed-Sat';
-items[7].content += '* Sun-Sat';
+var specialItems = [specialItem1, specialItem2];
+for (var i = 0; i < specialItems.length; i++) {
+    var specialItem = specialItems[i];
+    specialItem.content += '*';
+    specialItem.barStyle = 'fill: #60b060';
+    specialItem.completedBarStyle = 'fill: #108010';
+}
 // Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, items, settings);
