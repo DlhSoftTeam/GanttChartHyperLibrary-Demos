@@ -563,7 +563,7 @@ declare module DlhSoft.Controls {
             /** Converts date and time values to text values whenever needed within the control; the function may be provided by the developer for further customization and/or localization purposes. */
             dateTimeFormatter? (dateTime: Date): string;
             /** Converts text values to date and time values whenever needed within the control; the function may be provided by the developer for further customization and/or localization purposes. */
-            dateParser? (text: string): Date;
+            dateTimeParser? (text: string): Date;
 
             /** Function called whenever the end user scrolls the chart area horizontally, changing the left most displayed time (settings.displayedTime). */
             displayedTimeChangeHandler? (displayedTime: Date): void;
