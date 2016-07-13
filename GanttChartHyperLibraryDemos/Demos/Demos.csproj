@@ -106,6 +106,11 @@
     <Content Include="Samples\JavaScript\GanttChartView\Columns\index.html" />
     <Content Include="Samples\JavaScript\GanttChartView\Columns\templates.js" />
     <Content Include="Samples\JavaScript\GanttChartView\Columns\themes.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\ContinuousSchedule\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\ContinuousSchedule\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\ContinuousSchedule\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\ContinuousSchedule\templates.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\ContinuousSchedule\themes.js" />
     <Content Include="Samples\JavaScript\GanttChartView\CriticalPath\app.css" />
     <Content Include="Samples\JavaScript\GanttChartView\CriticalPath\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\CriticalPath\index.html" />
@@ -248,6 +253,11 @@
     <Content Include="Samples\TypeScript\GanttChartView\Columns\index.html" />
     <Content Include="Samples\TypeScript\GanttChartView\Columns\templates.js" />
     <Content Include="Samples\TypeScript\GanttChartView\Columns\themes.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\ContinuousSchedule\app.css" />
+    <Content Include="Samples\TypeScript\GanttChartView\ContinuousSchedule\app.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\ContinuousSchedule\index.html" />
+    <Content Include="Samples\TypeScript\GanttChartView\ContinuousSchedule\templates.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\ContinuousSchedule\themes.js" />
     <Content Include="Samples\TypeScript\GanttChartView\CriticalPath\app.css" />
     <Content Include="Samples\TypeScript\GanttChartView\CriticalPath\app.js" />
     <Content Include="Samples\TypeScript\GanttChartView\CriticalPath\index.html" />
@@ -351,6 +361,7 @@
     <Content Include="Samples\TypeScript\GanttChartView\Styling\app.ts" />
     <Content Include="Samples\TypeScript\GanttChartView\ExportPngImage-PMF\app.ts" />
     <Content Include="Samples\TypeScript\GanttChartView\BuiltinScales\app.ts" />
+    <Content Include="Samples\TypeScript\GanttChartView\ContinuousSchedule\app.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.Data.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.HierarchicalData.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts" />
@@ -375,6 +386,7 @@
     <Folder Include="Samples\JavaScript\GanttChartView\Baseline\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\BuiltinScales\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\Columns\Scripts\" />
+    <Folder Include="Samples\JavaScript\GanttChartView\ContinuousSchedule\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\CriticalPath\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\CustomScale\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\ExportPngImage-PMF\Scripts\" />
@@ -391,6 +403,7 @@
     <Folder Include="Samples\TypeScript\GanttChartView\Baseline\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\BuiltinScales\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\Columns\Scripts\" />
+    <Folder Include="Samples\TypeScript\GanttChartView\ContinuousSchedule\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\CriticalPath\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\CustomScale\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\ExportPngImage-PMF\Scripts\" />
@@ -421,7 +434,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="LicenseManager, Version=4.3.1.1, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.35.2\lib\net45\LicenseManagement\LicenseManager.exe</HintPath>
+      <HintPath>..\packages\DlhSoft.GanttChartHyperLibrary.5.3.8.2\lib\JavaScript\LicenseManagement\LicenseManager.exe</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PresentationCore" />
