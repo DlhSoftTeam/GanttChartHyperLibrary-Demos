@@ -22,6 +22,9 @@ namespace Demos.Samples.JavaScript.GanttChartView.ExportPngImage_PMF
             // Initialize GanttChartExporter based on TaskManager component.
             using (var ganttChartExporter = new GanttChartExporter(taskManager, (GanttChartDataGrid control) =>
             {
+                // Configure timeline to export.
+                control.TimelinePageStart = taskManager.GetProjectStart().Date.AddDays(-2);
+                control.TimelinePageFinish = taskManager.GetProjectFinish().Date.AddDays(3);
                 // Configure internal provider control to support custom themes.
                 control.HeaderHeight = 80;
                 control.ScaleHeaderHeight = 40;
