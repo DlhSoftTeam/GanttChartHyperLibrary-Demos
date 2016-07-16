@@ -98,7 +98,7 @@ function initializeFormats() {
         return value;
     };
     durationColumn.header = 'Duration (' + durationFormatSelect.value + ')';
-    durationColumn.cellTemplate = DlhSoft.Controls.GanttChartView.getDurationColumnTemplate(64, durationFormatSelect.value == 'd' ? 8 : (durationFormatSelect.value == 'w' ? 8 * 7 : 1));
+    durationColumn.cellTemplate = DlhSoft.Controls.GanttChartView.getDurationColumnTemplate(64, durationFormatSelect.value == 'd' ? 8 : (durationFormatSelect.value == 'w' ? 8 * 5 : 1));
     if (ganttChartView)
         ganttChartView.refresh();
 }
