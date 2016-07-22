@@ -366,7 +366,7 @@
             var y = ganttChartView.getItemTop(predecessorItem.item);
             var y1 = ganttChartView.getItemTop(item);
             var d = 'M ', x, x1, x2, y, h = settings.itemHeight, h2 = h / 2, extraLineLength = h / 3.5, arrowSpace = 3.5, horizontal = false, x0;
-            if (y == y1 && typeof predecessorItem.dependencyType === undefinedType || predecessorItem.dependencyType == 'FinishStart' || predecessorItem.dependencyType == 'FS' || predecessorItem.dependencyType == 'StartFinish' || predecessorItem.dependencyType == 'SF') {
+            if (y == y1 && (typeof predecessorItem.dependencyType === undefinedType || predecessorItem.dependencyType == 'FinishStart' || predecessorItem.dependencyType == 'FS' || predecessorItem.dependencyType == 'StartFinish' || predecessorItem.dependencyType == 'SF')) {
                 if (typeof predecessorItem.dependencyType === undefinedType || predecessorItem.dependencyType == 'FinishStart' || predecessorItem.dependencyType == 'FS') {
                     x = ganttChartView.getChartPosition(predecessorItem.item.finish);
                     x1 = ganttChartView.getChartPosition(item.start);
@@ -455,7 +455,7 @@
                         if (y <= 0)
                             y += h2;
                         else
-                            y -= h2;
+                            y -= h2 - 2.5;
                         d += ' ' + x1 + ' ' + (y + h2);
                     }
                     d += ' ' + x2 + ' ' + (y + h2);
@@ -466,7 +466,7 @@
                         if (y <= 0)
                             y += h2;
                         else
-                            y -= h2;
+                            y -= h2 - 2.5;
                         d += ' ' + x1 + ' ' + (y + h2);
                     }
                     d += ' ' + x2 + ' ' + (y + h2);
