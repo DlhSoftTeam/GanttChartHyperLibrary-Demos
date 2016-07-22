@@ -1,6 +1,10 @@
+/// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts'/>
 var GanttChartView = DlhSoft.Controls.GanttChartView;
+// Query string syntax: ?theme
+// Supported themes: Generic-blue, Default.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
+// Retrieve and store the control element for reference purposes.
 var ganttChartViewElement = document.querySelector('#ganttChartView');
 var date = new Date(), year = date.getFullYear(), month = date.getMonth();
 var items = [
@@ -18,16 +22,18 @@ items[7].predecessors = [{ item: items[6], lag: 2 * 60 * 60 * 1000 }];
 items[8].predecessors = [{ item: items[4] }, { item: items[5] }];
 for (var i = 4; i <= 16; i++)
     items.push({ content: 'Task ' + i, indentation: i >= 8 && i % 3 == 2 ? 0 : 1, start: new Date(year, month, 2 + (i <= 8 ? (i - 4) * 3 : i - 8), 8, 0, 0), finish: new Date(year, month, 2 + (i <= 8 ? (i - 4) * 3 + (i > 8 ? 6 : 1) : i - 2), 16, 0, 0) });
-items[9].assignmentsContent = 'Resource 1';
-items[10].predecessors = [{ item: items[9] }];
 var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
+// Optionally, initialize custom theme and templates (themes.js, templates.js).
 if (initializeGanttChartTheme)
     initializeGanttChartTheme(settings, theme);
 if (initializeGanttChartTemplates)
     initializeGanttChartTemplates(settings, theme);
+// Prepare command element references.
 var zoomLevelTextBox = document.querySelector('#zoomLevelTextBox');
 var disableMouseWheelZoomCheckBox = document.querySelector('#disableMouseWheelZoomCheckBox');
+// Initialize input value for zoom level element.
 zoomLevelTextBox.value = '5';
+// Update zoom level settings based on user selections.
 function updateZoomLevel() {
     var hourWidth = parseFloat(zoomLevelTextBox.value);
     if (hourWidth > 0)
@@ -36,7 +42,9 @@ function updateZoomLevel() {
     if (ganttChartView)
         ganttChartView.refresh();
 }
+// Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, items, settings);
+// Update zoom level settings upon user commands.
 zoomLevelTextBox.addEventListener('change', updateZoomLevel);
 zoomLevelTextBox.addEventListener('keyup', updateZoomLevel);
 disableMouseWheelZoomCheckBox.addEventListener('change', updateZoomLevel);

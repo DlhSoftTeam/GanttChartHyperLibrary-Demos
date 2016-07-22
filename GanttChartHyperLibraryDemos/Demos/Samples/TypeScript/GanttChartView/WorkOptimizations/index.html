@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>GanttChartView Work Optimizations Sample</title>
+    <link rel="Stylesheet" href="app.css" type="text/css" />
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.js" type="text/javascript"></script>
+    <script src="Scripts/DlhSoft.Data.HTML.Controls.js" type="text/javascript"></script>
+    <script src="templates.js" type="text/javascript"></script>
+    <script src="themes.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript" defer="defer"></script>
+</head>
+<body>
+    <div class="command-area">
+        <table>
+            <tr>
+                <td class="columnStyle"><button id="optimizeWorkButton" onclick="optimizeWork()">Optimize work</button></td>
+                <td class="columnStyle"><input id="dependenciesOnlyCheckBox" type="checkbox" />Dependencies only</td>
+                <td class="columnStyle">Start on <input id="startTextBox" type="date" title="date" /></td>
+            </tr>
+            <tr>
+                <td class="columnStyle"><button id="levelResourcesButton" onclick="levelResources()">Level resources</button></td>
+                <td class="columnStyle"><input id="includeStartedTasksCheckBox" type="checkbox" />Include started tasks</td>
+            </tr>
+        </table>
+    </div>
+    <div id="ganttChartView" style="height: 388px">...</div>
+</body>
+</html>
