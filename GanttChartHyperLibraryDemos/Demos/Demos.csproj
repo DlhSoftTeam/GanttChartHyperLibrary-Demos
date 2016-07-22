@@ -175,6 +175,11 @@
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\index.html" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\MinuteScale\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\MinuteScale\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\MinuteScale\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\MinuteScale\templates.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\MinuteScale\themes.js" />
     <Content Include="Samples\JavaScript\GanttChartView\Printing\app.css" />
     <Content Include="Samples\JavaScript\GanttChartView\Printing\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\Printing\Images\Print.png" />
@@ -193,6 +198,11 @@
     <Content Include="Samples\JavaScript\GanttChartView\Styling\index.html" />
     <Content Include="Samples\JavaScript\GanttChartView\Styling\templates.js" />
     <Content Include="Samples\JavaScript\GanttChartView\Styling\themes.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\ZoomLevel\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\ZoomLevel\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\ZoomLevel\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\ZoomLevel\templates.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\ZoomLevel\themes.js" />
     <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\app.js" />
     <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\Images\CustomScales.png" />
     <Content Include="Samples\JavaScript\LoadChartView\MainFeatures\Images\DecreaseTimelinePage.png" />
@@ -332,6 +342,11 @@
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\index.html" />
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\templates.js" />
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\themes.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\MinuteScale\app.css" />
+    <Content Include="Samples\TypeScript\GanttChartView\MinuteScale\app.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\MinuteScale\index.html" />
+    <Content Include="Samples\TypeScript\GanttChartView\MinuteScale\templates.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\MinuteScale\themes.js" />
     <Content Include="Samples\TypeScript\GanttChartView\Printing\app.css" />
     <Content Include="Samples\TypeScript\GanttChartView\Printing\app.js" />
     <Content Include="Samples\TypeScript\GanttChartView\Printing\Images\Print.png" />
@@ -350,6 +365,11 @@
     <Content Include="Samples\TypeScript\GanttChartView\Styling\index.html" />
     <Content Include="Samples\TypeScript\GanttChartView\Styling\templates.js" />
     <Content Include="Samples\TypeScript\GanttChartView\Styling\themes.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\ZoomLevel\app.css" />
+    <Content Include="Samples\TypeScript\GanttChartView\ZoomLevel\app.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\ZoomLevel\index.html" />
+    <Content Include="Samples\TypeScript\GanttChartView\ZoomLevel\templates.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\ZoomLevel\themes.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -384,6 +404,8 @@
     <Content Include="Samples\TypeScript\GanttChartView\ContinuousSchedule\app.ts" />
     <Content Include="Samples\TypeScript\GanttChartView\CustomSchedules\app.ts" />
     <Content Include="Samples\TypeScript\GanttChartView\DateTimeFormats\app.ts" />
+    <Content Include="Samples\TypeScript\GanttChartView\ZoomLevel\app.ts" />
+    <Content Include="Samples\TypeScript\GanttChartView\MinuteScale\app.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.Data.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.HierarchicalData.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts" />
@@ -416,9 +438,11 @@
     <Folder Include="Samples\JavaScript\GanttChartView\ExportPngImage-PMF\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\HierarchicalVirtualization\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\MainFeatures\Scripts\" />
+    <Folder Include="Samples\JavaScript\GanttChartView\MinuteScale\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\Printing\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\ProjectXml\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\Styling\Scripts\" />
+    <Folder Include="Samples\JavaScript\GanttChartView\ZoomLevel\Scripts\" />
     <Folder Include="Samples\JavaScript\LoadChartView\MainFeatures\Scripts\" />
     <Folder Include="Samples\JavaScript\NetworkDiagramView\MainFeatures\Scripts\" />
     <Folder Include="Samples\JavaScript\PertChartView\MainFeatures\Scripts\" />
@@ -434,9 +458,11 @@
     <Folder Include="Samples\TypeScript\GanttChartView\DateTimeFormats\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\ExportPngImage-PMF\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\MainFeatures\Scripts\" />
+    <Folder Include="Samples\TypeScript\GanttChartView\MinuteScale\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\Printing\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\ProjectXml\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\Styling\Scripts\" />
+    <Folder Include="Samples\TypeScript\GanttChartView\ZoomLevel\Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="DlhSoft.HierarchicalData.LightWPF.Controls, Version=4.0.8.5, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
@@ -460,7 +486,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="LicenseManager, Version=4.3.1.1, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.GanttChartHyperLibrary.5.3.8.3\lib\JavaScript\LicenseManagement\LicenseManager.exe</HintPath>
+      <HintPath>..\packages\DlhSoft.GanttChartHyperLibrary.5.3.8.4\lib\JavaScript\LicenseManagement\LicenseManager.exe</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PresentationCore" />

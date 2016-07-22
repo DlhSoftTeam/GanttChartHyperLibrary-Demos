@@ -5,7 +5,7 @@ var theme = queryString ? queryString.substr(1) : null;
 
 var ganttChartView = document.querySelector('#ganttChartView');
 
-var date = new Date(), year = 2013, month = 1;
+var year = 2013, month = 1;
 var items = [{ content: 'Task 1', isExpanded: false },
              { content: 'Task 1.1', indentation: 1, start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 4, 16, 0, 0) },
              { content: 'Task 1.2', indentation: 1, start: new Date(year, month, 3, 8, 0, 0), finish: new Date(year, month, 5, 12, 0, 0) },
