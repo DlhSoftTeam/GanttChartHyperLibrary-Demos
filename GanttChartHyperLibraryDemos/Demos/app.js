@@ -11,90 +11,125 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'AssigningResources', title: 'Assigning resources', description: 'Shows how resource assignments work and includes code providing automatic Load Chart synchronization',
+            component: 'GanttChartView', feature: 'AssigningResources', title: 'Assigning resources (with multi-selector combo box)', description: 'Shows how resource assignments work and includes code providing automatic Load Chart synchronization',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js']
             }
         },
         {
-            component: 'GanttChartView', feature: 'AutomaticScheduling', title: 'Automatic scheduling', description: 'Shows how task dependency constraints can be enabled to automatically schedule tasks upon all changes',
+            component: 'GanttChartView', feature: 'AutomaticScheduling', title: 'Automatic scheduling (dependency constraints)', description: 'Shows how task dependency constraints can be enabled to automatically schedule tasks upon all changes',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
-            component: 'GanttChartView', feature: 'Columns', title: 'Columns', description: 'Shows how to add supplemental built-in and custom grid columns including a column presenting task icon thumbs that offer vertical drag and drop support',
+            component: 'GanttChartView', feature: 'Columns', title: 'Grid columns (built-in and custom)', description: 'Shows how to add supplemental built-in and custom grid columns including a column presenting task icon thumbs that offer vertical drag and drop support',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
-            component: 'GanttChartView', feature: 'BuiltinScales', title: 'Built-in scales', description: 'Shows how you can combine and use built-in scale types, text header formats, and related settings',
+            component: 'GanttChartView', feature: 'ReadOnlySettings', title: 'Read only, visibility, and other behavioral settings', description: 'Shows how you can set up read only, visibility, and other settings on the component and on specific items',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
-            component: 'GanttChartView', feature: 'ZoomLevel', title: 'Zoom level', description: 'Shows how you can set up zoom level settings for the chart area',
+            component: 'GanttChartView', feature: 'ChangeNotifications', title: 'Change notifications (item value update handling)', description: 'Shows how custom code can be executed when changes occur on the data presented by the component',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
-            component: 'GanttChartView', feature: 'CustomScale', title: 'Custom scale', description: 'Shows how to define a fully custom chart scale with special time intervals and text headers',
+            component: 'GanttChartView', feature: 'BuiltinScales', title: 'Built-in scales (from years to hours)', description: 'Shows how you can combine and use built-in scale types, text header formats, and related settings',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
-            component: 'GanttChartView', feature: 'MinuteScale', title: 'Minute scale', description: 'Shows how to zoom in and display hour quarters and minutes in the chart area',
+            component: 'GanttChartView', feature: 'ZoomLevel', title: 'Zoom level (and disabling mouse wheel zooming)', description: 'Shows how you can set up zoom level settings for the chart area',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
-            component: 'GanttChartView', feature: 'Baseline', title: 'Baseline', description: 'Shows how you can define and display estimation bars for tasks (i.e. project baseline)',
+            component: 'GanttChartView', feature: 'CustomScale', title: 'Custom scale (time intervals and header texts)', description: 'Shows how to define a fully custom chart scale with special time intervals and text headers',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
-            component: 'GanttChartView', feature: 'CriticalPath', title: 'Critical path', description: 'Shows how you can determine and highlight critical tasks in your project (i.e. those that would affect the project finish date if their duration would increase)',
+            component: 'GanttChartView', feature: 'MinuteScale', title: 'Minute scale (zoom in to hour quaters and minutes)', description: 'Shows how to zoom in and display hour quarters and minutes in the chart area',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
-            component: 'GanttChartView', feature: 'ContinuousSchedule', title: 'Continuous schedule', description: 'Shows how to define continuous working time for tasks (24/7)',
+            component: 'GanttChartView', feature: 'SpecialDays', title: 'Special days (vertically highlight specific time intervals)', description: 'Shows how you can highlight special time intervals in the chart area',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
-            component: 'GanttChartView', feature: 'CustomSchedules', title: 'Custom schedules', description: 'Shows how to define custom working time and special nonworking days for all tasks with individual exceptions',
+            component: 'GanttChartView', feature: 'Baseline', title: 'Baseline (estimation time bars vs. actual task bars)', description: 'Shows how you can define and display estimation bars for tasks (i.e. project baseline)',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
-            component: 'GanttChartView', feature: 'DateTimeFormats', title: 'Date and time formats', description: 'Shows how to set up custom formatting for dates, times, and durations',
+            component: 'GanttChartView', feature: 'CriticalPath', title: 'Critical path (tasks that affect project finish)', description: 'Shows how you can determine and highlight critical tasks in your project (i.e. those that would affect the project finish date if their duration would increase)',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
-            component: 'GanttChartView', feature: 'Styling', title: 'Styling', description: 'Shows how to style up elements defined by the component using CSS classes',
+            component: 'GanttChartView', feature: 'ContinuousSchedule', title: 'Continuous schedule (non-stop working time)', description: 'Shows how to define continuous working time for tasks (24/7)',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'CustomSchedules', title: 'Custom schedules (general and for individual tasks)', description: 'Shows how to define custom working time and special nonworking days for all tasks with individual exceptions',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'DateTimeFormats', title: 'Date and time formats (simple or fully customized)', description: 'Shows how to set up custom formatting for dates, times, and durations',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'Styling', title: 'Styling (with CSS classes)', description: 'Shows how to style up elements defined by the component using CSS classes',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'MoveUpDown', title: 'Move up-down (hierarchical moving)', description: 'Shows how you can allow the end user to move items up and down without breaking the hierarchy',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'WorkOptimizations', title: 'Work optimizations (minimize project time, level resources)', description: 'Shows how you can optimize project timeline and avoiding resource over-allocation',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
@@ -122,7 +157,14 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'HierarchicalVirtualization', title: 'Hierarchical virtualization', description: 'Shows how to develop summary task virtualization and lazy load child tasks only upon parent node expansion',
+            component: 'GanttChartView', feature: 'Performance', title: 'Performance (large data set)', description: 'Shows app responsiveness and other runtime performance features when loading large sets of hierarchical data',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'HierarchicalVirtualization', title: 'Hierarchical virtualization (lazy loading)', description: 'Shows how to develop summary task virtualization and lazy load child tasks only upon parent node expansion',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js']
             }

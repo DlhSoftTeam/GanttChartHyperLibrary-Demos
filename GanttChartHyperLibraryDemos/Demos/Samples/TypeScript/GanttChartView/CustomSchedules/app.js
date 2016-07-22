@@ -22,8 +22,6 @@ items[7].predecessors = [{ item: items[6], lag: 2 * 60 * 60 * 1000 }];
 items[8].predecessors = [{ item: items[4] }, { item: items[5] }];
 for (var i = 4; i <= 16; i++)
     items.push({ content: 'Task ' + i, indentation: i >= 8 && i % 3 == 2 ? 0 : 1, start: new Date(year, month, 2 + (i <= 8 ? (i - 4) * 3 : i - 8), 0, 0, 0), finish: new Date(year, month, 2 + (i <= 8 ? (i - 4) * 3 + (i > 8 ? 6 : 1) : i - 2) + 1, 0, 0, 0) });
-items[9].assignmentsContent = 'Resource 1';
-items[10].predecessors = [{ item: items[9] }];
 var settings = {
     currentTime: new Date(year, month, 2, 12, 0, 0),
     areTaskDependencyConstraintsEnabled: true
@@ -54,6 +52,8 @@ specialItem2.schedule = {
     workingWeekStart: 0,
     workingWeekFinish: 6 // Saturday
 };
+// Optionally, highlight nonworking time for individual items.
+settings.isIndividualItemNonworkingTimeHighlighted = true;
 // Optionally, visually indicate tasks with special schedules.
 var specialItems = [specialItem1, specialItem2];
 for (var i = 0; i < specialItems.length; i++) {
