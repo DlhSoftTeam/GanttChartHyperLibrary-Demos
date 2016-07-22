@@ -34,11 +34,11 @@
                 <td>
                     <div><input id="hideDependenciesCheckBox" type="checkbox" />Hide dependencies</div>
                     <div><input id="disableCreatingStartDependenciesCheckBox" type="checkbox" />Disable creating start dependencies</div>
-                    <div><input id="disableCreatingToFinishDependenciesCheckBox" type="checkbox" />Disable creating to-finish dependencies</div>
+                    <div><input type="checkbox" checked="checked" disabled="disabled" title="Can be configured only once per element instance (settings.allowCreatingToFinishDependencies field)"/>Disable creating to-finish dependencies</div>
                     <div><input id="areDependenciesReadOnlyCheckBox" type="checkbox" />Dependencies read only</div>
                 </td>
                 <td>
-                    <p>Selected item commands:</p>
+                    <div>Selected item commands:</div>
                     <div><button onclick="setSelectedItemAsReadOnly()">Set as read only (override)</button></div>
                     <div><button onclick="setSelectedItemBarAsReadonly()">Set chart bar as read only</button></div>
                 </td>
