@@ -18,8 +18,8 @@ var items = [{ content: 'Task 1', isExpanded: false },
 items[3].predecessors = [{ item: items[0], dependencyType: 'SS' }];
 items[7].predecessors = [{ item: items[6], lag: 2 * 60 * 60 * 1000 }];
 items[8].predecessors = [{ item: items[4] }, { item: items[5] }];
-for (var i = 4; i <= 20; i++)
-    items.push({ content: 'Task ' + i, start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 4, 16, 0, 0) });
+for (var i = 4; i <= 16; i++)
+    items.push({ content: 'Task ' + i, indentation: i >= 8 && i % 3 == 2 ? 0 : 1, start: new Date(year, month, 2 + (i <= 8 ? (i - 4) * 3 : i - 8), 8, 0, 0), finish: new Date(year, month, 2 + (i <= 8 ? (i - 4) * 3 + (i > 8 ? 6 : 1) : i - 2), 16, 0, 0) });
 
 var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
 

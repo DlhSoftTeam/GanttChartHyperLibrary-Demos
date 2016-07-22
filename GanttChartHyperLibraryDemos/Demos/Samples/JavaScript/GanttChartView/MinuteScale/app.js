@@ -20,7 +20,7 @@ var items = [
 items[3].predecessors = [{ item: items[0], dependencyType: 'SS' }];
 items[7].predecessors = [{ item: items[6], lag: 2 * 60 * 60 * 1000 }];
 items[8].predecessors = [{ item: items[4] }, { item: items[5] }];
-for (var i = 4; i <= 20; i++)
+for (var i = 4; i <= 16; i++)
     items.push({ content: 'Task ' + i, start: new Date(year, month, day, 8, 0, 0), finish: new Date(year, month, day, 8, 5, 0) });
 var dayDuration = 24 * 60 * 60 * 1000; // 24 hours (in milliseconds).
 var settings = {

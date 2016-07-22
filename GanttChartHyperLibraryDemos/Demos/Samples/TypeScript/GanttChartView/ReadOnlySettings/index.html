@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>GanttChartView Read Only Settings Sample</title>
+    <link rel="Stylesheet" href="app.css" type="text/css" />
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.js" type="text/javascript"></script>
+    <script src="Scripts/DlhSoft.Data.HTML.Controls.js" type="text/javascript"></script>
+    <script src="templates.js" type="text/javascript"></script>
+    <script src="themes.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript" defer="defer"></script>
+</head>
+<body>
+    <div class="command-area">
+        <table>
+            <tr>
+                <td>
+                    <div><input id="isReadOnlyCheckBox" type="checkbox" />Read only (override)</div>
+                    <div><input id="isGridReadOnlyCheckBox" type="checkbox" />Grid read only</div>
+                    <div><input id="isChartReadOnlyCheckBox" type="checkbox" />Chart read only</div>
+                    <div><input id="hideGridCheckBox" type="checkbox" />Hide grid</div>
+                </td>
+                <td>
+                    <div><input id="isContentReadOnlyCheckBox" type="checkbox" />Content column read only</div>
+                    <div><input id="areSchedulingColumnsReadOnlyCheckBox" type="checkbox" />Scheduling columns read only</div>
+                    <div><input id="areAssignmentsReadOnlyCheckBox" type="checkbox" />Assignments column read only</div>
+                    <div><input id="disableScrollingOnTaskClick" type="checkbox" />Disable chart scrolling on task click</div>
+                </td>
+                <td>
+                    <div><input id="isStartReadOnlyCheckBox" type="checkbox" />Start read only in chart</div>
+                    <div><input id="isCompletionReadOnlyCheckBox" type="checkbox" />Completion read only in chart</div>
+                    <div><input id="isEffortReadOnlyCheckBox" type="checkbox" />Duration read only in chart</div>
+                    <div><input id="disableStartEndDraggingCheckBox" type="checkbox" />Disable updating duration by start dragging</div>
+                </td>
+                <td>
+                    <div><input id="hideDependenciesCheckBox" type="checkbox" />Hide dependencies</div>
+                    <div><input id="disableCreatingStartDependenciesCheckBox" type="checkbox" />Disable creating start dependencies</div>
+                    <div><input id="disableCreatingToFinishDependenciesCheckBox" type="checkbox" />Disable creating to-finish dependencies</div>
+                    <div><input id="areDependenciesReadOnlyCheckBox" type="checkbox" />Dependencies read only</div>
+                </td>
+                <td>
+                    <p>Selected item commands:</p>
+                    <div><button onclick="setSelectedItemAsReadOnly()">Set as read only (override)</button></div>
+                    <div><button onclick="setSelectedItemBarAsReadonly()">Set chart bar as read only</button></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="ganttChartView" style="height: 388px">...</div>
+</body>
+</html>
