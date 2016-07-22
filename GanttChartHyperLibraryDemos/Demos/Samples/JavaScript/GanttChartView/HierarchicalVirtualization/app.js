@@ -5,7 +5,7 @@ var theme = queryString ? queryString.substr(1) : null;
 
 var ganttChartView = document.querySelector("#ganttChartView");
 
-var date = new Date(), year = 2013, month = 1;
+var date = new Date(), year = date.getFullYear(), month = date.getMonth();
 var items = [{ content: "Task 1", isExpanded: false },
              // Add hidden hierarchy placeholders for summary tasks to enable expansion; if possible, also indicate summary durations by pre-setting start and finish values.
              { content: "Task 1 hierarchy placeholder", isHidden: true, indentation: 1, start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 5, 12, 0, 0) },
