@@ -48,7 +48,21 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'GanttChartView', feature: 'ZoomLevel', title: 'Zoom level', description: 'Shows how you can set up zoom level settings for the chart area',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
                 component: 'GanttChartView', feature: 'CustomScale', title: 'Custom scale', description: 'Shows how to define a fully custom chart scale with special time intervals and text headers',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'MinuteScale', title: 'Minute scale', description: 'Shows how to zoom in and display hour quarters and minutes in the chart area',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
                     'TypeScript': ['index.html', 'app.css', 'app.ts']
@@ -332,4 +346,3 @@ angular.module('Demos', [])
             templateUrl: 'Templates/SourceCode.html'
         };
     });
-

@@ -13,7 +13,7 @@ declare var initializeGanttChartTheme;
 // Retrieve and store the control element for reference purposes.
 var ganttChartViewElement = <HTMLElement>document.querySelector('#ganttChartView');
 
-var date = new Date(), year = 2013, month = 1;
+var year = 2013, month = 1;
 var items = <GanttChartItem[]>[
     { content: 'Task 1', isExpanded: false, start: new Date() },
     { content: 'Task 1.1', indentation: 1, start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 4, 16, 0, 0) },
@@ -52,9 +52,7 @@ var customIntervals = function () {
     return intervals;
 } (); // Call the inline function to immediately retreive the time intervals.
 // Define a fully custom scale item using Custom scale type and Custom header text format, providing the time intervals to be displayed using an inline function.
-var customScale = <GanttChartView.Scale>{ scaleType: 'Custom', headerTextFormat: 'Custom', headerStyle: 'padding: 2.25px; border-right: solid 1px White; color: Gray' };
-customScale['intervals'] = customIntervals; // Set up internal intervals field of the scale item.
-// Define scales.
+var customScale = <GanttChartView.Scale>{ scaleType: 'Custom', headerTextFormat: 'Custom', intervals: customIntervals, headerStyle: 'padding: 2.25px; border-right: solid 1px White; color: Gray' };
 settings.scales = [
     { scaleType: 'NonworkingTime', isHeaderVisible: false, isHighlightingVisible: true, highlightingStyle: 'stroke-width: 0; fill: ' + (theme == 'Dark-black' ? '#333333' : (theme == 'Steel-blue' ? '#95a5b2' : '#f8f8f8')) },
     { scaleType: 'Months', headerTextFormat: 'MonthAbbreviation', headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White; color: gray', isSeparatorVisible: true, separatorStyle: 'stroke: #c8bfe7; stroke-width: 1px' },
