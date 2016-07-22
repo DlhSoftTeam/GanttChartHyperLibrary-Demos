@@ -1,6 +1,10 @@
+/// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts'/>
 var GanttChartView = DlhSoft.Controls.GanttChartView;
+// Query string syntax: ?theme
+// Supported themes: Generic-blue, Default.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
+// Retrieve and store the control element for reference purposes.
 var ganttChartViewElement = document.querySelector('#ganttChartView');
 var date = new Date(), year = date.getFullYear(), month = date.getMonth();
 var items = [
@@ -20,6 +24,7 @@ for (var i = 4; i <= 16; i++)
     items.push({ content: 'Task ' + i, indentation: i >= 8 && i % 3 == 2 ? 0 : 1, start: new Date(year, month, 2 + (i <= 8 ? (i - 4) * 3 : i - 8), 8, 0, 0), finish: new Date(year, month, 2 + (i <= 8 ? (i - 4) * 3 + (i > 8 ? 6 : 1) : i - 2), 16, 0, 0) });
 var ganttChartView;
 var settings;
+// Prepare command element references.
 var isReadOnlyCheckBox = document.querySelector('#isReadOnlyCheckBox');
 var isGridReadOnlyCheckBox = document.querySelector('#isGridReadOnlyCheckBox');
 var isChartReadOnlyCheckBox = document.querySelector('#isChartReadOnlyCheckBox');
@@ -31,12 +36,16 @@ var areAssignmentsReadOnlyCheckBox = document.querySelector('#areAssignmentsRead
 var areDependenciesReadOnlyCheckBox = document.querySelector('#areDependenciesReadOnlyCheckBox');
 var hideDependenciesCheckBox = document.querySelector('#hideDependenciesCheckBox');
 var disableCreatingStartDependenciesCheckBox = document.querySelector('#disableCreatingStartDependenciesCheckBox');
-var disableCreatingToFinishDependenciesCheckBox = document.querySelector('#disableCreatingToFinishDependenciesCheckBox');
 var disableStartEndDraggingCheckBox = document.querySelector('#disableStartEndDraggingCheckBox');
 var disableScrollingOnTaskClick = document.querySelector('#disableScrollingOnTaskClick');
 var areSchedulingColumnsReadOnlyCheckBox = document.querySelector('#areSchedulingColumnsReadOnlyCheckBox');
 var hideGridCheckBox = document.querySelector('#hideGridCheckBox');
+// Initialize settings based on user selections.
 function initialize() {
+    // When we reinitialize the component, clean up previous internal item dependency dragging cache.
+    // This is not necessary if you initialize the component only once, nor if you don't need to update certain dependency settings upon reinitialization.
+    if (ganttChartViewElement['draggableDependencyItems'])
+        delete ganttChartViewElement['draggableDependencyItems'];
     settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
     settings.isReadOnly = isReadOnlyCheckBox.checked;
     settings.isGridReadOnly = isGridReadOnlyCheckBox.checked;
@@ -50,7 +59,7 @@ function initialize() {
     settings.areTaskPredecessorsReadOnly = areDependenciesReadOnlyCheckBox.checked;
     settings.areTaskDependenciesVisible = !hideDependenciesCheckBox.checked;
     settings.allowCreatingStartDependencies = !disableCreatingStartDependenciesCheckBox.checked;
-    settings.allowCreatingToFinishDependencies = !disableCreatingToFinishDependenciesCheckBox.checked;
+    settings.allowCreatingToFinishDependencies = false; // Doesn't support updates upon reinitialization (unless you clean up the internal draggable dependency cache using: delete ganttChartViewElement['draggableDependencyItems']).
     settings.isDraggingTaskStartEndsEnabled = !disableStartEndDraggingCheckBox.checked;
     settings.isGridRowClickTimeScrollingEnabled = !disableScrollingOnTaskClick.checked;
     if (areSchedulingColumnsReadOnlyCheckBox.checked) {
@@ -59,13 +68,16 @@ function initialize() {
             columns[i].isReadOnly = true;
         settings.columns = columns;
     }
+    // Optionally, initialize custom theme and templates (themes.js, templates.js).
     if (initializeGanttChartTheme)
         initializeGanttChartTheme(settings, theme);
     if (initializeGanttChartTemplates)
         initializeGanttChartTemplates(settings, theme);
+    // (Re-)Initialize the component.
     ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, items, settings);
 }
 initialize();
+// Reinitialize settings and the component upon user commands.
 isReadOnlyCheckBox.addEventListener('change', initialize);
 isGridReadOnlyCheckBox.addEventListener('change', initialize);
 isChartReadOnlyCheckBox.addEventListener('change', initialize);
@@ -78,10 +90,10 @@ areAssignmentsReadOnlyCheckBox.addEventListener('change', initialize);
 areDependenciesReadOnlyCheckBox.addEventListener('change', initialize);
 hideDependenciesCheckBox.addEventListener('change', initialize);
 disableCreatingStartDependenciesCheckBox.addEventListener('change', initialize);
-disableCreatingToFinishDependenciesCheckBox.addEventListener('change', initialize);
 disableStartEndDraggingCheckBox.addEventListener('change', initialize);
 disableScrollingOnTaskClick.addEventListener('change', initialize);
 areSchedulingColumnsReadOnlyCheckBox.addEventListener('change', initialize);
+// Handle item commands.
 function setSelectedItemAsReadOnly() {
     var item = ganttChartView.getSelectedItem();
     if (!item)
