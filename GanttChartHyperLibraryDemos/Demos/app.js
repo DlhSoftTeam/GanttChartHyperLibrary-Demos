@@ -157,6 +157,13 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'GanttChartView', feature: 'TimeConstraints', title: 'Time constraints (minimum and maximum start and finish)', description: 'Shows how you can set up constraints on item date and times using minimum and/or maximum values',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
             component: 'GanttChartView', feature: 'ProjectXml', title: 'Importing and exporting Microsoft® Project XML', description: 'Shows how you can import and export Microsoft® Project XML schema based content, providing maximum compatibility with other applications',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],

@@ -36,6 +36,12 @@ items[8].baselineStart = new Date(year, month, 12, 8, 0, 0);
 
 var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
 
+// Prepare the estimation start and finish columns.
+var columns = DlhSoft.Controls.GanttChartView.getDefaultColumns(items, settings);
+columns.splice(3, 0, { header: 'Est. start', width: 140, cellTemplate: DlhSoft.Controls.GanttChartView.getBaselineStartColumnTemplate(124, true, true, 8 * 60 * 60 * 1000) }); // 8 AM
+columns.splice(4, 0, { header: 'Est. finish', width: 140, cellTemplate: DlhSoft.Controls.GanttChartView.getBaselineFinishColumnTemplate(124, true, true, 16 * 60 * 60 * 1000) }); // 4 PM
+settings.columns = columns;
+
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
 if (initializeGanttChartTheme)
     initializeGanttChartTheme(settings, theme);
