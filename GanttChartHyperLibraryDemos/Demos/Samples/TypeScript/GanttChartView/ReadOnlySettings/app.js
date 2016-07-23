@@ -42,10 +42,6 @@ var areSchedulingColumnsReadOnlyCheckBox = document.querySelector('#areSchedulin
 var hideGridCheckBox = document.querySelector('#hideGridCheckBox');
 // Initialize settings based on user selections.
 function initialize() {
-    // When we reinitialize the component, clean up previous internal item dependency dragging cache.
-    // This is not necessary if you initialize the component only once, nor if you don't need to update certain dependency settings upon reinitialization.
-    if (ganttChartViewElement['draggableDependencyItems'])
-        delete ganttChartViewElement['draggableDependencyItems'];
     settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
     settings.isReadOnly = isReadOnlyCheckBox.checked;
     settings.isGridReadOnly = isGridReadOnlyCheckBox.checked;
