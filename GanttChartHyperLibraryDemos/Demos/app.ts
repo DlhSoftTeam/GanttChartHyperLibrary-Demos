@@ -48,7 +48,28 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'GanttChartView', feature: 'Filtering', title: 'Filtering and hiding items', description: 'Shows how you can set up an item visibility filter function and hide individual items when needed',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
                 component: 'GanttChartView', feature: 'ChangeNotifications', title: 'Change notifications (item value update handling)', description: 'Shows how custom code can be executed when changes occur on the data presented by the component',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'SelectionModes', title: 'Selection mode (single, extended, by clicking)', description: 'Shows how you can set up selection mode and handle item selection changes in the component',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'MoveUpDown', title: 'Move up-down (hierarchical moving)', description: 'Shows how you can allow the end user to move items up and down without breaking the hierarchy',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
                     'TypeScript': ['index.html', 'app.css', 'app.ts']
@@ -132,7 +153,7 @@ angular.module('Demos', [])
                 }
             },
             {
-                component: 'GanttChartView', feature: 'MoveUpDown', title: 'Move up-down (hierarchical moving)', description: 'Shows how you can allow the end user to move items up and down without breaking the hierarchy',
+                component: 'GanttChartView', feature: 'MultipleBarsPerItem', title: 'Multiple bars per item (parts)', description: 'Shows how you can define and display multiple bars for each task (i.e. item parts)',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
                     'TypeScript': ['index.html', 'app.css', 'app.ts']

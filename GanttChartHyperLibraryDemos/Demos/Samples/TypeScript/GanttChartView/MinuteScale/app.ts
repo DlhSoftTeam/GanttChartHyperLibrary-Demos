@@ -52,13 +52,14 @@ var getIntervals = function (intervalDuration: number, intervalHeaderFormatter: 
         intervals.push({ headerText: intervalHeaderFormatter(d), start: d, finish: new Date(d.valueOf() + intervalDuration) });
     return intervals;
 };
-var hourQuarterDuration = 15 * 60 * 1000; // 15 minutes (in milliseconds)
-var hourQuarterIntervals = getIntervals(hourQuarterDuration, (d: Date) => { return GanttChartView.defaultDateFormatter(d) + ' ' + ((d.getHours() < 10 ? '0' : '') + d.getHours()) + ':' + ((d.getMinutes() < 10 ? '0' : '') + d.getMinutes()) });
 var minuteDuration = 60 * 1000; // 60 seconds (in milliseconds)
-var minuteIntervals = getIntervals(minuteDuration, (d: Date) => { return (d.getMinutes() < 10 ? '0' : '') + d.getMinutes() });
+var hourQuarterDuration = 15 * minuteDuration; // 15 minutes (in milliseconds)
+var hourQuarterIntervals = getIntervals(hourQuarterDuration, (d: Date) => { return GanttChartView.defaultDateFormatter(d) + ' ' + ((d.getHours() < 10 ? '0' : '') + d.getHours()) + ':' + ((d.getMinutes() < 10 ? '0' : '') + d.getMinutes()) });
+var threeMinuteDuration = 3 * minuteDuration; // 3 minutes (in milliseconds)
+var threeMinuteIntervals = getIntervals(threeMinuteDuration, (d: Date) => { return (d.getMinutes() < 10 ? '0' : '') + d.getMinutes() + '\'' });
 // Define hour quarter and minute scale items using Custom scale type and Custom header text format, providing the time intervals to be displayed using an inline function.
 var hourQuarterScale = <GanttChartView.Scale>{ scaleType: 'Custom', headerTextFormat: 'Custom', intervals: hourQuarterIntervals, headerStyle: 'padding: 7px 5px; border-right: 1px solid White; border-bottom: 1px solid White; color: gray', isSeparatorVisible: true, separatorStyle: 'stroke: #c8bfe7' };
-var minuteScale = <GanttChartView.Scale>{ scaleType: 'Custom', headerTextFormat: 'Custom', intervals: minuteIntervals, headerStyle: 'padding: 7px 5px; border-right: 1px solid White; color: gray' };
+var minuteScale = <GanttChartView.Scale>{ scaleType: 'Custom', headerTextFormat: 'Custom', intervals: threeMinuteIntervals, headerStyle: 'padding: 7px 5px; border-right: 1px solid White; color: gray' };
 // Define scales.
 settings.scales = [
     hourQuarterScale,
