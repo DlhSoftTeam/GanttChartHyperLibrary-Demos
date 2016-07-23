@@ -50,7 +50,7 @@ function optimizeWork() {
     ganttChartView.optimizeWork(dependenciesOnlyCheckBox.checked, includeStartedTasksCheckBox.checked, startTextBox.value ? startTextBox.valueAsDate : settings.currentTime);
 }
 function levelResources() {
-    var dependenciesOnlyCheckBox = <HTMLInputElement>document.querySelector('#dependenciesOnlyCheckBox');
+    var includeStartedTasksCheckBox = <HTMLInputElement>document.querySelector('#includeStartedTasksCheckBox');
     var startTextBox = <HTMLInputElement>document.querySelector('#startTextBox');
-    ganttChartView.levelResources(dependenciesOnlyCheckBox.checked, startTextBox.value ? startTextBox.valueAsDate : settings.currentTime);
+    ganttChartView.levelResources(includeStartedTasksCheckBox.checked, startTextBox.value ? startTextBox.valueAsDate : settings.currentTime);
 }
