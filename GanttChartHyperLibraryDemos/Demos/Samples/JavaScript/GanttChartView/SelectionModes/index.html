@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>GanttChartView Selection Modes Sample</title>
+    <link rel="Stylesheet" href="app.css" type="text/css" />
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.js" type="text/javascript"></script>
+    <script src="Scripts/DlhSoft.Data.HTML.Controls.js" type="text/javascript"></script>
+    <script src="templates.js" type="text/javascript"></script>
+    <script src="themes.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript" defer="defer"></script>
+</head>
+<body>
+    <div class="command-area">
+        <div>
+            Selection:
+            <select id="selectionModeSelect">
+                <option value="None" selected="selected">Not allowed</option>
+                <option value="Focus">Single item, by clicking</option>
+                <option value="Single">Single item, using checkboxes</option>
+                <option value="Extended">Multiple items, by checkboxes</option>
+                <option value="ExtendedFocus">Multiple items, by clicking or using checkboxes</option>
+            </select>
+        </div>
+        <div>
+            Count: <label id="selectionCountOutput">0</label>
+        </div>
+    </div>
+    <div id="ganttChartView" style="height: 388px">...</div>
+</body>
+</html>
