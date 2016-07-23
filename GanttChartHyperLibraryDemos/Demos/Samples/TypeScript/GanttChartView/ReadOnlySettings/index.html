@@ -23,7 +23,7 @@
                     <div><input id="isContentReadOnlyCheckBox" type="checkbox" />Content column read only</div>
                     <div><input id="areSchedulingColumnsReadOnlyCheckBox" type="checkbox" />Scheduling columns read only</div>
                     <div><input id="areAssignmentsReadOnlyCheckBox" type="checkbox" />Assignments column read only</div>
-                    <div><input id="disableScrollingOnTaskClick" type="checkbox" />Disable chart scrolling on task click</div>
+                    <div><input id="isEffortPreservedWhenStartChangesInGridCheckBox" type="checkbox" />Effort is preserved when changing start from grid</div>
                 </td>
                 <td>
                     <div><input id="isStartReadOnlyCheckBox" type="checkbox" />Start read only in chart</div>
@@ -34,11 +34,11 @@
                 <td>
                     <div><input id="hideDependenciesCheckBox" type="checkbox" />Hide dependencies</div>
                     <div><input id="disableCreatingStartDependenciesCheckBox" type="checkbox" />Disable creating start dependencies</div>
-                    <div><input type="checkbox" checked="checked" disabled="disabled" title="Can be configured only once per element instance (settings.allowCreatingToFinishDependencies field)"/>Disable creating to-finish dependencies</div>
                     <div><input id="areDependenciesReadOnlyCheckBox" type="checkbox" />Dependencies read only</div>
+                    <div><input id="disableScrollingOnTaskClick" type="checkbox" />Disable chart scrolling on grid row clicking</div>
                 </td>
                 <td>
-                    <div>Selected item commands:</div>
+                    <p>Selected item commands:</p>
                     <div><button onclick="setSelectedItemAsReadOnly()">Set as read only (override)</button></div>
                     <div><button onclick="setSelectedItemBarAsReadonly()">Set chart bar as read only</button></div>
                 </td>
