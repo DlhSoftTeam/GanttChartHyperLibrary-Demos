@@ -240,6 +240,11 @@
     <Content Include="Samples\JavaScript\GanttChartView\Styling\index.html" />
     <Content Include="Samples\JavaScript\GanttChartView\Styling\templates.js" />
     <Content Include="Samples\JavaScript\GanttChartView\Styling\themes.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\TimeConstraints\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\TimeConstraints\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\TimeConstraints\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\TimeConstraints\templates.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\TimeConstraints\themes.js" />
     <Content Include="Samples\JavaScript\GanttChartView\WorkOptimizations\app.css" />
     <Content Include="Samples\JavaScript\GanttChartView\WorkOptimizations\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\WorkOptimizations\index.html" />
@@ -454,6 +459,11 @@
     <Content Include="Samples\TypeScript\GanttChartView\Styling\index.html" />
     <Content Include="Samples\TypeScript\GanttChartView\Styling\templates.js" />
     <Content Include="Samples\TypeScript\GanttChartView\Styling\themes.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\TimeConstraints\app.css" />
+    <Content Include="Samples\TypeScript\GanttChartView\TimeConstraints\app.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\TimeConstraints\index.html" />
+    <Content Include="Samples\TypeScript\GanttChartView\TimeConstraints\templates.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\TimeConstraints\themes.js" />
     <Content Include="Samples\TypeScript\GanttChartView\WorkOptimizations\app.css" />
     <Content Include="Samples\TypeScript\GanttChartView\WorkOptimizations\app.js" />
     <Content Include="Samples\TypeScript\GanttChartView\WorkOptimizations\index.html" />
@@ -509,6 +519,7 @@
     <Content Include="Samples\TypeScript\GanttChartView\MultipleBarsPerItem\app.ts" />
     <Content Include="Samples\TypeScript\GanttChartView\SelectionModes\app.ts" />
     <Content Include="Samples\TypeScript\GanttChartView\Filtering\app.ts" />
+    <Content Include="Samples\TypeScript\GanttChartView\TimeConstraints\app.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.Data.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.HierarchicalData.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts" />
@@ -553,6 +564,7 @@
     <Folder Include="Samples\JavaScript\GanttChartView\SelectionModes\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\SpecialDays\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\Styling\Scripts\" />
+    <Folder Include="Samples\JavaScript\GanttChartView\TimeConstraints\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\WorkOptimizations\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\ZoomLevel\Scripts\" />
     <Folder Include="Samples\JavaScript\LoadChartView\MainFeatures\Scripts\" />
@@ -582,6 +594,7 @@
     <Folder Include="Samples\TypeScript\GanttChartView\SelectionModes\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\SpecialDays\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\Styling\Scripts\" />
+    <Folder Include="Samples\TypeScript\GanttChartView\TimeConstraints\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\WorkOptimizations\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\ZoomLevel\Scripts\" />
   </ItemGroup>

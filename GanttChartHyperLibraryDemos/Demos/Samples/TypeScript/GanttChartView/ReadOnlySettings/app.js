@@ -33,6 +33,7 @@ var isStartReadOnlyCheckBox = document.querySelector('#isStartReadOnlyCheckBox')
 var isEffortReadOnlyCheckBox = document.querySelector('#isEffortReadOnlyCheckBox');
 var isCompletionReadOnlyCheckBox = document.querySelector('#isCompletionReadOnlyCheckBox');
 var areAssignmentsReadOnlyCheckBox = document.querySelector('#areAssignmentsReadOnlyCheckBox');
+var isEffortPreservedWhenStartChangesInGridCheckBox = document.querySelector('#isEffortPreservedWhenStartChangesInGridCheckBox');
 var areDependenciesReadOnlyCheckBox = document.querySelector('#areDependenciesReadOnlyCheckBox');
 var hideDependenciesCheckBox = document.querySelector('#hideDependenciesCheckBox');
 var disableCreatingStartDependenciesCheckBox = document.querySelector('#disableCreatingStartDependenciesCheckBox');
@@ -52,6 +53,7 @@ function initialize() {
     settings.isTaskEffortReadOnly = isEffortReadOnlyCheckBox.checked;
     settings.isTaskCompletionReadOnly = isCompletionReadOnlyCheckBox.checked;
     settings.isAssignmentsContentReadOnly = areAssignmentsReadOnlyCheckBox.checked;
+    settings.isTaskEffortPreservedWhenStartChangesInGrid = isEffortPreservedWhenStartChangesInGridCheckBox.checked;
     settings.areTaskPredecessorsReadOnly = areDependenciesReadOnlyCheckBox.checked;
     settings.areTaskDependenciesVisible = !hideDependenciesCheckBox.checked;
     settings.allowCreatingStartDependencies = !disableCreatingStartDependenciesCheckBox.checked;
@@ -83,6 +85,7 @@ isStartReadOnlyCheckBox.addEventListener('change', initialize);
 isEffortReadOnlyCheckBox.addEventListener('change', initialize);
 isCompletionReadOnlyCheckBox.addEventListener('change', initialize);
 areAssignmentsReadOnlyCheckBox.addEventListener('change', initialize);
+isEffortPreservedWhenStartChangesInGridCheckBox.addEventListener('change', initialize);
 areDependenciesReadOnlyCheckBox.addEventListener('change', initialize);
 hideDependenciesCheckBox.addEventListener('change', initialize);
 disableCreatingStartDependenciesCheckBox.addEventListener('change', initialize);
@@ -92,15 +95,22 @@ areSchedulingColumnsReadOnlyCheckBox.addEventListener('change', initialize);
 // Handle item commands.
 function setSelectedItemAsReadOnly() {
     var item = ganttChartView.getSelectedItem();
-    if (!item)
+    if (!item || item.isReadOnly)
         return;
     item.isReadOnly = true;
+    // Optionally, highlight read only item.
+    item.content += '*';
+    item.barStyle = 'fill: #60b060';
+    item.completedBarStyle = 'fill: #108010';
     ganttChartView.refreshItem(item);
 }
 function setSelectedItemBarAsReadonly() {
     var item = ganttChartView.getSelectedItem();
-    if (!item)
+    if (!item || item.isBarReadOnly)
         return;
     item.isBarReadOnly = true;
+    // Optionally, highlight read only bar.
+    item.barStyle = 'fill: #60b060';
+    item.completedBarStyle = 'fill: #108010';
     ganttChartView.refreshChartItem(item);
 }
