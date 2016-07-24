@@ -1,3 +1,5 @@
+var queryString = window.location.search;
+var initialSelection = queryString ? queryString.substr(1).replace('-', ' ') : null;
 angular.module('Demos', [])
     .controller('MainController', function ($scope, $http, $timeout) {
     var components = ['GanttChartView', 'ScheduleChartView', 'LoadChartView', 'PertChartView', 'NetworkDiagramView'];
@@ -376,9 +378,8 @@ angular.module('Demos', [])
     $scope.getSampleUrl = function (selectedSample, selectedTechnology, selectedTheme) {
         return 'Samples/' + (selectedTechnology ? selectedTechnology.name : '') + '/' + selectedSample.component + '/' + selectedSample.feature + '/index.html?' + (selectedTheme ? selectedTheme : $scope.applyingTheme);
     };
-    var endsWith = function (value, suffix) {
-        return value.indexOf(suffix, value.length - suffix.length) !== -1;
-    };
+    if (initialSelection)
+        selectComponent(initialSelection);
 })
     .directive('dsSample', function ($timeout) {
     return {
