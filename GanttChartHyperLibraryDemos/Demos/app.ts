@@ -1,4 +1,9 @@
-﻿interface Sample {
+﻿declare var angular;
+
+var queryString = window.location.search;
+var initialSelection = queryString ? queryString.substr(1).replace('-', ' ') : null;
+
+interface Sample {
     component: string;
     feature: string;
     title: string;
@@ -7,7 +12,6 @@
     sourceCodeUrls?: { [key: string]: string };
 }
 
-declare var angular;
 angular.module('Demos', [])
     .controller('MainController', ($scope, $http, $timeout) => {
         var components = ['GanttChartView', 'ScheduleChartView', 'LoadChartView', 'PertChartView', 'NetworkDiagramView'];
@@ -386,9 +390,8 @@ angular.module('Demos', [])
         $scope.getSampleUrl = (selectedSample, selectedTechnology, selectedTheme) => {
             return 'Samples/' + (selectedTechnology ? selectedTechnology.name : '') + '/' + selectedSample.component + '/' + selectedSample.feature + '/index.html?' + (selectedTheme ? selectedTheme : $scope.applyingTheme);
         };
-        var endsWith = (value, suffix) => {
-            return value.indexOf(suffix, value.length - suffix.length) !== -1;
-        };
+        if (initialSelection)
+            selectComponent(initialSelection);
     })
     .directive('dsSample', ($timeout) => {
         return {
