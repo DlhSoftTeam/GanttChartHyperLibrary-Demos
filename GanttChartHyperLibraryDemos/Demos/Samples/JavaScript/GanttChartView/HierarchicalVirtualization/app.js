@@ -53,7 +53,7 @@ function loadHierarchy(item) {
                         { content: "Task 2.2 hierarchy placeholder", isHidden: true, start: new Date(year, month, 11, 8, 0, 0), finish: new Date(year, month, 14, 16, 0, 0) }];
             break;
         case "Task 2.2":
-            subItems = [{ content: "Task 2.2.1", indentation: 2, start: new Date(year, month, 11, 8, 0, 0), finish: new Date(year, month, 12, 16, 0, 0), completedFinish: new Date(year, month, 12, 16, 0, 0), assignmentsContent: "Resource 2" },
+            subItems = [{ content: "Task 2.2.1", indentation: 2, start: new Date(year, month, 11, 8, 0, 0), finish: new Date(year, month, 14, 16, 0, 0), completedFinish: new Date(year, month, 14, 16, 0, 0), assignmentsContent: "Resource 2" },
                         { content: "Task 2.2.2", indentation: 2, start: new Date(year, month, 12, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0), assignmentsContent: "Resource 2" }];
             break;
     }
