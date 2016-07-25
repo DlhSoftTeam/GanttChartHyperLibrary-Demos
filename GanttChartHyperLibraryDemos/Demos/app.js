@@ -238,7 +238,8 @@ angular.module('Demos', [])
         {
             component: 'GanttChartView', feature: 'SinglePageDatabase', title: 'SQL Server® + ASP .NET WebAPI', description: 'Single page app accessing data using ASP .NET WebAPI from a SQL Server® database',
             sourceCodeUrls: {
-                'JavaScript': 'http://DlhSoft.com/KnowledgeBase/GanttChartSinglePageDatabaseSample.zip'
+                'JavaScript': 'http://DlhSoft.com/KnowledgeBase/GanttChartSinglePageDatabaseSample.zip',
+                'AngularJS': 'http://GitHub.com/DlhSoftTeam/Angular-GanttChartViewSampleApp/archive/master.zip'
             }
         },
         {
@@ -251,13 +252,6 @@ angular.module('Demos', [])
             component: 'GanttChartView', feature: 'WindowsStoreApp', title: 'Windows® Store app (UWP)', description: 'Windows® Universal Platform (UWP) app using JavaScript®',
             sourceCodeUrls: {
                 'JavaScript': 'http://DlhSoft.com/KnowledgeBase/GanttChartJavaScriptStoreAppSample.zip'
-            }
-        },
-        {
-            component: 'GanttChartView', feature: 'Cordova', title: 'Multi-platform app (Cordova™ tools)', description: 'Multi-device hybrid app for Windows®, Android™, and iOS™ designed with Visual Studio® tools for Apache® Cordova™',
-            sourceCodeUrls: {
-                'JavaScript': 'http://DlhSoft.com/KnowledgeBase/GanttChartMDHASample.zip',
-                'TypeScript': 'http://DlhSoft.com/KnowledgeBase/GanttChartMDHASample.zip'
             }
         }
     ];
