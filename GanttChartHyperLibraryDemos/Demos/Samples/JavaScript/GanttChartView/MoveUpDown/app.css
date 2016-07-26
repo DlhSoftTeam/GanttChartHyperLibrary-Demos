@@ -20,6 +20,23 @@
 .ribbonCommand img {
     border: 0px;
 }
+.extraPanel {
+    background-color: #a0a0a0; border-bottom: 1px solid White;
+    color: White; font-family: Tahoma, Arial; font-size: 12px;
+}
+.extraPanelHeader {
+    background-color: #808080; padding: 6px;
+}
+.extraPanelContent {
+    padding: 1px 6px;
+    color: Black;
+}
+.extraPanelCommandsArea {
+    float: right; padding: 5px 6px;
+}
+.extraPanel a {
+    color: White;
+}
 
 /* Overrides */
 body {
@@ -40,21 +57,4 @@ input {
 .dark input:focus {
     color: black;
     background-color: white;
-}
-.extraPanel {
-    background-color: #a0a0a0; border-bottom: 1px solid White;
-    color: White; font-family: Tahoma, Arial; font-size: 12px;
-}
-.extraPanelHeader {
-    background-color: #808080; padding: 6px;
-}
-.extraPanelContent {
-    padding: 1px 6px;
-    color: Black;
-}
-.extraPanelCommandsArea {
-    float: right; padding: 5px 6px;
-}
-.extraPanel a {
-    color: White;
 }

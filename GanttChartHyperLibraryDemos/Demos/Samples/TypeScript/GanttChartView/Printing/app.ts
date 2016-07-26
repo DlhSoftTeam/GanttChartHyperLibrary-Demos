@@ -4,7 +4,7 @@ import GanttChartItem = GanttChartView.Item;
 import PredecessorItem = GanttChartView.PredecessorItem;
 
 // Query string syntax: ?theme
-// Supported themes: Generic-blue, Default.
+// Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 declare var initializeGanttChartTemplates;
@@ -23,7 +23,7 @@ var items = <GanttChartItem[]>[
     { content: 'Task 2.2', indentation: 1, start: new Date() },
     { content: 'Task 2.2.1', indentation: 2, start: new Date(year, month, 11, 8, 0, 0), finish: new Date(year, month, 14, 16, 0, 0), completedFinish: new Date(year, month, 14, 16, 0, 0), assignmentsContent: 'Resource 2' },
     { content: 'Task 2.2.2', indentation: 2, start: new Date(year, month, 12, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0), assignmentsContent: 'Resource 2' },
-    { content: 'Task 3', indentation: 1, start: new Date(year, month, 14, 16, 0, 0), isMilestone: true }];
+    { content: 'Task 3', indentation: 1, start: new Date(year, month, 15, 16, 0, 0), isMilestone: true }];
 items[3].predecessors = [{ item: items[0], dependencyType: 'SS' }];
 items[7].predecessors = [{ item: items[6], lag: 2 * 60 * 60 * 1000 }];
 items[8].predecessors = [{ item: items[4] }, { item: items[5] }];
