@@ -40,7 +40,7 @@ function getStatus(item: GanttChartItem): string {
         return 'Completed';
     var now = settings.currentTime;
     if (item.completedFinish < now)
-        return 'Delayed';
+        return 'Behind schedule';
     if (item.completedFinish > item.start)
         return 'In progress';
     return 'To do';
@@ -51,7 +51,7 @@ function getStatusColor(status: string): string {
             return 'Green';
         case 'To do':
             return 'Gray';
-        case 'Delayed':
+        case 'Behind schedule':
             return 'Red';
         case 'In progress':
             return 'Orange';
@@ -65,7 +65,7 @@ var settings = <GanttChartView.Settings>{ currentTime: new Date(year, month, 2, 
 // Prepare the custom Status columns.
 var columns = DlhSoft.Controls.GanttChartView.getDefaultColumns(items, settings);
 columns.splice(1, 0, {
-    header: 'Status', width: 80,
+    header: 'Status', width: 120,
     cellTemplate: (item: GanttChartItem) => {
         return DlhSoft.Controls.GanttChartView.textColumnTemplateBase(document,
             () => { return getStatus(item); });
