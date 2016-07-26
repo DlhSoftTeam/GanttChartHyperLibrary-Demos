@@ -33,7 +33,7 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'Statuses', title: 'Status columns (including color indicator)', description: 'Shows how to add supplemental custom columns for showing task statuses, such as To do, In progress, Delayed, and Completed',
+            component: 'GanttChartView', feature: 'Statuses', title: 'Status columns (including color indicator)', description: 'Shows how to add supplemental custom columns for showing task statuses, such as To do, In progress, Behind schedule, and Completed',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
