@@ -10,7 +10,7 @@ import PertChartView = DlhSoft.Controls.Pert.PertChartView;
 import NetworkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView;
 
 // Query string syntax: ?theme
-// Supported themes: Generic-blue, Default.
+// Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 declare var initializeGanttChartTemplates;
