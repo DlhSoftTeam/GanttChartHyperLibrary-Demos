@@ -1,4 +1,5 @@
-﻿function initializeGanttChartTemplates(settings, theme) {
+﻿// Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+function initializeGanttChartTemplates(settings, theme) {
     if (theme == 'Default' || theme == 'Aero')
         return;
     // Override settings (partial).
