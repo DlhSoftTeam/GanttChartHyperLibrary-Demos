@@ -7,7 +7,7 @@ var theme = queryString ? queryString.substr(1) : null;
 var pertChartView = document.querySelector('#pertChartView');
 
 // Prepare data items.
-var date = secondDuration = 1000, minuteDuration = 60 * secondDuration, hourDuration = 60 * minuteDuration;
+var secondDuration = 1000, minuteDuration = 60 * secondDuration, hourDuration = 60 * minuteDuration;
 var items = [{ displayedText: '0', content: 'Start' },
              { displayedText: '1', content: 'Task event 1' },
              { displayedText: '2', content: 'Task event 2' },
@@ -42,6 +42,7 @@ var settings = {
 // Optionally, specify the application target in order for the component to adapt to the screen size.
 // settings.target = 'Phone'; // Supported values: Standard, Phone.
 
+// Optionally, initialize custom theme (themes.js).
 if (initializePertChartTheme)
     initializePertChartTheme(settings, theme);
 
