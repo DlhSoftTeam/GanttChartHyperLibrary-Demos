@@ -75,7 +75,7 @@ var settings = {
 //         alert(item.content + '.' + propertyName + ' has changed.');
 // }
 
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom theme (themes.js).
 if (initializeLoadChartTheme)
     initializeLoadChartTheme(settings, theme);
 

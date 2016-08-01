@@ -46,6 +46,7 @@ var settings = {
     // },
 };
 
+// Optionally, initialize custom theme (themes.js).
 if (initializePertChartTheme)
     initializePertChartTheme(settings, theme);
 

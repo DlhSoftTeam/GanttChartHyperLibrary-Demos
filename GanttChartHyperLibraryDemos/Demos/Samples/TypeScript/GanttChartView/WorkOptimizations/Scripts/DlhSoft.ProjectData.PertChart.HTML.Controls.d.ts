@@ -1,8 +1,8 @@
 ﻿/* Assembly: DlhSoft.ProjectData.PertChart.HTML.Controls,
    Company: DlhSoft,
    Product: Project Data Modern Library,
-   Version: 5.3.0.0,
-   Copyright: Copyright © 2012-2014 DlhSoft,
+   Version: 5.3.0.1,
+   Copyright: Copyright © 2012-2016 DlhSoft,
    Title: Project Data PERT Chart HTML Controls,
    Description: Project Data PERT Chart related HTML client components */
 
@@ -97,6 +97,12 @@ declare module DlhSoft.Controls.Pert {
         interface PredecessorItem {
             /** Task event item that precedes the owner of the predecessor item (the item that the current item depends of). */
             item: Item;
+
+            /** The object that is displayed to represent the task item in the dependency line tool tips, usually the task name. */
+            content?: any;
+
+            /** The object that is displayed to represent the task item on the dependency line, usually a short task name or identifier. */
+            displayedText?: any;
 
             effort?: number; isEffortVirtual?: boolean;
 
@@ -237,7 +243,7 @@ declare module DlhSoft.Controls.Pert {
             /** The object that is displayed to represent the task item in the task shape, usually a short task name or identifier. */
             displayedText: any;
 
-            effort: number; earlyStart: Date; earlyfinish: Date; lateState: Date; lateFinish: Date;
+            effort: number; earlyStart: Date; earlyFinish: Date; lateStart: Date; lateFinish: Date;
 
             /** A milestone task is displayed in the Network Diagram view using a supplemental task shape template. */
             isMilestone?: boolean;
