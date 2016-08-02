@@ -57,6 +57,27 @@
     <Content Include="Samples\AngularJS\GanttChartView\MainFeatures\index.html" />
     <Content Include="Samples\AngularJS\GanttChartView\MainFeatures\templates.js" />
     <Content Include="Samples\AngularJS\GanttChartView\MainFeatures\themes.js" />
+    <Content Include="Samples\AngularJS\LoadChartView\BasicUsage\app.css" />
+    <Content Include="Samples\AngularJS\LoadChartView\BasicUsage\app.js" />
+    <Content Include="Samples\AngularJS\LoadChartView\BasicUsage\index.html" />
+    <Content Include="Samples\AngularJS\LoadChartView\BasicUsage\themes.js" />
+    <Content Include="Samples\AngularJS\LoadChartView\SingleItem\app.css" />
+    <Content Include="Samples\AngularJS\LoadChartView\SingleItem\app.js" />
+    <Content Include="Samples\AngularJS\LoadChartView\SingleItem\index.html" />
+    <Content Include="Samples\AngularJS\LoadChartView\SingleItem\themes.js" />
+    <Content Include="Samples\AngularJS\NetworkDiagramView\BasicUsage\app.css" />
+    <Content Include="Samples\AngularJS\NetworkDiagramView\BasicUsage\app.js" />
+    <Content Include="Samples\AngularJS\NetworkDiagramView\BasicUsage\index.html" />
+    <Content Include="Samples\AngularJS\NetworkDiagramView\BasicUsage\themes.js" />
+    <Content Include="Samples\AngularJS\PertChartView\BasicUsage\app.css" />
+    <Content Include="Samples\AngularJS\PertChartView\BasicUsage\app.js" />
+    <Content Include="Samples\AngularJS\PertChartView\BasicUsage\index.html" />
+    <Content Include="Samples\AngularJS\PertChartView\BasicUsage\themes.js" />
+    <Content Include="Samples\AngularJS\ScheduleChartView\BasicUsage\app.css" />
+    <Content Include="Samples\AngularJS\ScheduleChartView\BasicUsage\app.js" />
+    <Content Include="Samples\AngularJS\ScheduleChartView\BasicUsage\index.html" />
+    <Content Include="Samples\AngularJS\ScheduleChartView\BasicUsage\templates.js" />
+    <Content Include="Samples\AngularJS\ScheduleChartView\BasicUsage\themes.js" />
     <Content Include="Samples\JavaScript\GanttChartView\AssigningResources\app.css" />
     <Content Include="Samples\JavaScript\GanttChartView\AssigningResources\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\AssigningResources\Images\AddNew.png" />
@@ -510,6 +531,27 @@
     <Content Include="Samples\TypeScript\GanttChartView\ZoomLevel\index.html" />
     <Content Include="Samples\TypeScript\GanttChartView\ZoomLevel\templates.js" />
     <Content Include="Samples\TypeScript\GanttChartView\ZoomLevel\themes.js" />
+    <Content Include="Samples\TypeScript\LoadChartView\BasicUsage\app.css" />
+    <Content Include="Samples\TypeScript\LoadChartView\BasicUsage\app.js" />
+    <Content Include="Samples\TypeScript\LoadChartView\BasicUsage\index.html" />
+    <Content Include="Samples\TypeScript\LoadChartView\BasicUsage\themes.js" />
+    <Content Include="Samples\TypeScript\LoadChartView\SingleItem\app.css" />
+    <Content Include="Samples\TypeScript\LoadChartView\SingleItem\app.js" />
+    <Content Include="Samples\TypeScript\LoadChartView\SingleItem\index.html" />
+    <Content Include="Samples\TypeScript\LoadChartView\SingleItem\themes.js" />
+    <Content Include="Samples\TypeScript\NetworkDiagramView\BasicUsage\app.css" />
+    <Content Include="Samples\TypeScript\NetworkDiagramView\BasicUsage\app.js" />
+    <Content Include="Samples\TypeScript\NetworkDiagramView\BasicUsage\index.html" />
+    <Content Include="Samples\TypeScript\NetworkDiagramView\BasicUsage\themes.js" />
+    <Content Include="Samples\TypeScript\PertChartView\BasicUsage\app.css" />
+    <Content Include="Samples\TypeScript\PertChartView\BasicUsage\app.js" />
+    <Content Include="Samples\TypeScript\PertChartView\BasicUsage\index.html" />
+    <Content Include="Samples\TypeScript\PertChartView\BasicUsage\themes.js" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\BasicUsage\app.css" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\BasicUsage\app.js" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\BasicUsage\index.html" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\BasicUsage\templates.js" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\BasicUsage\themes.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -559,6 +601,16 @@
     <Content Include="Samples\TypeScript\GanttChartView\CustomTemplate\app.ts" />
     <Content Include="Samples\TypeScript\GanttChartView\Statuses\app.ts" />
     <Content Include="Samples\TypeScript\GanttChartView\AssignmentsTemplate\app.ts" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\BasicUsage\app.ts" />
+    <Content Include="Samples\TypeScript\LoadChartView\BasicUsage\app.ts" />
+    <Content Include="Samples\TypeScript\LoadChartView\SingleItem\app.ts" />
+    <Content Include="Samples\TypeScript\PertChartView\BasicUsage\app.ts" />
+    <Content Include="Samples\TypeScript\NetworkDiagramView\BasicUsage\app.ts" />
+    <Content Include="Samples\AngularJS\ScheduleChartView\BasicUsage\app.ts" />
+    <Content Include="Samples\AngularJS\LoadChartView\BasicUsage\app.ts" />
+    <Content Include="Samples\AngularJS\LoadChartView\SingleItem\app.ts" />
+    <Content Include="Samples\AngularJS\PertChartView\BasicUsage\app.ts" />
+    <Content Include="Samples\AngularJS\NetworkDiagramView\BasicUsage\app.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.Data.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.HierarchicalData.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts" />
@@ -577,6 +629,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Samples\AngularJS\GanttChartView\MainFeatures\Scripts\" />
+    <Folder Include="Samples\AngularJS\LoadChartView\BasicUsage\Scripts\" />
+    <Folder Include="Samples\AngularJS\LoadChartView\SingleItem\Scripts\" />
+    <Folder Include="Samples\AngularJS\NetworkDiagramView\BasicUsage\Scripts\" />
+    <Folder Include="Samples\AngularJS\PertChartView\BasicUsage\Scripts\" />
+    <Folder Include="Samples\AngularJS\ScheduleChartView\BasicUsage\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\AssigningResources\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\AssignmentsTemplate\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\AssignmentsTree-HL\Scripts\" />
@@ -642,6 +699,11 @@
     <Folder Include="Samples\TypeScript\GanttChartView\TimeConstraints\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\WorkOptimizations\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\ZoomLevel\Scripts\" />
+    <Folder Include="Samples\TypeScript\LoadChartView\BasicUsage\Scripts\" />
+    <Folder Include="Samples\TypeScript\LoadChartView\SingleItem\Scripts\" />
+    <Folder Include="Samples\TypeScript\NetworkDiagramView\BasicUsage\Scripts\" />
+    <Folder Include="Samples\TypeScript\PertChartView\BasicUsage\Scripts\" />
+    <Folder Include="Samples\TypeScript\ScheduleChartView\BasicUsage\Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="DlhSoft.HierarchicalData.LightWPF.Controls, Version=4.0.8.5, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">

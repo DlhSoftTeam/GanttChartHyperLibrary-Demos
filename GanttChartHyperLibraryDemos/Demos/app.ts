@@ -21,7 +21,7 @@ angular.module('Demos', [])
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
                     'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
-                    'AngularJS': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js']
+                    'AngularJS' : ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js']
                 }
             },
             {
@@ -245,15 +245,31 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'ScheduleChartView', feature: 'BasicUsage', title: 'Basic usage', description: 'Sample application showing how to use the component',
+                sourceCodeFiles: {
+                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                    'AngularJS' : ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js']
+                }
+            },
+            {
                 component: 'LoadChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']
                 }
             },
             {
+                component: 'LoadChartView', feature: 'BasicUsage', title: 'Basic usage', description: 'Sample application showing how to use the component',
+                sourceCodeFiles: {
+                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.js'],
+                    'AngularJS' : ['index.html', 'app.css', 'app.ts', 'themes.js']
+                }
+            },
+            {
                 component: 'LoadChartView', feature: 'SingleItem', title: 'Single item', description: 'Sample application showing how to display a single item with multiple allocations',
                 sourceCodeFiles: {
-                    'JavaScript': ['index.html', 'app.css', 'app.js']
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.js'],
+                    'AngularJS' : ['index.html', 'app.css', 'app.ts', 'themes.js']
                 }
             },
             {
@@ -263,16 +279,30 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'PertChartView', feature: 'BasicUsage', title: 'Basic usage', description: 'Sample application showing how to use the component',
+                sourceCodeFiles: {
+                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.js'],
+                    'AngularJS' : ['index.html', 'app.css', 'app.ts', 'themes.js']
+                }
+            },
+            {
                 component: 'NetworkDiagramView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']
                 }
             },
             {
+                component: 'NetworkDiagramView', feature: 'BasicUsage', title: 'Basic usage', description: 'Sample application showing how to use the component',
+                sourceCodeFiles: {
+                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.js'],
+                    'AngularJS' : ['index.html', 'app.css', 'app.ts', 'themes.js']
+                }
+            },
+            {
                 component: 'GanttChartView', feature: 'SinglePageDatabase', title: 'SQL Server® + ASP .NET WebAPI', description: 'Single page app accessing data using ASP .NET WebAPI from a SQL Server® database',
                 sourceCodeUrls: {
                     'JavaScript': 'http://DlhSoft.com/KnowledgeBase/GanttChartSinglePageDatabaseSample.zip',
-                    'AngularJS': 'http://GitHub.com/DlhSoftTeam/Angular-GanttChartViewSampleApp/archive/master.zip'
+                    'AngularJS' : 'http://GitHub.com/DlhSoftTeam/Angular-GanttChartViewSampleApp/archive/master.zip'
                 }
             },
             {

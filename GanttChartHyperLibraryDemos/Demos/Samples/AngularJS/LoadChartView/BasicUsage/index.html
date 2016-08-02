@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Load Chart sample</title>
+    <!-- Angular framwork. -->
+    <script src="Scripts/angular.min.js"></script>
+    <!-- DlhSoft Gantt Chart component references. TypeScript definitions: Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts. -->
+    <script src="Scripts/DlhSoft.Data.HTML.Controls.js"></script>
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.js"></script>
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.Angular.Directives.js"></script>
+    <!-- Sample application code and style references. TypeScript: app.ts. -->
+    <link rel="stylesheet" href="app.css" type="text/css"/>
+    <script src="themes.js"></script>
+    <script src="app.js"></script>
+</head>
+<!-- Sample application user interface. -->
+<body ng-app="LoadChartViewSample" ng-controller="MainController">
+    <!-- Load Chart component. -->
+    <div ds:load-chart id="loadChartView"
+         items="items" settings="settings"
+         style="min-height: 388px">
+    </div>
+</body>
+</html>
