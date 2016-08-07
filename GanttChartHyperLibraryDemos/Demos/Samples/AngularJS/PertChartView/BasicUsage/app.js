@@ -23,9 +23,11 @@ angular.module('PertChartViewSample', ['DlhSoft.ProjectData.PertChart.Directives
         { item: items[3], displayedText: 'F', content: 'Task F', effort: 2 * hourDuration }];
     $scope.items = items;
     var settings = {};
-    // Optionally, initialize custom theme (themes.js).
+    // Optionally, initialize custom theme (themes.js, templates.js).
     if (initializePertChartTheme)
         initializePertChartTheme(settings, theme);
+    if (initializePertChartTemplates)
+        initializePertChartTemplates(settings, theme);
     $scope.settings = settings;
     // Underlying PertChartView component reference.
     var pertChartView = document.getElementById('pertChartView');

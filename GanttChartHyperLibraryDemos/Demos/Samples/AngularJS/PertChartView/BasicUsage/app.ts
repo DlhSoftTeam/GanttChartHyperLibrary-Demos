@@ -7,6 +7,7 @@ import PredecessorItem = PertChartView.PredecessorItem;
 // Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
+declare var initializePertChartTemplates;
 declare var initializePertChartTheme;
 
 declare var angular;
@@ -29,9 +30,11 @@ angular.module('PertChartViewSample', ['DlhSoft.ProjectData.PertChart.Directives
             { item: items[3], displayedText: 'F', content: 'Task F', effort: 2 * hourDuration }];
         $scope.items = items;
         var settings = <PertChartView.Settings>{ };
-        // Optionally, initialize custom theme (themes.js).
+        // Optionally, initialize custom theme (themes.js, templates.js).
         if (initializePertChartTheme)
             initializePertChartTheme(settings, theme);
+        if (initializePertChartTemplates)
+            initializePertChartTemplates(settings, theme);
         $scope.settings = settings;
         // Underlying PertChartView component reference.
         var pertChartView = <PertChartView.Element>document.getElementById('pertChartView');

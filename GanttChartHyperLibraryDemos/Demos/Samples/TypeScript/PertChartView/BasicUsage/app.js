@@ -23,8 +23,10 @@ items[4].predecessors = [
     { item: items[3], displayedText: 'F', content: 'Task F', effort: 2 * hourDuration }];
 // Prepare control settings.
 var settings = {};
-// Optionally, initialize custom theme (themes.js).
+// Optionally, initialize custom theme and templates (themes.js, templates.js).
 if (initializePertChartTheme)
     initializePertChartTheme(settings, theme);
+if (initializePertChartTemplates)
+    initializePertChartTemplates(settings, theme);
 // Initialize the component.
 var pertChartView = DlhSoft.Controls.Pert.PertChartView.initialize(pertChartViewElement, items, settings);

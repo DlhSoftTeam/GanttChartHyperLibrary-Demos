@@ -413,6 +413,8 @@ function pertChart() {
     var pertChartViewElement = document.querySelector('#pertChartView');
     if (initializePertChartTheme)
         initializePertChartTheme(pertChartSettings, theme);
+    if (initializePertChartTemplates)
+        initializePertChartTemplates(pertChartSettings, theme);
     pertChartView = DlhSoft.Controls.Pert.PertChartView.initialize(pertChartViewElement, pertChartItems, pertChartSettings);
     var criticalItems = pertChartView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {
@@ -436,6 +438,8 @@ function networkDiagram() {
     var networkDiagramViewElement = document.querySelector('#networkDiagramView');
     if (initializePertChartTheme)
         initializePertChartTheme(networkDiagramSettings, theme);
+    if (initializePertChartTemplates)
+        initializePertChartTemplates(networkDiagramSettings, theme);
     networkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramViewElement, networkDiagramItems, networkDiagramSettings);
     var criticalItems = networkDiagramView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {

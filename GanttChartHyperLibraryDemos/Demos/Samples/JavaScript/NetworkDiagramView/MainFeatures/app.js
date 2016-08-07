@@ -27,9 +27,11 @@ items[8].predecessors = [{ item: items[6] }, { item: items[7] }];
 var settings = {
 };
 
-// Optionally, initialize custom theme (themes.js).
+// Optionally, initialize custom theme and templates (themes.js, templates.js).
 if (initializePertChartTheme)
     initializePertChartTheme(settings, theme);
+if (initializePertChartTemplates)
+    initializePertChartTemplates(settings, theme);
 
 DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramView, items, settings);
 
