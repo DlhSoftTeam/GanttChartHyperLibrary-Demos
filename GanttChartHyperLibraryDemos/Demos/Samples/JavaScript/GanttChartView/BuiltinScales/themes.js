@@ -202,6 +202,6 @@ function initializePertChartTheme(settings, theme) {
         return;
     settings.shapeStyle = 'fill: White; stroke: #606060; stroke-width: 1px';
     settings.milestoneStyle = 'fill: White; stroke: #606060; stroke-width: 1px';
-    settings.dependencyLineStyle = 'stroke: #8abbed; stroke-width: 0.65px; fill: none; marker-end: url(#ArrowMarker)';
-    settings.virtualEffortDependencyLineStyle = 'stroke: #8abbed; stroke-width: 0.65px; stroke-dasharray: 2, 2; fill: none; marker-end: url(#ArrowMarker)';
+    settings.dependencyLineStyle = 'stroke: #8abbed; stroke-width: 0.65px; fill: none; marker-end: url(#PertArrowMarker)';
+    settings.virtualEffortDependencyLineStyle = 'stroke: #8abbed; stroke-width: 0.65px; stroke-dasharray: 2, 2; fill: none; marker-end: url(#PertArrowMarker)';
 }

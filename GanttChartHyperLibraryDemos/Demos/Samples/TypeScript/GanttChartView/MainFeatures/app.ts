@@ -16,6 +16,7 @@ var theme = queryString ? queryString.substr(1) : null;
 declare var initializeGanttChartTemplates;
 declare var initializeGanttChartTheme;
 declare var initializeLoadChartTheme;
+declare var initializePertChartTemplates;
 declare var initializePertChartTheme;
 
 // Retrieve and store the control element for reference purposes.
@@ -453,6 +454,8 @@ function pertChart() {
     var pertChartViewElement = <HTMLElement>document.querySelector('#pertChartView');
     if (initializePertChartTheme)
         initializePertChartTheme(pertChartSettings, theme);
+    if (initializePertChartTemplates)
+        initializePertChartTemplates(pertChartSettings, theme);
     pertChartView = DlhSoft.Controls.Pert.PertChartView.initialize(pertChartViewElement, pertChartItems, pertChartSettings);
     var criticalItems = pertChartView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {
@@ -476,6 +479,8 @@ function networkDiagram() {
     var networkDiagramViewElement = <HTMLElement>document.querySelector('#networkDiagramView');
     if (initializePertChartTheme)
         initializePertChartTheme(networkDiagramSettings, theme);
+    if (initializePertChartTemplates)
+        initializePertChartTemplates(networkDiagramSettings, theme);
     networkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramViewElement, networkDiagramItems, networkDiagramSettings);
     var criticalItems = networkDiagramView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {

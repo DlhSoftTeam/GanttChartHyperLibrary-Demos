@@ -614,3 +614,26 @@ function initializeGanttChartTemplates(settings, theme) {
         return toolTip;
     };
 }
+function initializePertChartTemplates(settings, theme) {
+    // Common helpers.
+    var svgns = 'http://www.w3.org/2000/svg';
+    // Template definitions.
+    settings.styleDefinitionTemplate = function () {
+        var defs = document.createElementNS(svgns, 'defs');
+        var arrowMarker = document.createElementNS(svgns, 'marker');
+        arrowMarker.setAttribute('id', 'PertArrowMarker');
+        arrowMarker.setAttribute("viewBox", "0 0 10 10");
+        arrowMarker.setAttribute("refX", "0");
+        arrowMarker.setAttribute("refY", "5");
+        arrowMarker.setAttribute("markerUnits", "strokeWidth");
+        arrowMarker.setAttribute("markerWidth", "5");
+        arrowMarker.setAttribute("markerHeight", "4");
+        arrowMarker.setAttribute("orient", "auto");
+        var arrowPath = document.createElementNS(svgns, "path");
+        arrowPath.setAttribute("fill", settings.arrowFill ? settings.arrowFill : '#3b87d9');
+        arrowPath.setAttribute("d", "M 0 0 L 10 5 L 0 10 z");
+        arrowMarker.appendChild(arrowPath);
+        defs.appendChild(arrowMarker);
+        return defs;
+    };
+}
