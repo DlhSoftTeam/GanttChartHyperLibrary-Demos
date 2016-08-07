@@ -7,6 +7,7 @@ import PredecessorItem = NetworkDiagramView.PredecessorItem;
 // Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
+declare var initializePertChartTemplates;
 declare var initializePertChartTheme;
 
 declare var angular;
@@ -34,9 +35,11 @@ angular.module('NetworkDiagramViewSample', ['DlhSoft.ProjectData.PertChart.Direc
         items[8].predecessors = [{ item: items[6] }, { item: items[7] }];
         $scope.items = items;
         var settings = <NetworkDiagramView.Settings>{ };
-        // Optionally, initialize custom theme (themes.js).
+        // Optionally, initialize custom theme and templates (themes.js, templates.js).
         if (initializePertChartTheme)
             initializePertChartTheme(settings, theme);
+        if (initializePertChartTemplates)
+            initializePertChartTemplates(settings, theme);
         $scope.settings = settings;
         // Underlying NetworkDiagramView component reference.
         var networkDiagramView = <NetworkDiagramView.Element>document.getElementById('networkDiagramView');

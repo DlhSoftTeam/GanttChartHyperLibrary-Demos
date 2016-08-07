@@ -240,6 +240,14 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'ScheduleChartView', feature: 'GanttChartIntegration', title: 'Gantt Chart integration', description: 'Sample application showing how to generate a Schedule Chart view from Gantt Chart data',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                'AngularJS': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js']
+            }
+        },
+        {
             component: 'LoadChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']
@@ -256,8 +264,16 @@ angular.module('Demos', [])
             component: 'LoadChartView', feature: 'SingleItem', title: 'Single item', description: 'Sample application showing how to display a single item with multiple allocations',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.js'],
-                'AngularJS': ['index.html', 'app.css', 'app.ts', 'themes.js']
+                'TypeScript': ['index.html', 'app.css', 'app.ts'],
+                'AngularJS': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'LoadChartView', feature: 'GanttChartIntegration', title: 'Gantt Chart integration', description: 'Sample application showing how to generate a Load Chart view from Gantt Chart data',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts'],
+                'AngularJS': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
@@ -274,6 +290,14 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'PertChartView', feature: 'GanttChartIntegration', title: 'PERT Chart integration', description: 'Sample application showing how to generate a PERT Chart view from Gantt Chart data',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts'],
+                'AngularJS': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
             component: 'NetworkDiagramView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']
@@ -284,6 +308,14 @@ angular.module('Demos', [])
             sourceCodeFiles: {
                 'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.js'],
                 'AngularJS': ['index.html', 'app.css', 'app.ts', 'themes.js']
+            }
+        },
+        {
+            component: 'NetworkDiagramView', feature: 'GanttChartIntegration', title: 'Gantt Chart integration', description: 'Sample application showing how to generate a Network Diagram view from Gantt Chart data',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts'],
+                'AngularJS': ['index.html', 'app.css', 'app.ts']
             }
         },
         {

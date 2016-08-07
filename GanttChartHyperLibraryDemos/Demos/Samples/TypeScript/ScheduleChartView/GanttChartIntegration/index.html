@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>ScheduleChartView Sample - Gantt Chart Integration</title>
+    <link rel="Stylesheet" href="app.css" type="text/css" />
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.js" type="text/javascript"></script>
+    <script src="Scripts/DlhSoft.Data.HTML.Controls.js" type="text/javascript"></script>
+    <script src="templates.js" type="text/javascript"></script>
+    <script src="themes.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript" defer="defer"></script>
+</head>
+<body>
+    <div id="ganttChartViewContainer">
+        <!-- Gantt Chart component. -->
+        <div id="ganttChartView" style="height: 388px">...</div>
+        <button onclick="addNewGanttChartItem()">Add new task</button>
+        <button onclick="showScheduleChart()">Generate Schedule Chart</button>
+    </div>
+    <div id="scheduleChartViewContainer" style="display: none">
+        <!-- Schedule Chart component. -->
+        <div id="scheduleChartView" style="height: 388px">...</div>
+        <button onclick="hideScheduleChart()">Back to Gantt Chart source</button>
+    </div>
+</body>
+</html>

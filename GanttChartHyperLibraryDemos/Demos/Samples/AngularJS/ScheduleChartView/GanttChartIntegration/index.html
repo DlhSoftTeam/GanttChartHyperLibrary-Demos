@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Schedule Chart sample - Gantt Chart integration</title>
+    <!-- Angular framwork. -->
+    <script src="Scripts/angular.min.js"></script>
+    <!-- DlhSoft Gantt Chart component references. TypeScript definitions: Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts. -->
+    <script src="Scripts/DlhSoft.Data.HTML.Controls.js"></script>
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.js"></script>
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.Angular.Directives.js"></script>
+    <!-- Sample application code and style references. TypeScript: app.ts. -->
+    <link rel="stylesheet" href="app.css" type="text/css"/>
+    <script src="templates.js"></script>
+    <script src="themes.js"></script>
+    <script src="app.js"></script>
+</head>
+<!-- Sample application user interface. -->
+<body ng-app="ScheduleChartViewSample" ng-controller="MainController">
+    <div ng-hide="isScheduleChartVisible">
+        <!-- Gantt Chart component. -->
+        <div ds:gantt-chart id="ganttChartView"
+             items="ganttChartItems" settings="ganttChartSettings"
+             auto-refresh="{{ true }}"
+             style="min-height: 388px">
+        </div>
+        <button ng-click="addNewGanttChartItem()">Add new task</button>
+        <button ng-click="showScheduleChart()">Generate Schedule Chart</button>
+    </div>
+    <div ng-show="isScheduleChartVisible">
+        <!-- Schedule Chart component. -->
+        <div ds:schedule-chart id="scheduleChartView"
+             items="items" settings="settings"
+             style="min-height: 388px">
+        </div>
+        <button ng-click="hideScheduleChart()">Back to Gantt Chart source</button>
+    </div>
+</body>
+</html>
