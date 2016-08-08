@@ -173,14 +173,14 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'WorkOptimizations', title: 'Work optimizations (minimize project time, level resources)', description: 'Shows how you can optimize project timeline and avoiding resource over-allocation',
+            component: 'GanttChartView', feature: 'WorkOptimizations', title: 'Work optimizations (reschedule project, level resources)', description: 'Shows how you can optimize project timeline and avoiding resource over-allocation',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
-            component: 'GanttChartView', feature: 'TimeConstraints', title: 'Time constraints (minimum and maximum start and finish)', description: 'Shows how you can set up constraints on item date and times using minimum and/or maximum values',
+            component: 'GanttChartView', feature: 'TimeConstraints', title: 'Time constraints (minimum-maximum start and finish)', description: 'Shows how you can set up constraints on item date and times using minimum and/or maximum values',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
