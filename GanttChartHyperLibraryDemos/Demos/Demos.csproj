@@ -631,8 +631,8 @@
     <Content Include="Scripts\DlhSoft.ProjectData.PertChart.HTML.Controls.js" />
     <Content Include="Templates\SourceCode.html" />
     <Content Include="Templates\Sample.html" />
-    <Content Include="Tools\ArchiveBuilder.exe" />
-    <Content Include="Tools\Interop.Shell32.dll" />
+    <None Include="Tools\ArchiveBuilder.exe" />
+    <None Include="Tools\Interop.Shell32.dll" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
