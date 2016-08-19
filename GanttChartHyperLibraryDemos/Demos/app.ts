@@ -260,6 +260,20 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'ScheduleChartView', feature: 'Filtering', title: 'Filtering and hiding items', description: 'Shows how you can set up an item visibility filter function and hide individual items when needed',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                }
+            },
+            {
+                component: 'ScheduleChartView', feature: 'Hierarchy', title: 'Hierarchy (resource groups)', description: 'Sample application showing how to display expandable groups of resources in a hierarchical fashion',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                }
+            },
+            {
                 component: 'LoadChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']

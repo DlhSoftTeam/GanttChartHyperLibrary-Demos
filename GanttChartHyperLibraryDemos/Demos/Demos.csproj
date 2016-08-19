@@ -363,11 +363,21 @@
     <Content Include="Samples\JavaScript\PertChartView\MainFeatures\app.css" />
     <Content Include="Samples\JavaScript\PertChartView\MainFeatures\templates.js" />
     <Content Include="Samples\JavaScript\PertChartView\MainFeatures\themes.js" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\Filtering\app.css" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\Filtering\app.js" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\Filtering\index.html" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\Filtering\templates.js" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\Filtering\themes.js" />
     <Content Include="Samples\JavaScript\ScheduleChartView\GanttChartIntegration\app.css" />
     <Content Include="Samples\JavaScript\ScheduleChartView\GanttChartIntegration\app.js" />
     <Content Include="Samples\JavaScript\ScheduleChartView\GanttChartIntegration\index.html" />
     <Content Include="Samples\JavaScript\ScheduleChartView\GanttChartIntegration\templates.js" />
     <Content Include="Samples\JavaScript\ScheduleChartView\GanttChartIntegration\themes.js" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\Hierarchy\app.css" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\Hierarchy\app.js" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\Hierarchy\index.html" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\Hierarchy\templates.js" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\Hierarchy\themes.js" />
     <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\app.js" />
     <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Images\AddNew.png" />
     <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Images\CustomScales.png" />
@@ -608,6 +618,11 @@
     <Content Include="Samples\TypeScript\PertChartView\GanttChartIntegration\index.html" />
     <Content Include="Samples\TypeScript\PertChartView\GanttChartIntegration\templates.js" />
     <Content Include="Samples\TypeScript\PertChartView\GanttChartIntegration\themes.js" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\Filtering\app.css" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\Filtering\app.js" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\Filtering\index.html" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\Filtering\templates.js" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\Filtering\themes.js" />
     <Content Include="Samples\TypeScript\ScheduleChartView\GanttChartIntegration\app.css" />
     <Content Include="Samples\TypeScript\ScheduleChartView\GanttChartIntegration\app.js" />
     <Content Include="Samples\TypeScript\ScheduleChartView\GanttChartIntegration\index.html" />
@@ -618,6 +633,11 @@
     <Content Include="Samples\TypeScript\ScheduleChartView\BasicUsage\index.html" />
     <Content Include="Samples\TypeScript\ScheduleChartView\BasicUsage\templates.js" />
     <Content Include="Samples\TypeScript\ScheduleChartView\BasicUsage\themes.js" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\Hierarchy\app.css" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\Hierarchy\app.js" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\Hierarchy\index.html" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\Hierarchy\templates.js" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\Hierarchy\themes.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -685,6 +705,8 @@
     <Content Include="Samples\TypeScript\LoadChartView\GanttChartIntegration\app.ts" />
     <Content Include="Samples\TypeScript\PertChartView\GanttChartIntegration\app.ts" />
     <Content Include="Samples\TypeScript\NetworkDiagramView\GanttChartIntegration\app.ts" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\Hierarchy\app.ts" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\Filtering\app.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.Data.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.HierarchicalData.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts" />
@@ -750,7 +772,9 @@
     <Folder Include="Samples\JavaScript\NetworkDiagramView\MainFeatures\Scripts\" />
     <Folder Include="Samples\JavaScript\PertChartView\GanttChartIntegration\Scripts\" />
     <Folder Include="Samples\JavaScript\PertChartView\MainFeatures\Scripts\" />
+    <Folder Include="Samples\JavaScript\ScheduleChartView\Filtering\Scripts\" />
     <Folder Include="Samples\JavaScript\ScheduleChartView\GanttChartIntegration\Scripts\" />
+    <Folder Include="Samples\JavaScript\ScheduleChartView\Hierarchy\Scripts\" />
     <Folder Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\AssignmentsTemplate\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\AutomaticScheduling\Scripts\" />
@@ -789,7 +813,9 @@
     <Folder Include="Samples\TypeScript\PertChartView\BasicUsage\Scripts\" />
     <Folder Include="Samples\TypeScript\PertChartView\GanttChartIntegration\Scripts\" />
     <Folder Include="Samples\TypeScript\ScheduleChartView\BasicUsage\Scripts\" />
+    <Folder Include="Samples\TypeScript\ScheduleChartView\Filtering\Scripts\" />
     <Folder Include="Samples\TypeScript\ScheduleChartView\GanttChartIntegration\Scripts\" />
+    <Folder Include="Samples\TypeScript\ScheduleChartView\Hierarchy\Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="DlhSoft.HierarchicalData.LightWPF.Controls, Version=4.0.8.5, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
