@@ -41,7 +41,7 @@ if (initializeGanttChartTemplates)
 // Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, items, settings);
 
-// Prepare element to output information about change when they occur.
+// Prepare element to output information about changes when they occur.
 var notificationsOutputElement = <HTMLElement>document.querySelector('#notificationsOutput');
 
 // Handle item property change notifications.
