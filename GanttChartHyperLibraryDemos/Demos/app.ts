@@ -73,6 +73,13 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'GanttChartView', feature: 'MouseEvents', title: 'Mouse event handling', description: 'Shows how custom code can be executed when generir or specific mouse events occur within the component',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
                 component: 'GanttChartView', feature: 'SelectionModes', title: 'Selection mode (single, extended, by clicking)', description: 'Shows how you can set up selection mode and handle item selection changes in the component',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
