@@ -73,6 +73,13 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'GanttChartView', feature: 'MouseEvents', title: 'Mouse event handling', description: 'Shows how custom code can be executed when generir or specific mouse events occur within the component',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
                 component: 'GanttChartView', feature: 'SelectionModes', title: 'Selection mode (single, extended, by clicking)', description: 'Shows how you can set up selection mode and handle item selection changes in the component',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
@@ -260,6 +267,20 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'ScheduleChartView', feature: 'Filtering', title: 'Filtering and hiding items', description: 'Shows how you can set up an item visibility filter function and hide individual items when needed',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                }
+            },
+            {
+                component: 'ScheduleChartView', feature: 'Hierarchy', title: 'Hierarchy (resource groups)', description: 'Sample application showing how to display expandable groups of resources in a hierarchical fashion',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                }
+            },
+            {
                 component: 'LoadChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']
@@ -335,6 +356,12 @@ angular.module('Demos', [])
                 sourceCodeUrls: {
                     'JavaScript': 'http://DlhSoft.com/KnowledgeBase/GanttChartSinglePageDatabaseSample.zip',
                     'AngularJS' : 'http://GitHub.com/DlhSoftTeam/Angular-GanttChartViewSampleApp/archive/master.zip'
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'PHP', title: 'PHP integration', description: 'PHP based sample application',
+                sourceCodeUrls: {
+                    'JavaScript': 'http://GitHub.com/DlhSoftTeam/Php-GanttChartViewSampleApp/archive/master.zip'
                 }
             },
             {

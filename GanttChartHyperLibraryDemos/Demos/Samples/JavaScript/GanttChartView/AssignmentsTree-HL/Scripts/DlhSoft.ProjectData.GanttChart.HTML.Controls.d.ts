@@ -1,7 +1,7 @@
 ﻿/* Assembly: DlhSoft.ProjectData.GanttChart.HTML.Controls,
    Company: DlhSoft,
    Product: Project Data Modern Library,
-   Version: 5.3.7.4,
+   Version: 5.3.10.0,
    Copyright: Copyright © 2012-2016 DlhSoft,
    Title: Project Data Gantt Chart HTML Controls,
    Description: Project Data Gantt Chart related HTML client components */
@@ -586,6 +586,20 @@ declare module DlhSoft.Controls {
 
             itemContextMenuHandler? (e: Event): void;
             predecessorItemContextMenuHandler? (e: Event): void;
+
+            mouseHandler? (eventName: string, isOnItemsArea: boolean, isOnChart: boolean, row: Item|Scale, column: Column|Date, button: number, clickCount: number, e: MouseEvent): void;
+            mouseMoveHandler? (isOnItemsArea: boolean, isOnChart: boolean, row: Item|Scale, column: Column|Date): void;
+            mouseDownHandler? (isOnItemsArea: boolean, isOnChart: boolean, row: Item|Scale, column: Column|Date, button: number): void;
+            clickHandler? (isOnItemsArea: boolean, isOnChart: boolean, row: Item|Scale, column: Column|Date): void;
+            doubleClickHandler? (isOnItemsArea: boolean, isOnChart: boolean, row: Item|Scale, column: Column|Date): void;
+            itemClickHandler? (isOnChart: boolean, item: Item, column: Column|Date): void;
+            itemDoubleClickHandler? (isOnChart: boolean, item: Item, column: Column|Date): void;
+            chartClickHandler? (isOnItemsArea: boolean, row: Item|Scale, dateTime: Date): void;
+            chartDoubleClickHandler? (isOnItemsArea: boolean, row: Item|Scale, dateTime: Date): void;
+            chartItemClickHandler? (item: Item, dateTime: Date): void;
+            chartItemDoubleClickHandler? (item: Item, dateTime: Date): void;
+            dependencyLineClickHandler? (predecessorItem: PredecessorItem, targetItem: Item, e: MouseEvent): void;
+            dependencyLineDoubleClickHandler?(predecessorItem: PredecessorItem, targetItem: Item, e: MouseEvent): void;
         }
 
         /** Represents a grid column displayed by the GanttChartView component. */

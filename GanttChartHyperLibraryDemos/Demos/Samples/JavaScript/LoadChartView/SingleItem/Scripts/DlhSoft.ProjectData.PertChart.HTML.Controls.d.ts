@@ -1,7 +1,7 @@
 ﻿/* Assembly: DlhSoft.ProjectData.PertChart.HTML.Controls,
    Company: DlhSoft,
    Product: Project Data Modern Library,
-   Version: 5.3.0.1,
+   Version: 5.3.1.0,
    Copyright: Copyright © 2012-2016 DlhSoft,
    Title: Project Data PERT Chart HTML Controls,
    Description: Project Data PERT Chart related HTML client components */
@@ -157,6 +157,14 @@ declare module DlhSoft.Controls.Pert {
 
             /** Function called whenever item properties change within the control, providing the changed item, relevant property name, and Boolean values indicating whether this change was directly triggered by the user, and whether this is the final change in a periodic operation such as a drag and drop action, specified as parameters; a custom function may be provided by the developer in order to receive notifications whenever data changes occur within the control. */
             itemPropertyChangeHandler? (item: Item, propertyName: string, isDirect: boolean, isFinal: boolean): void;
+
+            mouseHandler? (eventName: string, item: Item, button: number, clickCount: number, e: MouseEvent): void;
+            mouseMoveHandler? (item: Item): void;
+            mouseDownHandler? (item: Item, button: number): void;
+            itemClickHandler? (item: Item): void;
+            itemDoubleClickHandler? (item: Item): void;
+            dependencyLineClickHandler? (predecessorItem: PredecessorItem, targetItem: Item, e: MouseEvent): void;
+            dependencyLineDoubleClickHandler?(predecessorItem: PredecessorItem, targetItem: Item, e: MouseEvent): void;
         }
 
         /** Represents export settings for a PertChartView component. */
@@ -323,6 +331,14 @@ declare module DlhSoft.Controls.Pert {
 
             /** Function called whenever item properties change within the control, providing the changed item, relevant property name, and Boolean values indicating whether this change was directly triggered by the user, and whether this is the final change in a periodic operation such as a drag and drop action, specified as parameters; a custom function may be provided by the developer in order to receive notifications whenever data changes occur within the control. */
             itemPropertyChangeHandler? (item: Item, propertyName: string, isDirect: boolean, isFinal: boolean): void;
+
+            mouseHandler? (eventName: string, item: Item, button: number, clickCount: number, e: MouseEvent): void;
+            mouseMoveHandler? (item: Item): void;
+            mouseDownHandler? (item: Item, button: number): void;
+            itemClickHandler? (item: Item): void;
+            itemDoubleClickHandler? (item: Item): void;
+            dependencyLineClickHandler? (predecessorItem: PredecessorItem, targetItem: Item, e: MouseEvent): void;
+            dependencyLineDoubleClickHandler?(predecessorItem: PredecessorItem, targetItem: Item, e: MouseEvent): void;
         }
 
         /** Represents export settings for a NetworkDiagramView component. */
