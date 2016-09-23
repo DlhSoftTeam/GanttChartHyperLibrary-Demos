@@ -375,6 +375,12 @@ angular.module('Demos', [])
                 sourceCodeUrls: {
                     'JavaScript': 'http://DlhSoft.com/KnowledgeBase/GanttChartJavaScriptStoreAppSample.zip'
                 }
+            },
+            {
+                component: 'GanttChartView', feature: 'Cordova', title: 'Multi-device (Cordova™)', description: 'Cordova™ tools based multi-device hybrid app targeting Windows (UWP), Android, and iOS',
+                sourceCodeUrls: {
+                    'JavaScript': 'http://DlhSoft.com/KnowledgeBase/GanttChartMDHASample.zip'
+                }
             }
         ];
         var themes = ['Default', 'Generic-bright', 'Generic-blue', 'DlhSoft-gray', 'Purple-green', 'Steel-blue', 'Dark-black', 'Cyan-green', 'Blue-navy', 'Orange-brown', 'Teal-green', 'Purple-beige', 'Gray-blue', 'Aero'];
