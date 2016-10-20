@@ -241,6 +241,11 @@
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\index.html" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\MatrialResources\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\MatrialResources\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\MatrialResources\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\MatrialResources\templates.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\MatrialResources\themes.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MinuteScale\app.css" />
     <Content Include="Samples\JavaScript\GanttChartView\MinuteScale\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MinuteScale\index.html" />
@@ -311,6 +316,11 @@
     <Content Include="Samples\JavaScript\GanttChartView\TimeConstraints\index.html" />
     <Content Include="Samples\JavaScript\GanttChartView\TimeConstraints\templates.js" />
     <Content Include="Samples\JavaScript\GanttChartView\TimeConstraints\themes.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\WBS\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\WBS\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\WBS\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\WBS\templates.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\WBS\themes.js" />
     <Content Include="Samples\JavaScript\GanttChartView\WorkOptimizations\app.css" />
     <Content Include="Samples\JavaScript\GanttChartView\WorkOptimizations\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\WorkOptimizations\index.html" />
@@ -401,6 +411,17 @@
     <Content Include="Samples\JavaScript\ScheduleChartView\MainFeatures\themes.js" />
     <Content Include="Samples\templates.js" />
     <Content Include="Samples\themes.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\AssigningResources\app.css" />
+    <Content Include="Samples\TypeScript\GanttChartView\AssigningResources\app.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\AssigningResources\Images\AddNew.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\AssigningResources\Images\DecreaseIndentation.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\AssigningResources\Images\Delete.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\AssigningResources\Images\IncreaseIndentation.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\AssigningResources\Images\InsertNew.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\AssigningResources\Images\LoadChart.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\AssigningResources\index.html" />
+    <Content Include="Samples\TypeScript\GanttChartView\AssigningResources\templates.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\AssigningResources\themes.js" />
     <Content Include="Samples\TypeScript\GanttChartView\AssignmentsTemplate\app.css" />
     <Content Include="Samples\TypeScript\GanttChartView\AssignmentsTemplate\app.js" />
     <Content Include="Samples\TypeScript\GanttChartView\AssignmentsTemplate\Images\Resource 1.png" />
@@ -515,6 +536,11 @@
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\index.html" />
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\templates.js" />
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\themes.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\MaterialResources\app.css" />
+    <Content Include="Samples\TypeScript\GanttChartView\MaterialResources\app.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\MaterialResources\index.html" />
+    <Content Include="Samples\TypeScript\GanttChartView\MaterialResources\templates.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\MaterialResources\themes.js" />
     <Content Include="Samples\TypeScript\GanttChartView\MinuteScale\app.css" />
     <Content Include="Samples\TypeScript\GanttChartView\MinuteScale\app.js" />
     <Content Include="Samples\TypeScript\GanttChartView\MinuteScale\index.html" />
@@ -585,6 +611,11 @@
     <Content Include="Samples\TypeScript\GanttChartView\TimeConstraints\index.html" />
     <Content Include="Samples\TypeScript\GanttChartView\TimeConstraints\templates.js" />
     <Content Include="Samples\TypeScript\GanttChartView\TimeConstraints\themes.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\WBS\app.css" />
+    <Content Include="Samples\TypeScript\GanttChartView\WBS\app.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\WBS\index.html" />
+    <Content Include="Samples\TypeScript\GanttChartView\WBS\templates.js" />
+    <Content Include="Samples\TypeScript\GanttChartView\WBS\themes.js" />
     <Content Include="Samples\TypeScript\GanttChartView\WorkOptimizations\app.css" />
     <Content Include="Samples\TypeScript\GanttChartView\WorkOptimizations\app.js" />
     <Content Include="Samples\TypeScript\GanttChartView\WorkOptimizations\index.html" />
@@ -718,6 +749,9 @@
     <Content Include="Samples\TypeScript\ScheduleChartView\Hierarchy\app.ts" />
     <Content Include="Samples\TypeScript\ScheduleChartView\Filtering\app.ts" />
     <Content Include="Samples\TypeScript\GanttChartView\MouseEvents\app.ts" />
+    <Content Include="Samples\TypeScript\GanttChartView\MaterialResources\app.ts" />
+    <Content Include="Samples\TypeScript\GanttChartView\WBS\app.ts" />
+    <Content Include="Samples\TypeScript\GanttChartView\AssigningResources\app.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.Data.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.HierarchicalData.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts" />
@@ -763,6 +797,7 @@
     <Folder Include="Samples\JavaScript\GanttChartView\Filtering\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\HierarchicalVirtualization\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\MainFeatures\Scripts\" />
+    <Folder Include="Samples\JavaScript\GanttChartView\MatrialResources\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\MinuteScale\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\MouseEvents\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\MoveUpDown\Scripts\" />
@@ -776,6 +811,7 @@
     <Folder Include="Samples\JavaScript\GanttChartView\Statuses\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\Styling\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\TimeConstraints\Scripts\" />
+    <Folder Include="Samples\JavaScript\GanttChartView\WBS\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\WorkOptimizations\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\ZoomLevel\Scripts\" />
     <Folder Include="Samples\JavaScript\LoadChartView\GanttChartIntegration\Scripts\" />
@@ -788,6 +824,7 @@
     <Folder Include="Samples\JavaScript\ScheduleChartView\GanttChartIntegration\Scripts\" />
     <Folder Include="Samples\JavaScript\ScheduleChartView\Hierarchy\Scripts\" />
     <Folder Include="Samples\JavaScript\ScheduleChartView\MainFeatures\Scripts\" />
+    <Folder Include="Samples\TypeScript\GanttChartView\AssigningResources\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\AssignmentsTemplate\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\AutomaticScheduling\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\Baseline\Scripts\" />
@@ -803,6 +840,7 @@
     <Folder Include="Samples\TypeScript\GanttChartView\ExportPngImage-PMF\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\Filtering\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\MainFeatures\Scripts\" />
+    <Folder Include="Samples\TypeScript\GanttChartView\MaterialResources\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\MinuteScale\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\MouseEvents\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\MoveUpDown\Scripts\" />
@@ -816,6 +854,7 @@
     <Folder Include="Samples\TypeScript\GanttChartView\Statuses\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\Styling\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\TimeConstraints\Scripts\" />
+    <Folder Include="Samples\TypeScript\GanttChartView\WBS\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\WorkOptimizations\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\ZoomLevel\Scripts\" />
     <Folder Include="Samples\TypeScript\LoadChartView\BasicUsage\Scripts\" />
