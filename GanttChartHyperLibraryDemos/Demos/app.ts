@@ -27,7 +27,8 @@ angular.module('Demos', [])
             {
                 component: 'GanttChartView', feature: 'AssigningResources', title: 'Assigning resources (with multi-selector combo box)', description: 'Shows how resource assignments work and includes code providing automatic Load Chart synchronization',
                 sourceCodeFiles: {
-                    'JavaScript': ['index.html', 'app.css', 'app.js']
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts']
                 }
             },
             {
@@ -81,6 +82,13 @@ angular.module('Demos', [])
             },
             {
                 component: 'GanttChartView', feature: 'SelectionModes', title: 'Selection mode (single, extended, by clicking)', description: 'Shows how you can set up selection mode and handle item selection changes in the component',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'WBS', title: 'WBS path (work breakdown structure column)', description: 'Shows how you can easily insert a WBS column to the grid',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
                     'TypeScript': ['index.html', 'app.css', 'app.ts']
@@ -193,6 +201,13 @@ angular.module('Demos', [])
             },
             {
                 component: 'GanttChartView', feature: 'WorkOptimizations', title: 'Work optimizations (reschedule project, level resources)', description: 'Shows how you can optimize project timeline and avoiding resource over-allocation',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'MaterialResources', title: 'Material resources (quantities and costs)', description: 'Shows how you can assign material resources having limited or unlimited available quantities and compute task costs based on the allocations',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
                     'TypeScript': ['index.html', 'app.css', 'app.ts']
