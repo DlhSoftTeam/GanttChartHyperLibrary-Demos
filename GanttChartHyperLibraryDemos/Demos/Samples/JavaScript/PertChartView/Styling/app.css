@@ -1,0 +1,19 @@
+.container {
+    font-family: Calibri;
+    font-variant: small-caps;
+    font-size: 16px;
+    color: #346;
+}
+.shape {
+    stroke: gray;
+    fill: #ebf5ef;
+}
+.dependencyLine {
+    stroke: lightgray;
+    fill: none;
+}
+
+/* Overrides */
+body {
+    margin: 0;
+}
