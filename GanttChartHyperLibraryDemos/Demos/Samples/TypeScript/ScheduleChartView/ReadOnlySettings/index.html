@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>ScheduleChartView Read Only Settings Sample</title>
+    <link rel="Stylesheet" href="app.css" type="text/css" />
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.js" type="text/javascript"></script>
+    <script src="Scripts/DlhSoft.Data.HTML.Controls.js" type="text/javascript"></script>
+    <script src="templates.js" type="text/javascript"></script>
+    <script src="themes.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript" defer="defer"></script>
+</head>
+<body>
+    <div class="command-area">
+        <table>
+            <tr>
+                <td>
+                    <div><input id="isReadOnlyCheckBox" type="checkbox" />Read only (override)</div>
+                    <div><input id="isGridReadOnlyCheckBox" type="checkbox" />Grid read only</div>
+                    <div><input id="isChartReadOnlyCheckBox" type="checkbox" />Chart read only</div>
+                    <div><input id="hideGridCheckBox" type="checkbox" />Hide grid</div>
+                </td>
+                <td>
+                    <div><input id="isStartReadOnlyCheckBox" type="checkbox" />Start read only in chart</div>
+                    <div><input id="isCompletionReadOnlyCheckBox" type="checkbox" />Completion read only in chart</div>
+                    <div><input id="isEffortReadOnlyCheckBox" type="checkbox" />Duration read only in chart</div>
+                    <div><input id="disableStartEndDraggingCheckBox" type="checkbox" />Disable updating duration by start dragging</div>
+                </td>
+                <td>
+                    <div><input id="disableScrollingOnTaskClick" type="checkbox" />Disable chart scrolling on grid row clicking</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="scheduleChartView" style="height: 388px">...</div>
+</body>
+</html>
