@@ -1,0 +1,24 @@
+.container {
+    font-family: Calibri;
+    font-variant: small-caps;
+    font-size: 14px;
+    color: #346;
+}
+.shape {
+    stroke: gray;
+    fill: #e0e0e0;
+}
+.milestone {
+    stroke: darkred;
+    stroke-width: 2px;
+    fill: #c1c9c9;
+}
+.dependencyLine {
+    stroke: darkgray;
+    fill: none;
+}
+
+/* Overrides */
+body {
+    margin: 0;
+}
