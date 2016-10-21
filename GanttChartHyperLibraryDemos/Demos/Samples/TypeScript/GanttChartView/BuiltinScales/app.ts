@@ -164,7 +164,7 @@ function initializeScales() {
     if (currentTimeCheckBox.checked)
         scales.push({ scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: Red; stroke-width: 0.5px' });
     settings.scales = scales;
-    settings.updateScale = updateScaleSelect.value;
+    settings.updateScale = parseFloat(updateScaleSelect.value);
     settings.weekStartDay = !mondayBasedCheckBox.checked ? 0 : 1;
     var hourWidth = parseFloat(zoomLevelTextBox.value);
     if (hourWidth > 0)
