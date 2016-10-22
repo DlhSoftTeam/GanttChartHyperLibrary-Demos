@@ -15,7 +15,7 @@ for (var i = 1; i <= 16; i++)
     ganttChartItems.push({ content: 'Task ' + i, start: new Date(year, month, 2 + i - 1, 8, 0, 0), finish: new Date(year, month, 2 + i - 1 + 3, 16, 0, 0) });
 var ganttChartSettings = {
     gridWidth: '20%', chartWidth: '80%', isSplitterEnabled: false,
-    isChartReadOnly: true,
+    isChartReadOnly: true, isMouseWheelZoomEnabled: false,
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
 // Optionally, initialize custom theme and templates for Gantt Chart (themes.js, templates.js).
@@ -31,6 +31,7 @@ for (var i = 1; i <= 5; i++)
     items.push({ content: 'Resource ' + i, start: new Date(), ganttChartItems: [] });
 var scheduleChartSettings = {
     gridWidth: '20%', chartWidth: '80%', isSplitterEnabled: false,
+    isMouseWheelZoomEnabled: false,
     currentTime: new Date(year, month, 2) // Display the current time vertical line of the chart at the project start date.
 };
 // Optionally, initialize custom theme and templates for Schedule Chart (themes.js, templates.js).
