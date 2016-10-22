@@ -27,7 +27,7 @@ if (initializeGanttChartTheme)
     initializeGanttChartTheme(ganttChartSettings, theme);
 if (initializeGanttChartTemplates)
     initializeGanttChartTemplates(ganttChartSettings, theme);
-// Initialize the component.
+// Initialize the Gantt Chart component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, ganttChartItems, ganttChartSettings);
 function addNewGanttChartItem() {
     var item = {
@@ -49,8 +49,8 @@ function showScheduleChart() {
         initializeGanttChartTheme(settings, theme);
     if (initializeGanttChartTemplates)
         initializeGanttChartTemplates(settings, theme);
+    // Initialize the Schedule Chart component.
     var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, items, settings);
-    ;
 }
 function hideScheduleChart() {
     scheduleChartViewContainerElement.style.display = 'none';
