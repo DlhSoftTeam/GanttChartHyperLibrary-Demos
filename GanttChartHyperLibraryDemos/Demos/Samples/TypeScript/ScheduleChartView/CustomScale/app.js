@@ -7,7 +7,7 @@ var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 // Retrieve and store the control element for reference purposes.
 var scheduleChartViewElement = document.querySelector('#scheduleChartView');
-var date = new Date(), year = date.getFullYear(), month = date.getMonth();
+var year = 2017, month = 1;
 var scheduleChartItems = [
     { content: 'Resource 1', start: new Date(), ganttChartItems: [{ content: 'Task A (Resource 1)', start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0) }] },
     {
@@ -32,8 +32,8 @@ if (initializeGanttChartTheme)
 if (initializeGanttChartTemplates)
     initializeGanttChartTemplates(settings, theme);
 // Ensure timelineStart and timelineFinish are set to Sundays, as the timline needs to present entire weeks.
-settings.timelineStart = new Date(year, month - 1, 27); // Sunday, January 27, 2013
-settings.timelineFinish = new Date(year, month + 2, 7); // Sunday, April 7, 2013
+settings.timelineStart = new Date(year, month - 1, 29); // Sunday, January 29, 2017
+settings.timelineFinish = new Date(year, month + 2, 2); // Sunday, April 2, 2017
 // Prepare time intervals for the custom scale.
 var customIntervals = function () {
     var intervals = [];

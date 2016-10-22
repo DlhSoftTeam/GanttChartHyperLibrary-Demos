@@ -1,0 +1,42 @@
+.engineer.morning {
+    fill: #68a860;
+}
+.engineer.afternoon {
+    fill: #ef9c50;
+}
+.engineer.night {
+    fill: #506ca4;
+}
+.manager {
+    fill: gray;    
+}
+.morning {
+    opacity: 0.3;
+}
+.afternoon {
+    opacity: 0.5;
+}
+.night {
+    opacity: 0.9;
+}
+
+/* Overrides */
+body {
+    margin: 0;
+}
+input {
+    font-size: 12px;
+}
+
+/* Dark theme */
+.dark input {
+    color: white;
+    background-color: black;
+}
+.dark input:disabled {
+    color: gray;
+}
+.dark input:focus {
+    color: black;
+    background-color: white;
+}

@@ -5,7 +5,7 @@ var theme = queryString ? queryString.substr(1) : null;
 
 var ganttChartView = document.querySelector('#ganttChartView');
 
-var year = 2013, month = 1;
+var year = 2017, month = 1;
 var items = [{ content: 'Task 1', isExpanded: false },
              { content: 'Task 1.1', indentation: 1, start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 4, 16, 0, 0) },
              { content: 'Task 1.2', indentation: 1, start: new Date(year, month, 3, 8, 0, 0), finish: new Date(year, month, 5, 12, 0, 0) },
@@ -30,8 +30,8 @@ if (initializeGanttChartTemplates)
     initializeGanttChartTemplates(settings, theme);
 
 // Ensure timelineStart and timelineFinish are set to Sundays, as the timline needs to present entire weeks.
-settings.timelineStart = new Date(year, month - 1, 27); // Sunday, January 27, 2013
-settings.timelineFinish = new Date(year, month + 2, 7); // Sunday, April 7, 2013
+settings.timelineStart = new Date(year, month - 1, 29); // Sunday, January 29, 2017
+settings.timelineFinish = new Date(year, month + 2, 2); // Sunday, April 2, 2017
 // Define scales.
 settings.scales = [{ scaleType: 'NonworkingTime', isHeaderVisible: false, isHighlightingVisible: true, highlightingStyle: 'stroke-width: 0; fill: ' + (theme == 'Dark-black' ? '#333333' : (theme == 'Steel-blue' ? '#95a5b2' : '#f8f8f8')) },
                    { scaleType: 'Months', headerTextFormat: 'MonthAbbreviation', headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White; color: gray', isSeparatorVisible: true, separatorStyle: 'stroke: #c8bfe7; stroke-width: 1px' },

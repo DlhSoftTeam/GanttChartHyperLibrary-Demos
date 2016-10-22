@@ -347,6 +347,20 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'ScheduleChartView', feature: 'AssigningTasks', title: 'Assigning tasks (drag unassigned items)', description: 'Shows how you can define a Gantt Chart displaying unassigned items and allowing the end user to drag items from that area to a Schedule Chart and assign tasks to specific resources',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'Styling', title: 'Styling (with CSS classes)', description: 'Shows how to style up elements defined by the component using CSS classes',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
             component: 'ScheduleChartView', feature: 'ResourceStatus', title: 'Status displaying (resource timeline)', description: 'Sample application showing how you can display multiple resources and their status at different times using chart bars of different colors',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
@@ -354,7 +368,7 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'ScheduleChartView', feature: 'Styling', title: 'Styling (with CSS classes)', description: 'Shows how to style up elements defined by the component using CSS classes',
+            component: 'ScheduleChartView', feature: 'ShiftScheduling', title: 'Shift scheduling (assigning employees on time shifts)', description: 'Shows how you can define shifts as resource assignments so that the end user can drag and drop them vertically to change shifts as needed',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
@@ -672,4 +686,3 @@ angular.module('Demos', [])
         templateUrl: 'Templates/SourceCode.html'
     };
 });
-//# sourceMappingURL=app.js.map

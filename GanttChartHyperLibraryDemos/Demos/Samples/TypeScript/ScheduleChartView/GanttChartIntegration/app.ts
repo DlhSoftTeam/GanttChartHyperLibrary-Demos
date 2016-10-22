@@ -36,7 +36,7 @@ if (initializeGanttChartTheme)
 if (initializeGanttChartTemplates)
     initializeGanttChartTemplates(ganttChartSettings, theme);
 
-// Initialize the component.
+// Initialize the Gantt Chart component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, ganttChartItems, ganttChartSettings);
 
 function addNewGanttChartItem() {
@@ -50,17 +50,21 @@ function addNewGanttChartItem() {
 function showScheduleChart() {
     ganttChartViewContainerElement.style.display = 'none';
     scheduleChartViewContainerElement.style.display = null;
+
     // Prepare Schedule Chart data items and settings.
     var items = ganttChartView.getScheduleChartItems();
     var settings = <ScheduleChartView.Settings>{
         currentTime: new Date(year, month, 2) // Display the current time vertical line of the chart at the project start date.
     };
+
     // Optionally, initialize custom theme and templates for Schedule Chart (themes.js, templates.js).
     if (initializeGanttChartTheme)
         initializeGanttChartTheme(settings, theme);
     if (initializeGanttChartTemplates)
         initializeGanttChartTemplates(settings, theme);
-    var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, items, settings);;
+
+    // Initialize the Schedule Chart component.
+    var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, items, settings);
 }
 
 function hideScheduleChart() {

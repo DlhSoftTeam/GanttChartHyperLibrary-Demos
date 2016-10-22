@@ -413,6 +413,11 @@
     <Content Include="Samples\JavaScript\PertChartView\Styling\index.html" />
     <Content Include="Samples\JavaScript\PertChartView\Styling\templates.js" />
     <Content Include="Samples\JavaScript\PertChartView\Styling\themes.js" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\app.css" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\app.js" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\index.html" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\templates.js" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\themes.js" />
     <Content Include="Samples\JavaScript\ScheduleChartView\BuiltinScales\app.css" />
     <Content Include="Samples\JavaScript\ScheduleChartView\BuiltinScales\app.js" />
     <Content Include="Samples\JavaScript\ScheduleChartView\BuiltinScales\index.html" />
@@ -498,6 +503,11 @@
     <Content Include="Samples\JavaScript\ScheduleChartView\ResourceStatus\index.html" />
     <Content Include="Samples\JavaScript\ScheduleChartView\ResourceStatus\templates.js" />
     <Content Include="Samples\JavaScript\ScheduleChartView\ResourceStatus\themes.js" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\ShiftScheduling\app.css" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\ShiftScheduling\app.js" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\ShiftScheduling\index.html" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\ShiftScheduling\templates.js" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\ShiftScheduling\themes.js" />
     <Content Include="Samples\JavaScript\ScheduleChartView\SpecialDays\app.css" />
     <Content Include="Samples\JavaScript\ScheduleChartView\SpecialDays\app.js" />
     <Content Include="Samples\JavaScript\ScheduleChartView\SpecialDays\index.html" />
@@ -738,6 +748,11 @@
     <Content Include="Samples\TypeScript\LoadChartView\BuiltinScales\app.js" />
     <Content Include="Samples\TypeScript\LoadChartView\BuiltinScales\index.html" />
     <Content Include="Samples\TypeScript\LoadChartView\BuiltinScales\themes.js" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\AssigningTasks\app.css" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\AssigningTasks\app.js" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\AssigningTasks\index.html" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\AssigningTasks\templates.js" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\AssigningTasks\themes.js" />
     <Content Include="Samples\TypeScript\ScheduleChartView\ContinuousSchedule\app.css" />
     <Content Include="Samples\TypeScript\ScheduleChartView\ContinuousSchedule\app.js" />
     <Content Include="Samples\TypeScript\ScheduleChartView\ContinuousSchedule\index.html" />
@@ -872,6 +887,11 @@
     <Content Include="Samples\TypeScript\ScheduleChartView\ResourceStatus\index.html" />
     <Content Include="Samples\TypeScript\ScheduleChartView\ResourceStatus\templates.js" />
     <Content Include="Samples\TypeScript\ScheduleChartView\ResourceStatus\themes.js" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\ShiftScheduling\app.css" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\ShiftScheduling\app.js" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\ShiftScheduling\index.html" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\ShiftScheduling\templates.js" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\ShiftScheduling\themes.js" />
     <Content Include="Samples\TypeScript\ScheduleChartView\SpecialDays\app.css" />
     <Content Include="Samples\TypeScript\ScheduleChartView\SpecialDays\app.js" />
     <Content Include="Samples\TypeScript\ScheduleChartView\SpecialDays\index.html" />
@@ -980,6 +1000,8 @@
     <Content Include="Samples\TypeScript\ScheduleChartView\ZoomLevel\app.ts" />
     <Content Include="Samples\TypeScript\ScheduleChartView\ReadOnlySettings\app.ts" />
     <Content Include="Samples\TypeScript\ScheduleChartView\MouseEvents\app.ts" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\ShiftScheduling\app.ts" />
+    <Content Include="Samples\TypeScript\ScheduleChartView\AssigningTasks\app.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.Data.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.HierarchicalData.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts" />
@@ -1055,6 +1077,7 @@
     <Folder Include="Samples\JavaScript\PertChartView\MainFeatures\Scripts\" />
     <Folder Include="Samples\JavaScript\PertChartView\Printing\Scripts\" />
     <Folder Include="Samples\JavaScript\PertChartView\Styling\Scripts\" />
+    <Folder Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\Scripts\" />
     <Folder Include="Samples\JavaScript\ScheduleChartView\BuiltinScales\Scripts\" />
     <Folder Include="Samples\JavaScript\ScheduleChartView\ChangeNotifications\Scripts\" />
     <Folder Include="Samples\JavaScript\ScheduleChartView\Columns\Scripts\" />
@@ -1069,6 +1092,7 @@
     <Folder Include="Samples\JavaScript\ScheduleChartView\Printing\Scripts\" />
     <Folder Include="Samples\JavaScript\ScheduleChartView\ReadOnlySettings\Scripts\" />
     <Folder Include="Samples\JavaScript\ScheduleChartView\ResourceStatus\Scripts\" />
+    <Folder Include="Samples\JavaScript\ScheduleChartView\ShiftScheduling\Scripts\" />
     <Folder Include="Samples\JavaScript\ScheduleChartView\SpecialDays\Scripts\" />
     <Folder Include="Samples\JavaScript\ScheduleChartView\Styling\Scripts\" />
     <Folder Include="Samples\JavaScript\ScheduleChartView\ZoomLevel\Scripts\" />
@@ -1119,6 +1143,7 @@
     <Folder Include="Samples\TypeScript\PertChartView\GanttChartIntegration\Scripts\" />
     <Folder Include="Samples\TypeScript\PertChartView\Printing\Scripts\" />
     <Folder Include="Samples\TypeScript\PertChartView\Styling\Scripts\" />
+    <Folder Include="Samples\TypeScript\ScheduleChartView\AssigningTasks\Scripts\" />
     <Folder Include="Samples\TypeScript\ScheduleChartView\BasicUsage\Scripts\" />
     <Folder Include="Samples\TypeScript\ScheduleChartView\BuiltinScales\Scripts\" />
     <Folder Include="Samples\TypeScript\ScheduleChartView\ChangeNotifications\Scripts\" />
@@ -1133,6 +1158,7 @@
     <Folder Include="Samples\TypeScript\ScheduleChartView\Printing\Scripts\" />
     <Folder Include="Samples\TypeScript\ScheduleChartView\ReadOnlySettings\Scripts\" />
     <Folder Include="Samples\TypeScript\ScheduleChartView\ResourceStatus\Scripts\" />
+    <Folder Include="Samples\TypeScript\ScheduleChartView\ShiftScheduling\Scripts\" />
     <Folder Include="Samples\TypeScript\ScheduleChartView\SpecialDays\Scripts\" />
     <Folder Include="Samples\TypeScript\ScheduleChartView\Styling\Scripts\" />
     <Folder Include="Samples\TypeScript\ScheduleChartView\ZoomLevel\Scripts\" />
@@ -1154,12 +1180,12 @@
       <HintPath>..\packages\DlhSoft.ProjectManagementFramework.5.0.5.9\lib\net40-client\DlhSoft.ProjectData.Core.Imaging.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DlhSoft.ProjectData.GanttChart.LightWPF.Controls, Version=4.3.36.0, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.36\lib\net45\DlhSoft.ProjectData.GanttChart.LightWPF.Controls.dll</HintPath>
+    <Reference Include="DlhSoft.ProjectData.GanttChart.LightWPF.Controls, Version=4.3.36.2, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.36.2\lib\net45\DlhSoft.ProjectData.GanttChart.LightWPF.Controls.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="DlhSoft.ProjectData.PertChart.LightWPF.Controls, Version=4.3.36.0, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.36\lib\net45\DlhSoft.ProjectData.PertChart.LightWPF.Controls.dll</HintPath>
+      <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.36.2\lib\net45\DlhSoft.ProjectData.PertChart.LightWPF.Controls.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PresentationCore" />
