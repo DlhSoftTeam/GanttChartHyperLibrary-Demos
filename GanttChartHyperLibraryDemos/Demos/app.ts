@@ -601,11 +601,11 @@ angular.module('Demos', [])
             for (var i = 0; i < samples.length; i++) {
                 var sample = samples[i];
                 if (sample.component == component) {
-                    if (sample.feature == $scope.selectedSample.feature) {
+                    if (sample.feature == $scope.selectedSample.feature && sample.sourceCodeFiles[$scope.selectedTechnology.name]) {
                         selectSample(sample);
                         return;
                     }
-                    if (!firstComponentSample)
+                    if (!firstComponentSample && sample.sourceCodeFiles[$scope.selectedTechnology.name])
                         firstComponentSample = sample;
                 }
             }
