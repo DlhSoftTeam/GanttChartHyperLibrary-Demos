@@ -173,7 +173,7 @@ function initializeGanttChartTemplates(settings, theme) {
             completedFinishThumb.setAttribute('width', 6);
             completedFinishThumb.setAttribute('height', barHeight);
             completedFinishThumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: e-resize');
-            if (!settings.isTaskCompletionReadOnly && settings.interaction != 'TouchEnabled') {
+            if (!settings.isTaskCompletionReadOnly && settings.isTaskCompletedEffortVisible && settings.interaction != 'TouchEnabled') {
                 group.appendChild(completedFinishThumb);
                 var completedFinishToolTip = document.createElementNS(svgns, 'title');
                 var completion = typeof settings.areToolTipsSimplified === undefinedType || !settings.areToolTipsSimplified ? ganttChartView.getItemCompletion(item) : NaN;

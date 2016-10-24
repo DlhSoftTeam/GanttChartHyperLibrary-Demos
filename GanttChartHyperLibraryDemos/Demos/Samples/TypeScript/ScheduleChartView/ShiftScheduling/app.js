@@ -21,7 +21,7 @@ for (var i = 1; i <= managerCount; i++) {
 }
 var settings = {
     currentTime: new Date(year, month, 2, 12, 0, 0),
-    isTaskStartReadOnly: true, isTaskCompletedEffortVisible: false
+    isTaskStartReadOnly: true, isTaskEffortReadOnly: true, isTaskCompletedEffortVisible: false, isTaskCompletionReadOnly: true
 };
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
 if (initializeGanttChartTheme)
