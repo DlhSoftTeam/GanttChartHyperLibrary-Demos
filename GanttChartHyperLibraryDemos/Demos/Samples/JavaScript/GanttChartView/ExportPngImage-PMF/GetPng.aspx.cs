@@ -17,7 +17,7 @@ namespace Demos.Samples.JavaScript.GanttChartView.ExportPngImage_PMF
             var projectXml = Request.Params["ProjectXml"];
             projectXml = HttpUtility.UrlDecode(projectXml);
             // Use TaskManager to load Project XML content.
-            TaskManager taskManager = new TaskManager();
+            var taskManager = new TaskManager();
             taskManager.LoadProjectXml(projectXml);
             // Initialize GanttChartExporter based on TaskManager component.
             using (var ganttChartExporter = new GanttChartExporter(taskManager, (GanttChartDataGrid control) =>
