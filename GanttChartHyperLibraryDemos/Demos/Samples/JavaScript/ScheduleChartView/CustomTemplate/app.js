@@ -65,6 +65,7 @@ settings.standardTaskTemplate = function (item) {
     var group = item.numberOfLinesToDisplayInsteadOfRectangle ? linesTemplate(item) : originalStandardTaskTemplate(item);
     if (item.hasMilestoneAtFinish) {
         var finishDiamond = getFinishDiamond(item);
+
         var lastChildIndex = group.childNodes.length - 1; // Dependency creation thumb.
         group.insertBefore(finishDiamond, group.childNodes[lastChildIndex]);
     }
@@ -196,7 +197,7 @@ function getFinishDiamond(item) {
     var group = document.createElementNS(svgns, 'g');
     var itemLeft = ganttChartView.getChartPosition(item.finish);
     var startDiamond = document.createElementNS(svgns, 'polygon');
-    var x = itemLeft - 8, y = settings.barMargin, h = settings.barHeight + 1;
+    var x = itemLeft - 8, y = settings.barMargin - 1, h = settings.barHeight + 1;
     startDiamond.setAttribute('points', x + ',' + y + ' ' + (x - h / 2) + ',' + (y + h / 2) + ' ' + x + ',' + (y + h) + ' ' + (x + h / 2) + ',' + (y + h / 2));
     var barClass = settings.milestoneBarClass;
     if (typeof item.milestoneBarClass !== undefinedType)

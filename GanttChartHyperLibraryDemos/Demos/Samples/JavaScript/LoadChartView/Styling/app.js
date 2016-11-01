@@ -27,7 +27,7 @@ var settings = {
     itemHeight: 48, barHeight: 32,
     containerClass: 'container', selectedItemClass: 'selectedItem', cellClass: 'cell',
     normalAllocationBarClass: 'normalAllocationBar', underAllocationBarClass: 'underAllocationBar', overAllocationBarClass: 'overAllocationBar',
-    alternativeItemClass: (theme == 'Dark-black' ? 'alternativeGridItem-dark' : (theme == 'Steel-blue' ? 'alternativeGridItem-steel' : 'alternativeGridItem')),
+    alternativeItemClass: theme == 'Dark-black' ? 'alternativeGridItem-dark' : (theme == 'Steel-blue' ? 'alternativeGridItem-steel' : 'alternativeGridItem'),
     alternativeChartItemClass: theme == 'Dark-black' ? 'alternativeChartItem-dark' : 'alternativeChartItem'
 };
 // Optionally, initialize custom theme (themes.js).
