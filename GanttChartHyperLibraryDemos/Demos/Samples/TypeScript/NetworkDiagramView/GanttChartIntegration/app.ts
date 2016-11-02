@@ -58,7 +58,7 @@ function showNetworkDiagram() {
     // Optionally, initialize custom theme and templates for Network Diagram (themes.js, templates.js).
     initializePertChartTheme(settings, theme);
     initializePertChartTemplates(settings, theme);
-    var networkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramViewElement, items, settings);;
+    var networkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramViewElement, items, settings);
 }
 
 function hideNetworkDiagram() {

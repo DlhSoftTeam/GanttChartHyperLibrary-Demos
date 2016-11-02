@@ -48,7 +48,7 @@ initializeGanttChartTheme(scheduleChartSettings, theme);
 initializeGanttChartTemplates(scheduleChartSettings, theme);
 
 // Initialize the Schedule Chart component.
-var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, items, scheduleChartSettings);;
+var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, items, scheduleChartSettings);
 
 // Synchronize displayed time (horizontal scrolling) between Gantt Chart and Schedule Chart components.
 ganttChartSettings.displayedTimeChangeHandler = scheduleChartSettings.displayedTimeChangeHandler = (displayedTime) => {
