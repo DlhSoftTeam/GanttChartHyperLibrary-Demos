@@ -237,8 +237,8 @@ angular.module('Demos', [])
             {
                 component: 'GanttChartView', feature: 'ExportPngImage-PMF', title: 'Export image (using Project Management Framework)', description: 'Shows how to generate PNG images for the current Gantt Chart – using TaskManager component from DlhSoft Project Management Framework, available separately for free to Gantt Chart Hyper Library licensees',
                 sourceCodeFiles: {
-                    'JavaScript': ['index.html', 'app.css', 'app.js', 'GetPng.aspx', 'GetPng.aspx.cs'],
-                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'GetPng.aspx', 'GetPng.aspx.cs']
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'GetPng.aspx.cs'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'GetPng.aspx.cs']
                 }
             },
             {
@@ -453,14 +453,14 @@ angular.module('Demos', [])
             {
                 component: 'PertChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
-                    'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
                 }
             },
             {
                 component: 'PertChartView', feature: 'BasicUsage', title: 'Basic usage', description: 'Sample application showing how to use the component',
                 sourceCodeFiles: {
-                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.js'],
-                    'AngularJS': ['index.html', 'app.css', 'app.ts', 'themes.js']
+                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js',  'themes.js'],
+                    'AngularJS': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js']
                 }
             },
             {
@@ -488,14 +488,14 @@ angular.module('Demos', [])
             {
                 component: 'NetworkDiagramView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
-                    'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
                 }
             },
             {
                 component: 'NetworkDiagramView', feature: 'BasicUsage', title: 'Basic usage', description: 'Sample application showing how to use the component',
                 sourceCodeFiles: {
-                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.js'],
-                    'AngularJS': ['index.html', 'app.css', 'app.ts', 'themes.js']
+                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                    'AngularJS': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js']
                 }
             },
             {
