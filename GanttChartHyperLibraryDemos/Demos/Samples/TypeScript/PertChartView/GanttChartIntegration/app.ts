@@ -58,7 +58,7 @@ function showPertChart() {
     // Optionally, initialize custom theme and templates for PERT Chart (themes.js, templates.js).
     initializePertChartTheme(settings, theme);
     initializePertChartTemplates(settings, theme);
-    var pertChartView = DlhSoft.Controls.Pert.PertChartView.initialize(pertChartViewElement, items, settings);;
+    var pertChartView = DlhSoft.Controls.Pert.PertChartView.initialize(pertChartViewElement, items, settings);
 }
 
 function hidePertChart() {

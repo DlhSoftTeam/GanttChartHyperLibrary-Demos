@@ -45,7 +45,6 @@ function showNetworkDiagram() {
     initializePertChartTheme(settings, theme);
     initializePertChartTemplates(settings, theme);
     var networkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramViewElement, items, settings);
-    ;
 }
 function hideNetworkDiagram() {
     networkDiagramViewContainerElement.style.display = 'none';

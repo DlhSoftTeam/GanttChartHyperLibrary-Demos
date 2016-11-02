@@ -56,7 +56,7 @@ function showLoadChart() {
     };
     // Optionally, initialize custom theme for Load Chart (themes.js).
     initializeLoadChartTheme(settings, theme);
-    var loadChartView = DlhSoft.Controls.LoadChartView.initialize(loadChartViewElement, items, settings);;
+    var loadChartView = DlhSoft.Controls.LoadChartView.initialize(loadChartViewElement, items, settings);
 }
 
 function hideLoadChart() {

@@ -45,7 +45,6 @@ function showPertChart() {
     initializePertChartTheme(settings, theme);
     initializePertChartTemplates(settings, theme);
     var pertChartView = DlhSoft.Controls.Pert.PertChartView.initialize(pertChartViewElement, items, settings);
-    ;
 }
 function hidePertChart() {
     pertChartViewContainerElement.style.display = 'none';
