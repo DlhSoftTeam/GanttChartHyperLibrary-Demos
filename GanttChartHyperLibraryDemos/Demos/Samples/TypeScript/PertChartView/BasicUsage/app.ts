@@ -33,10 +33,8 @@ items[4].predecessors = [
 var settings = <PertChartView.Settings>{ };
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-if (initializePertChartTheme)
-    initializePertChartTheme(settings, theme);
-if (initializePertChartTemplates)
-    initializePertChartTemplates(settings, theme);
+initializePertChartTheme(settings, theme);
+initializePertChartTemplates(settings, theme);
 
 // Initialize the component.
 var pertChartView = DlhSoft.Controls.Pert.PertChartView.initialize(pertChartViewElement, items, settings);

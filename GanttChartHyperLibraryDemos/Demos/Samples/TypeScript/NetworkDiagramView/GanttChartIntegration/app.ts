@@ -35,10 +35,8 @@ var ganttChartSettings = <GanttChartView.Settings>{
 };
 
 // Optionally, initialize custom theme and templates for Gantt Chart (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(ganttChartSettings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(ganttChartSettings, theme);
+initializeGanttChartTheme(ganttChartSettings, theme);
+initializeGanttChartTemplates(ganttChartSettings, theme);
 
 // Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, ganttChartItems, ganttChartSettings);
@@ -58,10 +56,8 @@ function showNetworkDiagram() {
     var items = ganttChartView.getNetworkDiagramItems();
     var settings = <NetworkDiagramView.Settings>{ };
     // Optionally, initialize custom theme and templates for Network Diagram (themes.js, templates.js).
-    if (initializePertChartTheme)
-        initializePertChartTheme(settings, theme);
-    if (initializePertChartTemplates)
-        initializePertChartTemplates(settings, theme);
+    initializePertChartTheme(settings, theme);
+    initializePertChartTemplates(settings, theme);
     var networkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramViewElement, items, settings);;
 }
 

@@ -23,10 +23,8 @@ items[7].predecessors = [{ item: items[6], lag: 2 * 60 * 60 * 1000 }];
 items[8].predecessors = [{ item: items[4] }, { item: items[5] }];
 var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
 // Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, items, settings);
 // Prepare elements to output information about mouse events when they occur.

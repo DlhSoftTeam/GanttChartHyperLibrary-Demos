@@ -1,7 +1,11 @@
+/// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts'/>
 var GanttChartView = DlhSoft.Controls.GanttChartView;
 var ScheduleChartView = DlhSoft.Controls.ScheduleChartView;
+// Query string syntax: ?theme
+// Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
+// Retrieve and store the control element for reference purposes.
 var scheduleChartViewElement = document.querySelector('#scheduleChartView');
 var date = new Date(), year = date.getFullYear(), month = date.getMonth();
 var scheduleChartItems = [
@@ -22,10 +26,10 @@ for (var i = 4; i <= 16; i++)
 var settings = {
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+// Optionally, initialize custom theme and templates (themes.js, templates.js).
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
+// Prepare command element references.
 var majorScaleTypeSelect = document.querySelector('#majorScaleTypeSelect');
 var majorScaleHeaderFormatSelect = document.querySelector('#majorScaleHeaderFormatSelect');
 var majorScaleSeparatorCheckBox = document.querySelector('#majorScaleSeparatorCheckBox');
@@ -37,9 +41,11 @@ var nonworkingDaysCheckBox = document.querySelector('#nonworkingDaysCheckBox');
 var currentTimeCheckBox = document.querySelector('#currentTimeCheckBox');
 var zoomLevelTextBox = document.querySelector('#zoomLevelTextBox');
 var updateScaleSelect = document.querySelector('#updateScaleSelect');
+// Prepare supported scale types and header formats, and a few available udpate scale options.
 var availableScaleTypes = ['Years', 'Months', 'Weeks', 'Days', 'Hours'];
 var availableHeaderFormats = ['DateTime', 'Date', 'Hour', 'DayOfWeek', 'DayOfWeekAbbreviation', 'Day', 'Month', 'MonthAbbreviation', 'Year', 'MonthYear', 'Localized'];
 var availableUpdateScaleItems = { 'Free': 1, '15 min': 15 * 60 * 1000, 'Hour': 60 * 60 * 1000, 'Day': 24 * 60 * 60 * 1000 };
+// Initialize available and selected options for scale type and header format select elements, and values for other input and select elements.
 for (var i = 0; i < availableScaleTypes.length; i++) {
     var scaleType = availableScaleTypes[i];
     var option = document.createElement('option');
@@ -83,6 +89,7 @@ for (var key in availableUpdateScaleItems) {
     option.selected = key == '15 min';
     updateScaleSelect.appendChild(option);
 }
+// Handle change chains.
 function updateFromSelectedMajorScaleType() {
     switch (majorScaleTypeSelect.value) {
         case 'Years':
@@ -134,6 +141,7 @@ function updateFromSelectedMinorScaleType() {
     }
 }
 minorScaleTypeSelect.addEventListener('change', updateFromSelectedMinorScaleType);
+// Set scales collection and related settings based on user selections.
 function initializeScales() {
     var scales = [];
     if (nonworkingDaysCheckBox.checked)
@@ -154,7 +162,9 @@ function initializeScales() {
         scheduleChartView.refresh();
 }
 initializeScales();
+// Initialize the component.
 var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, scheduleChartItems, settings);
+// Update scales collection upon user commands.
 majorScaleTypeSelect.addEventListener('change', initializeScales);
 majorScaleHeaderFormatSelect.addEventListener('change', initializeScales);
 majorScaleSeparatorCheckBox.addEventListener('change', initializeScales);

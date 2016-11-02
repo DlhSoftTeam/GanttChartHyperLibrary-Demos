@@ -32,10 +32,8 @@ var ganttChartSettings = <GanttChartView.Settings>{
 };
 
 // Optionally, initialize custom theme and templates for Gantt Chart (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(ganttChartSettings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(ganttChartSettings, theme);
+initializeGanttChartTheme(ganttChartSettings, theme);
+initializeGanttChartTemplates(ganttChartSettings, theme);
 
 // Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, ganttChartItems, ganttChartSettings);
@@ -57,8 +55,7 @@ function showLoadChart() {
         currentTime: new Date(year, month, 2) // Display the current time vertical line of the chart at the project start date.
     };
     // Optionally, initialize custom theme for Load Chart (themes.js).
-    if (initializeLoadChartTheme)
-        initializeLoadChartTheme(settings, theme);
+    initializeLoadChartTheme(settings, theme);
     var loadChartView = DlhSoft.Controls.LoadChartView.initialize(loadChartViewElement, items, settings);;
 }
 

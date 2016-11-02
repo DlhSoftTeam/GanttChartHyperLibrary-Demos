@@ -31,10 +31,8 @@ var ganttChartSettings = <GanttChartView.Settings>{
 };
 
 // Optionally, initialize custom theme and templates for Gantt Chart (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(ganttChartSettings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(ganttChartSettings, theme);
+initializeGanttChartTheme(ganttChartSettings, theme);
+initializeGanttChartTemplates(ganttChartSettings, theme);
 
 // Initialize the Gantt Chart component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, ganttChartItems, ganttChartSettings);
@@ -58,10 +56,8 @@ function showScheduleChart() {
     };
 
     // Optionally, initialize custom theme and templates for Schedule Chart (themes.js, templates.js).
-    if (initializeGanttChartTheme)
-        initializeGanttChartTheme(settings, theme);
-    if (initializeGanttChartTemplates)
-        initializeGanttChartTemplates(settings, theme);
+    initializeGanttChartTheme(settings, theme);
+    initializeGanttChartTemplates(settings, theme);
 
     // Initialize the Schedule Chart component.
     var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, items, settings);

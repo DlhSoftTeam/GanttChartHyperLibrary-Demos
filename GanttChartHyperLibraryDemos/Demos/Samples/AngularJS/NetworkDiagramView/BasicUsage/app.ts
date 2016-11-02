@@ -36,10 +36,8 @@ angular.module('NetworkDiagramViewSample', ['DlhSoft.ProjectData.PertChart.Direc
         $scope.items = items;
         var settings = <NetworkDiagramView.Settings>{ };
         // Optionally, initialize custom theme and templates (themes.js, templates.js).
-        if (initializePertChartTheme)
-            initializePertChartTheme(settings, theme);
-        if (initializePertChartTemplates)
-            initializePertChartTemplates(settings, theme);
+        initializePertChartTheme(settings, theme);
+        initializePertChartTemplates(settings, theme);
         $scope.settings = settings;
         // Underlying NetworkDiagramView component reference.
         var networkDiagramView = <NetworkDiagramView.Element>document.getElementById('networkDiagramView');

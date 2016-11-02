@@ -20,10 +20,8 @@ angular.module('NetworkDiagramViewSample', ['DlhSoft.ProjectData.GanttChart.Dire
         currentTime: new Date(2016, 2 - 1, 2) // Display the current time vertical line of the chart at the project start date.
     };
     // Optionally, initialize custom theme and templates for Gantt Chart (themes.js, templates.js).
-    if (initializeGanttChartTheme)
-        initializeGanttChartTheme(ganttChartSettings, theme);
-    if (initializeGanttChartTemplates)
-        initializeGanttChartTemplates(ganttChartSettings, theme);
+    initializeGanttChartTheme(ganttChartSettings, theme);
+    initializeGanttChartTemplates(ganttChartSettings, theme);
     $scope.ganttChartSettings = ganttChartSettings;
     // Underlying GanttChartView component reference.
     var ganttChartView = document.getElementById('ganttChartView');
@@ -38,10 +36,8 @@ angular.module('NetworkDiagramViewSample', ['DlhSoft.ProjectData.GanttChart.Dire
         $scope.items = networkDiagramItems;
         var settings = {};
         // Optionally, initialize custom theme and templates for Network Diagram (themes.js, templates.js).
-        if (initializePertChartTheme)
-            initializePertChartTheme(settings, theme);
-        if (initializePertChartTemplates)
-            initializePertChartTemplates(settings, theme);
+        initializePertChartTheme(settings, theme);
+        initializePertChartTemplates(settings, theme);
         $scope.settings = settings;
         var networkDiagramView = document.getElementById('networkDiagramView');
         $scope.isNetworkDiagramVisible = true;

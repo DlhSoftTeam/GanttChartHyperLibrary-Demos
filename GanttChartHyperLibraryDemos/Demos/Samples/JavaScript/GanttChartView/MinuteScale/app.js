@@ -31,10 +31,8 @@ var settings = {
     displayedTime: new Date(year, month, day, 7, 58, 0)
 };
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
 // Prepare time intervals for minute scale.
 var getIntervals = function (intervalDuration, intervalHeaderFormatter) {
     var intervals = [];

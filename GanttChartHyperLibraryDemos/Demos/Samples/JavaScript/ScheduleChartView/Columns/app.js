@@ -31,10 +31,8 @@ scheduleChartItems[3].myValue2 = 'B2';
 columns.push({ header: 'My value 1', width: 80, cellTemplate: function (item) { return DlhSoft.Controls.ScheduleChartView.textInputColumnTemplateBase(document, 64, function () { return item.myValue1; }, function (value) { item.myValue1 = value; }); } });
 columns.push({ header: 'My value 2', width: 80, cellTemplate: function (item) { return DlhSoft.Controls.ScheduleChartView.textInputColumnTemplateBase(document, 64, function () { return item.myValue2; }, function (value) { item.myValue2 = value; }); } });
 settings.columns = columns;
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
 var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, scheduleChartItems, settings);
 function addNewItem() {
     var item = { content: 'New resource', start: new Date(), ganttChartItems: [] };

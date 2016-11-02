@@ -218,10 +218,8 @@ settings.areTaskDependencyConstraintsEnabled = true;
 // settings.areDependencyConstraintsAppliedOnMilestones = false;
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
 
 // Initialize the component.
 DlhSoft.Controls.GanttChartView.initialize(ganttChartView, items, settings);
@@ -389,10 +387,8 @@ function scheduleChart() {
     var scheduleChartSettings = { isReadOnly: true, selectionMode: 'None', isMouseWheelZoomEnabled: false };
     ganttChartView.copyCommonSettings(scheduleChartSettings);
     var scheduleChartView = document.querySelector('#scheduleChartView');
-    if (initializeGanttChartTheme)
-        initializeGanttChartTheme(scheduleChartSettings, theme);
-    if (initializeGanttChartTemplates)
-        initializeGanttChartTemplates(scheduleChartSettings, theme);
+    initializeGanttChartTheme(scheduleChartSettings, theme);
+    initializeGanttChartTemplates(scheduleChartSettings, theme);
     DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartView, scheduleChartItems, scheduleChartSettings);
     scheduleChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('ScheduleChart', displayedTime); }
     scheduleChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('ScheduleChart', gridWidth, chartWidth); }
@@ -408,8 +404,7 @@ function loadChart() {
     var loadChartSettings = { selectionMode: 'None', isMouseWheelZoomEnabled: false };
     ganttChartView.copyCommonSettings(loadChartSettings);
     var loadChartView = document.querySelector('#loadChartView');
-    if (initializeLoadChartTheme)
-        initializeLoadChartTheme(loadChartSettings, theme);
+    initializeLoadChartTheme(loadChartSettings, theme);
     DlhSoft.Controls.LoadChartView.initialize(loadChartView, loadChartItems, loadChartSettings);
     loadChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('LoadChart', displayedTime); }
     loadChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('LoadChart', gridWidth, chartWidth); }
@@ -426,10 +421,8 @@ function pertChart() {
     var pertChartItems = ganttChartView.getPertChartItems();
     var pertChartSettings = { chartMargin: 2, snapRearrangedItemsToGuidelines: false };
     var pertChartView = document.querySelector('#pertChartView');
-    if (initializePertChartTheme)
-        initializePertChartTheme(pertChartSettings, theme);
-    if (initializePertChartTemplates)
-        initializePertChartTemplates(pertChartSettings, theme);
+    initializePertChartTheme(pertChartSettings, theme);
+    initializePertChartTemplates(pertChartSettings, theme);
     DlhSoft.Controls.Pert.PertChartView.initialize(pertChartView, pertChartItems, pertChartSettings);
     var criticalItems = pertChartView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {
@@ -451,10 +444,8 @@ function networkDiagram() {
     var networkDiagramItems = ganttChartView.getNetworkDiagramItems();
     var networkDiagramSettings = { diagramMargin: 2, snapRearrangedItemsToGuidelines: false };
     var networkDiagramView = document.querySelector('#networkDiagramView');
-    if (initializePertChartTheme)
-        initializePertChartTheme(networkDiagramSettings, theme);
-    if (initializePertChartTemplates)
-        initializePertChartTemplates(networkDiagramSettings, theme);
+    initializePertChartTheme(networkDiagramSettings, theme);
+    initializePertChartTemplates(networkDiagramSettings, theme);
     DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramView, networkDiagramItems, networkDiagramSettings);
     var criticalItems = networkDiagramView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {

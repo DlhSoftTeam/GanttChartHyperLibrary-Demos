@@ -52,8 +52,7 @@ var settings = {
 // }
 
 // Optionally, initialize custom theme (themes.js).
-if (initializeLoadChartTheme)
-    initializeLoadChartTheme(settings, theme);
+initializeLoadChartTheme(settings, theme);
 
 // settings.isGridVisible = false;
 settings.itemHeight = 312;

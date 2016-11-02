@@ -236,10 +236,8 @@ settings.areTaskDependencyConstraintsEnabled = true;
 // settings.areDependencyConstraintsAppliedOnMilestones = false;
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
 
 // Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, items, settings);
@@ -415,10 +413,8 @@ function scheduleChart() {
     var scheduleChartSettings = <ScheduleChartView.Settings>{ isReadOnly: true, selectionMode: 'None', isMouseWheelZoomEnabled: false };
     ganttChartView.copyCommonSettings(scheduleChartSettings);
     var scheduleChartViewElement = <HTMLElement>document.querySelector('#scheduleChartView');
-    if (initializeGanttChartTheme)
-        initializeGanttChartTheme(scheduleChartSettings, theme);
-    if (initializeGanttChartTemplates)
-        initializeGanttChartTemplates(scheduleChartSettings, theme);
+    initializeGanttChartTheme(scheduleChartSettings, theme);
+    initializeGanttChartTemplates(scheduleChartSettings, theme);
     scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, scheduleChartItems, scheduleChartSettings);
     scheduleChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('ScheduleChart', displayedTime); }
     scheduleChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('ScheduleChart', gridWidth, chartWidth); }
@@ -434,8 +430,7 @@ function loadChart() {
     var loadChartSettings = <LoadChartView.Settings>{ selectionMode: 'None', isMouseWheelZoomEnabled: false };
     ganttChartView.copyCommonSettings(loadChartSettings);
     var loadChartViewElement = <HTMLElement>document.querySelector('#loadChartView');
-    if (initializeLoadChartTheme)
-        initializeLoadChartTheme(loadChartSettings, theme);
+    initializeLoadChartTheme(loadChartSettings, theme);
     loadChartView = DlhSoft.Controls.LoadChartView.initialize(loadChartViewElement, loadChartItems, loadChartSettings);
     loadChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('LoadChart', displayedTime); }
     loadChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('LoadChart', gridWidth, chartWidth); }
@@ -452,10 +447,8 @@ function pertChart() {
     var pertChartItems = ganttChartView.getPertChartItems();
     var pertChartSettings = <PertChartView.Settings>{ chartMargin: 2, snapRearrangedItemsToGuidelines: false };
     var pertChartViewElement = <HTMLElement>document.querySelector('#pertChartView');
-    if (initializePertChartTheme)
-        initializePertChartTheme(pertChartSettings, theme);
-    if (initializePertChartTemplates)
-        initializePertChartTemplates(pertChartSettings, theme);
+    initializePertChartTheme(pertChartSettings, theme);
+    initializePertChartTemplates(pertChartSettings, theme);
     pertChartView = DlhSoft.Controls.Pert.PertChartView.initialize(pertChartViewElement, pertChartItems, pertChartSettings);
     var criticalItems = pertChartView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {
@@ -477,10 +470,8 @@ function networkDiagram() {
     var networkDiagramItems = ganttChartView.getNetworkDiagramItems();
     var networkDiagramSettings = <NetworkDiagramView.Settings>{ diagramMargin: 2, snapRearrangedItemsToGuidelines: false };
     var networkDiagramViewElement = <HTMLElement>document.querySelector('#networkDiagramView');
-    if (initializePertChartTheme)
-        initializePertChartTheme(networkDiagramSettings, theme);
-    if (initializePertChartTemplates)
-        initializePertChartTemplates(networkDiagramSettings, theme);
+    initializePertChartTheme(networkDiagramSettings, theme);
+    initializePertChartTemplates(networkDiagramSettings, theme);
     networkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramViewElement, networkDiagramItems, networkDiagramSettings);
     var criticalItems = networkDiagramView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {

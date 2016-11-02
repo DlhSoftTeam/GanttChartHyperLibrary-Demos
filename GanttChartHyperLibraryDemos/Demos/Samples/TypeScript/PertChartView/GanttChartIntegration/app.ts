@@ -35,10 +35,8 @@ var ganttChartSettings = <GanttChartView.Settings>{
 };
 
 // Optionally, initialize custom theme and templates for Gantt Chart (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(ganttChartSettings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(ganttChartSettings, theme);
+initializeGanttChartTheme(ganttChartSettings, theme);
+initializeGanttChartTemplates(ganttChartSettings, theme);
 
 // Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, ganttChartItems, ganttChartSettings);
@@ -58,10 +56,8 @@ function showPertChart() {
     var items = ganttChartView.getPertChartItems();
     var settings = <PertChartView.Settings>{ };
     // Optionally, initialize custom theme and templates for PERT Chart (themes.js, templates.js).
-    if (initializePertChartTheme)
-        initializePertChartTheme(settings, theme);
-    if (initializePertChartTemplates)
-        initializePertChartTemplates(settings, theme);
+    initializePertChartTheme(settings, theme);
+    initializePertChartTemplates(settings, theme);
     var pertChartView = DlhSoft.Controls.Pert.PertChartView.initialize(pertChartViewElement, items, settings);;
 }
 

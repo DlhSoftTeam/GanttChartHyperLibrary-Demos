@@ -25,8 +25,7 @@ var settings = {
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
 // Optionally, initialize custom theme (themes.js).
-if (initializeLoadChartTheme)
-    initializeLoadChartTheme(settings, theme);
+initializeLoadChartTheme(settings, theme);
 // Initialize the component.
 var loadChartView = DlhSoft.Controls.LoadChartView.initialize(loadChartViewElement, loadChartItems, settings);
 function print() {
