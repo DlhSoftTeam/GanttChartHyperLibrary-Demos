@@ -1,8 +1,13 @@
+/// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts'/>
 var GanttChartView = DlhSoft.Controls.GanttChartView;
 var ScheduleChartView = DlhSoft.Controls.ScheduleChartView;
+// Query string syntax: ?theme
+// Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
+// Retrieve and store the control element for reference purposes.
 var scheduleChartViewElement = document.querySelector('#scheduleChartView');
+// Prepare data items with barClass values set to indicate different CSS classes as needed, and content set to display tool tips accordingly.
 var date = new Date(), year = date.getFullYear(), month = date.getMonth();
 var scheduleChartItems = [
     {
@@ -35,13 +40,14 @@ for (var i = 4; i <= 16; i++)
             { content: 'Resource ' + i + ': issues', start: new Date(year, month, 16, 8, 0, 0), finish: new Date(year, month, 16, 16, 0, 0), barClass: 'issuesStatusBar' },
             { content: 'Resource ' + i + ': started', start: new Date(year, month, 17, 8, 0, 0), finish: new Date(year, month, 22, 16, 0, 0), barClass: 'startedStatusBar' }]
     });
+// Prepare control settings.
 var settings = {
     isReadOnly: true, isTaskCompletedEffortVisible: false,
     workingWeekStart: 0, workingWeekFinish: 6,
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+// Optionally, initialize custom theme and templates (themes.js, templates.js).
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
+// Initialize the component.
 var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, scheduleChartItems, settings);

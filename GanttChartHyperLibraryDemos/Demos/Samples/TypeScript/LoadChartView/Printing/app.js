@@ -25,8 +25,7 @@ var settings = {
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
 // Optionally, initialize custom theme (themes.js).
-if (initializeLoadChartTheme)
-    initializeLoadChartTheme(settings, theme);
+initializeLoadChartTheme(settings, theme);
 // Initialize the component.
 var loadChartView = DlhSoft.Controls.LoadChartView.initialize(loadChartViewElement, loadChartItems, settings);
 function print() {
@@ -34,4 +33,3 @@ function print() {
     // Optionally, to rotate the print output and simulate Landscape printing mode (when the end user keeps Portrait selection in the Print dialog), append the rotate parameter set to true to the method call: rotate: true.
     loadChartView.print({ title: 'Load Chart (printable)', isGridVisible: true, columnIndexes: [0], timelineStart: new Date(year, month, 1), timelineFinish: new Date(new Date(year, month, 1).valueOf() + 5 * 7 * 24 * 60 * 60 * 1000), preparingMessage: '...' });
 }
-//# sourceMappingURL=app.js.map

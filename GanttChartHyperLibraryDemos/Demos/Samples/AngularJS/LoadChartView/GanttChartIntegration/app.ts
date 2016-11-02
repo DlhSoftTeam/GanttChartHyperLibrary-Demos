@@ -27,10 +27,8 @@ angular.module('LoadChartViewSample', ['DlhSoft.ProjectData.GanttChart.Directive
             currentTime: new Date(2016, 2 - 1, 2) // Display the current time vertical line of the chart at the project start date.
         };
         // Optionally, initialize custom theme and templates for Gantt Chart (themes.js, templates.js).
-        if (initializeGanttChartTheme)
-            initializeGanttChartTheme(ganttChartSettings, theme);
-        if (initializeGanttChartTemplates)
-            initializeGanttChartTemplates(ganttChartSettings, theme);
+        initializeGanttChartTheme(ganttChartSettings, theme);
+        initializeGanttChartTemplates(ganttChartSettings, theme);
         $scope.ganttChartSettings = ganttChartSettings;
         // Underlying GanttChartView component reference.
         var ganttChartView = <GanttChartView.Element>document.getElementById('ganttChartView');
@@ -48,8 +46,7 @@ angular.module('LoadChartViewSample', ['DlhSoft.ProjectData.GanttChart.Directive
                 currentTime: new Date(2016, 2 - 1, 2) // Display the current time vertical line of the chart at the project start date.
             };
             // Optionally, initialize custom theme for Load Chart (themes.js).
-            if (initializeLoadChartTheme)
-                initializeLoadChartTheme(settings, theme);
+            initializeLoadChartTheme(settings, theme);
             $scope.settings = settings;
             var loadChartView = <LoadChartView.Element>document.getElementById('loadChartView');
             $scope.isLoadChartVisible = true;

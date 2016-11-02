@@ -36,10 +36,8 @@ var settings = <GanttChartView.Settings>{
 };
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
 
 // Set up main schedule. Alternatively, set workingWeek{Start|Finish} and visibleDay{Start|Finish} fields on the settings object.
 settings.schedule = <GanttChartView.Schedule>{

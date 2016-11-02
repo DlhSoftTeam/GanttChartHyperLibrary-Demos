@@ -41,9 +41,7 @@ var settings = {
     alternativeChartItemClass: theme == 'Dark-black' ? 'alternativeChartItem-dark' : 'alternativeChartItem'
 };
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
 // Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, items, settings);

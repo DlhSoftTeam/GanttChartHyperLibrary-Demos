@@ -31,8 +31,6 @@ var settings = {
     alternativeChartItemClass: theme == 'Dark-black' ? 'alternativeChartItem-dark' : 'alternativeChartItem'
 };
 // Optionally, initialize custom theme (themes.js).
-if (initializeLoadChartTheme)
-    initializeLoadChartTheme(settings, theme);
+initializeLoadChartTheme(settings, theme);
 // Initialize the component.
 var loadChartView = DlhSoft.Controls.LoadChartView.initialize(loadChartViewElement, loadChartItems, settings);
-//# sourceMappingURL=app.js.map

@@ -31,10 +31,8 @@ angular.module('PertChartViewSample', ['DlhSoft.ProjectData.PertChart.Directives
         $scope.items = items;
         var settings = <PertChartView.Settings>{ };
         // Optionally, initialize custom theme (themes.js, templates.js).
-        if (initializePertChartTheme)
-            initializePertChartTheme(settings, theme);
-        if (initializePertChartTemplates)
-            initializePertChartTemplates(settings, theme);
+        initializePertChartTheme(settings, theme);
+        initializePertChartTemplates(settings, theme);
         $scope.settings = settings;
         // Underlying PertChartView component reference.
         var pertChartView = <PertChartView.Element>document.getElementById('pertChartView');

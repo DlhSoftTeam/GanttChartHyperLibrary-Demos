@@ -47,10 +47,8 @@ columns.splice(6, 0, { header: 'Max finish', width: 140, cellTemplate: DlhSoft.C
 settings.columns = columns;
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
 
 // Optionally, visually indicate original tasks with time constraints.
 var specialItems = [specialItem];

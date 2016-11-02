@@ -29,10 +29,8 @@ items[7].baselineFinish = new Date(year, month, 11, 16, 0, 0);
 items[8].baselineStart = new Date(year, month, 12, 8, 0, 0);
 var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
 // Optionally, provide a selection column.
 // settings.selectionMode = 'Extended';
 // Initialize extra columns.

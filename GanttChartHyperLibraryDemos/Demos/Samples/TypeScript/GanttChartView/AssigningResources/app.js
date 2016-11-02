@@ -28,10 +28,8 @@ columns.splice(1, 4); // Remove all default columns except Task and Assignments.
 columns.push({ header: 'Cost ($)', width: 110, cellTemplate: DlhSoft.Controls.GanttChartView.getCostColumnTemplate(84) });
 settings.columns = columns;
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
 // Optionally, define assignable resources.
 settings.assignableResources = ['Resource 1', 'Resource 2', 'Resource 3',
     'Material 1', 'Material 2'];
@@ -48,10 +46,8 @@ settings.defaultResourceHourCost = 10;
 settings.specificResourceHourCosts = [{ key: 'Resource 1', value: 20 }, { key: 'Material 2', value: 0.5 }];
 settings.areTaskDependencyConstraintsEnabled = true;
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, items, settings);
 function addNewItem() {
     var item = { content: 'New task', start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 4, 16, 0, 0) };
@@ -112,8 +108,7 @@ function loadChart() {
     var loadChartSettings = { selectionMode: 'None', isMouseWheelZoomEnabled: false };
     ganttChartView.copyCommonSettings(loadChartSettings);
     var loadChartView = document.querySelector('#loadChartView');
-    if (initializeLoadChartTheme)
-        initializeLoadChartTheme(loadChartSettings, theme);
+    initializeLoadChartTheme(loadChartSettings, theme);
     DlhSoft.Controls.LoadChartView.initialize(loadChartView, loadChartItems, loadChartSettings);
     loadChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('LoadChart', displayedTime); };
     loadChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('LoadChart', gridWidth, chartWidth); };

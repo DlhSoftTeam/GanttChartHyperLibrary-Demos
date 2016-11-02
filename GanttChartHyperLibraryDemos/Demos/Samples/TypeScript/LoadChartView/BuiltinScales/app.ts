@@ -33,8 +33,7 @@ var settings = <LoadChartView.Settings>{
 };
 
 // Optionally, initialize custom theme (themes.js).
-if (initializeLoadChartTheme)
-    initializeLoadChartTheme(settings, theme);
+initializeLoadChartTheme(settings, theme);
 
 // Prepare command element references.
 var majorScaleTypeSelect = <HTMLSelectElement>document.querySelector('#majorScaleTypeSelect');

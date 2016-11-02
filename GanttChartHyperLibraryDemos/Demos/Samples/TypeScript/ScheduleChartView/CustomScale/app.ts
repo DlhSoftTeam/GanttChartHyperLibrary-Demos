@@ -36,10 +36,8 @@ var settings = <ScheduleChartView.Settings>{
 };
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
 
 // Ensure timelineStart and timelineFinish are set to Sundays, as the timline needs to present entire weeks.
 settings.timelineStart = new Date(year, month - 1, 29); // Sunday, January 29, 2017

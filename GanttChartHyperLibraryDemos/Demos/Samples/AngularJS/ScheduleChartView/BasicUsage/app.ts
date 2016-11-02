@@ -35,10 +35,8 @@ angular.module('ScheduleChartViewSample', ['DlhSoft.ProjectData.GanttChart.Direc
             currentTime: new Date(2016, 2 - 1, 2) // Display the current time vertical line of the chart at the project start date.
         };
         // Optionally, initialize custom theme and templates (themes.js, templates.js).
-        if (initializeGanttChartTheme)
-            initializeGanttChartTheme(settings, theme);
-        if (initializeGanttChartTemplates)
-            initializeGanttChartTemplates(settings, theme);
+        initializeGanttChartTheme(settings, theme);
+        initializeGanttChartTemplates(settings, theme);
         $scope.settings = settings;
         // Underlying ScheduleChartView component reference.
         var scheduleChartView = <ScheduleChartView.Element>document.getElementById('scheduleChartView');

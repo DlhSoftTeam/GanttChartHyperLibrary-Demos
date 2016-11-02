@@ -1,7 +1,11 @@
+/// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts'/>
 var GanttChartView = DlhSoft.Controls.GanttChartView;
 var ScheduleChartView = DlhSoft.Controls.ScheduleChartView;
+// Query string syntax: ?theme
+// Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
+// Retrieve and store the control element for reference purposes.
 var scheduleChartViewElement = document.querySelector('#scheduleChartView');
 var date = new Date(), year = date.getFullYear(), month = date.getMonth();
 var scheduleChartItems = [
@@ -34,21 +38,24 @@ for (var i = 4; i <= 16; i++)
 var settings = {
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+// Optionally, initialize custom theme and templates (themes.js, templates.js).
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
+// Set up custom template for standard tasks using custom fields prepared for items (hasMilestoneAtFinish, numberOfLinesToDisplayInsteadOfRectangle).
+// When getDefault*TaskTemplate methods are used, pass undefined as items, ganttChartView, and settings arguments to use the instances associated to the item that the template would apply for.
 var originalStandardTaskTemplate = settings.standardTaskTemplate ? settings.standardTaskTemplate : ScheduleChartView.getDefaultStandardTaskTemplate(undefined, undefined, undefined);
 settings.standardTaskTemplate = function (item) {
     var group = item.numberOfLinesToDisplayInsteadOfRectangle ? linesTemplate(item) : originalStandardTaskTemplate(item);
     if (item.hasMilestoneAtFinish) {
         var finishDiamond = getFinishDiamond(item);
-        var lastChildIndex = group.childNodes.length - 1;
+        var lastChildIndex = group.childNodes.length - 1; // Dependency creation thumb.
         group.insertBefore(finishDiamond, group.childNodes[lastChildIndex]);
     }
     return group;
 };
+// Initialize the component.
 var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, scheduleChartItems, settings);
+// Custom template helpers.
 function getChartItemArea(item) {
     var undefinedType = 'undefined', svgns = 'http://www.w3.org/2000/svg';
     var document = item.scheduleChartView.ownerDocument;
@@ -140,7 +147,7 @@ function linesTemplate(item) {
         finishThumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: e-resize');
         if (!settings.isTaskEffortReadOnly && settings.interaction != 'TouchEnabled')
             group.appendChild(finishThumb);
-        ganttChartView.initializeTaskDraggingThumbs(thumb, startThumb, finishThumb, undefined, item, itemLeft, itemRight, undefined);
+        ganttChartView.initializeTaskDraggingThumbs(thumb, startThumb, finishThumb, undefined, item, itemLeft, itemRight, undefined); // Without completion support: passing undefined for completion arguments.
         if (settings.areTaskDependenciesVisible && !settings.areTaskPredecessorsReadOnly && !item.isPart) {
             var startDependencyThumb = null;
             if (typeof settings.allowCreatingStartDependencies === undefinedType || settings.allowCreatingStartDependencies) {

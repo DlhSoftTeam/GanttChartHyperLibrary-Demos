@@ -1,7 +1,11 @@
+/// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts'/>
 var GanttChartView = DlhSoft.Controls.GanttChartView;
 var ScheduleChartView = DlhSoft.Controls.ScheduleChartView;
+// Query string syntax: ?theme
+// Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
+// Retrieve and store the control element for reference purposes.
 var scheduleChartViewElement = document.querySelector('#scheduleChartView');
 var date = new Date(), year = date.getFullYear(), month = date.getMonth();
 var scheduleChartItems = [
@@ -22,12 +26,14 @@ for (var i = 4; i <= 16; i++)
 var settings = {
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+// Optionally, initialize custom theme and templates (themes.js, templates.js).
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
+// Initialize the component.
 var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, scheduleChartItems, settings);
+// Prepare element to output information about change when they occur.
 var notificationsOutputElement = document.querySelector('#notificationsOutput');
+// Handle item property change notifications.
 settings.itemPropertyChangeHandler = function (item, propertyName, isDirect, isFinal) {
     if (isDirect && isFinal && propertyName != 'isSelected') {
         notificationsOutputElement.textContent += (notificationsOutputElement.textContent.length > 0 ? '\n' : '') + item.content + '.' + propertyName + ' has changed.';
