@@ -1,80 +1,64 @@
 /// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts'/>
 var GanttChartView = DlhSoft.Controls.GanttChartView;
+var ScheduleChartView = DlhSoft.Controls.ScheduleChartView;
 // Query string syntax: ?theme
 // Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 // Retrieve and store the control element for reference purposes.
-var ganttChartViewElement = document.querySelector('#ganttChartView');
+var scheduleChartViewElement = document.querySelector('#scheduleChartView');
 var date = new Date(), year = date.getFullYear(), month = date.getMonth();
-var items = [
-    { content: 'Task 1', isExpanded: false, start: new Date() },
-    { content: 'Task 1.1', indentation: 1, start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 4, 16, 0, 0) },
-    { content: 'Task 1.2', indentation: 1, start: new Date(year, month, 3, 8, 0, 0), finish: new Date(year, month, 5, 12, 0, 0) },
-    { content: 'Task 2', isExpanded: true, start: new Date() },
+var scheduleChartItems = [
+    { content: 'Resource 1', start: new Date(), ganttChartItems: [{ content: 'Task A (Resource 1)', start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0) }] },
     {
-        content: 'Task 2.1', indentation: 1, start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: 'Resource 1, Resource 2 [50%]',
-        hasMilestoneAtFinish: true
+        content: 'Resource 2', start: new Date(), ganttChartItems: [
+            {
+                content: 'Task A (Resource 2)', start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: '50%',
+                hasMilestoneAtFinish: true
+            },
+            {
+                content: 'Task B (Resource 2)', start: new Date(year, month, 11, 8, 0, 0), finish: new Date(year, month, 12, 16, 0, 0), completedFinish: new Date(year, month, 12, 16, 0, 0),
+                hasMilestoneAtFinish: true, numberOfLinesToDisplayInsteadOfRectangle: 50
+            },
+            { content: 'Task C (Resource 2)', start: new Date(year, month, 14, 8, 0, 0), finish: new Date(year, month, 14, 16, 0, 0) }]
     },
-    { content: 'Task 2.2', indentation: 1, start: new Date() },
     {
-        content: 'Task 2.2.1', indentation: 2, start: new Date(year, month, 11, 8, 0, 0), finish: new Date(year, month, 14, 16, 0, 0), completedFinish: new Date(year, month, 14, 16, 0, 0), assignmentsContent: 'Resource 2',
-        hasMilestoneAtFinish: true, numberOfLinesToDisplayInsteadOfRectangle: 50
-    },
-    {
-        content: 'Task 2.2.2', indentation: 2, start: new Date(year, month, 12, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0), assignmentsContent: 'Resource 2',
-        numberOfLinesToDisplayInsteadOfRectangle: 16
-    },
-    { content: 'Task 3', indentation: 1, start: new Date(year, month, 15, 16, 0, 0), isMilestone: true }];
-items[3].predecessors = [{ item: items[0], dependencyType: 'SS' }];
-items[7].predecessors = [{ item: items[6], lag: 2 * 60 * 60 * 1000 }];
-items[8].predecessors = [{ item: items[4] }, { item: items[5] }];
+        content: 'Resource 3', start: new Date(), ganttChartItems: [
+            {
+                content: 'Task D (Resource 3)', start: new Date(year, month, 12, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0),
+                numberOfLinesToDisplayInsteadOfRectangle: 16
+            }]
+    }];
 for (var i = 4; i <= 16; i++)
-    items.push({ content: 'Task ' + i, indentation: i >= 8 && i % 3 == 2 ? 0 : 1, start: new Date(year, month, 2 + (i <= 8 ? (i - 4) * 3 : i - 8), 8, 0, 0), finish: new Date(year, month, 2 + (i <= 8 ? (i - 4) * 3 + (i > 8 ? 6 : 1) : i - 2), 16, 0, 0) });
-var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
-// Prepare the custom field columns.
-var columns = DlhSoft.Controls.GanttChartView.getDefaultColumns(items, settings);
-columns.splice(3, 0, {
-    header: 'Has milestone', width: 140,
-    cellTemplate: function (item) {
-        return DlhSoft.Controls.GanttChartView.optionSelectColumnTemplateBase(document, 124, function () { return ["No", "Yes"]; }, function () { return item.hasMilestoneAtFinish ? "Yes" : "No"; }, function (value) {
-            item.hasMilestoneAtFinish = value == "Yes" ? true : false;
-            ganttChartView.refreshChartItem(item);
-        });
-    }
-});
-columns.splice(4, 0, {
-    header: 'Zig-zag lines', width: 140,
-    cellTemplate: function (item) {
-        return DlhSoft.Controls.GanttChartView.numberInputColumnTemplateBase(document, 124, function () { return item.numberOfLinesToDisplayInsteadOfRectangle; }, function (value) {
-            item.numberOfLinesToDisplayInsteadOfRectangle = value;
-            ganttChartView.refreshChartItem(item);
-        });
-    }
-});
-settings.columns = columns;
+    scheduleChartItems.push({
+        content: 'Resource ' + i, start: new Date(), ganttChartItems: [
+            { content: 'Task X (Resource ' + i + ')', start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 5, 16, 0, 0) },
+            { content: 'Task Y (Resource ' + i + ')', start: new Date(year, month, 7, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0) }]
+    });
+var settings = {
+    currentTime: new Date(year, month, 2, 12, 0, 0)
+};
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
 initializeGanttChartTheme(settings, theme);
 initializeGanttChartTemplates(settings, theme);
 // Set up custom template for standard tasks using custom fields prepared for items (hasMilestoneAtFinish, numberOfLinesToDisplayInsteadOfRectangle).
 // When getDefault*TaskTemplate methods are used, pass undefined as items, ganttChartView, and settings arguments to use the instances associated to the item that the template would apply for.
-var originalStandardTaskTemplate = settings.standardTaskTemplate ? settings.standardTaskTemplate : GanttChartView.getDefaultStandardTaskTemplate(undefined, undefined, undefined);
+var originalStandardTaskTemplate = settings.standardTaskTemplate ? settings.standardTaskTemplate : ScheduleChartView.getDefaultStandardTaskTemplate(undefined, undefined, undefined);
 settings.standardTaskTemplate = function (item) {
     var group = item.numberOfLinesToDisplayInsteadOfRectangle ? linesTemplate(item) : originalStandardTaskTemplate(item);
     if (item.hasMilestoneAtFinish) {
         var finishDiamond = getFinishDiamond(item);
-
         var lastChildIndex = group.childNodes.length - 1; // Dependency creation thumb.
         group.insertBefore(finishDiamond, group.childNodes[lastChildIndex]);
     }
     return group;
 };
 // Initialize the component.
-var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, items, settings);
+var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, scheduleChartItems, settings);
 // Custom template helpers.
 function getChartItemArea(item) {
     var undefinedType = 'undefined', svgns = 'http://www.w3.org/2000/svg';
-    var document = item.ganttChartView.ownerDocument;
+    var document = item.scheduleChartView.ownerDocument;
     if (typeof item.chartItemArea === undefinedType)
         item.chartItemArea = document.createElementNS(svgns, 'g');
     for (var i = item.chartItemArea.childNodes.length; i-- > 0;)
