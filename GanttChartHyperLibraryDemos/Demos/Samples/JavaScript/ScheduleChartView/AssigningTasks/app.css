@@ -1,0 +1,32 @@
+.ribbonContainer {
+    overflow: auto; 
+    background-color: #909090; border-bottom: 1px solid White; 
+    font-family: Tahoma, Arial; font-size: 12px;
+}
+.ribbonContainer .content {
+    color: white;
+    display: inline-block;
+    margin: 8px;
+    padding: 10px;
+}
+
+/* Overrides */
+body {
+    margin: 0;
+}
+input {
+    font-size: 12px;
+}
+
+/* Dark theme */
+.dark input {
+    color: white;
+    background-color: black;
+}
+.dark input:disabled {
+    color: gray;
+}
+.dark input:focus {
+    color: black;
+    background-color: white;
+}

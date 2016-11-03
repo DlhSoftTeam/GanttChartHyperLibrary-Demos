@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>GanttChartView Material Resources Sample - Scheduling Printers</title>
+    <link rel="Stylesheet" href="app.css" type="text/css" />
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.js" type="text/javascript"></script>
+    <script src="Scripts/DlhSoft.Data.HTML.Controls.js" type="text/javascript"></script>
+    <script src="templates.js" type="text/javascript"></script>
+    <script src="themes.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript" defer="defer"></script>
+</head>
+<body>
+    <div class="ribbonContainer">
+        <div class="ribbonPanel">
+            <div class="ribbonHeader">Command</div>
+            <div class="ribbonCommandsArea">
+                <div class="ribbonCommand">
+                    <button id="levelResourcesButton" onclick="levelResources()">Level resources</button>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            Click the command button to level resources based on their required amounts of each of them on each task and their available quantities.
+        </div>
+    </div>
+    <div id="ganttChartView" style="height: 388px">...</div>
+</body>
+</html>

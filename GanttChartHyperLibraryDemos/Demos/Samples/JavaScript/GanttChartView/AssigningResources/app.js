@@ -48,10 +48,8 @@ settings.specificResourceHourCosts = [{ key: 'Resource 1', value: 20 }, { key: '
 settings.areTaskDependencyConstraintsEnabled = true;
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
 
 DlhSoft.Controls.GanttChartView.initialize(ganttChartView, items, settings);
 
@@ -116,8 +114,7 @@ function loadChart() {
     var loadChartSettings = { selectionMode: 'None', isMouseWheelZoomEnabled: false };
     ganttChartView.copyCommonSettings(loadChartSettings);
     var loadChartView = document.querySelector('#loadChartView');
-    if (initializeLoadChartTheme)
-        initializeLoadChartTheme(loadChartSettings, theme);
+    initializeLoadChartTheme(loadChartSettings, theme);
     DlhSoft.Controls.LoadChartView.initialize(loadChartView, loadChartItems, loadChartSettings);
     loadChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('LoadChart', displayedTime); }
     loadChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('LoadChart', gridWidth, chartWidth); }

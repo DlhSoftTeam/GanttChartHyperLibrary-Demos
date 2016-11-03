@@ -13,7 +13,7 @@ declare var initializeGanttChartTheme;
 // Retrieve and store the control element for reference purposes.
 var ganttChartViewElement = <HTMLElement>document.querySelector('#ganttChartView');
 
-var year = 2013, month = 1;
+var year = 2017, month = 1;
 var items = <GanttChartItem[]>[
     { content: 'Task 1', isExpanded: false, start: new Date() },
     { content: 'Task 1.1', indentation: 1, start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 4, 16, 0, 0) },
@@ -33,14 +33,12 @@ for (var i = 4; i <= 16; i++)
 var settings = <GanttChartView.Settings>{ currentTime: new Date(year, month, 2, 12, 0, 0) };
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
 
 // Ensure timelineStart and timelineFinish are set to Sundays, as the timline needs to present entire weeks.
-settings.timelineStart = new Date(year, month - 1, 27); // Sunday, January 27, 2013
-settings.timelineFinish = new Date(year, month + 2, 7); // Sunday, April 7, 2013
+settings.timelineStart = new Date(year, month - 1, 29); // Sunday, January 29, 2017
+settings.timelineFinish = new Date(year, month + 2, 2); // Sunday, April 2, 2017
 // Prepare time intervals for the custom scale.
 var customIntervals = function () {
     var intervals = [];

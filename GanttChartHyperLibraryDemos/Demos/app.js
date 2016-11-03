@@ -15,7 +15,8 @@ angular.module('Demos', [])
         {
             component: 'GanttChartView', feature: 'AssigningResources', title: 'Assigning resources (with multi-selector combo box)', description: 'Shows how resource assignments work and includes code providing automatic Load Chart synchronization',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
@@ -61,7 +62,7 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'MouseEvents', title: 'Mouse event handling', description: 'Shows how custom code can be executed when generir or specific mouse events occur within the component',
+            component: 'GanttChartView', feature: 'MouseEvents', title: 'Mouse event handling', description: 'Shows how custom code can be executed when generic or specific mouse events occur within the component',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
@@ -69,6 +70,13 @@ angular.module('Demos', [])
         },
         {
             component: 'GanttChartView', feature: 'SelectionModes', title: 'Selection mode (single, extended, by clicking)', description: 'Shows how you can set up selection mode and handle item selection changes in the component',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'WBS', title: 'WBS path (work breakdown structure column)', description: 'Shows how you can easily insert a WBS column to the grid',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
@@ -187,6 +195,13 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'GanttChartView', feature: 'MaterialResources', title: 'Material resources (quantities and costs)', description: 'Shows how you can assign material resources having limited or unlimited available quantities and compute task costs based on the allocations',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
             component: 'GanttChartView', feature: 'TimeConstraints', title: 'Time constraints (minimum-maximum start and finish)', description: 'Shows how you can set up constraints on item date and times using minimum and/or maximum values',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
@@ -210,8 +225,8 @@ angular.module('Demos', [])
         {
             component: 'GanttChartView', feature: 'ExportPngImage-PMF', title: 'Export image (using Project Management Framework)', description: 'Shows how to generate PNG images for the current Gantt Chart – using TaskManager component from DlhSoft Project Management Framework, available separately for free to Gantt Chart Hyper Library licensees',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'GetPng.aspx', 'GetPng.aspx.cs'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts', 'GetPng.aspx', 'GetPng.aspx.cs']
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'GetPng.aspx.cs'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts', 'GetPng.aspx.cs']
             }
         },
         {
@@ -249,23 +264,128 @@ angular.module('Demos', [])
         {
             component: 'ScheduleChartView', feature: 'GanttChartIntegration', title: 'Gantt Chart integration', description: 'Sample application showing how to generate a Schedule Chart view from Gantt Chart data',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
-                'AngularJS': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts'],
+                'AngularJS': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
             component: 'ScheduleChartView', feature: 'Filtering', title: 'Filtering and hiding items', description: 'Shows how you can set up an item visibility filter function and hide individual items when needed',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts'],
             }
         },
         {
             component: 'ScheduleChartView', feature: 'Hierarchy', title: 'Hierarchy (resource groups)', description: 'Sample application showing how to display expandable groups of resources in a hierarchical fashion',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts'],
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'Columns', title: 'Grid columns (custom)', description: 'Shows how to add supplemental custom grid columns',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'ReadOnlySettings', title: 'Read only, visibility, and other behavioral settings', description: 'Shows how you can set up read only, visibility, and other settings on the component and on specific items',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'MouseEvents', title: 'Mouse event handling', description: 'Shows how custom code can be executed when generic or specific mouse events occur within the component',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'ChangeNotifications', title: 'Change notifications (item value update handling)', description: 'Shows how custom code can be executed when changes occur on the data presented by the component',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'BuiltinScales', title: 'Built-in scales (from years to hours)', description: 'Shows how you can combine and use built-in scale types, text header formats, and related settings',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'ZoomLevel', title: 'Zoom level (and disabling mouse wheel zooming)', description: 'Shows how you can set up zoom level settings for the chart area',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'CustomScale', title: 'Custom scale (time intervals and header texts)', description: 'Shows how to define a fully custom chart scale with special time intervals and text headers',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'SpecialDays', title: 'Special days (vertically highlight specific time intervals)', description: 'Shows how you can highlight special time intervals in the chart area',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'ContinuousSchedule', title: 'Continuous schedule (non-stop working time)', description: 'Shows how to define continuous working time for tasks (24/7)',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'AssigningTasks', title: 'Assigning tasks (drag unassigned items)', description: 'Shows how you can define a Gantt Chart displaying unassigned items and allowing the end user to drag items from that area to a Schedule Chart and assign tasks to specific resources',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'Styling', title: 'Styling (with CSS classes)', description: 'Shows how to style up elements defined by the component using CSS classes',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'ResourceStatus', title: 'Status displaying (resource timeline)', description: 'Sample application showing how you can display multiple resources and their status at different times using chart bars of different colors',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts'],
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'ShiftScheduling', title: 'Shift scheduling (assigning employees on time shifts)', description: 'Shows how you can define shifts as resource assignments so that the end user can drag and drop them vertically to change shifts as needed',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'CustomTemplate', title: 'Custom template (drawing item bars using custom SVG)', description: 'Shows how you can write code to customize drawing stanadard item bars in the chart area using SVG elements',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'Printing', title: 'Printing (virtual printers, e.g. Print to PDF, supported)', description: 'Includes code that initiates a print operation; end user can select the printer to use (virtual printers such as Print to PDF are supported as well)',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
@@ -298,20 +418,41 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'LoadChartView', feature: 'BuiltinScales', title: 'Built-in scales (from years to hours)', description: 'Shows how you can combine and use built-in scale types, text header formats, and related settings',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'LoadChartView', feature: 'Styling', title: 'Styling (with CSS classes)', description: 'Shows how to style up elements defined by the component using CSS classes',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'LoadChartView', feature: 'Printing', title: 'Printing (virtual printers, e.g. Print to PDF, supported)', description: 'Includes code that initiates a print operation; end user can select the printer to use (virtual printers such as Print to PDF are supported as well)',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
             component: 'PertChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
             }
         },
         {
             component: 'PertChartView', feature: 'BasicUsage', title: 'Basic usage', description: 'Sample application showing how to use the component',
             sourceCodeFiles: {
-                'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.js'],
-                'AngularJS': ['index.html', 'app.css', 'app.ts', 'themes.js']
+                'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                'AngularJS': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js']
             }
         },
         {
-            component: 'PertChartView', feature: 'GanttChartIntegration', title: 'PERT Chart integration', description: 'Sample application showing how to generate a PERT Chart view from Gantt Chart data',
+            component: 'PertChartView', feature: 'GanttChartIntegration', title: 'Gantt Chart integration', description: 'Sample application showing how to generate a PERT Chart view from Gantt Chart data',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts'],
@@ -319,16 +460,30 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'PertChartView', feature: 'Styling', title: 'Styling (with CSS classes)', description: 'Shows how to style up elements defined by the component using CSS classes',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'PertChartView', feature: 'Printing', title: 'Printing (virtual printers, e.g. Print to PDF, supported)', description: 'Includes code that initiates a print operation; end user can select the printer to use (virtual printers such as Print to PDF are supported as well)',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
             component: 'NetworkDiagramView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
             }
         },
         {
             component: 'NetworkDiagramView', feature: 'BasicUsage', title: 'Basic usage', description: 'Sample application showing how to use the component',
             sourceCodeFiles: {
-                'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.js'],
-                'AngularJS': ['index.html', 'app.css', 'app.ts', 'themes.js']
+                'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                'AngularJS': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js']
             }
         },
         {
@@ -337,6 +492,20 @@ angular.module('Demos', [])
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts'],
                 'AngularJS': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'NetworkDiagramView', feature: 'Styling', title: 'Styling (with CSS classes)', description: 'Shows how to style up elements defined by the component using CSS classes',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'NetworkDiagramView', feature: 'Printing', title: 'Printing (virtual printers, e.g. Print to PDF, supported)', description: 'Includes code that initiates a print operation; end user can select the printer to use (virtual printers such as Print to PDF are supported as well)',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
@@ -420,11 +589,11 @@ angular.module('Demos', [])
         for (var i = 0; i < samples.length; i++) {
             var sample = samples[i];
             if (sample.component == component) {
-                if (sample.feature == $scope.selectedSample.feature) {
+                if (sample.feature == $scope.selectedSample.feature && sample.sourceCodeFiles[$scope.selectedTechnology.name]) {
                     selectSample(sample);
                     return;
                 }
-                if (!firstComponentSample)
+                if (!firstComponentSample && sample.sourceCodeFiles[$scope.selectedTechnology.name])
                     firstComponentSample = sample;
             }
         }

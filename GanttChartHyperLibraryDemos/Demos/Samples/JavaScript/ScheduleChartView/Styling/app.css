@@ -1,0 +1,74 @@
+.container {
+    font-family: Calibri;
+    font-variant: small-caps;
+    font-size: 16px;
+    color: #346;
+}
+.selectedItem {
+    background-color: #e0e0ff;
+}
+.cell input[type="text"] {
+    height: 24px;
+    margin: 2px;
+    margin-bottom: 6px;
+    border-radius: 4px;
+    padding: 4px 6px;
+    line-height: 22px;
+    font-family: Calibri;
+    font-size: 16px;
+    color: #555;
+}
+.cell input[type="text"]:focus {
+    box-shadow: 0px 1px 0px 0px #78c;
+}
+.standardBar {
+    fill: #3eb0c7;
+    fill-opacity: 0.75;
+    stroke: #3eb0c7;
+}
+.darkBar {
+    fill: #3b4160;
+    stroke: #3b4160;
+}
+.assignments {
+    font-variant: normal;
+    font-size: 15px;
+    fill: #7080c0;
+}
+.alternativeGridItem {
+    background-color: #f8f8f8;
+}
+.alternativeGridItem-dark {
+    background-color: #111111;
+}
+.alternativeGridItem-steel {
+    background-color: #b9cedf;
+}
+.alternativeChartItem {
+    fill: #f0f0f0;
+    fill-opacity: 0.5;
+}
+.alternativeChartItem-dark {
+    background-color: #111111;
+}
+
+/* Overrides */
+body {
+    margin: 0;
+}
+input {
+    font-size: 12px;
+}
+
+/* Dark theme */
+.dark input {
+    color: white;
+    background-color: black;
+}
+.dark input:disabled {
+    color: gray;
+}
+.dark input:focus {
+    color: black;
+    background-color: white;
+}

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>LoadChartView Built-in Scales Sample</title>
+    <link rel="Stylesheet" href="app.css" type="text/css" />
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.js" type="text/javascript"></script>
+    <script src="Scripts/DlhSoft.Data.HTML.Controls.js" type="text/javascript"></script>
+    <script src="themes.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript" defer="defer"></script>
+</head>
+<body>
+    <div class="command-area">
+        <table>
+            <tr>
+                <td></td>
+                <td>Type</td>
+                <td>Header format</td>
+                <td>Separator</td>
+                <td>Monday-based</td>
+                <td>Nonworking days</td>
+                <td>Current time</td>
+                <td>Zoom level</td>
+            </tr>
+            <tr>
+                <td>Major scale</td>
+                <td><select id="majorScaleTypeSelect" /></td>
+                <td><select id="majorScaleHeaderFormatSelect" /></td>
+                <td><input id="majorScaleSeparatorCheckBox" type="checkbox" /></td>
+                <td><input id="mondayBasedCheckBox" type="checkbox" /></td>
+                <td><input id="nonworkingDaysCheckBox" type="checkbox" /></td>
+                <td><input id="currentTimeCheckBox" type="checkbox" /></td>
+                <td><input id="zoomLevelTextBox" type="number" /></td>
+            </tr>
+            <tr>
+                <td>Minor scale</td>
+                <td><select id="minorScaleTypeSelect" /></td>
+                <td><select id="minorScaleHeaderFormatSelect" /></td>
+                <td><input id="minorScaleSeparatorCheckBox" type="checkbox" /></td>
+            </tr>
+        </table>
+    </div>
+    <div id="loadChartView" style="height: 388px">...</div>
+</body>
+</html>

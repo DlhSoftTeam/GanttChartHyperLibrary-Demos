@@ -173,7 +173,7 @@ function initializeGanttChartTemplates(settings, theme) {
             completedFinishThumb.setAttribute('width', 6);
             completedFinishThumb.setAttribute('height', barHeight);
             completedFinishThumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: e-resize');
-            if (!settings.isTaskCompletionReadOnly && settings.interaction != 'TouchEnabled') {
+            if (!settings.isTaskCompletionReadOnly && settings.isTaskCompletedEffortVisible && settings.interaction != 'TouchEnabled') {
                 group.appendChild(completedFinishThumb);
                 var completedFinishToolTip = document.createElementNS(svgns, 'title');
                 var completion = typeof settings.areToolTipsSimplified === undefinedType || !settings.areToolTipsSimplified ? ganttChartView.getItemCompletion(item) : NaN;
@@ -544,9 +544,13 @@ function initializeGanttChartTemplates(settings, theme) {
         if (typeof settings.areToolTipsSimplified === undefinedType || !settings.areToolTipsSimplified) {
             toolTip.appendChild(document.createTextNode('  '));
             if (typeof item.loadChartView === undefinedType) {
-                if (item.parent) {
+                if (typeof item.scheduleChartView === undefinedType && item.parent) {
                     toolTip.appendChild(document.createElement('br'));
                     toolTip.appendChild(document.createTextNode('Parent: ' + item.parent.content + '  '));
+                }
+                if (typeof item.scheduleChartView !== undefinedType && item.scheduleChartItem) {
+                    toolTip.appendChild(document.createElement('br'));
+                    toolTip.appendChild(document.createTextNode('Row: ' + item.scheduleChartItem.content + '  '));
                 }
                 if (item.hasChildren) {
                     toolTip.appendChild(document.createElement('br'));
@@ -615,6 +619,8 @@ function initializeGanttChartTemplates(settings, theme) {
     };
 }
 function initializePertChartTemplates(settings, theme) {
+    if (theme == 'Default')
+        return;
     // Common helpers.
     var svgns = 'http://www.w3.org/2000/svg';
     // Template definitions.

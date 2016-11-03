@@ -43,10 +43,8 @@ var settings = {
 // settings.target = 'Phone'; // Supported values: Standard, Phone.
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-if (initializePertChartTheme)
-    initializePertChartTheme(settings, theme);
-if (initializePertChartTemplates)
-    initializePertChartTemplates(settings, theme);
+initializePertChartTheme(settings, theme);
+initializePertChartTemplates(settings, theme);
 
 // Initialize the component.
 DlhSoft.Controls.Pert.PertChartView.initialize(pertChartView, items, settings);
@@ -60,7 +58,7 @@ function setCustomBarColorToItem() {
 function setCustomDependencyLineColorToPredecessorItem() {
     var item = pertChartView.items[2];
     var predecessorItem = pertChartView.items[2].predecessors[0];
-    predecessorItem.dependencyLineStyle = 'stroke: DarkMagenta; fill: none; marker-end: url(#ArrowMarker)';
+    predecessorItem.dependencyLineStyle = 'stroke: DarkMagenta; fill: none; marker-end: url(#' + (theme != 'Default' ? 'Pert' : '') + 'ArrowMarker)';
     pertChartView.refreshPredecessorItems(item);
 }
 function highlightCriticalPath() {
@@ -76,7 +74,7 @@ function highlightCriticalPath() {
     var criticalDependencies = pertChartView.getCriticalDependencies();
     for (i = 0; i < criticalDependencies.length; i++) {
         var predecessorItem = criticalDependencies[i];
-        predecessorItem.dependencyLineStyle = 'stroke: Red; fill: none: none; marker-end: url(#ArrowMarker)';
+        predecessorItem.dependencyLineStyle = 'stroke: Red; fill: none: none; marker-end: url(#' + (theme != 'Default' ? 'Pert' : '') + 'ArrowMarker)';
         predecessorItem.item.shapeStyle = 'stroke: Red; fill: White';
         if (i >= criticalDependencies.length - 1)
             predecessorItem.dependentItem.shapeStyle = 'stroke: Red; fill: White';

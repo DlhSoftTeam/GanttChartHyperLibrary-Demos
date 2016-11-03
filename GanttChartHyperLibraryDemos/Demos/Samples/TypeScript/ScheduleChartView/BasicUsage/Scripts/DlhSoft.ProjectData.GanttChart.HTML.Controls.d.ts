@@ -1,7 +1,7 @@
 ﻿/* Assembly: DlhSoft.ProjectData.GanttChart.HTML.Controls,
    Company: DlhSoft,
    Product: Project Data Modern Library,
-   Version: 5.3.10.0,
+   Version: 5.3.10.2,
    Copyright: Copyright © 2012-2016 DlhSoft,
    Title: Project Data Gantt Chart HTML Controls,
    Description: Project Data Gantt Chart related HTML client components */
@@ -739,10 +739,13 @@ declare module DlhSoft.Controls {
 
         /** Represents settings for a ScheduleChartView component. */
         interface Settings extends GanttChartView.Settings {
+            areAssignmentsReadOnly?: boolean;
+
             assignmentThumbClass?: string; assignmentThumbStyle?: string;
             temporaryAssignmentThumbClass?: string; temporaryAssignmentThumbStyle?: string;
 
             assignmentThumbTemplate? (item: GanttChartView.Item): SVGElement;
+            temporaryAssignmentThumbTemplate? (document: HTMLDocument, x: number, y: number, width: number, height: number): SVGElement;
         }
     }
 

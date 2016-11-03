@@ -75,10 +75,8 @@ columns.splice(4, 0, {
 settings.columns = columns;
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(settings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(settings, theme);
+initializeGanttChartTheme(settings, theme);
+initializeGanttChartTemplates(settings, theme);
 
 // Set up custom template for standard tasks using custom fields prepared for items (hasMilestoneAtFinish, numberOfLinesToDisplayInsteadOfRectangle).
 // When getDefault*TaskTemplate methods are used, pass undefined as items, ganttChartView, and settings arguments to use the instances associated to the item that the template would apply for.
@@ -220,7 +218,7 @@ function getFinishDiamond(item): SVGElement {
     var group = document.createElementNS(svgns, 'g');
     var itemLeft = ganttChartView.getChartPosition(item.finish);
     var startDiamond = document.createElementNS(svgns, 'polygon');
-    var x = itemLeft - 8, y = settings.barMargin, h = settings.barHeight + 1;
+    var x = itemLeft - 8, y = settings.barMargin - 1, h = settings.barHeight + 1;
     startDiamond.setAttribute('points', x + ',' + y + ' ' + (x - h / 2) + ',' + (y + h / 2) + ' ' + x + ',' + (y + h) + ' ' + (x + h / 2) + ',' + (y + h / 2));
     var barClass = settings.milestoneBarClass;
     if (typeof item.milestoneBarClass !== undefinedType)

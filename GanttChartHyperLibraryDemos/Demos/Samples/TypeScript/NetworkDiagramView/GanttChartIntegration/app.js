@@ -24,10 +24,8 @@ var ganttChartSettings = {
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
 // Optionally, initialize custom theme and templates for Gantt Chart (themes.js, templates.js).
-if (initializeGanttChartTheme)
-    initializeGanttChartTheme(ganttChartSettings, theme);
-if (initializeGanttChartTemplates)
-    initializeGanttChartTemplates(ganttChartSettings, theme);
+initializeGanttChartTheme(ganttChartSettings, theme);
+initializeGanttChartTemplates(ganttChartSettings, theme);
 // Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, ganttChartItems, ganttChartSettings);
 function addNewGanttChartItem() {
@@ -44,12 +42,9 @@ function showNetworkDiagram() {
     var items = ganttChartView.getNetworkDiagramItems();
     var settings = {};
     // Optionally, initialize custom theme and templates for Network Diagram (themes.js, templates.js).
-    if (initializePertChartTheme)
-        initializePertChartTheme(settings, theme);
-    if (initializePertChartTemplates)
-        initializePertChartTemplates(settings, theme);
+    initializePertChartTheme(settings, theme);
+    initializePertChartTemplates(settings, theme);
     var networkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramViewElement, items, settings);
-    ;
 }
 function hideNetworkDiagram() {
     networkDiagramViewContainerElement.style.display = 'none';
