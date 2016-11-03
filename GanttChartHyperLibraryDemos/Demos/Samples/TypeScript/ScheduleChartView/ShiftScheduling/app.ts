@@ -59,7 +59,6 @@ var customIntervals = function () {
 var customScale = <GanttChartView.Scale>{ scaleType: 'Custom', headerTextFormat: 'Custom', intervals: customIntervals, headerStyle: 'padding: 2.25px; border-right: solid 1px White; color: Gray', isSeparatorVisible: true, separatorStyle: 'stroke: #c8bfe7; stroke-width: 0.25px' };
 settings.scales = [
     { scaleType: 'NonworkingTime', isHeaderVisible: false, isHighlightingVisible: true, highlightingStyle: 'stroke-width: 0; fill: ' + (theme == 'Dark-black' ? '#333333' : (theme == 'Steel-blue' ? '#95a5b2' : '#f8f8f8')) },
-    { scaleType: 'Weeks', isHeaderVisible: false },
     { scaleType: 'Days', headerTextFormat: 'Date', headerStyle: 'padding: 2.25px; border-right: solid 1px White; color: gray' },
     { scaleType: 'Days', headerTextFormat: 'DayOfWeek', headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White; color: gray' },
     customScale,
