@@ -30,7 +30,7 @@ var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewEl
 function addNewGanttChartItem() {
     var item = {
         content: 'New task', start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 4, 16, 0, 0),
-        assignmentsContent: 'Resource 5'
+        assignmentsContent: 'Resource 4'
     };
     ganttChartView.addItem(item);
 }
