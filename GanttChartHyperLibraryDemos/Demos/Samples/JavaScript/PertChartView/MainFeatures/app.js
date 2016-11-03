@@ -74,7 +74,7 @@ function highlightCriticalPath() {
     var criticalDependencies = pertChartView.getCriticalDependencies();
     for (i = 0; i < criticalDependencies.length; i++) {
         var predecessorItem = criticalDependencies[i];
-        predecessorItem.dependencyLineStyle = 'stroke: Red; fill: none: none; marker-end: url(#ArrowMarker)';
+        predecessorItem.dependencyLineStyle = 'stroke: Red; fill: none: none; marker-end: url(#PertArrowMarker)';
         predecessorItem.item.shapeStyle = 'stroke: Red; fill: White';
         if (i >= criticalDependencies.length - 1)
             predecessorItem.dependentItem.shapeStyle = 'stroke: Red; fill: White';
