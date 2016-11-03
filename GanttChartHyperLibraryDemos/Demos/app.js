@@ -452,7 +452,7 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'PertChartView', feature: 'GanttChartIntegration', title: 'PERT Chart integration', description: 'Sample application showing how to generate a PERT Chart view from Gantt Chart data',
+            component: 'PertChartView', feature: 'GanttChartIntegration', title: 'Gantt Chart integration', description: 'Sample application showing how to generate a PERT Chart view from Gantt Chart data',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts'],
