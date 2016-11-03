@@ -58,7 +58,7 @@ function setCustomBarColorToItem() {
 function setCustomDependencyLineColorToPredecessorItem() {
     var item = pertChartView.items[2];
     var predecessorItem = pertChartView.items[2].predecessors[0];
-    predecessorItem.dependencyLineStyle = 'stroke: DarkMagenta; fill: none; marker-end: url(#ArrowMarker)';
+    predecessorItem.dependencyLineStyle = 'stroke: DarkMagenta; fill: none; marker-end: url(#PertArrowMarker)';
     pertChartView.refreshPredecessorItems(item);
 }
 function highlightCriticalPath() {
