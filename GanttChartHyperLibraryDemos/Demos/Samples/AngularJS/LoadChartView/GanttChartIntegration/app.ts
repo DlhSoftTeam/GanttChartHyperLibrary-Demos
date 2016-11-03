@@ -35,7 +35,7 @@ angular.module('LoadChartViewSample', ['DlhSoft.ProjectData.GanttChart.Directive
         $scope.addNewGanttChartItem = () => {
             ganttChartItems.push({
                 content: 'New task', start: new Date(2016, 2 - 1, 2, 8, 0, 0), finish: new Date(2016, 2 - 1, 4, 16, 0, 0),
-                assignmentsContent: 'Resource 5'
+                assignmentsContent: 'Resource 4'
             });
         };
         $scope.showLoadChart = () => {
