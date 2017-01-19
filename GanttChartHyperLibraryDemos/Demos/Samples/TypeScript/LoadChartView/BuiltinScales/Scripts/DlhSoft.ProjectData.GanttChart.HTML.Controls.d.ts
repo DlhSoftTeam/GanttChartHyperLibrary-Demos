@@ -1,7 +1,7 @@
 ﻿/* Assembly: DlhSoft.ProjectData.GanttChart.HTML.Controls,
    Company: DlhSoft,
    Product: Project Data Modern Library,
-   Version: 5.3.10.2,
+   Version: 5.3.11.0,
    Copyright: Copyright © 2012-2016 DlhSoft,
    Title: Project Data Gantt Chart HTML Controls,
    Description: Project Data Gantt Chart related HTML client components */
@@ -518,6 +518,9 @@ declare module DlhSoft.Controls {
             /** Quantity values to consider when leveling resources, indicating maximum amounts of materials available for use at the same time. */
             resourceQuantities?: { key: string; value: number }[];
             maxLoadChartDisplayedResourceQuantity?: number;
+
+			/** Resource schedules */
+			resourceSchedules?: { key: string; value: Schedule }[];
 
             taskInitiationCost?: number;
             defaultResourceUsageCost?: number;
