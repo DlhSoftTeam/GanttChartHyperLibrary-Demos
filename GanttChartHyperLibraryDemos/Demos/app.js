@@ -188,6 +188,13 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'GanttChartView', feature: 'UndoRedo', title: 'Undo-redo (using DlhSoft.UndoManagementLibrary)', description: 'Shows how you can add support for undo and redo operations for the Gantt Chart items',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
             component: 'GanttChartView', feature: 'WorkOptimizations', title: 'Work optimizations (reschedule project, level resources)', description: 'Shows how you can optimize project timeline and avoiding resource over-allocation',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],

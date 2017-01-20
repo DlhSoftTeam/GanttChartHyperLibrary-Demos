@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>GanttChartView Work Optimizations Sample</title>
+    <link rel="Stylesheet" href="app.css" type="text/css" />
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.js" type="text/javascript"></script>
+    <script src="Scripts/DlhSoft.Data.HTML.Controls.js" type="text/javascript"></script>
+    <script src="templates.js" type="text/javascript"></script>
+    <script src="themes.js" type="text/javascript"></script>
+    <script src="Scripts/bridge.min.js" type="text/javascript"></script>
+    <script src="Scripts/DlhSoft.UndoManagementLibrary.min.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript" defer="defer"></script>
+</head>
+<body>
+    <div class="command-area">
+        <table>
+            <tr>
+                <td><button id="addNewItemButton" onclick="addNewItem()">Add new item</button></td>
+                <td><button id="deleteSelectedItemButton" onclick="deleteItem()">Delete selected item</button></td>
+                <td>|</td>
+                <td><button id="decreaseItemIndentationButton" onclick="decreaseItemIndentation()">Decrease indentation</button></td>
+                <td><button id="increaseItemIndentationButton" onclick="increaseItemIndentation()">Increase indentation</button></td>
+                <td>|</td>
+                <td><button id="undoButton" onclick="undo()">Undo</button></td>
+                <td><button id="redoButton" onclick="redo()">Redo</button></td>
+            </tr>
+        </table>
+    </div>
+    <div id="ganttChartView" style="height: 388px">...</div>
+</body>
+</html>
