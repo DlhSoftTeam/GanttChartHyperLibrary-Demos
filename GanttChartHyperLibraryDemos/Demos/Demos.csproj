@@ -319,9 +319,6 @@
     <Content Include="Samples\JavaScript\GanttChartView\UndoRedo\app.css" />
     <Content Include="Samples\JavaScript\GanttChartView\UndoRedo\app.js" />
     <Content Include="Samples\JavaScript\GanttChartView\UndoRedo\index.html" />
-    <Content Include="Samples\JavaScript\GanttChartView\UndoRedo\Scripts\bridge.min.js" />
-    <Content Include="Samples\JavaScript\GanttChartView\UndoRedo\Scripts\DlhSoft.UndoManagementLibrary.js" />
-    <Content Include="Samples\JavaScript\GanttChartView\UndoRedo\Scripts\DlhSoft.UndoManagementLibrary.min.js" />
     <Content Include="Samples\JavaScript\GanttChartView\UndoRedo\templates.js" />
     <Content Include="Samples\JavaScript\GanttChartView\UndoRedo\themes.js" />
     <Content Include="Samples\JavaScript\GanttChartView\WBS\app.css" />
@@ -736,9 +733,6 @@
     <Content Include="Samples\TypeScript\GanttChartView\UndoRedo\app.css" />
     <Content Include="Samples\TypeScript\GanttChartView\UndoRedo\app.js" />
     <Content Include="Samples\TypeScript\GanttChartView\UndoRedo\index.html" />
-    <Content Include="Samples\TypeScript\GanttChartView\UndoRedo\Scripts\bridge.min.js" />
-    <Content Include="Samples\TypeScript\GanttChartView\UndoRedo\Scripts\DlhSoft.UndoManagementLibrary.js" />
-    <Content Include="Samples\TypeScript\GanttChartView\UndoRedo\Scripts\DlhSoft.UndoManagementLibrary.min.js" />
     <Content Include="Samples\TypeScript\GanttChartView\UndoRedo\templates.js" />
     <Content Include="Samples\TypeScript\GanttChartView\UndoRedo\themes.js" />
     <Content Include="Samples\TypeScript\GanttChartView\WBS\app.css" />
@@ -926,6 +920,7 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\bridge.min.js" />
     <Content Include="Scripts\DlhSoft.Data.Angular.Directives.js" />
     <Content Include="Scripts\DlhSoft.Data.HTML.Controls.js" />
     <Content Include="Scripts\DlhSoft.HierarchicalData.HTML.Controls.js" />
@@ -934,6 +929,8 @@
     <Content Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.js" />
     <Content Include="Scripts\DlhSoft.ProjectData.PertChart.Angular.Directives.js" />
     <Content Include="Scripts\DlhSoft.ProjectData.PertChart.HTML.Controls.js" />
+    <Content Include="Scripts\DlhSoft.UndoManagementLibrary.js" />
+    <Content Include="Scripts\DlhSoft.UndoManagementLibrary.min.js" />
     <Content Include="Templates\SourceCode.html" />
     <Content Include="Templates\Sample.html" />
     <None Include="Tools\ArchiveBuilder.exe" />
@@ -1019,13 +1016,13 @@
     <Content Include="Samples\TypeScript\ScheduleChartView\ShiftScheduling\app.ts" />
     <Content Include="Samples\TypeScript\ScheduleChartView\AssigningTasks\app.ts" />
     <Content Include="Samples\TypeScript\GanttChartView\UndoRedo\app.ts" />
-    <Content Include="Samples\TypeScript\GanttChartView\UndoRedo\Scripts\bridge.d.ts" />
-    <Content Include="Samples\TypeScript\GanttChartView\UndoRedo\Scripts\DlhSoft.UndoManagementLibrary.d.ts" />
+    <TypeScriptCompile Include="Scripts\bridge.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.Data.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.HierarchicalData.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.GanttChart.HTML.Controls.Extras.d.ts" />
     <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.PertChart.HTML.Controls.d.ts" />
+    <TypeScriptCompile Include="Scripts\DlhSoft.UndoManagementLibrary.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -1080,6 +1077,7 @@
     <Folder Include="Samples\JavaScript\GanttChartView\Statuses\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\Styling\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\TimeConstraints\Scripts\" />
+    <Folder Include="Samples\JavaScript\GanttChartView\UndoRedo\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\WBS\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\WorkOptimizations\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\ZoomLevel\Scripts\" />
@@ -1145,6 +1143,7 @@
     <Folder Include="Samples\TypeScript\GanttChartView\Statuses\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\Styling\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\TimeConstraints\Scripts\" />
+    <Folder Include="Samples\TypeScript\GanttChartView\UndoRedo\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\WBS\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\WorkOptimizations\Scripts\" />
     <Folder Include="Samples\TypeScript\GanttChartView\ZoomLevel\Scripts\" />
