@@ -6,12 +6,61 @@
 Bridge.assembly("DlhSoft.UndoManagementLibrary", function ($asm, globals) {
     "use strict";
 
+    /** @namespace System */
+
+    /**
+     * @memberof System
+     * @callback System.Action
+     * @return  {void}
+     */
+
+    /** @namespace System.ComponentModel */
+
+    /**
+     * @memberof System.ComponentModel
+     * @callback System.ComponentModel.PropertyChangedEventHandler
+     * @param   {Object}                                            sender    
+     * @param   {System.ComponentModel.PropertyChangedEventArgs}    e
+     * @return  {void}
+     */
+
+    /** @namespace DlhSoft.UndoManagementLibrary */
+
+    /**
+     * Provides support for recording (or executing and automatically recording) and undoing or redoing actions.
+     *
+     * @public
+     * @class DlhSoft.UndoManagementLibrary.UndoStack
+     * @implements  System.ComponentModel.INotifyPropertyChanged
+     */
     Bridge.define("DlhSoft.UndoManagementLibrary.UndoStack", {
         inherits: [System.ComponentModel.INotifyPropertyChanged],
         completedActions: null,
         undoneActions: null,
         config: {
             events: {
+                /**
+                 * Occurs when CanUndo/CanRedo property values change.
+                 *
+                 * @instance
+                 * @public
+                 * @this DlhSoft.UndoManagementLibrary.UndoStack
+                 * @memberof DlhSoft.UndoManagementLibrary.UndoStack
+                 * @function addPropertyChanged
+                 * @param   {System.ComponentModel.PropertyChangedEventHandler}    value
+                 * @return  {void}
+                 */
+                /**
+                 * Occurs when CanUndo/CanRedo property values change.
+                 *
+                 * @instance
+                 * @public
+                 * @this DlhSoft.UndoManagementLibrary.UndoStack
+                 * @memberof DlhSoft.UndoManagementLibrary.UndoStack
+                 * @function removePropertyChanged
+                 * @param   {System.ComponentModel.PropertyChangedEventHandler}    value
+                 * @return  {void}
+                 */
                 PropertyChanged: null
             },
             alias: [
@@ -23,12 +72,56 @@ Bridge.assembly("DlhSoft.UndoManagementLibrary", function ($asm, globals) {
                 this.undoneActions = new (System.Collections.Generic.List$1(DlhSoft.UndoManagementLibrary.UndoStack.ActionRecord))();
             }
         },
+        /**
+         * Indicates whether there are any completed operations that can be undone.
+         *
+         * @instance
+         * @public
+         * @this DlhSoft.UndoManagementLibrary.UndoStack
+         * @memberof DlhSoft.UndoManagementLibrary.UndoStack
+         * @function getCanUndo
+         * @return  {boolean}
+         */
+        /**
+         * Indicates whether there are any completed operations that can be undone.
+         *
+         * @instance
+         * @function setCanUndo
+         */
         getCanUndo: function () {
             return System.Linq.Enumerable.from(this.completedActions).any();
         },
+        /**
+         * Indicates whether there are any undone operations that can be redone.
+         *
+         * @instance
+         * @public
+         * @this DlhSoft.UndoManagementLibrary.UndoStack
+         * @memberof DlhSoft.UndoManagementLibrary.UndoStack
+         * @function getCanRedo
+         * @return  {boolean}
+         */
+        /**
+         * Indicates whether there are any undone operations that can be redone.
+         *
+         * @instance
+         * @function setCanRedo
+         */
         getCanRedo: function () {
             return System.Linq.Enumerable.from(this.undoneActions).any();
         },
+        /**
+         * Records an already executed action to the undo stack.
+         *
+         * @instance
+         * @public
+         * @this DlhSoft.UndoManagementLibrary.UndoStack
+         * @memberof DlhSoft.UndoManagementLibrary.UndoStack
+         * @param   {System.Action}    whatWasDone    
+         * @param   {System.Action}    howToUndo      
+         * @param   {?number}          whenWasDone
+         * @return  {void}
+         */
         record: function (whatWasDone, howToUndo, whenWasDone) {
             var $t;
             if (whenWasDone === void 0) { whenWasDone = null; }
@@ -47,11 +140,32 @@ Bridge.assembly("DlhSoft.UndoManagementLibrary", function ($asm, globals) {
                 this.onPropertyChanged("canRedo");
             }
         },
+        /**
+         * Executes an action and records it to the undo stack.
+         *
+         * @instance
+         * @public
+         * @this DlhSoft.UndoManagementLibrary.UndoStack
+         * @memberof DlhSoft.UndoManagementLibrary.UndoStack
+         * @param   {System.Action}    whatToDo     
+         * @param   {System.Action}    howToUndo
+         * @return  {void}
+         */
         doAndRecord: function (whatToDo, howToUndo) {
             var now = new Date();
             whatToDo();
             this.record(whatToDo, howToUndo, System.Int64.clip32(System.Int64((now).getTime()).mul(10000).div(System.Int64(10000))));
         },
+        /**
+         * Undoes the last completed action and related actions.
+         *
+         * @instance
+         * @public
+         * @this DlhSoft.UndoManagementLibrary.UndoStack
+         * @memberof DlhSoft.UndoManagementLibrary.UndoStack
+         * @param   {?number}    relatedActionSpan    Maximum time span in milliseconds to consider for determining related actions.
+         * @return  {void}
+         */
         undo: function (relatedActionSpan) {
             if (relatedActionSpan === void 0) { relatedActionSpan = null; }
             if (!this.getCanUndo()) {
@@ -78,6 +192,16 @@ Bridge.assembly("DlhSoft.UndoManagementLibrary", function ($asm, globals) {
                 this.onPropertyChanged("canRedo");
             }
         },
+        /**
+         * Redoes the last undone action and related actions.
+         *
+         * @instance
+         * @public
+         * @this DlhSoft.UndoManagementLibrary.UndoStack
+         * @memberof DlhSoft.UndoManagementLibrary.UndoStack
+         * @param   {?number}    relatedActionSpan    Maximum time span in milliseconds to consider for determining related actions.
+         * @return  {void}
+         */
         redo: function (relatedActionSpan) {
             if (relatedActionSpan === void 0) { relatedActionSpan = null; }
             if (!this.getCanRedo()) {
@@ -104,6 +228,16 @@ Bridge.assembly("DlhSoft.UndoManagementLibrary", function ($asm, globals) {
                 this.onPropertyChanged("canUndo");
             }
         },
+        /**
+         * Raises PropertyChanged event.
+         *
+         * @instance
+         * @protected
+         * @this DlhSoft.UndoManagementLibrary.UndoStack
+         * @memberof DlhSoft.UndoManagementLibrary.UndoStack
+         * @param   {string}    propertyName
+         * @return  {void}
+         */
         onPropertyChanged: function (propertyName) {
             !Bridge.staticEquals(this.PropertyChanged, null) ? this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName)) : null;
         }
