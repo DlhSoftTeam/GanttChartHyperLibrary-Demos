@@ -188,7 +188,7 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'UndoRedo', title: 'Undo-redo (using DlhSoft.UndoManagementLibrary)', description: 'Shows how you can add support for undo and redo operations for the Gantt Chart items',
+            component: 'GanttChartView', feature: 'UndoRedo', title: 'Undo-redo (using Undo Management Library)', description: 'Shows how you can add support for undo and redo operations for the Gantt Chart items – using UndoStack component from DlhSoft Undo Management Library, available separately for free as open source',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
