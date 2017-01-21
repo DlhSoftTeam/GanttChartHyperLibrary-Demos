@@ -133,6 +133,8 @@ function increaseItemIndentation() {
     var item = ganttChartView.getSelectedItem();
     if (item == null)
         return;
+    if (item.index == 0 || item.indentation > items[item.index - 1].indentation)
+        return;
     undoStack.doAndRecord(function () {
         ganttChartView.increaseItemIndentation(item);
         ganttChartView.scrollToItem(item);
@@ -144,6 +146,8 @@ function increaseItemIndentation() {
 function decreaseItemIndentation() {
     var item = ganttChartView.getSelectedItem();
     if (item == null)
+        return;
+    if (item.indentation == 0)
         return;
     undoStack.doAndRecord(function () {
         ganttChartView.decreaseItemIndentation(item);
