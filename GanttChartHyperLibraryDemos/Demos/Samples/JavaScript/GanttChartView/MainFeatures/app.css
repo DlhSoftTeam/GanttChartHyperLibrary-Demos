@@ -68,3 +68,46 @@ input {
     color: black;
     background-color: white;
 }
+
+/* Support for editing items. */
+.editor {
+    z-index: 1;
+    position: absolute;
+    left: 180px; top: 64px;
+    border: 1px solid #808080;
+    padding: 10px;
+    background-color: white;
+    font-family: Tahoma, Arial; font-size: 12px;
+    box-shadow: #808080 4px 4px;
+    display: none;
+}
+.editor .header {
+    margin-top: 0px;
+    font-size: larger;
+    font-weight: bold;
+}
+.editor .cell {
+    padding: 4px;
+}
+.editor .command-area {
+    margin: 4px;
+    margin-top: 8px;
+    text-align: right;
+}
+.editor input {
+    border: 1px solid #e0e0e0;
+    padding: 4px;
+}
+.editor input[type='checkbox'] {
+    margin-left: 0px;
+}
+.editor input[disabled='disabled'] {
+    background-color: #f0f0f0 !important;
+}
+.editor .command-area .command {
+    text-decoration: none;
+    margin-left: 4px;
+}
+.editor .command-area .main {
+    font-weight: bold;
+}

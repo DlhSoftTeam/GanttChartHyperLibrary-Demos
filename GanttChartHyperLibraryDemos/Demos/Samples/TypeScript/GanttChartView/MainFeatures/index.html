@@ -18,6 +18,7 @@
             <div class="ribbonCommandsArea">
                 <div class="ribbonCommand"><a href="javascript:addNewItem();" title="Add new item"><img src="Images/AddNew.png" alt="Add new" /></a></div>
                 <div class="ribbonCommand"><a href="javascript:insertNewItem();" title="Insert new item before selection"><img src="Images/InsertNew.png" alt="Insert new" /></a></div>
+                <div class="ribbonCommand"><a href="javascript:editItem();" title="Edit selected item"><img src="Images/Edit.png" alt="Edit" /></a></div>
                 <div class="ribbonCommand"><a href="javascript:decreaseItemIndentation();" title="Decrease selected item indentation"><img src="Images/DecreaseIndentation.png" alt="Increase indentation" /></a></div>
                 <div class="ribbonCommand"><a href="javascript:increaseItemIndentation();" title="Increase selected item indentation"><img src="Images/IncreaseIndentation.png" alt="Increase indentation" /></a></div>
                 <div class="ribbonCommand"><a href="javascript:deleteItem();" title="Delete selected item"><img src="Images/Delete.png" alt="Delete selected item" /></a></div>
@@ -66,6 +67,53 @@
             </div>
         </div>
     </div>
+    <!-- Support for editing items (element hidden by default from CSS). -->
+    <div id="editor" class="editor">
+        <p class="header">Edit task</p>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <td>Task</td>
+                <td class="cell"><input id="contentEditor" /></td>
+            </tr>
+            <tr>
+                <td>Start</td>
+                <td class="cell"><input id="startEditor" /></td>
+            </tr>
+            <tr>
+                <td>Effort (h)</td>
+                <td class="cell"><input id="effortEditor" onchange="onEffortEditorChanged()" /></td>
+            </tr>
+            <tr>
+                <td>Duration (d)</td>
+                <td class="cell"><input id="durationEditor" onchange="onDurationEditorChanged()" /></td>
+            </tr>
+            <tr>
+                <td>Finish</td>
+                <td class="cell"><input id="finishEditor" /></td>
+            </tr>
+            <tr>
+                <td>Milestone</td>
+                <td class="cell"><input id="isMilestoneEditor" type="checkbox" onchange="onIsMilestoneEditorChanged()" /></td>
+            </tr>
+            <tr>
+                <td>Completed %</td>
+                <td class="cell"><input id="completionEditor" /></td>
+            </tr>
+            <tr>
+                <td>Predecessors</td>
+                <td class="cell"><input id="predecessorsEditor" /></td>
+            </tr>
+            <tr>
+                <td>Assignments</td>
+                <td class="cell"><input id="assignmentsEditor" /></td>
+            </tr>
+        </table>
+        <div class="command-area">
+            <a class="command main" href="javascript://" onclick="saveEditor()">Save</a>
+            <a class="command" href="javascript://" onclick="closeEditor()">Cancel</a>
+        </div>
+    </div>
+    <!-- Component and other areas and views. -->
     <div id="ganttChartView" style="height: 388px">...</div>
     <div id="loadProjectXmlPanel" style="display: none">
         <div class="extraPanel">

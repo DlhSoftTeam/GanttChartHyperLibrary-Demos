@@ -1,6 +1,7 @@
 ﻿/// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts'/>
 /// <reference path='./Scripts/DlhSoft.ProjectData.PertChart.HTML.Controls.d.ts'/>
 /// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.Extras.d.ts'/>
+/// <reference path='./Scripts/DlhSoft.Data.HTML.Controls.d.ts'/>
 import GanttChartView = DlhSoft.Controls.GanttChartView;
 import GanttChartItem = GanttChartView.Item;
 import PredecessorItem = GanttChartView.PredecessorItem;
@@ -8,6 +9,8 @@ import ScheduleChartView = DlhSoft.Controls.ScheduleChartView;
 import LoadChartView = DlhSoft.Controls.LoadChartView;
 import PertChartView = DlhSoft.Controls.Pert.PertChartView;
 import NetworkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView;
+import DateTimePicker = DlhSoft.Controls.DateTimePicker;
+import MultiSelectorComboBox = DlhSoft.Controls.MultiSelectorComboBox;
 
 // Query string syntax: ?theme
 // Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
@@ -653,4 +656,151 @@ function refreshViewsSplitterPosition(sourceControlType, gridWidth, chartWidth) 
             isWaitingToRefreshGanttChartViewSplitterPosition = false;
         });
     }
+}
+
+// Support for editing items.
+var editor = document.getElementById('editor');
+var editedItem: GanttChartItem;
+function editItem() {
+    var item = ganttChartView.getSelectedItem();
+    if (item == null)
+        return;
+    editedItem = item;
+    var contentInput = <HTMLInputElement>document.getElementById('contentEditor');
+    contentInput.value = item.content;
+    var startInput = <HTMLInputElement>document.getElementById('startEditor');
+    DateTimePicker.initialize(startInput, GanttChartView.getOutputDate(item.start), { defaultTimeOfDay: 8 * 60 * 60 * 1000, valueChangeHandler: onDateEditorChanged });
+    startInput.removeAttribute('disabled');
+    if (item.hasChildren)
+        startInput.setAttribute('disabled', 'disabled');
+    var finishInput = <HTMLInputElement>document.getElementById('finishEditor');
+    finishInput.removeAttribute('disabled');
+    if (item.hasChildren || item.isMilestone)
+        finishInput.setAttribute('disabled', 'disabled');
+    DateTimePicker.initialize(finishInput, !item.isMilestone ? GanttChartView.getOutputDate(item.finish) : null, { defaultTimeOfDay: 16 * 60 * 60 * 1000, valueChangeHandler: onDateEditorChanged });
+    var effortInput = <HTMLInputElement>document.getElementById('effortEditor');
+    effortInput.removeAttribute('disabled');
+    if (item.hasChildren || item.isMilestone)
+        effortInput.setAttribute('disabled', 'disabled');
+    effortInput.value = (ganttChartView.getItemTotalEffort(item) / (60 * 60 * 1000)).toString();
+    var durationInput = <HTMLInputElement>document.getElementById('durationEditor');
+    durationInput.removeAttribute('disabled');
+    if (item.hasChildren || item.isMilestone)
+        durationInput.setAttribute('disabled', 'disabled');
+    durationInput.value = (ganttChartView.getItemDuration(item) / (8 * 60 * 60 * 1000)).toString();
+    var isMilestoneInput = <HTMLInputElement>document.getElementById('isMilestoneEditor');
+    isMilestoneInput.removeAttribute('disabled');
+    if (item.hasChildren)
+        isMilestoneInput.setAttribute('disabled', 'disabled');
+    isMilestoneInput.checked = item.isMilestone;
+    var completionInput = <HTMLInputElement>document.getElementById('completionEditor');
+    completionInput.removeAttribute('disabled');
+    if (item.hasChildren || item.isMilestone)
+        completionInput.setAttribute('disabled', 'disabled');
+    completionInput.value = !item.isMilestone && item.finish > item.start ? Math.round(ganttChartView.getItemCompletion(item) * 100).toString() : '';
+    var predecessorsInput = <HTMLInputElement>document.getElementById('predecessorsEditor');
+    predecessorsInput.value = ganttChartView.getItemPredecessorsString(item);
+    var assignmentsInput = <HTMLInputElement>document.getElementById('assignmentsEditor');
+    MultiSelectorComboBox.initialize(assignmentsInput, ganttChartView.getAssignedResources(), item.assignmentsContent);
+    editor.style.display = 'block';
+    settings.selectionMode = 'None';
+}
+function onDateEditorChanged() {
+    var startInput = <HTMLInputElement>document.getElementById('startEditor');
+    var finishInput = <HTMLInputElement>document.getElementById('finishEditor');
+    var finishDateTimePicker = DateTimePicker.get(finishInput);
+    var start = DateTimePicker.get(startInput).getValue();
+    if (finishDateTimePicker.getValue() < start)
+        setTimeout(() => finishDateTimePicker.setValue(start));
+    var effortInput = <HTMLInputElement>document.getElementById('effortEditor');
+    var durationInput = <HTMLInputElement>document.getElementById('durationEditor');
+    var isMilestoneInput = <HTMLInputElement>document.getElementById('isMilestoneEditor');
+    effortInput.setAttribute('disabled', 'disabled');
+    durationInput.setAttribute('disabled', 'disabled');
+    isMilestoneInput.setAttribute('disabled', 'disabled');
+}
+function onEffortEditorChanged() {
+    var startInput = <HTMLInputElement>document.getElementById('startEditor');
+    var finishInput = <HTMLInputElement>document.getElementById('finishEditor');
+    var durationInput = <HTMLInputElement>document.getElementById('durationEditor');
+    var isMilestoneInput = <HTMLInputElement>document.getElementById('isMilestoneEditor');
+    startInput.setAttribute('disabled', 'disabled');
+    finishInput.setAttribute('disabled', 'disabled');
+    durationInput.setAttribute('disabled', 'disabled');
+    isMilestoneInput.setAttribute('disabled', 'disabled');
+}
+function onDurationEditorChanged() {
+    var startInput = <HTMLInputElement>document.getElementById('startEditor');
+    var finishInput = <HTMLInputElement>document.getElementById('finishEditor');
+    var effortInput = <HTMLInputElement>document.getElementById('effortEditor');
+    var isMilestoneInput = <HTMLInputElement>document.getElementById('isMilestoneEditor');
+    startInput.setAttribute('disabled', 'disabled');
+    finishInput.setAttribute('disabled', 'disabled');
+    effortInput.setAttribute('disabled', 'disabled');
+    isMilestoneInput.setAttribute('disabled', 'disabled');
+}
+function onIsMilestoneEditorChanged() {
+    if (!editedItem)
+        return;
+    var isMilestoneInput = <HTMLInputElement>document.getElementById('isMilestoneEditor');
+    var finishInput = <HTMLInputElement>document.getElementById('finishEditor');
+    var effortInput = <HTMLInputElement>document.getElementById('effortEditor');
+    var durationInput = <HTMLInputElement>document.getElementById('durationEditor');
+    var completionInput = <HTMLInputElement>document.getElementById('completionEditor');
+    finishInput.removeAttribute('disabled');
+    effortInput.removeAttribute('disabled');
+    durationInput.removeAttribute('disabled');
+    completionInput.removeAttribute('disabled');
+    if (editedItem.hasChildren || isMilestoneInput.checked) {
+        finishInput.setAttribute('disabled', 'disabled');
+        effortInput.setAttribute('disabled', 'disabled');
+        durationInput.setAttribute('disabled', 'disabled');
+        completionInput.setAttribute('disabled', 'disabled');
+    }
+}
+function closeEditor() {
+    delete editedItem;
+    editor.style.display = 'none';
+    settings.selectionMode = 'Focus';
+}
+function saveEditor() {
+    if (editedItem) {
+        var contentInput = <HTMLInputElement>document.getElementById('contentEditor');
+        ganttChartView.setItemContent(editedItem, contentInput.value);
+        var assignmentsInput = <HTMLInputElement>document.getElementById('assignmentsEditor');
+        ganttChartView.setItemAssignmentsContent(editedItem, assignmentsInput.value);
+        if (!editedItem.hasChildren) {
+            var isMilestoneInput = <HTMLInputElement>document.getElementById('isMilestoneEditor');
+            ganttChartView.setItemIsMilestone(editedItem, isMilestoneInput.checked);
+            var startInput = <HTMLInputElement>document.getElementById('startEditor');
+            ganttChartView.setItemStart(editedItem, GanttChartView.getInputDate(DateTimePicker.get(startInput).getValue()));
+            if (!editedItem.isMilestone) {
+                var finishInput = <HTMLInputElement>document.getElementById('finishEditor');
+                if (!finishInput.disabled) {
+                    ganttChartView.setItemFinish(editedItem, GanttChartView.getInputDate(DateTimePicker.get(finishInput).getValue()));
+                }
+                else {
+                    var effortInput = <HTMLInputElement>document.getElementById('effortEditor');
+                    if (!effortInput.disabled) {
+                        ganttChartView.setItemEffort(editedItem, parseFloat(effortInput.value) * 60 * 60 * 1000 / ganttChartView.getItemAllocationUnits(editedItem));
+                    }
+                    else {
+                        var durationInput = <HTMLInputElement>document.getElementById('durationEditor');
+                        if (!durationInput.disabled) {
+                            ganttChartView.setItemDuration(editedItem, parseFloat(durationInput.value) * 8 * 60 * 60 * 1000);
+                        }
+                    }
+                }
+                var completionInput = <HTMLInputElement>document.getElementById('completionEditor');
+                ganttChartView.setItemCompletion(editedItem, completionInput.value ? parseFloat(completionInput.value) / 100 : 0);
+            }
+            else {
+                editedItem.finish = editedItem.start;
+            }
+        }
+        var predecessorsInput = <HTMLInputElement>document.getElementById('predecessorsEditor');
+        ganttChartView.setItemPredecessorsString(editedItem, predecessorsInput.value);
+        ganttChartView.refreshItemNeighbourhood(editedItem);
+    }
+    closeEditor();
 }

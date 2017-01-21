@@ -209,6 +209,7 @@
     <Content Include="Samples\JavaScript\GanttChartView\HierarchicalVirtualization\index.html" />
     <Content Include="Samples\JavaScript\GanttChartView\HierarchicalVirtualization\templates.js" />
     <Content Include="Samples\JavaScript\GanttChartView\HierarchicalVirtualization\themes.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\Edit.png" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\templates.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\themes.js" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\AddNew.png" />
@@ -634,6 +635,7 @@
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\DecreaseTimelinePage.png" />
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\Delete.png" />
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\DependencyConstraints.png" />
+    <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\Edit.png" />
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\IncreaseIndentation.png" />
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\IncreaseTimelinePage.png" />
     <Content Include="Samples\TypeScript\GanttChartView\MainFeatures\Images\InsertNew.png" />
