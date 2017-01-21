@@ -635,3 +635,153 @@ function refreshViewsSplitterPosition(sourceControlType, gridWidth, chartWidth) 
         });
     }
 }
+
+// Support for editing items.
+var GanttChartView = DlhSoft.Controls.GanttChartView;
+var DateTimePicker = DlhSoft.Controls.DateTimePicker;
+var MultiSelectorComboBox = DlhSoft.Controls.MultiSelectorComboBox;
+var editor = document.getElementById('editor');
+var editedItem;
+function editItem() {
+    var item = ganttChartView.getSelectedItem();
+    if (item == null)
+        return;
+    editedItem = item;
+    var contentInput = document.getElementById('contentEditor');
+    contentInput.value = item.content;
+    var startInput = document.getElementById('startEditor');
+    DateTimePicker.initialize(startInput, GanttChartView.getOutputDate(item.start), { defaultTimeOfDay: 8 * 60 * 60 * 1000, valueChangeHandler: onDateEditorChanged });
+    startInput.removeAttribute('disabled');
+    if (item.hasChildren)
+        startInput.setAttribute('disabled', 'disabled');
+    var finishInput = document.getElementById('finishEditor');
+    finishInput.removeAttribute('disabled');
+    if (item.hasChildren || item.isMilestone)
+        finishInput.setAttribute('disabled', 'disabled');
+    DateTimePicker.initialize(finishInput, !item.isMilestone ? GanttChartView.getOutputDate(item.finish) : null, { defaultTimeOfDay: 16 * 60 * 60 * 1000, valueChangeHandler: onDateEditorChanged });
+    var effortInput = document.getElementById('effortEditor');
+    effortInput.removeAttribute('disabled');
+    if (item.hasChildren || item.isMilestone)
+        effortInput.setAttribute('disabled', 'disabled');
+    effortInput.value = (ganttChartView.getItemTotalEffort(item) / (60 * 60 * 1000)).toString();
+    var durationInput = document.getElementById('durationEditor');
+    durationInput.removeAttribute('disabled');
+    if (item.hasChildren || item.isMilestone)
+        durationInput.setAttribute('disabled', 'disabled');
+    durationInput.value = (ganttChartView.getItemDuration(item) / (8 * 60 * 60 * 1000)).toString();
+    var isMilestoneInput = document.getElementById('isMilestoneEditor');
+    isMilestoneInput.removeAttribute('disabled');
+    if (item.hasChildren)
+        isMilestoneInput.setAttribute('disabled', 'disabled');
+    isMilestoneInput.checked = item.isMilestone;
+    var completionInput = document.getElementById('completionEditor');
+    completionInput.removeAttribute('disabled');
+    if (item.hasChildren || item.isMilestone)
+        completionInput.setAttribute('disabled', 'disabled');
+    completionInput.value = !item.isMilestone && item.finish > item.start ? Math.round(ganttChartView.getItemCompletion(item) * 100).toString() : '';
+    var predecessorsInput = document.getElementById('predecessorsEditor');
+    predecessorsInput.value = ganttChartView.getItemPredecessorsString(item);
+    var assignmentsInput = document.getElementById('assignmentsEditor');
+    MultiSelectorComboBox.initialize(assignmentsInput, ganttChartView.getAssignedResources(), item.assignmentsContent);
+    editor.style.display = 'block';
+    settings.selectionMode = 'None';
+}
+function onDateEditorChanged() {
+    var startInput = document.getElementById('startEditor');
+    var finishInput = document.getElementById('finishEditor');
+    var finishDateTimePicker = DateTimePicker.get(finishInput);
+    var start = DateTimePicker.get(startInput).getValue();
+    if (finishDateTimePicker.getValue() < start)
+        setTimeout(function () { return finishDateTimePicker.setValue(start); });
+    var effortInput = document.getElementById('effortEditor');
+    var durationInput = document.getElementById('durationEditor');
+    var isMilestoneInput = document.getElementById('isMilestoneEditor');
+    effortInput.setAttribute('disabled', 'disabled');
+    durationInput.setAttribute('disabled', 'disabled');
+    isMilestoneInput.setAttribute('disabled', 'disabled');
+}
+function onEffortEditorChanged() {
+    var startInput = document.getElementById('startEditor');
+    var finishInput = document.getElementById('finishEditor');
+    var durationInput = document.getElementById('durationEditor');
+    var isMilestoneInput = document.getElementById('isMilestoneEditor');
+    startInput.setAttribute('disabled', 'disabled');
+    finishInput.setAttribute('disabled', 'disabled');
+    durationInput.setAttribute('disabled', 'disabled');
+    isMilestoneInput.setAttribute('disabled', 'disabled');
+}
+function onDurationEditorChanged() {
+    var startInput = document.getElementById('startEditor');
+    var finishInput = document.getElementById('finishEditor');
+    var effortInput = document.getElementById('effortEditor');
+    var isMilestoneInput = document.getElementById('isMilestoneEditor');
+    startInput.setAttribute('disabled', 'disabled');
+    finishInput.setAttribute('disabled', 'disabled');
+    effortInput.setAttribute('disabled', 'disabled');
+    isMilestoneInput.setAttribute('disabled', 'disabled');
+}
+function onIsMilestoneEditorChanged() {
+    if (!editedItem)
+        return;
+    var isMilestoneInput = document.getElementById('isMilestoneEditor');
+    var finishInput = document.getElementById('finishEditor');
+    var effortInput = document.getElementById('effortEditor');
+    var durationInput = document.getElementById('durationEditor');
+    var completionInput = document.getElementById('completionEditor');
+    finishInput.removeAttribute('disabled');
+    effortInput.removeAttribute('disabled');
+    durationInput.removeAttribute('disabled');
+    completionInput.removeAttribute('disabled');
+    if (editedItem.hasChildren || isMilestoneInput.checked) {
+        finishInput.setAttribute('disabled', 'disabled');
+        effortInput.setAttribute('disabled', 'disabled');
+        durationInput.setAttribute('disabled', 'disabled');
+        completionInput.setAttribute('disabled', 'disabled');
+    }
+}
+function closeEditor() {
+    delete editedItem;
+    editor.style.display = 'none';
+    settings.selectionMode = 'Focus';
+}
+function saveEditor() {
+    if (editedItem) {
+        var contentInput = document.getElementById('contentEditor');
+        ganttChartView.setItemContent(editedItem, contentInput.value);
+        var assignmentsInput = document.getElementById('assignmentsEditor');
+        ganttChartView.setItemAssignmentsContent(editedItem, assignmentsInput.value);
+        if (!editedItem.hasChildren) {
+            var isMilestoneInput = document.getElementById('isMilestoneEditor');
+            ganttChartView.setItemIsMilestone(editedItem, isMilestoneInput.checked);
+            var startInput = document.getElementById('startEditor');
+            ganttChartView.setItemStart(editedItem, GanttChartView.getInputDate(DateTimePicker.get(startInput).getValue()));
+            if (!editedItem.isMilestone) {
+                var finishInput = document.getElementById('finishEditor');
+                if (!finishInput.disabled) {
+                    ganttChartView.setItemFinish(editedItem, GanttChartView.getInputDate(DateTimePicker.get(finishInput).getValue()));
+                }
+                else {
+                    var effortInput = document.getElementById('effortEditor');
+                    if (!effortInput.disabled) {
+                        ganttChartView.setItemEffort(editedItem, parseFloat(effortInput.value) * 60 * 60 * 1000 / ganttChartView.getItemAllocationUnits(editedItem));
+                    }
+                    else {
+                        var durationInput = document.getElementById('durationEditor');
+                        if (!durationInput.disabled) {
+                            ganttChartView.setItemDuration(editedItem, parseFloat(durationInput.value) * 8 * 60 * 60 * 1000);
+                        }
+                    }
+                }
+                var completionInput = document.getElementById('completionEditor');
+                ganttChartView.setItemCompletion(editedItem, completionInput.value ? parseFloat(completionInput.value) / 100 : 0);
+            }
+            else {
+                editedItem.finish = editedItem.start;
+            }
+        }
+        var predecessorsInput = document.getElementById('predecessorsEditor');
+        ganttChartView.setItemPredecessorsString(editedItem, predecessorsInput.value);
+        ganttChartView.refreshItemNeighbourhood(editedItem);
+    }
+    closeEditor();
+}
