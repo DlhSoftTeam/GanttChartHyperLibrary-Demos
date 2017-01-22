@@ -702,6 +702,25 @@ function editItem() {
     predecessorsInput.value = ganttChartView.getItemPredecessorsString(item);
     var assignmentsInput = <HTMLInputElement>document.getElementById('assignmentsEditor');
     MultiSelectorComboBox.initialize(assignmentsInput, ganttChartView.getAssignedResources(), item.assignmentsContent);
+    var oldBaselineStartInput = <HTMLInputElement>document.getElementById('baselineStartEditor');
+    var baselineStartInputParent = oldBaselineStartInput.parentElement;
+    var baselineStartInput = document.createElement('input');
+    baselineStartInput.setAttribute('id', 'baselineStartEditor');
+    baselineStartInputParent.replaceChild(baselineStartInput, oldBaselineStartInput);
+    var baselineStartDateTimePicker = DateTimePicker.initialize(baselineStartInput, null, { defaultTimeOfDay: 8 * 60 * 60 * 1000, isNullValueAccepted: true });
+    if (item.baselineStart)
+        baselineStartDateTimePicker.setValue(GanttChartView.getOutputDate(item.baselineStart));
+    var oldBaselineFinishInput = <HTMLInputElement>document.getElementById('baselineFinishEditor');
+    var baselineFinishInputParent = oldBaselineFinishInput.parentElement;
+    var baselineFinishInput = document.createElement('input');
+    baselineFinishInput.setAttribute('id', 'baselineFinishEditor');
+    baselineFinishInputParent.replaceChild(baselineFinishInput, oldBaselineFinishInput);
+    var baselineFinishDateTimePicker = DateTimePicker.initialize(baselineFinishInput, null, { defaultTimeOfDay: 16 * 60 * 60 * 1000, isNullValueAccepted: true });
+    if (!item.isMilestone && item.baselineFinish)
+        baselineFinishDateTimePicker.setValue(GanttChartView.getOutputDate(item.baselineFinish));
+    baselineFinishInput.removeAttribute('disabled');
+    if (item.isMilestone)
+        baselineFinishInput.setAttribute('disabled', 'disabled');
     editor.style.display = 'block';
     settings.selectionMode = 'None';
 }
@@ -747,15 +766,20 @@ function onIsMilestoneEditorChanged() {
     var effortInput = <HTMLInputElement>document.getElementById('effortEditor');
     var durationInput = <HTMLInputElement>document.getElementById('durationEditor');
     var completionInput = <HTMLInputElement>document.getElementById('completionEditor');
+    var baselineFinishInput = <HTMLInputElement>document.getElementById('baselineFinishEditor');
     finishInput.removeAttribute('disabled');
     effortInput.removeAttribute('disabled');
     durationInput.removeAttribute('disabled');
     completionInput.removeAttribute('disabled');
+    baselineFinishInput.removeAttribute('disabled');
     if (editedItem.hasChildren || isMilestoneInput.checked) {
         finishInput.setAttribute('disabled', 'disabled');
         effortInput.setAttribute('disabled', 'disabled');
         durationInput.setAttribute('disabled', 'disabled');
         completionInput.setAttribute('disabled', 'disabled');
+    }
+    if (isMilestoneInput.checked) {
+        baselineFinishInput.setAttribute('disabled', 'disabled');
     }
 }
 function closeEditor() {
@@ -800,6 +824,18 @@ function saveEditor() {
         }
         var predecessorsInput = <HTMLInputElement>document.getElementById('predecessorsEditor');
         ganttChartView.setItemPredecessorsString(editedItem, predecessorsInput.value);
+        var baselineStartInput = <HTMLInputElement>document.getElementById('baselineStartEditor');
+        var baselineStart = DateTimePicker.get(baselineStartInput).getValue();
+        if (baselineStart)
+            editedItem.baselineStart = GanttChartView.getInputDate(baselineStart);
+        else
+            delete editedItem.baselineStart;
+        var baselineFinishInput = <HTMLInputElement>document.getElementById('baselineFinishEditor');
+        var baselineFinish = DateTimePicker.get(baselineFinishInput).getValue();
+        if (baselineFinish)
+            editedItem.baselineFinish = GanttChartView.getInputDate(baselineFinish);
+        else
+            delete editedItem.baselineFinish;
         ganttChartView.refreshItemNeighbourhood(editedItem);
     }
     closeEditor();
