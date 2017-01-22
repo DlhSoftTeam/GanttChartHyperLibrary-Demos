@@ -89,9 +89,14 @@ input {
 .editor .cell {
     padding: 4px;
 }
+.editor .last-column-header {
+    text-align: right;
+    padding-right: 8px;
+}
 .editor .command-area {
     margin: 4px;
     margin-top: 8px;
+    margin-right: 160px;
     text-align: right;
 }
 .editor input {
