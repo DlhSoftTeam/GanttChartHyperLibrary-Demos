@@ -1,8 +1,8 @@
 ﻿/* Assembly: DlhSoft.ProjectData.GanttChart.HTML.Controls,
    Company: DlhSoft,
    Product: Project Data Modern Library,
-   Version: 5.3.11.0,
-   Copyright: Copyright © 2012-2016 DlhSoft,
+   Version: 5.3.12.2,
+   Copyright: Copyright © 2012-2017 DlhSoft,
    Title: Project Data Gantt Chart HTML Controls,
    Description: Project Data Gantt Chart related HTML client components */
 
@@ -261,6 +261,9 @@ declare module DlhSoft.Controls {
 
             /** Copies the common settings of the current component instance to the specified target settings collection; a secondary component instance may be initialized using the output collection. */
             copyCommonSettings(targetSettings: Settings): void;
+
+            /** Determines whether an item depends of another item by checking the hierarchy and predecessor items. */
+            itemDependsOf(item: Item, otherItem: Item): boolean;
         }
 
         /** Represents a task data item and its Gantt Chart representation. */
@@ -587,8 +590,8 @@ declare module DlhSoft.Controls {
             /** Function called whenever an item is moved in the managed list of the control, providing the item, source and target positions of the item, specified as parameters. */
             itemMoveHandler? (item: Item, fromIndex: number, toIndex: number): void;
 
-            itemContextMenuHandler? (e: Event): void;
-            predecessorItemContextMenuHandler? (e: Event): void;
+            itemContextMenuHandler? (e: Event, item: Item): void;
+            predecessorItemContextMenuHandler? (e: Event, predecessorItem: PredecessorItem, targetItem: Item): void;
 
             mouseHandler? (eventName: string, isOnItemsArea: boolean, isOnChart: boolean, row: Item|Scale, column: Column|Date, button: number, clickCount: number, e: MouseEvent): void;
             mouseMoveHandler? (isOnItemsArea: boolean, isOnChart: boolean, row: Item|Scale, column: Column|Date): void;
@@ -603,6 +606,8 @@ declare module DlhSoft.Controls {
             chartItemDoubleClickHandler? (item: Item, dateTime: Date): void;
             dependencyLineClickHandler? (predecessorItem: PredecessorItem, targetItem: Item, e: MouseEvent): void;
             dependencyLineDoubleClickHandler?(predecessorItem: PredecessorItem, targetItem: Item, e: MouseEvent): void;
+
+            invalidPredecessorDetectionHandler?(predecessorItem: PredecessorItem, targetitem: Item, sourceItem: Item): void;
         }
 
         /** Represents a grid column displayed by the GanttChartView component. */
