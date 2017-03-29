@@ -705,3 +705,20 @@ angular.module('Demos', [])
             templateUrl: 'Templates/SourceCode.html'
         };
     });
+
+// Support for Safari.
+$(document).ready(() => {
+    var body = $(document).find('body');
+    var shouldSyncSize = false;
+    var syncSizeTimer = setInterval(() => {
+        var sampleFrame = $('#sample-frame');
+        var sampleBody = sampleFrame.contents().find('body');
+        var bodyWidth = body.width(), sampleBodyWidth = sampleBody.width();
+        if (sampleBodyWidth > bodyWidth)
+            shouldSyncSize = true;
+        if (shouldSyncSize && sampleBodyWidth != bodyWidth)
+            sampleBody.width(bodyWidth + 'px');
+        if (!shouldSyncSize)
+            clearInterval(syncSizeTimer);
+    }, 500);
+});
