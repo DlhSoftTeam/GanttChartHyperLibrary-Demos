@@ -707,6 +707,7 @@ angular.module('Demos', [])
     });
 
 // Support for Safari.
+declare var $;
 $(document).ready(() => {
     var body = $(document).find('body');
     var shouldSyncSize = false;
