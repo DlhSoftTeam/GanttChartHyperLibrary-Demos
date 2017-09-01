@@ -7,10 +7,11 @@
 .selectedItem {
     background-color: #e0e0ff;
 }
-.cell input[type="text"] {
+.cell input {
     height: 24px;
-    margin: 2px;
-    margin-bottom: 6px;
+}
+.cell input[type="text"] {
+    margin: 0 2px;
     border-radius: 4px;
     padding: 4px 6px;
     line-height: 22px;
@@ -20,6 +21,9 @@
 }
 .cell input[type="text"]:focus {
     box-shadow: 0px 1px 0px 0px #78c;
+}
+.cell [style*="z-index:"] input {
+    height: auto;
 }
 .standardBar {
     fill: #3eb0c7;
