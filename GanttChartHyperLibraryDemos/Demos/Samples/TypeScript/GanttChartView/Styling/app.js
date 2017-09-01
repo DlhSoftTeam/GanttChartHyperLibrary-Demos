@@ -31,6 +31,7 @@ items[8].baselineStart = new Date(year, month, 12, 8, 0, 0);
 var settings = {
     currentTime: new Date(year, month, 2, 12, 0, 0),
     itemHeight: 32, barHeight: 15,
+    gridLines: '#eaeaea',
     containerClass: 'container', selectedItemClass: 'selectedItem', cellClass: 'cell',
     toggleButtonClass: 'toggleButton', toggleButtonHoveringClass: 'toggleButtonHovering',
     standardBarClass: 'standardBar', standardCompletionBarClass: 'darkBar',

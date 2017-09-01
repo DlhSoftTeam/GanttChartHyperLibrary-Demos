@@ -25,6 +25,7 @@ for (var i = 3; i <= 16; i++)
 var settings = {
     currentTime: new Date(year, month, 2, 12, 0, 0),
     itemHeight: 48, barHeight: 32,
+    gridLines: '#eaeaea',
     containerClass: 'container', selectedItemClass: 'selectedItem', cellClass: 'cell',
     normalAllocationBarClass: 'normalAllocationBar', underAllocationBarClass: 'underAllocationBar', overAllocationBarClass: 'overAllocationBar',
     alternativeItemClass: theme == 'Dark-black' ? 'alternativeGridItem-dark' : (theme == 'Steel-blue' ? 'alternativeGridItem-steel' : 'alternativeGridItem'),
