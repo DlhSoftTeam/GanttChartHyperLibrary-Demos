@@ -169,8 +169,11 @@ function initializeScales() {
         settings.hourWidth = hourWidth;
     settings.timelineStart = new Date(year, month, 1);
     settings.timelineFinish = new Date(year + (majorScaleTypeSelect.value == 'Years' ? 2 : (minorScaleTypeSelect.value != 'Hours' ? 1 : 0)), month + (minorScaleTypeSelect.value != 'Hours' ? 0 : 1), 1);
-    if (ganttChartView)
+    if (ganttChartView) {
+        settings.timelineStart = DlhSoft.Controls.GanttChartView.getInputDate(settings.timelineStart);
+        settings.timelineFinish = DlhSoft.Controls.GanttChartView.getInputDate(settings.timelineFinish);
         ganttChartView.refresh();
+    }
 }
 initializeScales();
 
