@@ -17,6 +17,7 @@ var ganttChartViewElement = <HTMLElement>document.querySelector('#ganttChartView
 interface MyGanttChartItem extends GanttChartItem {
     hasMilestoneAtFinish?: boolean;
     numberOfLinesToDisplayInsteadOfRectangle?: number;
+    label?: string;
 }
 
 var date = new Date(), year = date.getFullYear(), month = date.getMonth();
@@ -32,7 +33,7 @@ var items = <MyGanttChartItem[]>[
     { content: 'Task 2.2', indentation: 1, start: new Date() },
     {
         content: 'Task 2.2.1', indentation: 2, start: new Date(year, month, 11, 8, 0, 0), finish: new Date(year, month, 14, 16, 0, 0), completedFinish: new Date(year, month, 14, 16, 0, 0), assignmentsContent: 'Resource 2',
-        hasMilestoneAtFinish: true, numberOfLinesToDisplayInsteadOfRectangle: 50
+        hasMilestoneAtFinish: true, numberOfLinesToDisplayInsteadOfRectangle: 50, label: 'X'
     },
     {
         content: 'Task 2.2.2', indentation: 2, start: new Date(year, month, 12, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0), assignmentsContent: 'Resource 2',
@@ -44,6 +45,8 @@ items[7].predecessors = [{ item: items[6], lag: 2 * 60 * 60 * 1000 }];
 items[8].predecessors = [{ item: items[4] }, { item: items[5] }];
 for (var i = 4; i <= 16; i++)
     items.push({ content: 'Task ' + i, indentation: i >= 8 && i % 3 == 2 ? 0 : 1, start: new Date(year, month, 2 + (i <= 8 ? (i - 4) * 3 : i - 8), 8, 0, 0), finish: new Date(year, month, 2 + (i <= 8 ? (i - 4) * 3 + (i > 8 ? 6 : 1) : i - 2), 16, 0, 0) });
+items[10].label = "Task 5";
+items[11].label = "6";
 
 var settings = <GanttChartView.Settings>{ currentTime: new Date(year, month, 2, 12, 0, 0) };
 
@@ -72,6 +75,17 @@ columns.splice(4, 0, {
             });
     }
 });
+columns.splice(4, 0, {
+    header: 'Label', width: 140,
+    cellTemplate: (item: MyGanttChartItem) => {
+        return DlhSoft.Controls.GanttChartView.textInputColumnTemplateBase(document, 124,
+            () => { return item.label; },
+            (value) => {
+                item.label = value;
+                ganttChartView.refreshChartItem(item);
+        });
+    }
+});
 settings.columns = columns;
 
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
@@ -85,8 +99,13 @@ settings.standardTaskTemplate = (item: MyGanttChartItem) => {
     var group = item.numberOfLinesToDisplayInsteadOfRectangle ? linesTemplate(item) : originalStandardTaskTemplate(item);
     if (item.hasMilestoneAtFinish) {
         var finishDiamond = getFinishDiamond(item);
-        var lastChildIndex = group.childNodes.length - 1; // Dependency creation thumb.
-        group.insertBefore(finishDiamond, group.childNodes[lastChildIndex]); 
+        var index = group.childNodes.length - 1; // Dependency creation thumb.
+        group.insertBefore(finishDiamond, group.childNodes[index]); 
+    }
+    if (item.label) {
+        var label = getLabel(item);
+        var index = group.childNodes.length - 6; // Drag thumb.
+        group.insertBefore(label, group.childNodes[index]);
     }
     return group;
 };
@@ -238,4 +257,20 @@ function getFinishDiamond(item): SVGElement {
     }
     group.appendChild(startDiamond);
     return group;
+}
+function getLabel(item): SVGElement {
+    var ganttChartView = item.ganttChartView;
+    var settings = ganttChartView.settings;
+    var document = ganttChartView.ownerDocument;
+    var svgns = 'http://www.w3.org/2000/svg';
+    var barMargin = 4;
+    var barHeight = settings.itemHeight - 2 * barMargin;
+    var itemLeft = ganttChartView.getChartPosition(item.start);
+    var content = document.createTextNode(item.label);
+    var text = document.createElementNS(svgns, 'text');
+    text.setAttribute('x', itemLeft + 4);
+    text.setAttribute('y', barMargin + barHeight - barHeight / 4 - 1);
+    text.setAttribute('style', 'font-size: ' + (barHeight / 2 + 1) + 'px');
+    text.appendChild(content);
+    return text;
 }
