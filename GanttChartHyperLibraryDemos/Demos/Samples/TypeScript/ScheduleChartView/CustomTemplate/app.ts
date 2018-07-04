@@ -62,7 +62,7 @@ var settings = <ScheduleChartView.Settings>{
 initializeGanttChartTheme(settings, theme);
 initializeGanttChartTemplates(settings, theme);
 
-// Set up custom template for standard tasks using custom fields prepared for items (hasMilestoneAtFinish, numberOfLinesToDisplayInsteadOfRectangle).
+// Set up custom template for standard tasks using custom fields prepared for items (hasMilestoneAtFinish, numberOfLinesToDisplayInsteadOfRectangle, label).
 // When getDefault*TaskTemplate methods are used, pass undefined as items, ganttChartView, and settings arguments to use the instances associated to the item that the template would apply for.
 var originalStandardTaskTemplate = settings.standardTaskTemplate ? settings.standardTaskTemplate : ScheduleChartView.getDefaultStandardTaskTemplate(undefined, undefined, undefined);
 settings.standardTaskTemplate = (item: MyGanttChartItem) => {
