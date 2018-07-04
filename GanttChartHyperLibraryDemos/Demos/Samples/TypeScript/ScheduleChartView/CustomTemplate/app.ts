@@ -20,6 +20,7 @@ interface MyScheduleChartItem extends ScheduleChartItem {
 interface MyGanttChartItem extends GanttChartItem {
     hasMilestoneAtFinish?: boolean;
     numberOfLinesToDisplayInsteadOfRectangle?: number;
+    label?: string;
 }
 
 var date = new Date(), year = date.getFullYear(), month = date.getMonth();
@@ -41,7 +42,7 @@ var scheduleChartItems = <MyScheduleChartItem[]>[
         content: 'Resource 3', start: new Date(), ganttChartItems: [
             {
                 content: 'Task D (Resource 3)', start: new Date(year, month, 12, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0),
-                numberOfLinesToDisplayInsteadOfRectangle: 16
+                numberOfLinesToDisplayInsteadOfRectangle: 16, label: 'X'
             }]
     }];
 for (var i = 4; i <= 16; i++)
@@ -50,6 +51,8 @@ for (var i = 4; i <= 16; i++)
             { content: 'Task X (Resource ' + i + ')', start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 5, 16, 0, 0) },
             { content: 'Task Y (Resource ' + i + ')', start: new Date(year, month, 7, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0) }]
     });
+scheduleChartItems[4].ganttChartItems[0].label = 'Task X (Resource 5)';
+scheduleChartItems[5].ganttChartItems[0].label = 'X (6)';
 
 var settings = <ScheduleChartView.Settings>{
     currentTime: new Date(year, month, 2, 12, 0, 0)
@@ -68,6 +71,11 @@ settings.standardTaskTemplate = (item: MyGanttChartItem) => {
         var finishDiamond = getFinishDiamond(item);
         var lastChildIndex = group.childNodes.length - 1; // Dependency creation thumb.
         group.insertBefore(finishDiamond, group.childNodes[lastChildIndex]);
+    }
+    if (item.label) {
+        var label = getLabel(item);
+        var index = group.childNodes.length - 4; // Drag thumb.
+        group.insertBefore(label, group.childNodes[index]);
     }
     return group;
 };
@@ -219,4 +227,20 @@ function getFinishDiamond(item): SVGElement {
     }
     group.appendChild(startDiamond);
     return group;
+}
+function getLabel(item): SVGElement {
+    var ganttChartView = item.ganttChartView;
+    var settings = ganttChartView.settings;
+    var document = ganttChartView.ownerDocument;
+    var svgns = 'http://www.w3.org/2000/svg';
+    var barMargin = 4;
+    var barHeight = settings.itemHeight - 2 * barMargin;
+    var itemLeft = ganttChartView.getChartPosition(item.start);
+    var content = document.createTextNode(item.label);
+    var text = document.createElementNS(svgns, 'text');
+    text.setAttribute('x', itemLeft + 4);
+    text.setAttribute('y', barMargin + barHeight - barHeight / 4 - 1);
+    text.setAttribute('style', 'font-size: ' + (barHeight / 2 + 1) + 'px');
+    text.appendChild(content);
+    return text;
 }
