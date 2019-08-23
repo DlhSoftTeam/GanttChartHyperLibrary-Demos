@@ -196,10 +196,14 @@ settings.specificResourceHourCosts = [{ key: 'Resource 1', value: 20 }, { key: '
 // }
 // Optionally, apply visibility filter to display only specific items in the view.
 // settings.visibilityFilter = function (item) { return item.content.indexOf('Task 2') >= 0; }
+// Optionally, set hasFixedEffort to true to automatically update item assignment allocation units rather than effort upon duration changes.
+// items[4].hasFixedEffort = true;
 // Optionally, set up auto-scheduling behavior for dependent tasks based on predecessor information, supplementary disallowing circular dependencies, either for all tasks or excluding started items and/or milestones.
 settings.areTaskDependencyConstraintsEnabled = true;
 // settings.areDependencyConstraintsAppliedOnStartedTasks = false;
 // settings.areDependencyConstraintsAppliedOnMilestones = false;
+// Optionally, disable auto-scheduling for specific items (turning on manual scheduling back for them.)
+// items[7].areDependencyConstraintsEnabled = false;
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
 initializeGanttChartTheme(settings, theme);
 initializeGanttChartTemplates(settings, theme);

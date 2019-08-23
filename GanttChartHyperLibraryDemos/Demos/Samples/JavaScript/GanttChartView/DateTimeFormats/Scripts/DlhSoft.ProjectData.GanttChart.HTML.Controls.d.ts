@@ -1,8 +1,8 @@
 ﻿/* Assembly: DlhSoft.ProjectData.GanttChart.HTML.Controls,
    Company: DlhSoft,
    Product: Project Data Modern Library,
-   Version: 5.3.12.2,
-   Copyright: Copyright © 2012-2017 DlhSoft,
+   Version: 5.3.14.0,
+   Copyright: Copyright © 2012-2019 DlhSoft,
    Title: Project Data Gantt Chart HTML Controls,
    Description: Project Data Gantt Chart related HTML client components */
 
@@ -126,6 +126,8 @@ declare module DlhSoft.Controls {
             setItemIsMilestone(item: Item, value: boolean): void;
             getItemEffort(item: Item): number; setItemEffort(item: Item, value: number): void; getItemCompletedEffort(item: Item): number; setItemCompletedEffort(item: Item, value: number): void;
             getItemTotalEffort(item: Item): number; getItemTotalCompletedEffort(item: Item): number;
+			setItemTotalEffort(item: Item, value: number): void; setItemTotalCompletedEffort(item: Item, value: number): void;
+			setItemHasFixedEffort(item: Item, value: boolean): void;
             getItemDuration(item: Item): number; setItemDuration(item: Item, value: number): void;
             getItemCompletion(item: Item): number; setItemCompletion(item: Item, value: number): void;
             isItemCompleted(item: Item): boolean; setItemAsCompleted(item: Item): void;
@@ -185,7 +187,7 @@ declare module DlhSoft.Controls {
             /** Prints the content using a temporary document and window. */
             print(exportSettings?: ExportSettings): void;
 
-            getRootItems(): Item[]; getLeafItems(): Item[];
+            getRootItems(): Item[]; getLeafItems(): Item[]; getSummaryItems(): Item[];
             getProjectStart(): Date; getProjectFinish(): Date;
             getProjectEffort(): number; getProjectCompletedEffort(): number;
             getProjectTotalEffort(): number; getProjectTotalCompletedEffort(): number;
@@ -298,6 +300,12 @@ declare module DlhSoft.Controls {
             isBarReadOnly?: boolean;
             isSummaryEnabled?: boolean;
             isParentSummarizationEnabled?: boolean;
+
+            /** When set to true it would ensure that the original item's total effort is preserved when duration is updated by updating assignment allocation units, assuming that the item has resources assigned. */
+			hasFixedEffort?: boolean;
+			
+			/** When specifically set to false, overrides GanttChartView.areTaskDependencyConstraintsEnabled = true (auto-scheduling) for an item, setting up manual scheduling. */
+			areDependencyConstraintsEnabled?: boolean;
 
             displayRowIndex?: number;
 
