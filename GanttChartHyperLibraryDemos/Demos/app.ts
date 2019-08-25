@@ -46,13 +46,6 @@ angular.module('Demos', [])
                 }
             },
             {
-                component: 'GanttChartView', feature: 'Statuses', title: 'Status columns (including color indicator)', description: 'Shows how to add supplemental custom columns for showing task statuses, such as To do, In progress, Behind schedule, and Completed',
-                sourceCodeFiles: {
-                    'JavaScript': ['index.html', 'app.css', 'app.js'],
-                    'TypeScript': ['index.html', 'app.css', 'app.ts']
-                }
-            },
-            {
                 component: 'GanttChartView', feature: 'ReadOnlySettings', title: 'Read only, visibility, and other behavioral settings', description: 'Shows how you can set up read only, visibility, and other settings on the component and on specific items',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
@@ -138,6 +131,13 @@ angular.module('Demos', [])
             },
             {
                 component: 'GanttChartView', feature: 'Baseline', title: 'Baseline (estimation time bars vs. actual task bars)', description: 'Shows how you can define and display estimation bars for tasks (i.e. project baseline)',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'Statuses', title: 'Status columns (including color indicator)', description: 'Shows how to add supplemental custom columns for showing task statuses, such as To do, In progress, Behind schedule, and Completed',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
                     'TypeScript': ['index.html', 'app.css', 'app.ts']
