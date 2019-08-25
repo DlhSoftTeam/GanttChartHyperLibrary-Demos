@@ -34,13 +34,6 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'Statuses', title: 'Status columns (including color indicator)', description: 'Shows how to add supplemental custom columns for showing task statuses, such as To do, In progress, Behind schedule, and Completed',
-            sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts']
-            }
-        },
-        {
             component: 'GanttChartView', feature: 'ReadOnlySettings', title: 'Read only, visibility, and other behavioral settings', description: 'Shows how you can set up read only, visibility, and other settings on the component and on specific items',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
@@ -55,6 +48,13 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'GanttChartView', feature: 'Interruptions', title: 'Interruptions', description: 'Shows how you can set up task template extensions to draw interruptions',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
             component: 'GanttChartView', feature: 'ChangeNotifications', title: 'Change notifications (item value update handling)', description: 'Shows how custom code can be executed when changes occur on the data presented by the component',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
@@ -63,6 +63,13 @@ angular.module('Demos', [])
         },
         {
             component: 'GanttChartView', feature: 'MouseEvents', title: 'Mouse event handling', description: 'Shows how custom code can be executed when generic or specific mouse events occur within the component',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'ContextMenus', title: 'Context menus', description: 'Shows how you can set up item and dependency line context menus',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
@@ -126,6 +133,13 @@ angular.module('Demos', [])
         },
         {
             component: 'GanttChartView', feature: 'Baseline', title: 'Baseline (estimation time bars vs. actual task bars)', description: 'Shows how you can define and display estimation bars for tasks (i.e. project baseline)',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'Statuses', title: 'Status columns (including color indicator)', description: 'Shows how to add supplemental custom columns for showing task statuses, such as To do, In progress, Behind schedule, and Completed',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
