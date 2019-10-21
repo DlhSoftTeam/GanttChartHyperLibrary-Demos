@@ -31,7 +31,7 @@ var settings = { currentTime: new Date(year, month, 2, 12, 0, 0), isTaskComplete
 initializeGanttChartTheme(settings, theme);
 initializeGanttChartTemplates(settings, theme);
 // Set up extra template to draw interruptions.
-settings.extraTaskTemplate = (item) => {
+settings.extraTaskTemplate = function(item) {
     var svgns = 'http://www.w3.org/2000/svg';
     var ganttChartView = item.ganttChartView, document = ganttChartView.ownerDocument;
     var extraArea = document.createElementNS(svgns, 'g');
@@ -50,7 +50,7 @@ function addInterruptionElements(document, ganttChartView, extraArea, item) {
         interruption = { start: item.start > interruption.start ? item.start : interruption.start, finish: item.finish < interruption.finish ? item.finish : interruption.finish };
         if (interruption.finish <= item.start || interruption.start >= item.finish)
             continue;
-        extraArea.append(getInterruptionElement(document, ganttChartView, item, interruption));
+        extraArea.appendChild(getInterruptionElement(document, ganttChartView, item, interruption));
     }
 }
 function getInterruptionElement(document, ganttChartView, item, interruption) {

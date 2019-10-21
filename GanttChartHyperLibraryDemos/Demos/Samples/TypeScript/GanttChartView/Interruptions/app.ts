@@ -71,7 +71,7 @@ function addInterruptionElements(document: HTMLDocument, ganttChartView: GanttCh
         interruption = { start: item.start > interruption.start ? item.start : interruption.start, finish: item.finish < interruption.finish ? item.finish : interruption.finish };
         if (interruption.finish <= item.start || interruption.start >= item.finish)
             continue;
-        extraArea.append(getInterruptionElement(document, ganttChartView, item, interruption));
+        extraArea.appendChild(getInterruptionElement(document, ganttChartView, item, interruption));
     }
 }
 function getInterruptionElement(document: HTMLDocument, ganttChartView: GanttChartView.Element, item: MyGanttChartItem, interruption: Interval): SVGElement {

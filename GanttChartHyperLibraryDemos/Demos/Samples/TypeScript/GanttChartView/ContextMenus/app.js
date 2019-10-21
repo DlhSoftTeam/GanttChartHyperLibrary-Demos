@@ -82,7 +82,7 @@ function deleteDependencyContextMenuClicked(e) {
     }
     hideContextMenus();
 }
-document.addEventListener("mousedown", (e) => {
+document.addEventListener("mousedown", function(e) {
     hideContextMenus();
     e.preventDefault();
 });
