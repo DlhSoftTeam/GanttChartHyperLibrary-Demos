@@ -45,7 +45,7 @@ angular.module('GanttChartViewSample', ['DlhSoft.ProjectData.GanttChart.Directiv
         // standardCompletedBarStyle: 'stroke: DarkGreen; fill: DarkGreen',
         // dependencyLineStyle: 'stroke: Green; fill: none; marker-end: url(#ArrowMarker)',
         // alternativeItemStyle: 'background-color: #f9f9f9', alternativeChartItemStyle: 'fill: #f9f9f9',
-        // itemTemplate: (item) => {
+        // itemTemplate: function(item) {
         //     var toolTip = document.createElementNS('http://www.w3.org/2000/svg', 'title');
         //     var toolTipContent = item.content + ' • ' + 'Start: ' + item.start.toLocaleString();
         //     if (!item.isMilestone)
@@ -86,10 +86,10 @@ angular.module('GanttChartViewSample', ['DlhSoft.ProjectData.GanttChart.Directiv
     columns.push({ header: 'Est. start', width: 140, cellTemplate: GanttChartView.getBaselineStartColumnTemplate(124, true, true, 8 * 60 * 60 * 1000) }); // 8 AM
     columns.push({ header: 'Est. finish', width: 140, cellTemplate: GanttChartView.getBaselineFinishColumnTemplate(124, true, true, 16 * 60 * 60 * 1000) }); // 4 PM
     // items[7]['description'] = 'Custom description';
-    // columns.push({ header: 'Description', width: 200, cellTemplate: (item) => { return item['ganttChartView'].ownerDocument.createTextNode(item['description']); } });
+    // columns.push({ header: 'Description', width: 200, cellTemplate: function(item) { return item['ganttChartView'].ownerDocument.createTextNode(item['description']); } });
     // columns[10 + indexOffset].cellTemplate = GanttChartView.getAssignmentSelectorColumnTemplate(184, (item) { return ['Resource 1', 'Resource 2'] });
     // items[7]['targetDate'] = new Date(2016, 2 - 1, 28, 12, 0, 0);
-    // columns.push({ header: 'Target date', width: 140, cellTemplate: (item)  => {
+    // columns.push({ header: 'Target date', width: 140, cellTemplate: function(item) {
     //     return GanttChartView.datePickerInputColumnTemplateBase(item['ganttChartView'].ownerDocument, 140,
     //         function () { return GanttChartView.getInputDate(item['targetDate']); }, 
     //         function (value) { item['targetDate'] = GanttChartView.getOutputDate(value); }); } });
