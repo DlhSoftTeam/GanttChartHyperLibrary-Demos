@@ -30,7 +30,7 @@ for (var i = 1; i <= 5; i++)
 var scheduleChartSettings = {
     gridWidth: '20%', chartWidth: '80%', isSplitterEnabled: false,
     isMouseWheelZoomEnabled: false,
-    currentTime: new Date(year, month, 2) // Display the current time vertical line of the chart at the project start date.
+    currentTime: new Date(year, month, 2, 12, 0, 0) // Display the current time vertical line of the chart at the project start date.
 };
 // Optionally, initialize custom theme and templates for Schedule Chart (themes.js, templates.js).
 initializeGanttChartTheme(scheduleChartSettings, theme);
@@ -40,8 +40,10 @@ var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleCh
 ;
 // Synchronize displayed time (horizontal scrolling) between Gantt Chart and Schedule Chart components.
 ganttChartSettings.displayedTimeChangeHandler = scheduleChartSettings.displayedTimeChangeHandler = function (displayedTime) {
-    scheduleChartView.scrollToDateTime(displayedTime);
-    ganttChartView.scrollToDateTime(displayedTime);
+    if (displayedTime != scheduleChartView.settings.displayedTime)
+        scheduleChartView.scrollToDateTime(displayedTime);
+    if (displayedTime != ganttChartView.settings.displayedTime)
+        ganttChartView.scrollToDateTime(displayedTime);
 };
 // Support for dragging source tasks from Gantt Chart to target Schedule Chart resource rows.
 var hoveredGanttChartItem;
