@@ -47,9 +47,9 @@ var settings = {
     // Optionally, set item template used when displaying task bar tool tips in the chart area.
     // itemTemplate: function (item) {
     //     var toolTip = document.createElementNS('http://www.w3.org/2000/svg', 'title');
-    //     var toolTipContent = item.content + ' • ' + 'Start: ' + item.start.toLocaleString();
+    //     var toolTipContent = item.content + '\n' + 'Start: ' + item.start.toLocaleString();
     //     if (!item.isMilestone)
-    //         toolTipContent += ' • ' + 'Finish: ' + item.finish.toLocaleString();
+    //         toolTipContent += '\n' + 'Finish: ' + item.finish.toLocaleString();
     //     toolTip.appendChild(document.createTextNode(toolTipContent));
     //     return toolTip;
     // },

@@ -40,7 +40,7 @@ var settings = {
     // Optionally, set item template used when displaying task bar tool tips in the chart area.
     // itemTemplate: function (item) {
     //     var toolTip = document.createElementNS('http://www.w3.org/2000/svg', 'title');
-    //     var toolTipContent = item.content + ' • ' + item.start.toLocaleString() + '-' + 'Finish: ' + item.finish.toLocaleString();
+    //     var toolTipContent = item.content + '\n' + item.start.toLocaleString() + '-' + 'Finish: ' + item.finish.toLocaleString();
     //     toolTip.appendChild(document.createTextNode(toolTipContent));
     //     return toolTip;
     // },
