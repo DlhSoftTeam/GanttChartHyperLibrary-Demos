@@ -542,43 +542,42 @@ function initializeGanttChartTemplates(settings, theme) {
         var toolTip = document.createElementNS(svgns, 'title');
         toolTip.appendChild(getTextNode(document, item.content));
         if (typeof settings.areToolTipsSimplified === undefinedType || !settings.areToolTipsSimplified) {
-            toolTip.appendChild(document.createTextNode('  '));
             if (typeof item.loadChartView === undefinedType) {
                 if (typeof item.scheduleChartView === undefinedType && item.parent) {
-                    toolTip.appendChild(document.createElement('br'));
-                    toolTip.appendChild(document.createTextNode('Parent: ' + item.parent.content + '  '));
+                    toolTip.appendChild(document.createTextNode('\n'));
+                    toolTip.appendChild(document.createTextNode('Parent: ' + item.parent.content));
                 }
                 if (typeof item.scheduleChartView !== undefinedType && item.scheduleChartItem) {
-                    toolTip.appendChild(document.createElement('br'));
-                    toolTip.appendChild(document.createTextNode('Row: ' + item.scheduleChartItem.content + '  '));
+                    toolTip.appendChild(document.createTextNode('\n'));
+                    toolTip.appendChild(document.createTextNode('Row: ' + item.scheduleChartItem.content));
                 }
                 if (item.hasChildren) {
-                    toolTip.appendChild(document.createElement('br'));
-                    toolTip.appendChild(document.createTextNode('Children: ' + item.children.length + '  '));
+                    toolTip.appendChild(document.createTextNode('\n'));
+                    toolTip.appendChild(document.createTextNode('Children: ' + item.children.length));
                 }
-                toolTip.appendChild(document.createElement('br'));
-                toolTip.appendChild(document.createTextNode((!item.isMilestone ? 'Start: ' : '') + settings.dateTimeFormatter(ganttChartView.getOutputDate(item.start)) + '  '));
+                toolTip.appendChild(document.createTextNode('\n'));
+                toolTip.appendChild(document.createTextNode((!item.isMilestone ? 'Start: ' : '') + settings.dateTimeFormatter(ganttChartView.getOutputDate(item.start))));
                 if (!item.isMilestone) {
-                    toolTip.appendChild(document.createElement('br'));
-                    toolTip.appendChild(document.createTextNode('Finish: ' + settings.dateTimeFormatter(ganttChartView.getOutputDate(item.finish)) + '  '));
+                    toolTip.appendChild(document.createTextNode('\n'));
+                    toolTip.appendChild(document.createTextNode('Finish: ' + settings.dateTimeFormatter(ganttChartView.getOutputDate(item.finish))));
                 }
                 if (settings.areTaskAssignmentsVisible && item.assignmentsContent) {
-                    toolTip.appendChild(document.createElement('br'));
-                    toolTip.appendChild(document.createTextNode('Assignments: ' + item.assignmentsContent + '  '));
+                    toolTip.appendChild(document.createTextNode('\n'));
+                    toolTip.appendChild(document.createTextNode('Assignments: ' + item.assignmentsContent));
                 }
                 if (!item.isMilestone) {
-                    toolTip.appendChild(document.createElement('br'));
-                    toolTip.appendChild(document.createTextNode('Effort: ' + (ganttChartView.getItemTotalEffort(item) / hourDuration) + 'h' + '  '));
+                    toolTip.appendChild(document.createTextNode('\n'));
+                    toolTip.appendChild(document.createTextNode('Effort: ' + (ganttChartView.getItemTotalEffort(item) / hourDuration) + 'h'));
                     if (settings.isTaskCompletedEffortVisible) {
                         var completion = ganttChartView.getItemCompletion(item);
                         if (!isNaN(completion)) {
-                            toolTip.appendChild(document.createElement('br'));
-                            toolTip.appendChild(document.createTextNode('Completed: ' + (Math.round(completion * 100 * 100) / 100) + '%' + '  '));
+                            toolTip.appendChild(document.createTextNode('\n'));
+                            toolTip.appendChild(document.createTextNode('Completed: ' + (Math.round(completion * 100 * 100) / 100) + '%'));
                         }
                     }
                 }
                 if (settings.areTaskDependenciesVisible && item.predecessors && item.predecessors.length > 0) {
-                    toolTip.appendChild(document.createElement('br'));
+                    toolTip.appendChild(document.createTextNode('\n'));
                     var predecessorsString = '';
                     for (var i = 0; i < item.predecessors.length; i++) {
                         var predecessor = item.predecessors[i];
@@ -590,12 +589,12 @@ function initializeGanttChartTemplates(settings, theme) {
                         if (predecessor.dependencyType)
                             predecessorsString += ' (' + getDependencyTypeString(predecessor.dependencyType) + ')';
                     }
-                    toolTip.appendChild(document.createTextNode('Predecessors: ' + predecessorsString + '  '));
+                    toolTip.appendChild(document.createTextNode('Predecessors: ' + predecessorsString));
                 }
             }
             else if (!isNaN(item.units)) {
-                toolTip.appendChild(document.createElement('br'));
-                toolTip.appendChild(document.createTextNode('Allocation: ' + (Math.round(item.units * 100 * 100) / 100) + '%  '));
+                toolTip.appendChild(document.createTextNode('\n'));
+                toolTip.appendChild(document.createTextNode('Allocation: ' + (Math.round(item.units * 100 * 100) / 100) + '%'));
             }
         }
         return toolTip;
@@ -605,14 +604,13 @@ function initializeGanttChartTemplates(settings, theme) {
         var toolTip = document.createElementNS(svgns, 'title');
         toolTip.appendChild(getTextNode(document, predecessorItem.item.content + ' - ' + item.content));
         if (typeof settings.areToolTipsSimplified === undefinedType || !settings.areToolTipsSimplified) {
-            toolTip.appendChild(document.createTextNode('  '));
             if (predecessorItem.dependencyType) {
-                toolTip.appendChild(document.createElement('br'));
-                toolTip.appendChild(getTextNode(document, 'Type: ' + getDependencyTypeString(predecessorItem.dependencyType) + '  '));
+                toolTip.appendChild(document.createTextNode('\n'));
+                toolTip.appendChild(getTextNode(document, 'Type: ' + getDependencyTypeString(predecessorItem.dependencyType)));
             }
             if (predecessorItem.lag) {
-                toolTip.appendChild(document.createElement('br'));
-                toolTip.appendChild(getTextNode(document, 'Lag: ' + (predecessorItem.lag / hourDuration) + 'h' + '  '));
+                toolTip.appendChild(document.createTextNode('\n'));
+                toolTip.appendChild(getTextNode(document, 'Lag: ' + (predecessorItem.lag / hourDuration) + 'h'));
             }
         }
         return toolTip;
