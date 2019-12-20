@@ -549,13 +549,13 @@ angular.module('Demos', [])
                 }
             },
             {
-                component: 'GanttChartView', feature: 'PHP', title: 'PHP integration', description: 'PHP based sample application',
+                component: 'GanttChartView', feature: 'PHP', title: 'PHP', description: 'PHP based sample application with server side change handling',
                 sourceCodeUrls: {
                     'JavaScript': 'http://GitHub.com/DlhSoftTeam/Php-GanttChartViewSampleApp/archive/master.zip'
                 }
             },
             {
-                component: 'GanttChartView', feature: 'NodeJS', title: 'Node.js® integration', description: 'Node.js® based sample application',
+                component: 'GanttChartView', feature: 'NodeJS', title: 'Node.js® + Express (pug)', description: 'Simple Node.js® based application developed using pug template engine and Express framework',
                 sourceCodeUrls: {
                     'JavaScript': 'http://github.com/DlhSoftTeam/NodeJS-GanttChartViewSampleApp/archive/master.zip'
                 }
