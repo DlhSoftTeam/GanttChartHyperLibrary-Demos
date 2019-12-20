@@ -543,6 +543,12 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'GanttChartView', feature: 'NodeJS', title: 'Node.js® integration', description: 'Node.js® based sample application',
+            sourceCodeUrls: {
+                'JavaScript': 'http://github.com/DlhSoftTeam/NodeJS-GanttChartViewSampleApp/archive/master.zip'
+            }
+        },
+        {
             component: 'GanttChartView', feature: 'LightSwitch', title: 'LightSwitch® (HTML)', description: 'HTML based LightSwitch® app',
             sourceCodeUrls: {
                 'JavaScript': 'http://DlhSoft.com/KnowledgeBase/GanttChartHtmlSample.zip'
