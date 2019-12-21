@@ -555,9 +555,15 @@ angular.module('Demos', [])
                 }
             },
             {
-                component: 'GanttChartView', feature: 'NodeJS', title: 'Node.js® + Express (pug)', description: 'Simple Node.js® based application developed using pug template engine and Express framework',
+                component: 'GanttChartView', feature: 'NodeJS', title: 'Node.js® + Express + pug', description: 'Simple Node.js® based application developed using pug template engine and Express framework',
                 sourceCodeUrls: {
                     'JavaScript': 'http://github.com/DlhSoftTeam/NodeJS-GanttChartViewSampleApp/archive/master.zip'
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'Python', title: 'Python™ + Flask', description: 'Simple Python™ based application developed using Flask Web framework',
+                sourceCodeUrls: {
+                    'JavaScript': 'http://github.com/DlhSoftTeam/Python-GanttChartViewSampleApp/archive/master.zip'
                 }
             },
             {
