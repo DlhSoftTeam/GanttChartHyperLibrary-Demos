@@ -537,7 +537,7 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'PHP', title: 'PHP scripting', description: 'PHP based sample application with server side change handling',
+            component: 'GanttChartView', feature: 'PHP', title: 'PHP', description: 'PHP based sample application with server side change handling',
             sourceCodeUrls: {
                 'JavaScript': 'http://GitHub.com/DlhSoftTeam/Php-GanttChartViewSampleApp/archive/master.zip'
             }

@@ -45,11 +45,18 @@ function initializeFormats() {
     settings.timelineStart = projectStart;
     switch (dateFormatSelect.value) {
         case 'Standard':
-            settings.dateFormatter = GanttChartView.defaultDateFormatter;
-            settings.dateTimeParser = GanttChartView.defaultDateTimeParser;
+            settings.dateFormatter = function(date) {
+                date = DlhSoft.Controls.GanttChartView.getInputDate(date);
+                return GanttChartView.defaultDateFormatter(date);
+            };
+            settings.dateTimeParser = function(value) {
+                var date = GanttChartView.defaultDateTimeParser(value);
+                return DlhSoft.Controls.GanttChartView.getOutputDate(date);
+            };
             break;
         case 'DD.MM.YYYY':
             settings.dateFormatter = function (date) {
+                date = DlhSoft.Controls.GanttChartView.getInputDate(date);
                 var value = GanttChartView.defaultDateFormatter(date);
                 var month = value.substr(0, 2);
                 var day = value.substr(3, 2);
@@ -61,25 +68,28 @@ function initializeFormats() {
                 var month = value.substr(3, 2);
                 var rest = value.substr(6);
                 value = month + '/' + day + '/' + rest;
-                return GanttChartView.defaultDateTimeParser(value);
-            };
+                var date = GanttChartView.defaultDateTimeParser(value);
+                return DlhSoft.Controls.GanttChartView.getOutputDate(date);
+           };
             break;
         case 'Numeric':
             settings.dateFormatter = function (date) {
+                date = DlhSoft.Controls.GanttChartView.getInputDate(date);
                 var dayNumber = Math.floor((date.getTime() - projectStart.getTime()) / (24 * 60 * 60 * 1000));
                 return dayNumber > 0 ? (dayNumber < 10 ? '0' : '') + dayNumber.toString() : '--';
             };
             settings.dateTimeParser = function (value) {
                 var dayNumber = parseInt(value);
-                return new Date(projectStart.getTime() + dayNumber * 24 * 60 * 60 * 1000);
+                var date = new Date(projectStart.getTime() + dayNumber * 24 * 60 * 60 * 1000);
+                return DlhSoft.Controls.GanttChartView.getOutputDate(date);
             };
             break;
     }
     settings.dateTimeFormatter = function (date) {
-        var value = settings.dateFormatter(date);
-        if (!hideTimeOfDayCheckBox.checked)
-            value += ' ' + (date.getHours() < 10 ? '0' : '') + date.getHours() + ':' + (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
-        return value;
+        var dateValue = settings.dateFormatter(date);
+        date = DlhSoft.Controls.GanttChartView.getInputDate(date);
+        var timeValue = !hideTimeOfDayCheckBox.checked ? DlhSoft.Controls.GanttChartView.defaultDateTimeFormatter(date).substr(10) : '';
+        return dateValue + timeValue;
     };
     durationColumn.header = 'Duration (' + durationFormatSelect.value + ')';
     durationColumn.cellTemplate = DlhSoft.Controls.GanttChartView.getDurationColumnTemplate(64, durationFormatSelect.value == 'd' ? 8 : (durationFormatSelect.value == 'w' ? 8 * 5 : 1));

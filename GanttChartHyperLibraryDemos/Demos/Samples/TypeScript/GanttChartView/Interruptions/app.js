@@ -12,8 +12,7 @@ var items = [
     { content: 'Task 2.2', indentation: 1, start: new Date() },
     { content: 'Task 2.2.1', indentation: 2, start: new Date(year, month, 11, 8, 0, 0), finish: new Date(year, month, 14, 16, 0, 0), completedFinish: new Date(year, month, 14, 16, 0, 0), assignmentsContent: 'Resource 2' },
     { content: 'Task 2.2.2', indentation: 2, start: new Date(year, month, 12, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0), assignmentsContent: 'Resource 2' },
-    { content: 'Task 3', indentation: 1, start: new Date(year, month, 15, 16, 0, 0), isMilestone: true }
-];
+    { content: 'Task 3', indentation: 1, start: new Date(year, month, 15, 16, 0, 0), isMilestone: true }];
 items[3].predecessors = [{ item: items[0], dependencyType: 'SS' }];
 items[7].predecessors = [{ item: items[6], lag: 2 * 60 * 60 * 1000 }];
 items[8].predecessors = [{ item: items[4] }, { item: items[5] }];
