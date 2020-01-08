@@ -1,7 +1,7 @@
 var queryString = window.location.search;
 var initialSelection = queryString ? queryString.substr(1).replace('-', ' ') : null;
 angular.module('Demos', [])
-    .controller('MainController', function ($scope, $http, $timeout) {
+    .controller('MainController', function ($scope, $http, $timeout, $window) {
     var components = ['GanttChartView', 'ScheduleChartView', 'LoadChartView', 'PertChartView', 'NetworkDiagramView'];
     var samples = [
         {
@@ -587,7 +587,7 @@ angular.module('Demos', [])
             $scope.run();
         });
     };
-    var technologies = [{ name: 'JavaScript', title: 'HTML + JavaScript®' }, { name: 'TypeScript', title: 'HTML + TypeScript' }, { name: 'AngularJS', title: 'AngularJS' }];
+    var technologies = [{ name: 'JavaScript', title: 'HTML + JavaScript®' }, { name: 'TypeScript', title: 'HTML + TypeScript' }, { name: 'AngularJS', title: 'AngularJS' }, { name: 'Angular', title: 'Angular', url: 'https://github.com/DlhSoftTeam/Angular-GanttChartViewSampleApp/tree/master/src/app' }];
     $scope.technologies = technologies;
     $scope.selectedTechnology = technologies[0];
     var getSamples = function (component, selectedTechnology) {
@@ -635,6 +635,10 @@ angular.module('Demos', [])
     $scope.selectTechnology = function (technology) {
         if (technology == $scope.selectedTechnology)
             return;
+        if (technology.url != null) {
+            $window.open(technology.url, technology.name);
+            return;
+        }
         $scope.selectedTechnology = technology;
         var selectedSample = $scope.selectedSample;
         var selectedComponent = selectedSample.component;
