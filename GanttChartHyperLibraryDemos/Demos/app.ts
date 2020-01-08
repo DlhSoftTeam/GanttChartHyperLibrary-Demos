@@ -13,7 +13,7 @@ interface Sample {
 }
 
 angular.module('Demos', [])
-    .controller('MainController', ($scope, $http, $timeout) => {
+    .controller('MainController', ($scope, $http, $timeout, $window) => {
         var components = ['GanttChartView', 'ScheduleChartView', 'LoadChartView', 'PertChartView', 'NetworkDiagramView'];
         var samples = <Sample[]>[
             {
@@ -599,7 +599,7 @@ angular.module('Demos', [])
                 $scope.run();
             });
         };
-        var technologies = [{ name: 'JavaScript', title: 'HTML + JavaScript®' }, { name: 'TypeScript', title: 'HTML + TypeScript' }, { name: 'AngularJS', title: 'AngularJS' }];
+        var technologies = [{ name: 'JavaScript', title: 'HTML + JavaScript®' }, { name: 'TypeScript', title: 'HTML + TypeScript' }, { name: 'AngularJS', title: 'AngularJS' }, { name: 'Angular', title: 'Angular', url: 'https://github.com/DlhSoftTeam/Angular-GanttChartViewSampleApp/tree/master/src/app' }];
         $scope.technologies = technologies;
         $scope.selectedTechnology = technologies[0];
         var getSamples = (component, selectedTechnology) => {
@@ -647,6 +647,10 @@ angular.module('Demos', [])
         $scope.selectTechnology = (technology) => {
             if (technology == $scope.selectedTechnology)
                 return;
+            if (technology.url != null) {
+                $window.open(technology.url, technology.name);
+                return;
+            }
             $scope.selectedTechnology = technology;
             var selectedSample = $scope.selectedSample;
             var selectedComponent = selectedSample.component;
