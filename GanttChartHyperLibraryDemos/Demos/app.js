@@ -587,7 +587,7 @@ angular.module('Demos', [])
             $scope.run();
         });
     };
-    var technologies = [{ name: 'JavaScript', title: 'HTML + JavaScript®' }, { name: 'TypeScript', title: 'HTML + TypeScript' }, { name: 'AngularJS', title: 'AngularJS' }, { name: 'Angular', title: 'Angular 8', url: 'https://github.com/DlhSoftTeam/Angular-GanttChartViewSampleApp/tree/master/src/app' }];
+    var technologies = [{ name: 'JavaScript', title: 'HTML + JavaScript®' }, { name: 'TypeScript', title: 'HTML + TypeScript' }, { name: 'AngularJS', title: 'AngularJS' }, { name: 'Angular', title: 'Angular 8', url: 'https://github.com/DlhSoftTeam/Angular-GanttChartViewSampleApp/tree/master/src/app' }, { name: 'React', title: 'React', url: 'https://github.com/DlhSoftTeam/React-GanttChartViewSampleApp/tree/master' }];
     $scope.technologies = technologies;
     $scope.selectedTechnology = technologies[0];
     var getSamples = function (component, selectedTechnology) {
