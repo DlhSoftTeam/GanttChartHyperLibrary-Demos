@@ -502,7 +502,7 @@ function projectStatistics() {
     var effortOutput = Math.round(ganttChartView.getProjectTotalEffort() / hourDuration * rounding) / rounding;
     var completionOutput = Math.round(ganttChartView.getProjectCompletion() * 100 * rounding) / rounding;
     var costOutput = Math.round(ganttChartView.getProjectCost() * rounding) / rounding;
-    alert('Project statistics:\nStart:\t' + startOutput + '\nFinish:\t' + finishOutput + '\nEffort:\t' + effortOutput + 'h\nCompl.:\t' + completionOutput + '%\nCost:\t$' + costOutput);
+    alert('Project statistics:\nStart: ' + startOutput + '\nFinish: ' + finishOutput + '\nEffort: ' + effortOutput + 'h\nCompl.: ' + completionOutput + '%\nCost: $' + costOutput);
 }
 function loadProjectXml() {
     closeSaveProjectXml();
@@ -580,7 +580,6 @@ function refreshScheduleChartView() {
 var loadChartResourceFilter = <HTMLSelectElement>document.querySelector('#loadChartResourceFilter');
 function refreshLoadChartResourceSelector() {
     var i;
-    var previouslySelectedResource = loadChartResourceFilter.value;
     for (i = loadChartResourceFilter.childNodes.length; i-- > 2;)
         loadChartResourceFilter.removeChild(loadChartResourceFilter.childNodes[i]);
     var resources = ganttChartView.getAssignedResources();
@@ -588,8 +587,6 @@ function refreshLoadChartResourceSelector() {
         var resource = resources[i];
         var option = document.createElement('option');
         option.appendChild(document.createTextNode(resource));
-        if (resource == previouslySelectedResource)
-            option.setAttribute('selected', 'true');
         loadChartResourceFilter.appendChild(option);
     }
 }
