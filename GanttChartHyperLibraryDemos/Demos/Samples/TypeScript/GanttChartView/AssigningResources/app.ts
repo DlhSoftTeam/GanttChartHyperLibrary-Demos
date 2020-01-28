@@ -139,7 +139,6 @@ function closeLoadChartView() {
 }
 function refreshLoadChartResourceSelector() {
     var loadChartResourceFilter = document.querySelector('#loadChartResourceFilter'), i;
-    var previouslySelectedResource = loadChartResourceFilter.value;
     for (i = loadChartResourceFilter.childNodes.length; i-- > 2;)
         loadChartResourceFilter.removeChild(loadChartResourceFilter.childNodes[i]);
     var resources = ganttChartView.getAssignedResources();
@@ -147,8 +146,6 @@ function refreshLoadChartResourceSelector() {
         var resource = resources[i];
         var option = document.createElement('option');
         option.appendChild(document.createTextNode(resource));
-        if (resource == previouslySelectedResource)
-            option.setAttribute('selected', 'true');
         loadChartResourceFilter.appendChild(option);
     }
 }
