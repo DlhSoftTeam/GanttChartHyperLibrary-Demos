@@ -706,7 +706,15 @@ angular.module('Demos', [])
         $scope.getSampleUrl = (selectedSample, selectedTechnology, selectedTheme) => {
             return 'Samples/' + (selectedTechnology ? selectedTechnology.name : '') + '/' + selectedSample.component + '/' + selectedSample.feature + '/index.html?' + (selectedTheme ? selectedTheme : $scope.applyingTheme);
         };
-        if (initialSelection)
+        if (initialSelection == 'AngularJS')
+            $scope.selectedTechnology = technologies[2];
+        else if (initialSelection == 'Angular')
+            $scope.selectedTechnology = technologies[3];
+        else if (initialSelection == 'React')
+            $scope.selectedTechnology = technologies[4];
+        else if (initialSelection == 'Vue')
+            $scope.selectedTechnology = technologies[5];
+        else if (initialSelection)
             selectComponent(initialSelection);
     })
     .directive('dsSample', ($timeout) => {
