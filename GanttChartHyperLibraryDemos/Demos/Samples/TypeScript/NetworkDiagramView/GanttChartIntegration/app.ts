@@ -25,8 +25,7 @@ var date = new Date(), year = date.getFullYear(), month = date.getMonth();
 var ganttChartItems = <GanttChartItem[]>[];
 for (var i = 1; i <= 8; i++)
     ganttChartItems.push({
-        content: 'Task ' + i, start: new Date(year, month, 2 + i - 1, 8, 0, 0), finish: new Date(year, month, 2 + i - 1 + 3, 16, 0, 0),
-        assignmentsContent: 'Resource ' + (i % 3 > 0 ? i % 3 : 3)
+        content: 'Task ' + i, start: new Date(year, month, 2 + i - 1, 8, 0, 0), finish: new Date(year, month, 2 + i - 1 + 3, 16, 0, 0)
     });
 ganttChartItems[2].predecessors = <PredecessorItem[]>[{ item: ganttChartItems[1] }]; // Task 2 depends on Task 1.
 var ganttChartSettings = <GanttChartView.Settings>{
@@ -43,8 +42,7 @@ var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewEl
 
 function addNewGanttChartItem() {
     var item = {
-        content: 'New task', start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 4, 16, 0, 0),
-        assignmentsContent: 'Resource 5'
+        content: 'New task', start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 4, 16, 0, 0)
     };
     ganttChartView.addItem(item);
 }
