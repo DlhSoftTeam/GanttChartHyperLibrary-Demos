@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>NetworkDiagramView sample</title>
+    <link rel="Stylesheet" href="app.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700" rel="stylesheet">
+    <!-- Vue. When deploying, replace "vue/dist/vue.js" with "vue". -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="Scripts/DlhSoft.Data.HTML.Controls.js"></script>
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.js"></script>
+    <script src="Scripts/DlhSoft.ProjectData.PertChart.HTML.Controls.js"></script>
+    <!-- DlhSoft Gantt Chart Hyper Library extensions -->
+    <script src="Scripts/DlhSoft.ProjectData.GanttChart.Vue.Components.js"></script>
+    <script src="Scripts/DlhSoft.ProjectData.PertChart.Vue.Components.js"></script>
+    <!-- Other scripts. -->
+    <script src="licensing.js"></script>
+    <script src="templates.js" type="text/javascript"></script>
+    <script src="themes.js" type="text/javascript"></script>
+    <!-- Main app component -->
+    <script src="app.js" defer></script>
+</head>
+<body style="font-family: Roboto;">
+    <div id="app">
+        <h1>NetworkDiagramView sample</h1>
+        <div class="ribbonContainer">
+            <div class="ribbonPanel">
+                <div class="ribbonHeader">Items</div>
+                <div class="ribbonCommandsArea">
+                    <div class="ribbonCommand"><a href="javascript:;" v-on:click="setCustomBarColorToItem" title="Set custom bar color to Task 2"><img src="Images/SetColor.png" alt="Set color" /></a></div>
+                </div>
+            </div>
+            <div class="ribbonPanel">
+                <div class="ribbonHeader">Project tools</div>
+                <div class="ribbonCommandsArea">
+                    <div class="ribbonCommand"><a href="javascript:;" v-on:click="highlightCriticalPath" title="Highlight critical path"><img src="Images/CriticalPath.png" alt="Critical path" /></a></div>
+                </div>
+            </div>
+            <div class="ribbonPanel">
+                <div class="ribbonHeader">Printing</div>
+                <div class="ribbonCommandsArea">
+                    <div class="ribbonCommand"><a href="javascript:;" v-on:click="print" title="Print"><img src="Images/Print.png" alt="Print" /></a></div>
+                </div>
+            </div>
+        </div>
+        <network-diagram id="networkDiagramView" v-bind:items="networkDiagramItems" v-bind:settings="settings" style="min-height: 388px">
+            ...
+        </network-diagram>
+    </div>
+</body>
+</html>

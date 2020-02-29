@@ -9,7 +9,10 @@ angular.module('Demos', [])
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
-                'AngularJS': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js']
+                'AngularJS': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                'Angular': ['app.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                'React': ['index.html', 'app.css', 'app.jsx', 'templates.js', 'themes.js'],
+                'Vue': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
             }
         },
         {
@@ -272,7 +275,10 @@ angular.module('Demos', [])
         {
             component: 'ScheduleChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
+                'Angular': ['app.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                'React': ['index.html', 'app.css', 'app.jsx', 'templates.js', 'themes.js'],
+                'Vue': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
             }
         },
         {
@@ -412,7 +418,10 @@ angular.module('Demos', [])
         {
             component: 'LoadChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js'],
+                'Angular': ['app.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                'React': ['index.html', 'app.css', 'app.jsx', 'templates.js', 'themes.js'],
+                'Vue': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
             }
         },
         {
@@ -462,7 +471,10 @@ angular.module('Demos', [])
         {
             component: 'PertChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
+                'Angular': ['app.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                'React': ['index.html', 'app.css', 'app.jsx', 'templates.js', 'themes.js'],
+                'Vue': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
             }
         },
         {
@@ -497,7 +509,10 @@ angular.module('Demos', [])
         {
             component: 'NetworkDiagramView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
+                'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
+                'Angular': ['app.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
+                'React': ['index.html', 'app.css', 'app.jsx', 'templates.js', 'themes.js'],
+                'Vue': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
             }
         },
         {
@@ -587,7 +602,7 @@ angular.module('Demos', [])
             $scope.run();
         });
     };
-    var technologies = [{ name: 'JavaScript', title: 'HTML + JavaScript®' }, { name: 'TypeScript', title: 'HTML + TypeScript' }, { name: 'AngularJS', title: 'AngularJS' }, { name: 'Angular', title: 'Angular 8', url: 'https://github.com/DlhSoftTeam/Angular-GanttChartViewSampleApp/tree/master/src/app' }, { name: 'React', title: 'React', url: 'https://github.com/DlhSoftTeam/React-GanttChartViewSampleApp/tree/master' }, { name: 'Vue', title: 'Vue', url: 'https://github.com/DlhSoftTeam/Vue-GanttChartViewSampleApp/tree/master' }];
+    var technologies = [{ name: 'JavaScript', title: 'HTML + JavaScript®' }, { name: 'TypeScript', title: 'HTML + TypeScript' }, { name: 'AngularJS', title: 'AngularJS' }, { name: 'Angular', title: 'Angular 8' }, { name: 'React', title: 'React' }, { name: 'Vue', title: 'Vue' }];
     $scope.technologies = technologies;
     $scope.selectedTechnology = technologies[0];
     var getSamples = function (component, selectedTechnology) {
@@ -694,6 +709,7 @@ angular.module('Demos', [])
     $scope.getSampleUrl = function (selectedSample, selectedTechnology, selectedTheme) {
         return 'Samples/' + (selectedTechnology ? selectedTechnology.name : '') + '/' + selectedSample.component + '/' + selectedSample.feature + '/index.html?' + (selectedTheme ? selectedTheme : $scope.applyingTheme);
     };
+    var pathIndex = initialSelection ? initialSelection.indexOf('/') : -1;
     if (initialSelection == 'AngularJS')
         $scope.selectedTechnology = technologies[2];
     else if (initialSelection == 'Angular')
@@ -702,6 +718,34 @@ angular.module('Demos', [])
         $scope.selectedTechnology = technologies[4];
     else if (initialSelection == 'Vue')
         $scope.selectedTechnology = technologies[5];
+    else if (pathIndex >= 0) {
+        var selection1 = initialSelection.substr(0, pathIndex), selection2, selection3;
+        initialSelection = initialSelection.substr(pathIndex + 1);
+        pathIndex = initialSelection.indexOf('/');
+        if (pathIndex >= 0) {
+            selection2 = initialSelection.substr(0, pathIndex);
+            selection3 = initialSelection.substr(pathIndex + 1);
+        }
+        else {
+            selection2 = selection1;
+            selection3 = initialSelection;
+            selection1 = "JavaScript";
+        }
+        for (var i = 0; i < technologies.length; i++) {
+            var technology = technologies[i];
+            if (technology.name == selection1) {
+                $scope.selectedTechnology = technology;
+                break;
+            }
+        }
+        for (var i = 0; i < samples.length; i++) {
+            var sample = samples[i];
+            if (sample.component == selection2 && sample.feature == selection3) {
+                selectSample(sample);
+                break;
+            }
+        }
+    }
     else if (initialSelection)
         selectComponent(initialSelection);
 })
