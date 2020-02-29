@@ -103,6 +103,7 @@
     <Content Include="Samples\AngularJS\ScheduleChartView\GanttChartIntegration\themes.js" />
     <Content Include="Samples\Angular\GanttChartView\MainFeatures\app.css" />
     <Content Include="Samples\Angular\GanttChartView\MainFeatures\app.html" />
+    <Content Include="Samples\Angular\GanttChartView\MainFeatures\index.html" />
     <Content Include="Samples\Angular\GanttChartView\MainFeatures\Project\e2e\protractor.conf.js" />
     <Content Include="Samples\Angular\GanttChartView\MainFeatures\Project\karma.conf.js" />
     <Content Include="Samples\Angular\GanttChartView\MainFeatures\Project\src\app\app.component.css" />
@@ -138,6 +139,7 @@
     <Content Include="Samples\Angular\GanttChartView\MainFeatures\Project\src\styles.css" />
     <Content Include="Samples\Angular\LoadChartView\MainFeatures\app.css" />
     <Content Include="Samples\Angular\LoadChartView\MainFeatures\app.html" />
+    <Content Include="Samples\Angular\LoadChartView\MainFeatures\index.html" />
     <Content Include="Samples\Angular\LoadChartView\MainFeatures\Project\e2e\protractor.conf.js" />
     <Content Include="Samples\Angular\LoadChartView\MainFeatures\Project\karma.conf.js" />
     <Content Include="Samples\Angular\LoadChartView\MainFeatures\Project\src\app\app.component.css" />
@@ -173,6 +175,7 @@
     <Content Include="Samples\Angular\LoadChartView\MainFeatures\Project\src\styles.css" />
     <Content Include="Samples\Angular\NetworkDiagramView\MainFeatures\app.css" />
     <Content Include="Samples\Angular\NetworkDiagramView\MainFeatures\app.html" />
+    <Content Include="Samples\Angular\NetworkDiagramView\MainFeatures\index.html" />
     <Content Include="Samples\Angular\NetworkDiagramView\MainFeatures\Project\e2e\protractor.conf.js" />
     <Content Include="Samples\Angular\NetworkDiagramView\MainFeatures\Project\karma.conf.js" />
     <Content Include="Samples\Angular\NetworkDiagramView\MainFeatures\Project\src\app\app.component.css" />
@@ -191,6 +194,7 @@
     <Content Include="Samples\Angular\NetworkDiagramView\MainFeatures\Project\src\styles.css" />
     <Content Include="Samples\Angular\PertChartView\MainFeatures\app.css" />
     <Content Include="Samples\Angular\PertChartView\MainFeatures\app.html" />
+    <Content Include="Samples\Angular\PertChartView\MainFeatures\index.html" />
     <Content Include="Samples\Angular\PertChartView\MainFeatures\Project\e2e\protractor.conf.js" />
     <Content Include="Samples\Angular\PertChartView\MainFeatures\Project\karma.conf.js" />
     <Content Include="Samples\Angular\PertChartView\MainFeatures\Project\src\app\app.component.css" />
@@ -209,6 +213,7 @@
     <Content Include="Samples\Angular\PertChartView\MainFeatures\Project\src\styles.css" />
     <Content Include="Samples\Angular\ScheduleChartView\MainFeatures\app.css" />
     <Content Include="Samples\Angular\ScheduleChartView\MainFeatures\app.html" />
+    <Content Include="Samples\Angular\ScheduleChartView\MainFeatures\index.html" />
     <Content Include="Samples\Angular\ScheduleChartView\MainFeatures\Project\e2e\protractor.conf.js" />
     <Content Include="Samples\Angular\ScheduleChartView\MainFeatures\Project\karma.conf.js" />
     <Content Include="Samples\Angular\ScheduleChartView\MainFeatures\Project\src\app\app.component.css" />
