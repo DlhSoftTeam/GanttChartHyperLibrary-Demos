@@ -1,4 +1,7 @@
-var GanttChartView = React.forwardRef(function(props, ref) {
+import React from 'react';
+const DlhSoft = window.DlhSoft;
+
+export var GanttChartView = React.forwardRef(function(props, ref) {
     if (!ref) ref = React.createRef();
     var element = <div ref={ref} style={props.style}>{props.children}</div>;
     var changeHandler = props.settings.itemPropertyChangeHandler;
@@ -15,7 +18,7 @@ var GanttChartView = React.forwardRef(function(props, ref) {
     return element;
 });
 
-var ScheduleChartView = React.forwardRef(function(props, ref) {
+export var ScheduleChartView = React.forwardRef(function(props, ref) {
     if (!ref) ref = React.createRef();
     var element = <div ref={ref} style={props.style}>{props.children}</div>;
     var changeHandler = props.settings.itemPropertyChangeHandler;
@@ -32,7 +35,7 @@ var ScheduleChartView = React.forwardRef(function(props, ref) {
     return element;
 });
 
-var LoadChartView = React.forwardRef(function(props, ref) {
+export var LoadChartView = React.forwardRef(function(props, ref) {
     if (!ref) ref = React.createRef();
     var element = <div ref={ref} style={props.style}>{props.children}</div>;
     var changeHandler = props.settings.itemPropertyChangeHandler;
