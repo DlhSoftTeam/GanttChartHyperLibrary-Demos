@@ -1,4 +1,7 @@
-var PertChartView = React.forwardRef(function(props, ref) {
+import React from 'react';
+const DlhSoft = window.DlhSoft;
+
+export var PertChartView = React.forwardRef(function(props, ref) {
     if (!ref) ref = React.createRef();
     var element = <div ref={ref} style={props.style}>{props.children}</div>;
     var changeHandler = props.settings.itemPropertyChangeHandler;
@@ -15,7 +18,7 @@ var PertChartView = React.forwardRef(function(props, ref) {
     return element;
 });
 
-var NetworkDiagramView = React.forwardRef(function(props, ref) {
+export var NetworkDiagramView = React.forwardRef(function(props, ref) {
     if (!ref) ref = React.createRef();
     var element = <div ref={ref} style={props.style}>{props.children}</div>;
     var changeHandler = props.settings.itemPropertyChangeHandler;
