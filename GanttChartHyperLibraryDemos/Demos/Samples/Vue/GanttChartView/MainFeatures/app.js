@@ -67,12 +67,9 @@ items[4].executionCost = 50;
 settings.defaultResourceHourCost = 10;
 settings.specificResourceHourCosts = [{ key: 'Resource 1', value: 20 }, { key: 'Material 2', value: 0.5 }];
 
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom theme (themes.js).
 initializeGanttChartTheme(settings, theme);
 initializeGanttChartTemplates(settings, theme);
-
-// Initialize the component.
-var ganttChartView = GanttChartView.initialize(ganttChartViewElement, items, settings);
 
 // Optionally, update the current time line periodically, e.g. every 5 minutes.
 // setInterval(function () { ganttChartView.updateCurrentTime(); }, 5 * 60 * 1000);

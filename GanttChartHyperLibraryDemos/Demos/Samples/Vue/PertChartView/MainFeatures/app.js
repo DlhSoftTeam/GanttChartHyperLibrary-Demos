@@ -40,11 +40,6 @@ var settings = {
 initializePertChartTheme(settings, theme);
 initializePertChartTemplates(settings, theme);
 
-// Retrieve and store the control element for reference purposes.
-var pertChartView = document.querySelector('#pertChartView');
-// Initialize the component.
-DlhSoft.Controls.Pert.PertChartView.initialize(pertChartView, pertChartItems, settings);
-
 var app = new Vue({
     el: '#app',
     data: {

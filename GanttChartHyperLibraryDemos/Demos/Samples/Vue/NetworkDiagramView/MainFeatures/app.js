@@ -47,11 +47,6 @@ var settings = {
 initializePertChartTheme(settings, theme);
 initializePertChartTemplates(settings, theme);
 
-// Retrieve and store the control element for reference purposes.
-var networkDiagramView = document.querySelector('#networkDiagramView');
-// Initialize the component.
-DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramView, networkDiagramItems, settings);
-
 var app = new Vue({
     el: '#app',
     data: {

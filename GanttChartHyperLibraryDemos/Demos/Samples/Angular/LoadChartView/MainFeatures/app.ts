@@ -124,7 +124,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.loadChartView = <LoadChartView.Element>(<HTMLElement>this.loadChartViewRef.nativeElement).firstChild;
 
-    // Optionally, initialize custom theme and templates (themes.js, templates.js).
+    // Optionally, initialize custom theme (themes.js).
     initializeLoadChartTheme(this.settings, this.theme);
   }
 }
