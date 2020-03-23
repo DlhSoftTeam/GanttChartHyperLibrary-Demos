@@ -27,11 +27,6 @@ var settings = {
 // Optionally, initialize custom theme and templates (themes.js, templates.js).
 initializeLoadChartTheme(settings, theme);
 
-// Retrieve and store the control element for reference purposes.
-var loadChartView = document.querySelector('#loadChartView');
-// Initialize the component.
-DlhSoft.Controls.LoadChartView.initialize(loadChartView, loadChartItems, settings);
-
 var app = new Vue({
     el: '#app',
     data: {

@@ -28,11 +28,6 @@ var settings = {
 initializeGanttChartTheme(settings, theme);
 initializeGanttChartTemplates(settings, theme);
 
-// Retrieve and store the control element for reference purposes.
-var scheduleChartViewElement = document.querySelector('#scheduleChartView');
-// Initialize the component.
-DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, scheduleChartItems, settings);
-
 var originalItemPropertyChangeHandler = settings.itemPropertyChangeHandler;
 var app = new Vue({
     el: '#app',
