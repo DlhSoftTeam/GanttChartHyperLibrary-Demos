@@ -1,8 +1,8 @@
 ﻿/* Assembly: DlhSoft.ProjectData.GanttChart.HTML.Controls,
    Company: DlhSoft,
    Product: Project Data Modern Library,
-   Version: 5.3.14.0,
-   Copyright: Copyright © 2012-2019 DlhSoft,
+   Version: 5.3.15.1,
+   Copyright: Copyright © 2012-2020 DlhSoft,
    Title: Project Data Gantt Chart HTML Controls,
    Description: Project Data Gantt Chart related HTML client components */
 
@@ -193,7 +193,8 @@ declare module DlhSoft.Controls {
             getProjectTotalEffort(): number; getProjectTotalCompletedEffort(): number;
             getProjectCompletion(): number;
 
-            isItemCritical(item: Item): boolean; getCriticalItems(): Item[];
+            isItemCritical(item: Item): boolean; getCriticalItems(criticalDelay?: number): Item[];
+            getPertCriticalItems(maxIndentation?: number): Item[];
 
             ensureDependencyConstraints(): void;
 
@@ -206,8 +207,8 @@ declare module DlhSoft.Controls {
             /** Creates and inserts a partial copy of the specified task item considering its remaining work effort into the managed hierarchy, and updates the finish date and time of the original task item to its completion point. */
             splitRemainingWork(item: Item): void;
 
-            /** Optimizes schedule times of all managed items in order to optimize the project finish date without leveling resources, respecting dependency constraints. */
-            optimizeWork(dependenciesOnly?: boolean, includeStartedTasks?: boolean, start?: Date): void;
+            /** Optimizes schedule times of all managed items in order to optimize the project finish date without leveling resources (optionally using single pass task leveling), respecting dependency constraints. */
+            optimizeWork(dependenciesOnly?: boolean, includeStartedTasks?: boolean, start?: Date, singlePassTaskLeveling?: boolean): void;
 
             /** Levels the assigned allocation units assuming that all or the specified tasks within the control are fixed duration and effort driven; requires that assignmentsContent property of the task items is of type string, formatted as a list of resource names separated by commas, optionally having associated allocation percents declared between square brackets (e.g.: "John, Mary [50%], Diane [12.5%]"). */
             levelAllocations(items?: Item[]): void;
@@ -654,6 +655,14 @@ declare module DlhSoft.Controls {
 
             isSeparatorVisible?: boolean;
             separatorClass?: string; separatorStyle?: string;
+
+            intervals?: ScaleInterval[];
+        }
+
+        /** Represents an interval for a custom scale displayed by the GanttChartView component. */
+        interface ScaleInterval {
+            start: Date; finish: Date;
+            headerText?: string;
         }
 
         /** Represents export settings for a GanttChartView component. */
