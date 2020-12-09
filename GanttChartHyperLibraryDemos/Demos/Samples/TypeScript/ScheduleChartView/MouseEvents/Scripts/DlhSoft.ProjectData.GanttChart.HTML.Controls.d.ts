@@ -1,7 +1,7 @@
 ﻿/* Assembly: DlhSoft.ProjectData.GanttChart.HTML.Controls,
    Company: DlhSoft,
    Product: Project Data Modern Library,
-   Version: 5.3.15.1,
+   Version: 5.3.17.0,
    Copyright: Copyright © 2012-2020 DlhSoft,
    Title: Project Data Gantt Chart HTML Controls,
    Description: Project Data Gantt Chart related HTML client components */
@@ -314,7 +314,7 @@ declare module DlhSoft.Controls {
             parts?: Item[];
 
             "class"?: string; style?: string;
-            barClass?: string; standardBarClass?: string; completedBarClass?: string; summaryBarClass?: string; milestoneBarClass?: string; baselineBarClass?: string; barStyle?: string; standardBarStyle?: string; completedBarStyle?: string; summaryBarStyle?: string; milestoneBarStyle?: string; baselineBarStyle?: string;
+            barClass?: string; standardBarClass?: string; completedBarClass?: string; summaryBarClass?: string; summaryCompletedBarClass?: string; milestoneBarClass?: string; baselineBarClass?: string; barStyle?: string; standardBarStyle?: string; completedBarStyle?: string; summaryBarStyle?: string; summaryCompletedBarStyle?: string; milestoneBarStyle?: string; baselineBarStyle?: string;
             taskTemplate? (item: Item): SVGElement;
             template? (item: Item): SVGElement;
 
@@ -468,6 +468,7 @@ declare module DlhSoft.Controls {
             styleDefinitionTemplate? (ganttChartView?: Element): SVGDefsElement;
             standardBarClass?: string; summaryBarClass?: string; milestoneBarClass?: string; standardBarStyle?: string; summaryBarStyle?: string; milestoneBarStyle?: string;
             standardCompletedBarClass?: string; standardCompletedBarStyle?: string;
+            summaryCompletedBarClass?: string; summaryCompletedBarStyle?: string;
             collapsedSummaryLineClass?: string; collapsedSummaryLineStyle?: string;
             dependencyPointerClass?: string; dependencyPointerStyle?: string;
             dependencyLineClass?: string; dependencyLineStyle?: string;
@@ -483,6 +484,7 @@ declare module DlhSoft.Controls {
             assignmentsTemplate? (item: Item): SVGElement;
 
             isTaskCompletedEffortVisible?: boolean;
+            isSummaryTaskCompletedEffortVisible?: boolean;
 
             isIndividualItemNonworkingTimeHighlighted?: boolean; areTaskInterruptionsHighlighted?: boolean;
 
