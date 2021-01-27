@@ -198,10 +198,22 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'MultipleBarsPerItem', title: 'Multiple bars per item (parts)', description: 'Shows how you can define and display multiple bars for each task (i.e. item parts)',
+            component: 'GanttChartView', feature: 'SummaryUpdating', title: 'Summary updating (using drag operations)', description: 'Shows how to setup a custom template to allow dragging summary items and automatically update child tasks accordingly',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'SummaryBackgroundColors', title: 'Summary background colors', description: 'Shows how to setup a custom template to draw background rectangles of custom colors enclosing summary items and their child tasks',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'MultipleBarsPerItem', title: 'Multiple bars per item (parts)', description: 'Shows how you can define and display multiple bars for each task (i.e. item parts)',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js']
             }
         },
         {
