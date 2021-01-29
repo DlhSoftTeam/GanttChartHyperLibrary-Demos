@@ -212,15 +212,13 @@ angular.module('Demos', [])
             {
                 component: 'GanttChartView', feature: 'SummaryUpdating', title: 'Summary updating (using drag operations)', description: 'Shows how to setup a custom template to allow dragging summary items and automatically update child tasks accordingly',
                 sourceCodeFiles: {
-                    'JavaScript': ['index.html', 'app.css', 'app.js'],
-                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                    'JavaScript': ['index.html', 'app.css', 'app.js']
                 }
             },
             {
                 component: 'GanttChartView', feature: 'SummaryBackgroundColors', title: 'Summary background colors', description: 'Shows how to setup a custom template to draw background rectangles of custom colors enclosing summary items and their child tasks',
                 sourceCodeFiles: {
-                    'JavaScript': ['index.html', 'app.css', 'app.js'],
-                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                    'JavaScript': ['index.html', 'app.css', 'app.js']
                 }
             },
             {
