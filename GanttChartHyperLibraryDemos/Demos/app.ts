@@ -571,44 +571,44 @@ angular.module('Demos', [])
             {
                 component: 'GanttChartView', feature: 'SinglePageDatabase', title: 'SQL Server® + ASP .NET WebAPI', description: 'Single page app accessing data using ASP .NET WebAPI from a SQL Server® database',
                 sourceCodeUrls: {
-                    'JavaScript': 'http://DlhSoft.com/KnowledgeBase/GanttChartSinglePageDatabaseSample.zip',
-                    'AngularJS': 'http://GitHub.com/DlhSoftTeam/Angular-GanttChartViewSampleApp/archive/master.zip'
+                    'JavaScript': 'https://DlhSoft.com/KnowledgeBase/GanttChartSinglePageDatabaseSample.zip',
+                    'AngularJS': 'https://GitHub.com/DlhSoftTeam/Angular-GanttChartViewSampleApp/archive/master.zip'
                 }
             },
             {
                 component: 'GanttChartView', feature: 'PHP', title: 'PHP', description: 'PHP based sample application with server side change handling',
                 sourceCodeUrls: {
-                    'JavaScript': 'http://GitHub.com/DlhSoftTeam/Php-GanttChartViewSampleApp/archive/master.zip'
+                    'JavaScript': 'https://GitHub.com/DlhSoftTeam/Php-GanttChartViewSampleApp/archive/master.zip'
                 }
             },
             {
                 component: 'GanttChartView', feature: 'NodeJS', title: 'Node.js® + Express + pug', description: 'Simple Node.js® based application developed using pug template engine and Express framework',
                 sourceCodeUrls: {
-                    'JavaScript': 'http://github.com/DlhSoftTeam/NodeJS-GanttChartViewSampleApp/archive/master.zip'
+                    'JavaScript': 'https://github.com/DlhSoftTeam/NodeJS-GanttChartViewSampleApp/archive/master.zip'
                 }
             },
             {
                 component: 'GanttChartView', feature: 'Python', title: 'Python™ + Flask', description: 'Simple Python™ based application developed using Flask Web framework',
                 sourceCodeUrls: {
-                    'JavaScript': 'http://github.com/DlhSoftTeam/Python-GanttChartViewSampleApp/archive/master.zip'
+                    'JavaScript': 'https://github.com/DlhSoftTeam/Python-GanttChartViewSampleApp/archive/master.zip'
                 }
             },
             {
                 component: 'GanttChartView', feature: 'LightSwitch', title: 'LightSwitch® (HTML)', description: 'HTML based LightSwitch® app',
                 sourceCodeUrls: {
-                    'JavaScript': 'http://DlhSoft.com/KnowledgeBase/GanttChartHtmlSample.zip'
+                    'JavaScript': 'https://DlhSoft.com/KnowledgeBase/GanttChartHtmlSample.zip'
                 }
             },
             {
                 component: 'GanttChartView', feature: 'WindowsStoreApp', title: 'Windows® Store app (UWP)', description: 'Windows® Universal Platform (UWP) app using JavaScript®',
                 sourceCodeUrls: {
-                    'JavaScript': 'http://DlhSoft.com/KnowledgeBase/GanttChartJavaScriptStoreAppSample.zip'
+                    'JavaScript': 'https://DlhSoft.com/KnowledgeBase/GanttChartJavaScriptStoreAppSample.zip'
                 }
             },
             {
                 component: 'GanttChartView', feature: 'Cordova', title: 'Multi-device (Cordova™)', description: 'Cordova™ tools based multi-device hybrid app targeting Windows (UWP), Android, and iOS',
                 sourceCodeUrls: {
-                    'JavaScript': 'http://DlhSoft.com/KnowledgeBase/GanttChartMDHASample.zip'
+                    'JavaScript': 'https://DlhSoft.com/KnowledgeBase/GanttChartMDHASample.zip'
                 }
             }
         ];
