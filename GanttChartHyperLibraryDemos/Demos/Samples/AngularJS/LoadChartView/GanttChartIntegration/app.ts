@@ -8,7 +8,6 @@ import LoadChartItem = LoadChartView.Item;
 // Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
-declare var initializeGanttChartTemplates;
 declare var initializeGanttChartTheme;
 declare var initializeLoadChartTheme;
 
@@ -26,9 +25,8 @@ angular.module('LoadChartViewSample', ['DlhSoft.ProjectData.GanttChart.Directive
         var ganttChartSettings = <GanttChartView.Settings>{
             currentTime: new Date(2016, 2 - 1, 2) // Display the current time vertical line of the chart at the project start date.
         };
-        // Optionally, initialize custom theme and templates for Gantt Chart (themes.js, templates.js).
+        // Optionally, initialize custom themes for Gantt Chart (themes.js).
         initializeGanttChartTheme(ganttChartSettings, theme);
-        initializeGanttChartTemplates(ganttChartSettings, theme);
         $scope.ganttChartSettings = ganttChartSettings;
         // Underlying GanttChartView component reference.
         var ganttChartView = <GanttChartView.Element>document.getElementById('ganttChartView');
@@ -45,7 +43,7 @@ angular.module('LoadChartViewSample', ['DlhSoft.ProjectData.GanttChart.Directive
             var settings = <LoadChartView.Settings>{
                 currentTime: new Date(2016, 2 - 1, 2) // Display the current time vertical line of the chart at the project start date.
             };
-            // Optionally, initialize custom theme for Load Chart (themes.js).
+            // Optionally, initialize custom themes for Load Chart (themes.js).
             initializeLoadChartTheme(settings, theme);
             $scope.settings = settings;
             var loadChartView = <LoadChartView.Element>document.getElementById('loadChartView');

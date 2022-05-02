@@ -26,9 +26,9 @@ var settings = {
     currentTime: new Date(year, month, 2, 12, 0, 0),
     areTaskDependencyConstraintsEnabled: true
 };
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
+
 // Set up main schedule. Alternatively, set workingWeek{Start|Finish} and visibleDay{Start|Finish} fields on the settings object.
 settings.schedule = {
     workingWeekStart: 2,

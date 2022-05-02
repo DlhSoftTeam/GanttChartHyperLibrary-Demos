@@ -58,9 +58,8 @@ class App extends React.Component {
         columns.push({ header: 'Est. start', width: 140, cellTemplate: DlhSoft.Controls.GanttChartView.getBaselineStartColumnTemplate(124, true, true, 8 * 60 * 60 * 1000) }); // 8 AM
         columns.push({ header: 'Est. finish', width: 140, cellTemplate: DlhSoft.Controls.GanttChartView.getBaselineFinishColumnTemplate(124, true, true, 16 * 60 * 60 * 1000) }); // 4 PM
         settings.columns = columns;
-        // Optionally, initialize custom theme and templates (themes.js, templates.js).
+        // Optionally, initialize custom themes (themes.js).
         initializeGanttChartTheme(settings, theme);
-        initializeGanttChartTemplates(settings, theme);
         function onItemChanged(item, propertyName, isDirect, isFinal) {
             if (!isDirect || !isFinal) // Skip internal changes, and changes occurred during drag operations.
                 return;

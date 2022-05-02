@@ -40,7 +40,7 @@ var settings = <LoadChartView.Settings>{
     alternativeChartItemClass: theme == 'Dark-black' ? 'alternativeChartItem-dark' : 'alternativeChartItem'
 };
 
-// Optionally, initialize custom theme (themes.js).
+// Optionally, initialize custom themes (themes.js).
 initializeLoadChartTheme(settings, theme);
 
 // Initialize the component.

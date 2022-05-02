@@ -35,9 +35,8 @@ class App extends React.Component {
 
         var settings = {  };
 
-        // Optionally, initialize custom theme and templates (themes.js, templates.js).
+        // Optionally, initialize custom themes (themes.js).
         initializePertChartTheme(settings, theme);
-        initializePertChartTemplates(settings, theme);
 
         function setCustomBarColorToItem() {
             var item = networkDiagramView.items[2];

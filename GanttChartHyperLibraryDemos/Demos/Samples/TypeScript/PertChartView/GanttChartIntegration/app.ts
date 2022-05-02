@@ -9,9 +9,7 @@ import PertChartItem = PertChartView.Item;
 // Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
-declare var initializeGanttChartTemplates;
 declare var initializeGanttChartTheme;
-declare var initializePertChartTemplates;
 declare var initializePertChartTheme;
 
 // Retrieve and store the control and container elements for reference purposes.
@@ -34,9 +32,8 @@ var ganttChartSettings = <GanttChartView.Settings>{
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
 
-// Optionally, initialize custom theme and templates for Gantt Chart (themes.js, templates.js).
+// Optionally, initialize custom themes for Gantt Chart (themes.js).
 initializeGanttChartTheme(ganttChartSettings, theme);
-initializeGanttChartTemplates(ganttChartSettings, theme);
 
 // Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, ganttChartItems, ganttChartSettings);
@@ -55,9 +52,8 @@ function showPertChart() {
     // Prepare PERT Chart data items and settings.
     var items = ganttChartView.getPertChartItems();
     var settings = <PertChartView.Settings>{ };
-    // Optionally, initialize custom theme and templates for PERT Chart (themes.js, templates.js).
+    // Optionally, initialize custom themes for PERT Chart (themes.js).
     initializePertChartTheme(settings, theme);
-    initializePertChartTemplates(settings, theme);
     var pertChartView = DlhSoft.Controls.Pert.PertChartView.initialize(pertChartViewElement, items, settings);
 }
 

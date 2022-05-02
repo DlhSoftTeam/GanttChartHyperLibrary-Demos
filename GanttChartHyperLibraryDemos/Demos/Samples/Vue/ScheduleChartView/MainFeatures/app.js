@@ -24,9 +24,8 @@ var settings = {
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
 
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
 
 var originalItemPropertyChangeHandler = settings.itemPropertyChangeHandler;
 var app = new Vue({

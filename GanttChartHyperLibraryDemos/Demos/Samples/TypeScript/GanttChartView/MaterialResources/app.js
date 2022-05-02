@@ -18,9 +18,9 @@ var settings = {
     currentTime: new Date(year, month, day, 7, 59, 0),
     displayedTime: new Date(year, month, day, 7, 58, 0)
 };
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
+
 // Use minute level scale as displayed print jobs are short (3 minutes each).
 var getIntervals = function (intervalDuration, intervalHeaderFormatter) {
     var intervals = [];

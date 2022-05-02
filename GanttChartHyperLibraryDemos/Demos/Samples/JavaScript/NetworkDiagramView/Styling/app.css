@@ -16,6 +16,7 @@
 .dependencyLine {
     stroke: darkgray;
     fill: none;
+    marker-end: url(#PertArrowMarker);
 }
 
 /* Overrides */

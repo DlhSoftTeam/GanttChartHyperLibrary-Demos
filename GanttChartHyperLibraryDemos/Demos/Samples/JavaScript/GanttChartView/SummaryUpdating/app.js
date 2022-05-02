@@ -58,9 +58,9 @@ columns[2].cellTemplate = function(item) { // Finish
         function() { return item.hasChildren }); // bold
 }
 settings.columns = columns;
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
+
 // Setup summary template to handle updates (with initializeTaskDraggingThumbs).
 var originalSummaryTaskTemplate = settings.summaryTaskTemplate ? settings.summaryTaskTemplate : DlhSoft.Controls.GanttChartView.getDefaultSummaryTaskTemplate(items, ganttChartView, settings);
 settings.summaryTaskTemplate = function (item) {

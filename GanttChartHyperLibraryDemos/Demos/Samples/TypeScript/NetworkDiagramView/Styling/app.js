@@ -32,8 +32,8 @@ var settings = {
     milestoneClass: 'milestone',
     dependencyLineClass: 'dependencyLine'
 };
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializePertChartTheme(settings, theme);
-initializePertChartTemplates(settings, theme);
+
 // Initialize the component.
 var networkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramViewElement, items, settings);

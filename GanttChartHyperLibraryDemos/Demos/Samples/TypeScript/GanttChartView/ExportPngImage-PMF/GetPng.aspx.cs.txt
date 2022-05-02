@@ -25,7 +25,7 @@ namespace Demos.Samples.TypeScript.GanttChartView.ExportPngImage_PMF
                 // Configure timeline to export.
                 control.TimelinePageStart = taskManager.GetProjectStart().Date.AddDays(-2);
                 control.TimelinePageFinish = taskManager.GetProjectFinish().Date.AddDays(3);
-                // Configure internal provider control to support custom themes.
+                // Configure internal provider control to support custom themes .
                 control.HeaderHeight = 80;
                 control.ScaleHeaderHeight = 40;
                 control.ItemHeight = 40;

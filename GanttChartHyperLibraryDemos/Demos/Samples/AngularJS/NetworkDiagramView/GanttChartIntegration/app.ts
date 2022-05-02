@@ -10,9 +10,7 @@ import NetworkDiagramItem = NetworkDiagramView.Item;
 // Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
-declare var initializeGanttChartTemplates;
 declare var initializeGanttChartTheme;
-declare var initializePertChartTemplates;
 declare var initializePertChartTheme;
 
 declare var angular;
@@ -29,9 +27,8 @@ angular.module('NetworkDiagramViewSample', ['DlhSoft.ProjectData.GanttChart.Dire
         var ganttChartSettings = <GanttChartView.Settings>{
             currentTime: new Date(2016, 2 - 1, 2) // Display the current time vertical line of the chart at the project start date.
         };
-        // Optionally, initialize custom theme and templates for Gantt Chart (themes.js, templates.js).
+        // Optionally, initialize custom themes for Gantt Chart (themes.js).
         initializeGanttChartTheme(ganttChartSettings, theme);
-        initializeGanttChartTemplates(ganttChartSettings, theme);
         $scope.ganttChartSettings = ganttChartSettings;
         // Underlying GanttChartView component reference.
         var ganttChartView = <GanttChartView.Element>document.getElementById('ganttChartView');
@@ -45,9 +42,8 @@ angular.module('NetworkDiagramViewSample', ['DlhSoft.ProjectData.GanttChart.Dire
             var networkDiagramItems = ganttChartView.getNetworkDiagramItems();
             $scope.items = networkDiagramItems;
             var settings = <NetworkDiagramView.Settings>{ };
-            // Optionally, initialize custom theme and templates for Network Diagram (themes.js, templates.js).
+            // Optionally, initialize custom themes for Network Diagram (themes.js).
             initializePertChartTheme(settings, theme);
-            initializePertChartTemplates(settings, theme);
             $scope.settings = settings;
             var networkDiagramView = <NetworkDiagramView.Element>document.getElementById('networkDiagramView');
             $scope.isNetworkDiagramVisible = true;

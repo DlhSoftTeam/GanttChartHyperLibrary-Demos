@@ -7,7 +7,6 @@ import PredecessorItem = GanttChartView.PredecessorItem;
 // Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
-declare var initializeGanttChartTemplates;
 declare var initializeGanttChartTheme;
 
 // Retrieve and store the control element for reference purposes.
@@ -46,9 +45,8 @@ columns.splice(5, 0, { header: 'Min finish', width: 140, cellTemplate: DlhSoft.C
 columns.splice(6, 0, { header: 'Max finish', width: 140, cellTemplate: DlhSoft.Controls.GanttChartView.getMaxFinishColumnTemplate(124, true, true, 16 * 60 * 60 * 1000) }); // 4 PM
 settings.columns = columns;
 
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
 
 // Optionally, visually indicate original tasks with time constraints.
 var specialItems = [specialItem];

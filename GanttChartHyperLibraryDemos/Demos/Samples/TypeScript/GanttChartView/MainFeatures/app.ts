@@ -16,10 +16,8 @@ import MultiSelectorComboBox = DlhSoft.Controls.MultiSelectorComboBox;
 // Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
-declare var initializeGanttChartTemplates;
 declare var initializeGanttChartTheme;
 declare var initializeLoadChartTheme;
-declare var initializePertChartTemplates;
 declare var initializePertChartTheme;
 
 // Retrieve and store the control element for reference purposes.
@@ -244,9 +242,8 @@ settings.areTaskDependencyConstraintsEnabled = true;
 // Optionally, disable auto-scheduling for specific items (turning on manual scheduling back for them.)
 // items[7].areDependencyConstraintsEnabled = false;
 
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
 
 // Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, items, settings);
@@ -423,7 +420,6 @@ function scheduleChart() {
     ganttChartView.copyCommonSettings(scheduleChartSettings);
     var scheduleChartViewElement = <HTMLElement>document.querySelector('#scheduleChartView');
     initializeGanttChartTheme(scheduleChartSettings, theme);
-    initializeGanttChartTemplates(scheduleChartSettings, theme);
     scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, scheduleChartItems, scheduleChartSettings);
     scheduleChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('ScheduleChart', displayedTime); }
     scheduleChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('ScheduleChart', gridWidth, chartWidth); }
@@ -457,7 +453,6 @@ function pertChart() {
     var pertChartSettings = <PertChartView.Settings>{ chartMargin: 2, snapRearrangedItemsToGuidelines: false };
     var pertChartViewElement = <HTMLElement>document.querySelector('#pertChartView');
     initializePertChartTheme(pertChartSettings, theme);
-    initializePertChartTemplates(pertChartSettings, theme);
     pertChartView = DlhSoft.Controls.Pert.PertChartView.initialize(pertChartViewElement, pertChartItems, pertChartSettings);
     var criticalItems = pertChartView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {
@@ -480,7 +475,6 @@ function networkDiagram() {
     var networkDiagramSettings = <NetworkDiagramView.Settings>{ diagramMargin: 2, snapRearrangedItemsToGuidelines: false };
     var networkDiagramViewElement = <HTMLElement>document.querySelector('#networkDiagramView');
     initializePertChartTheme(networkDiagramSettings, theme);
-    initializePertChartTemplates(networkDiagramSettings, theme);
     networkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramViewElement, networkDiagramItems, networkDiagramSettings);
     var criticalItems = networkDiagramView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {

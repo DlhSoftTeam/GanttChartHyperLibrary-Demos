@@ -204,9 +204,9 @@ settings.areTaskDependencyConstraintsEnabled = true;
 // settings.areDependencyConstraintsAppliedOnMilestones = false;
 // Optionally, disable auto-scheduling for specific items (turning on manual scheduling back for them.)
 // items[7].areDependencyConstraintsEnabled = false;
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
+
 // Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, items, settings);
 // Optionally, update the current time line periodically, e.g. every 5 minutes.
@@ -380,7 +380,6 @@ function scheduleChart() {
     ganttChartView.copyCommonSettings(scheduleChartSettings);
     var scheduleChartViewElement = document.querySelector('#scheduleChartView');
     initializeGanttChartTheme(scheduleChartSettings, theme);
-    initializeGanttChartTemplates(scheduleChartSettings, theme);
     scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, scheduleChartItems, scheduleChartSettings);
     scheduleChartSettings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('ScheduleChart', displayedTime); };
     scheduleChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('ScheduleChart', gridWidth, chartWidth); };
@@ -414,7 +413,6 @@ function pertChart() {
     var pertChartSettings = { chartMargin: 2, snapRearrangedItemsToGuidelines: false };
     var pertChartViewElement = document.querySelector('#pertChartView');
     initializePertChartTheme(pertChartSettings, theme);
-    initializePertChartTemplates(pertChartSettings, theme);
     pertChartView = DlhSoft.Controls.Pert.PertChartView.initialize(pertChartViewElement, pertChartItems, pertChartSettings);
     var criticalItems = pertChartView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {
@@ -437,7 +435,6 @@ function networkDiagram() {
     var networkDiagramSettings = { diagramMargin: 2, snapRearrangedItemsToGuidelines: false };
     var networkDiagramViewElement = document.querySelector('#networkDiagramView');
     initializePertChartTheme(networkDiagramSettings, theme);
-    initializePertChartTemplates(networkDiagramSettings, theme);
     networkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramViewElement, networkDiagramItems, networkDiagramSettings);
     var criticalItems = networkDiagramView.getCriticalItems();
     for (var i = 0; i < criticalItems.length; i++) {

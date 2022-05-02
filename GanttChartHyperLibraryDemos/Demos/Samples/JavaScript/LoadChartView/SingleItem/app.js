@@ -51,7 +51,7 @@ var settings = {
 //         alert(item.content + '.' + propertyName + ' has changed.');
 // }
 
-// Optionally, initialize custom theme (themes.js).
+// Optionally, initialize custom themes (themes.js).
 initializeLoadChartTheme(settings, theme);
 
 // settings.isGridVisible = false;

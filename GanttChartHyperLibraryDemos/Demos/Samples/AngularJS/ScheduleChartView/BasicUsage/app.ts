@@ -8,7 +8,6 @@ import ScheduleChartItem = ScheduleChartView.Item;
 // Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
-declare var initializeGanttChartTemplates;
 declare var initializeGanttChartTheme;
 
 declare var angular;
@@ -34,9 +33,8 @@ angular.module('ScheduleChartViewSample', ['DlhSoft.ProjectData.GanttChart.Direc
         var settings = <ScheduleChartView.Settings>{
             currentTime: new Date(2016, 2 - 1, 2) // Display the current time vertical line of the chart at the project start date.
         };
-        // Optionally, initialize custom theme and templates (themes.js, templates.js).
+        // Optionally, initialize custom themes (themes.js).
         initializeGanttChartTheme(settings, theme);
-        initializeGanttChartTemplates(settings, theme);
         $scope.settings = settings;
         // Underlying ScheduleChartView component reference.
         var scheduleChartView = <ScheduleChartView.Element>document.getElementById('scheduleChartView');

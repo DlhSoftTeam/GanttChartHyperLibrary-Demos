@@ -32,7 +32,7 @@ class App extends React.Component {
             currentTime: new Date(year, month, 2, 12, 0, 0)
         };
 
-        // Optionally, initialize custom theme (themes.js).
+        // Optionally, initialize custom themes (themes.js).
         initializeLoadChartTheme(settings, theme);
 
         function onItemChanged(item, propertyName, isDirect, isFinal) {

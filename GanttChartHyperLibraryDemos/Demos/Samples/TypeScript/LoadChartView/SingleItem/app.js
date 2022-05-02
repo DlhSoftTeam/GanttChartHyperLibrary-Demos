@@ -20,7 +20,7 @@ var settings = {
     // Set the current time value to automatically scroll to a specific chart coordinate, and display a vertical bar highlighter at the specified point.
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
-// Optionally, initialize custom theme (themes.js).
+// Optionally, initialize custom themes (themes.js).
 initializeLoadChartTheme(settings, theme);
 // settings.isGridVisible = false;
 settings.itemHeight = 312;

@@ -48,9 +48,9 @@ function initialize() {
     settings.areAssignmentsReadOnly = false; // Doesn't support updates upon reinitialization (unless you clean up the internal draggable dependency cache using: delete scheduleChartViewElement['draggableAssignmentItems']).
     settings.isDraggingTaskStartEndsEnabled = !disableStartEndDraggingCheckBox.checked;
     settings.isGridRowClickTimeScrollingEnabled = !disableScrollingOnTaskClick.checked;
-    // Optionally, initialize custom theme and templates (themes.js, templates.js).
+    // Optionally, initialize custom themes (themes.js).
     initializeGanttChartTheme(settings, theme);
-    initializeGanttChartTemplates(settings, theme);
+    
     // (Re-)Initialize the component.
     scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, scheduleChartItems, settings);
 }

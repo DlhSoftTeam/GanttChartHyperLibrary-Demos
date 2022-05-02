@@ -64,9 +64,9 @@ columns.splice(4, 0, {
     }
 });
 settings.columns = columns;
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
+
 // Set up custom template for standard tasks using custom fields prepared for items (hasMilestoneAtFinish, numberOfLinesToDisplayInsteadOfRectangle, label).
 // When getDefault*TaskTemplate methods are used, pass undefined as items, ganttChartView, and settings arguments to use the instances associated to the item that the template would apply for.
 var originalStandardTaskTemplate = settings.standardTaskTemplate ? settings.standardTaskTemplate : GanttChartView.getDefaultStandardTaskTemplate(undefined, undefined, undefined);

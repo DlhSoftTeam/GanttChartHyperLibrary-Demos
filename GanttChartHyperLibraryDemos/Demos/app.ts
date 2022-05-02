@@ -19,12 +19,12 @@ angular.module('Demos', [])
             {
                 component: 'GanttChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
-                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
-                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
-                    'AngularJS': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
-                    'Angular': ['app.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
-                    'React': ['index.html', 'app.css', 'app.jsx', 'templates.js', 'themes.js'],
-                    'Vue': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.js'],
+                    'AngularJS': ['index.html', 'app.css', 'app.ts', 'themes.js'],
+                    'Angular': ['app.html', 'app.css', 'app.ts', 'themes.js'],
+                    'React': ['index.html', 'app.css', 'app.jsx', 'themes.js'],
+                    'Vue': ['index.html', 'app.css', 'app.js', 'themes.js']
                 }
             },
             {
@@ -299,17 +299,17 @@ angular.module('Demos', [])
             {
                 component: 'ScheduleChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
-                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
-                    'Angular': ['app.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
-                    'React': ['index.html', 'app.css', 'app.jsx', 'templates.js', 'themes.js'],
-                    'Vue': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js'],
+                    'Angular': ['app.html', 'app.css', 'app.ts', 'themes.js'],
+                    'React': ['index.html', 'app.css', 'app.jsx', 'themes.js'],
+                    'Vue': ['index.html', 'app.css', 'app.js', 'themes.js']
                 }
             },
             {
                 component: 'ScheduleChartView', feature: 'BasicUsage', title: 'Basic usage', description: 'Sample application showing how to use the component',
                 sourceCodeFiles: {
-                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
-                    'AngularJS': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js']
+                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.js'],
+                    'AngularJS': ['index.html', 'app.css', 'app.ts', 'themes.js']
                 }
             },
             {
@@ -443,9 +443,9 @@ angular.module('Demos', [])
                 component: 'LoadChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js'],
-                    'Angular': ['app.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
-                    'React': ['index.html', 'app.css', 'app.jsx', 'templates.js', 'themes.js'],
-                    'Vue': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
+                    'Angular': ['app.html', 'app.css', 'app.ts', 'themes.js'],
+                    'React': ['index.html', 'app.css', 'app.jsx', 'themes.js'],
+                    'Vue': ['index.html', 'app.css', 'app.js', 'themes.js']
                 }
             },
             {
@@ -495,17 +495,17 @@ angular.module('Demos', [])
             {
                 component: 'PertChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
-                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
-                    'Angular': ['app.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
-                    'React': ['index.html', 'app.css', 'app.jsx', 'templates.js', 'themes.js'],
-                    'Vue': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js'],
+                    'Angular': ['app.html', 'app.css', 'app.ts', 'themes.js'],
+                    'React': ['index.html', 'app.css', 'app.jsx', 'themes.js'],
+                    'Vue': ['index.html', 'app.css', 'app.js', 'themes.js']
                 }
             },
             {
                 component: 'PertChartView', feature: 'BasicUsage', title: 'Basic usage', description: 'Sample application showing how to use the component',
                 sourceCodeFiles: {
-                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js',  'themes.js'],
-                    'AngularJS': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js']
+                    'TypeScript': ['index.html', 'app.css', 'app.ts',  'themes.js'],
+                    'AngularJS': ['index.html', 'app.css', 'app.ts', 'themes.js']
                 }
             },
             {
@@ -533,17 +533,17 @@ angular.module('Demos', [])
             {
                 component: 'NetworkDiagramView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
-                    'JavaScript': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
-                    'Angular': ['app.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
-                    'React': ['index.html', 'app.css', 'app.jsx', 'templates.js', 'themes.js'],
-                    'Vue': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
+                    'JavaScript': ['index.html', 'app.css', 'app.js', 'themes.js'],
+                    'Angular': ['app.html', 'app.css', 'app.ts', 'themes.js'],
+                    'React': ['index.html', 'app.css', 'app.jsx', 'themes.js'],
+                    'Vue': ['index.html', 'app.css', 'app.js', 'themes.js']
                 }
             },
             {
                 component: 'NetworkDiagramView', feature: 'BasicUsage', title: 'Basic usage', description: 'Sample application showing how to use the component',
                 sourceCodeFiles: {
-                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js'],
-                    'AngularJS': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js']
+                    'TypeScript': ['index.html', 'app.css', 'app.ts', 'themes.js'],
+                    'AngularJS': ['index.html', 'app.css', 'app.ts', 'themes.js']
                 }
             },
             {

@@ -46,9 +46,8 @@ var settings = {
     // },
 };
 
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializePertChartTheme(settings, theme);
-initializePertChartTemplates(settings, theme);
 
 // Initialize the component.
 DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramView, items, settings);

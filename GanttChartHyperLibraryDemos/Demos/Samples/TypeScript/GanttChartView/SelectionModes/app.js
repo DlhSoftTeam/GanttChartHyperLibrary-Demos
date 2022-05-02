@@ -41,9 +41,9 @@ function initialize() {
             selectionCountOutput.innerText = ganttChartView.getSelectedItems().length.toString();
         });
     };
-    // Optionally, initialize custom theme and templates (themes.js, templates.js).
+    // Optionally, initialize custom themes (themes.js).
     initializeGanttChartTheme(settings, theme);
-    initializeGanttChartTemplates(settings, theme);
+    
     // (Re-)Initialize the component.
     ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, items, settings);
 }

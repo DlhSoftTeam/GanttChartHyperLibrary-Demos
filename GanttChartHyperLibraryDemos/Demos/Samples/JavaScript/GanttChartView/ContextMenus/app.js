@@ -27,9 +27,9 @@ var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
 // Set up context menus.
 settings.itemContextMenuHandler = itemContextMenuHandler;
 settings.predecessorItemContextMenuHandler = predecessorItemContextMenuHandler;
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
+
 // Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, items, settings);
 // Support for context menus.

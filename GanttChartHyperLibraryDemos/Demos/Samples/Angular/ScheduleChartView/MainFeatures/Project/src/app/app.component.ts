@@ -3,7 +3,7 @@ import ScheduleChartView = DlhSoft.Controls.ScheduleChartView;
 import ScheduleChartItem = ScheduleChartView.Item;
 import ScheduleChartSettings = ScheduleChartView.Settings;
 
-declare var initializeGanttChartTheme, initializeGanttChartTemplates: any;
+declare var initializeGanttChartTheme: any;
 
 @Component({
   selector: 'app-root',
@@ -149,9 +149,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.scheduleChartView = <ScheduleChartView.Element>(<HTMLElement>this.scheduleChartViewRef.nativeElement).firstChild;
 
-    // Optionally, initialize custom theme and templates (themes.js, templates.js).
+    // Optionally, initialize custom themes (themes.js).
     initializeGanttChartTheme(this.settings, this.theme);
-    initializeGanttChartTemplates(this.settings, this.theme);
   }
 }
 

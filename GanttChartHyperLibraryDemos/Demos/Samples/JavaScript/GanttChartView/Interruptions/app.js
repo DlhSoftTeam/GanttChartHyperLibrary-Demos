@@ -27,9 +27,9 @@ for (var i = 4; i <= 16; i++)
 items[4].interruptions = [{ start: new Date(year, month, 3, 8, 0, 0), finish: new Date(year, month, 3, 12, 0, 0) }, { start: new Date(year, month, 7, 8, 0, 0), finish: new Date(year, month, 8, 12, 0, 0) }];
 items[7].interruptions = [{ start: new Date(year, month, 13, 8, 0, 0), finish: new Date(year, month, 13, 16, 0, 0) }];
 var settings = { currentTime: new Date(year, month, 2, 12, 0, 0), isTaskCompletedEffortVisible: false };
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
+
 // Set up extra template to draw interruptions.
 settings.extraTaskTemplate = function(item) {
     var svgns = 'http://www.w3.org/2000/svg';

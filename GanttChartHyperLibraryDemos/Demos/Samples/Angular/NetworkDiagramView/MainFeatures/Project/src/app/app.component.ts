@@ -4,7 +4,7 @@ import NetworkDiagramItem = NetworkDiagramView.Item;
 import NetworkDiagramSettings = NetworkDiagramView.Settings;
 import PredecessorItem = NetworkDiagramView.PredecessorItem;
 
-declare var initializePertChartTheme, initializePertChartTemplates: any;
+declare var initializePertChartTheme: any;
 
 @Component({
   selector: 'app-root',
@@ -85,9 +85,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.networkDiagramView = <NetworkDiagramView.Element>(<HTMLElement>this.networkDiagramViewRef.nativeElement).firstChild;
 
-    // Optionally, initialize custom theme and templates (themes.js, templates.js).
+    // Optionally, initialize custom themes (themes.js).
     initializePertChartTheme(this.settings, this.theme);
-    initializePertChartTemplates(this.settings, this.theme);
   }
 }
 

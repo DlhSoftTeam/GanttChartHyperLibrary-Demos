@@ -7,7 +7,6 @@ import PredecessorItem = GanttChartView.PredecessorItem;
 // Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
-declare var initializeGanttChartTemplates;
 declare var initializeGanttChartTheme;
 
 // Retrieve and store the control element for reference purposes.
@@ -32,9 +31,8 @@ for (var i = 4; i <= 16; i++)
 
 var settings = <GanttChartView.Settings>{ currentTime: new Date(year, month, 2, 12, 0, 0) };
 
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
 
 // Ensure timelineStart and timelineFinish are set to Sundays, as the timline needs to present entire weeks.
 settings.timelineStart = new Date(year, month - 1, 29); // Sunday, January 29, 2017

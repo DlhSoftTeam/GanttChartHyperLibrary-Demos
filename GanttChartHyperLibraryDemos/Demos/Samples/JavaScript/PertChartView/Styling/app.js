@@ -26,9 +26,9 @@ var settings = {
     shapeClass: 'shape',
     dependencyLineClass: 'dependencyLine'
 };
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializePertChartTheme(settings, theme);
-initializePertChartTemplates(settings, theme);
+
 // Initialize the component.
 var pertChartView = DlhSoft.Controls.Pert.PertChartView.initialize(pertChartViewElement, items, settings);
 //# sourceMappingURL=app.js.map

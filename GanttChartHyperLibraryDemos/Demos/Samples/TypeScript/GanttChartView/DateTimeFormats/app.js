@@ -33,9 +33,9 @@ var indexOffset = columns[0].isSelection ? 1 : 0;
 var durationColumn = { width: 80 };
 columns.splice(2 + indexOffset, 0, durationColumn);
 settings.columns = columns;
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
+
 // Prepare command element references.
 var dateFormatSelect = document.querySelector('#dateFormatSelect');
 var hideTimeOfDayCheckBox = document.querySelector('#hideTimeOfDayCheckBox');

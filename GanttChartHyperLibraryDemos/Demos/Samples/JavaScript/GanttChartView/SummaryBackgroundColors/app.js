@@ -30,9 +30,9 @@ items[3].backgroundColor = 'yellow';
 items[5].backgroundColor = 'green';
 for (var i = 13; i <= 19; i += 3)
     items[i].backgroundColor = i % 2 == 0 ? 'orange' : 'brown';
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
+
 // Set up summary template to provide background color rectangles.
 var originalSummaryTaskTemplate = settings.summaryTaskTemplate ? settings.summaryTaskTemplate : DlhSoft.Controls.GanttChartView.getDefaultSummaryTaskTemplate(items, ganttChartView, settings);
 settings.summaryTaskTemplate = function (item) {

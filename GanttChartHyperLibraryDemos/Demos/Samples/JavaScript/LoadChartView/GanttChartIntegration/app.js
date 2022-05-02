@@ -22,9 +22,9 @@ var ganttChartSettings = {
     // Set the current time value to automatically scroll to a specific chart coordinate, and display a vertical bar highlighter at the specified point.
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
-// Optionally, initialize custom theme and templates for Gantt Chart (themes.js, templates.js).
+// Optionally, initialize custom themes for Gantt Chart (themes.js).
 initializeGanttChartTheme(ganttChartSettings, theme);
-initializeGanttChartTemplates(ganttChartSettings, theme);
+
 // Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, ganttChartItems, ganttChartSettings);
 function addNewGanttChartItem() {
@@ -42,7 +42,7 @@ function showLoadChart() {
     var settings = {
         currentTime: new Date(year, month, 2) // Display the current time vertical line of the chart at the project start date.
     };
-    // Optionally, initialize custom theme for Load Chart (themes.js).
+    // Optionally, initialize custom themes for Load Chart (themes.js).
     initializeLoadChartTheme(settings, theme);
     var loadChartView = DlhSoft.Controls.LoadChartView.initialize(loadChartViewElement, items, settings);
 }

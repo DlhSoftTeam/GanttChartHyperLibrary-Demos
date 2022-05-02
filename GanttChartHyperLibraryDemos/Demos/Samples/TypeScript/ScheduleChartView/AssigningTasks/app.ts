@@ -8,7 +8,6 @@ import ScheduleChartItem = ScheduleChartView.Item;
 // Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
-declare var initializeGanttChartTemplates;
 declare var initializeGanttChartTheme;
 
 // Retrieve and store the control and container elements for reference purposes.
@@ -26,9 +25,8 @@ var ganttChartSettings = <GanttChartView.Settings>{
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
 
-// Optionally, initialize custom theme and templates for Gantt Chart (themes.js, templates.js).
+// Optionally, initialize custom themes for Gantt Chart (themes.js).
 initializeGanttChartTheme(ganttChartSettings, theme);
-initializeGanttChartTemplates(ganttChartSettings, theme);
 
 // Initialize the Gantt Chart component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, ganttChartItems, ganttChartSettings);
@@ -43,9 +41,8 @@ var scheduleChartSettings = <ScheduleChartView.Settings>{
     currentTime: new Date(year, month, 2, 12, 0, 0) // Display the current time vertical line of the chart at the project start date.
 };
 
-// Optionally, initialize custom theme and templates for Schedule Chart (themes.js, templates.js).
+// Optionally, initialize custom themes for Schedule Chart (themes.js).
 initializeGanttChartTheme(scheduleChartSettings, theme);
-initializeGanttChartTemplates(scheduleChartSettings, theme);
 
 // Initialize the Schedule Chart component.
 var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, items, scheduleChartSettings);

@@ -24,7 +24,7 @@ angular.module('LoadChartViewSample', ['DlhSoft.ProjectData.GanttChart.Directive
         var settings = <LoadChartView.Settings>{
             currentTime: new Date(2016, 2 - 1, 2) // Display the current time vertical line of the chart at the project start date.
         };
-        // Optionally, initialize custom theme (themes.js).
+        // Optionally, initialize custom themes (themes.js).
         initializeLoadChartTheme(settings, theme);
         // settings.isGridVisible = false;
         settings.itemHeight = 312;

@@ -8,6 +8,8 @@ function initializeGanttChartTheme(settings, theme) {
     }
     settings.headerHeight = 31 * 2; // 2 scale rows
     settings.itemHeight = 28;
+    settings.barMargin = 4;
+    settings.completedBarMargin = 1;
     settings.barCornerRadius = 1;
     settings.completedBarCornerRadius = 1;
     settings.arrowSize = 2;
@@ -174,7 +176,8 @@ function initializeGanttChartTheme(settings, theme) {
         settings.milestoneBarStyle = 'stroke: ' + (settings.diamondStroke ? settings.diamondStroke : settings.diamondFill) + '; fill: ' + settings.diamondFill;
     if (settings.mainStroke) {
         settings.baselineBarStyle = 'fill: none; stroke: ' + settings.mainStroke + '; stroke-width: 0.65px; stroke-dasharray: 2, 2';
-        settings.arrowFill = settings.mainStroke;
+        if (!settings.arrowFill)
+            settings.arrowFill = settings.mainStroke;
         settings.dependencyLineStyle = 'stroke: ' + settings.arrowFill + '; stroke-width: 0.65px; fill: none; marker-end: url(#ArrowMarker)';
     }
     if (settings.chartForeground)
@@ -203,5 +206,27 @@ function initializePertChartTheme(settings, theme) {
     settings.shapeStyle = 'fill: White; stroke: #606060; stroke-width: 1px';
     settings.milestoneStyle = 'fill: White; stroke: #606060; stroke-width: 1px';
     settings.dependencyLineStyle = 'stroke: #8abbed; stroke-width: 0.65px; fill: none; marker-end: url(#PertArrowMarker)';
+    settings.arrowFill = '#8abbed';
     settings.virtualEffortDependencyLineStyle = 'stroke: #8abbed; stroke-width: 0.65px; stroke-dasharray: 2, 2; fill: none; marker-end: url(#PertArrowMarker)';
+    // Common helpers.
+    var svgns = 'http://www.w3.org/2000/svg';
+    // Template definitions.
+    settings.styleDefinitionTemplate = function () {
+        var defs = document.createElementNS(svgns, 'defs');
+        var arrowMarker = document.createElementNS(svgns, 'marker');
+        arrowMarker.setAttribute('id', 'PertArrowMarker');
+        arrowMarker.setAttribute("viewBox", "0 0 10 10");
+        arrowMarker.setAttribute("refX", "0");
+        arrowMarker.setAttribute("refY", "5");
+        arrowMarker.setAttribute("markerUnits", "strokeWidth");
+        arrowMarker.setAttribute("markerWidth", "5");
+        arrowMarker.setAttribute("markerHeight", "4");
+        arrowMarker.setAttribute("orient", "auto");
+        var arrowPath = document.createElementNS(svgns, "path");
+        arrowPath.setAttribute("fill", settings.arrowFill ? settings.arrowFill : '#3b87d9');
+        arrowPath.setAttribute("d", "M 0 0 L 10 5 L 0 10 z");
+        arrowMarker.appendChild(arrowPath);
+        defs.appendChild(arrowMarker);
+        return defs;
+    };
 }

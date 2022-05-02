@@ -23,9 +23,9 @@ var settings = {
     currentTime: new Date(year, month, 2, 12, 0, 0),
     isTaskStartReadOnly: true, isTaskEffortReadOnly: true, isTaskCompletedEffortVisible: false, isTaskCompletionReadOnly: true
 };
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
+
 // Ensure timelineStart and timelineFinish are set to Sundays, as the timline needs to present entire weeks.
 settings.timelineStart = new Date(year, month - 1, 29); // Sunday, January 29, 2017
 settings.timelineFinish = new Date(year, month + 1, 5); // Sunday, March 5, 2017

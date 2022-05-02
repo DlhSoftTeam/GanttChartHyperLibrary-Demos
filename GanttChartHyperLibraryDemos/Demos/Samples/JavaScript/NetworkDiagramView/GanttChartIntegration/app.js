@@ -22,9 +22,9 @@ var ganttChartSettings = {
     // Set the current time value to automatically scroll to a specific chart coordinate, and display a vertical bar highlighter at the specified point.
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
-// Optionally, initialize custom theme and templates for Gantt Chart (themes.js, templates.js).
+// Optionally, initialize custom themes for Gantt Chart (themes.js).
 initializeGanttChartTheme(ganttChartSettings, theme);
-initializeGanttChartTemplates(ganttChartSettings, theme);
+
 // Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, ganttChartItems, ganttChartSettings);
 function addNewGanttChartItem() {
@@ -39,9 +39,9 @@ function showNetworkDiagram() {
     // Prepare Network Diagram data items and settings.
     var items = ganttChartView.getNetworkDiagramItems();
     var settings = {};
-    // Optionally, initialize custom theme and templates for Network Diagram (themes.js, templates.js).
+    // Optionally, initialize custom themes for Network Diagram (themes.js).
     initializePertChartTheme(settings, theme);
-    initializePertChartTemplates(settings, theme);
+    
     var networkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramViewElement, items, settings);
 }
 function hideNetworkDiagram() {

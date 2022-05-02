@@ -8,7 +8,6 @@ import ScheduleChartItem = ScheduleChartView.Item;
 // Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
-declare var initializeGanttChartTemplates;
 declare var initializeGanttChartTheme;
 
 // Retrieve and store the control element for reference purposes.
@@ -32,9 +31,8 @@ var settings = <ScheduleChartView.Settings>{
     isTaskStartReadOnly: true, isTaskEffortReadOnly: true, isTaskCompletedEffortVisible: false, isTaskCompletionReadOnly: true
 };
 
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
 
 // Ensure timelineStart and timelineFinish are set to Sundays, as the timline needs to present entire weeks.
 settings.timelineStart = new Date(year, month - 1, 29); // Sunday, January 29, 2017

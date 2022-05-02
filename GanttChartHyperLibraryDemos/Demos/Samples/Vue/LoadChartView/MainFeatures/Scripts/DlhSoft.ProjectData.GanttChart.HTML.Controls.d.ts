@@ -1,8 +1,8 @@
 ﻿/* Assembly: DlhSoft.ProjectData.GanttChart.HTML.Controls,
    Company: DlhSoft,
    Product: Project Data Modern Library,
-   Version: 5.3.17.0,
-   Copyright: Copyright © 2012-2020 DlhSoft,
+   Version: 5.3.18.2,
+   Copyright: Copyright © 2012-2022 DlhSoft,
    Title: Project Data Gantt Chart HTML Controls,
    Description: Project Data Gantt Chart related HTML client components */
 
@@ -68,8 +68,8 @@ declare module DlhSoft.Controls {
         function timeSpanInputColumnTemplateBase(document: HTMLDocument, width: number, valueGetter: () => any, valueSetter: (value: any) => void, scale?: number, isEnabledGetter?: () => boolean, isVisibleGetter?: () => boolean, isBoldGetter?: () => boolean): HTMLElement;
         function dateTimeInputColumnTemplateBase(document: HTMLDocument, width: number, valueGetter: () => any, valueSetter: (value: any) => void, isEnabledGetter?: () => boolean, isVisibleGetter?: () => boolean, isBoldGetter?: () => boolean): HTMLElement;
 
-        function datePickerInputColumnTemplateBase(document: HTMLDocument, width: number, valueGetter: () => any, valueSetter: (value: any) => void, isEnabledGetter?: () => boolean, isVisibleGetter?: () => boolean, isBoldGetter?: () => boolean, defaultTimeOfDay?: number, calendarSelectorLevels?: number, months?: string[], daysOfWeek?: string[], dateTimeFormatter?: (Date) => string, dateTimeParser?: (string) => Date): HTMLElement;
-        function dateTimePickerInputColumnTemplateBase(document: HTMLDocument, width: number, valueGetter: () => any, valueSetter: (value: any) => void, isEnabledGetter?: () => boolean, isVisibleGetter?: () => boolean, isBoldGetter?: () => boolean, defaultTimeOfDay?: number, calendarSelectorLevels?: number, months?: string[], daysOfWeek?: string[], dateTimeFormatter?: (Date) => string, dateTimeParser?: (string) => Date): HTMLElement;
+        function datePickerInputColumnTemplateBase(document: HTMLDocument, width: number, valueGetter: () => any, valueSetter: (value: any) => void, isEnabledGetter?: () => boolean, isVisibleGetter?: () => boolean, isBoldGetter?: () => boolean, defaultTimeOfDay?: number, calendarSelectorLevels?: number, months?: string[], daysOfWeek?: string[], dateTimeFormatter?: (date: Date) => string, dateTimeParser?: (value: string) => Date, weekStart?: number): HTMLElement;
+        function dateTimePickerInputColumnTemplateBase(document: HTMLDocument, width: number, valueGetter: () => any, valueSetter: (value: any) => void, isEnabledGetter?: () => boolean, isVisibleGetter?: () => boolean, isBoldGetter?: () => boolean, defaultTimeOfDay?: number, calendarSelectorLevels?: number, months?: string[], daysOfWeek?: string[], dateTimeFormatter?: (date: Date) => string, dateTimeParser?: (value: string) => Date, weekStart?: number): HTMLElement;
         function multiSelectorComboBoxInputColumnTemplateBase(document: HTMLDocument, width: number, valueGetter: () => any, valueSetter: (value: any) => void, isEnabledGetter?: () => boolean, isVisibleGetter?: () => boolean, isBoldGetter?: () => boolean): HTMLElement;
 
         function getIconColumnTemplate(imageSource: string, imageClass: string, imageStyle: string, isMovingEnabled?: boolean, isMovingToEnabledGetter?: (index: number, hoveringItem: Item) => boolean, movingTargetHoveringClass?: string, movingTargetHoveringStyle?: string, disabledMovingTargetHoveringClass?: string, disabledMovingTargetHoveringStyle?: string): (item: Item) => HTMLElement;
@@ -88,12 +88,12 @@ declare module DlhSoft.Controls {
         function getAssignmentSelectorColumnTemplate(selectWidth: number, assignableResourcesCollection: any[], isInputDisabled?: boolean, useMultiSelectorComboBox?: boolean): (item: Item) => HTMLElement;
         function getAssignmentSelectorColumnTemplate(selectWidth: number, assignableResourcesCollectionGetter: (item: Item) => any[], isInputDisabled?: boolean, useMultiSelectorComboBox?: boolean): (item: Item) => HTMLElement;
         function getCostColumnTemplate(inputWidth: number, isInputDisabled?: boolean): (item: Item) => HTMLElement;
-        function getBaselineStartColumnTemplate(inputWidth: number, useDatePicker?: boolean, useTimePicker?: boolean, defaultTimeOfDay?: number, calendarSelectorLevels?: number, months?: string[], daysOfWeek?: string[], isInputDisabled?: boolean): (item: Item) => HTMLElement;
-        function getBaselineFinishColumnTemplate(inputWidth: number, useDatePicker?: boolean, useTimePicker?: boolean, defaultTimeOfDay?: number, calendarSelectorLevels?: number, months?: string[], daysOfWeek?: string[], isInputDisabled?: boolean): (item: Item) => HTMLElement;
-        function getMinStartColumnTemplate(inputWidth: number, useDatePicker?: boolean, useTimePicker?: boolean, defaultTimeOfDay?: number, calendarSelectorLevels?: number, months?: string[], daysOfWeek?: string[], isInputDisabled?: boolean): (item: Item) => HTMLElement;
-        function getMaxStartColumnTemplate(inputWidth: number, useDatePicker?: boolean, useTimePicker?: boolean, defaultTimeOfDay?: number, calendarSelectorLevels?: number, months?: string[], daysOfWeek?: string[], isInputDisabled?: boolean): (item: Item) => HTMLElement;
-        function getMinFinishColumnTemplate(inputWidth: number, useDatePicker?: boolean, useTimePicker?: boolean, defaultTimeOfDay?: number, calendarSelectorLevels?: number, months?: string[], daysOfWeek?: string[], isInputDisabled?: boolean): (item: Item) => HTMLElement;
-        function getMaxFinishColumnTemplate(inputWidth: number, useDatePicker?: boolean, useTimePicker?: boolean, defaultTimeOfDay?: number, calendarSelectorLevels?: number, months?: string[], daysOfWeek?: string[], isInputDisabled?: boolean): (item: Item) => HTMLElement;
+        function getBaselineStartColumnTemplate(inputWidth: number, useDatePicker?: boolean, useTimePicker?: boolean, defaultTimeOfDay?: number, calendarSelectorLevels?: number, months?: string[], daysOfWeek?: string[], isInputDisabled?: boolean, weekStart?: number): (item: Item) => HTMLElement;
+        function getBaselineFinishColumnTemplate(inputWidth: number, useDatePicker?: boolean, useTimePicker?: boolean, defaultTimeOfDay?: number, calendarSelectorLevels?: number, months?: string[], daysOfWeek?: string[], isInputDisabled?: boolean, weekStart?: number): (item: Item) => HTMLElement;
+        function getMinStartColumnTemplate(inputWidth: number, useDatePicker?: boolean, useTimePicker?: boolean, defaultTimeOfDay?: number, calendarSelectorLevels?: number, months?: string[], daysOfWeek?: string[], isInputDisabled?: boolean, weekStart?: number): (item: Item) => HTMLElement;
+        function getMaxStartColumnTemplate(inputWidth: number, useDatePicker?: boolean, useTimePicker?: boolean, defaultTimeOfDay?: number, calendarSelectorLevels?: number, months?: string[], daysOfWeek?: string[], isInputDisabled?: boolean, weekStart?: number): (item: Item) => HTMLElement;
+        function getMinFinishColumnTemplate(inputWidth: number, useDatePicker?: boolean, useTimePicker?: boolean, defaultTimeOfDay?: number, calendarSelectorLevels?: number, months?: string[], daysOfWeek?: string[], isInputDisabled?: boolean, weekStart?: number): (item: Item) => HTMLElement;
+        function getMaxFinishColumnTemplate(inputWidth: number, useDatePicker?: boolean, useTimePicker?: boolean, defaultTimeOfDay?: number, calendarSelectorLevels?: number, months?: string[], daysOfWeek?: string[], isInputDisabled?: boolean, weekStart?: number): (item: Item) => HTMLElement;
 
         /** Prepares the specified date values to be used for component method input, considering that after initialization the component uses UTC date and time values internally; this method may also be called using a component instance object. */
         function getInputDate(date: Date): Date;
@@ -142,7 +142,7 @@ declare module DlhSoft.Controls {
             scrollToItem(item: Item): void; scrollToBottom(): void; scrollToDateTime(dateTime: Date): void;
             increaseTimelinePage(timeAmount: number): void; decreaseTimelinePage(timeAmount: number): void;
             setHourWidth(hourWidth: number): void;
-            setSplitterPosition(gridWidth: number, chartWidth: number);
+            setSplitterPosition(gridWidth: number, chartWidth: number): void;
 
             /** Returns the X coordinate of a specific date and time in the chart area. */
             getChartPosition(dateTime: Date): number;
@@ -193,8 +193,8 @@ declare module DlhSoft.Controls {
             getProjectTotalEffort(): number; getProjectTotalCompletedEffort(): number;
             getProjectCompletion(): number;
 
-            isItemCritical(item: Item): boolean; getCriticalItems(criticalDelay?: number): Item[];
-            getPertCriticalItems(maxIndentation?: number): Item[];
+            isItemCritical(item: Item): boolean; getCriticalItems(criticalDelay?: number, specificItems?: Item[]): Item[];
+            getPertCriticalItems(maxIndentation?: number, specificItems?: Item[]): Item[];
 
             ensureDependencyConstraints(): void;
 
@@ -255,10 +255,10 @@ declare module DlhSoft.Controls {
             getFilteredGanttChartItems(resource: any): Item[];
 
             /** Returns a list of PERT Chart items for the current project, optionally considering the maximum indentation, and start, finish, and link content and suffixes values specified as parameters; the PERT Chart items may be displayed using a separate PertChartView component instance. */
-            getPertChartItems(maxIndentation?: number, startContent?: string, finishContent?: string, linkContent?: string, completedContentSuffix?: string, startingContentSuffix?: string): Pert.PertChartView.Item[];
+            getPertChartItems(maxIndentation?: number, startContent?: string, finishContent?: string, linkContent?: string, completedContentSuffix?: string, startingContentSuffix?: string, specificItems?: Item[]): Pert.PertChartView.Item[];
 
             /** Returns a list of Network Diagram items for the current project, optionally considering the maximum indentation, and start and finish content values specified as parameters; the Network Diagram items may be displayed using a separate NetworkDiagramView component instance. */
-            getNetworkDiagramItems(maxIndentation?: number, startContent?: string, finishContent?: string): Pert.NetworkDiagramView.Item[];
+            getNetworkDiagramItems(maxIndentation?: number, startContent?: string, finishContent?: string, specificItems?: Item[]): Pert.NetworkDiagramView.Item[];
 
             isInitializing: boolean; isInitialized: boolean;
 
@@ -282,6 +282,9 @@ declare module DlhSoft.Controls {
 
             start: Date; finish?: Date; completedFinish?: Date;
 
+            /** Date that the item would revert to at the earliest when the predecessors are moved towards the past. Automatically reset when item's start is manually set. */
+            preferredStart?: Date;
+
             /** A milestone task is displayed in the Gantt Chart view using a different task bar template. */
             isMilestone?: boolean;
 
@@ -295,6 +298,10 @@ declare module DlhSoft.Controls {
             /** The assignments content to be displayed in the Gantt Chart view next to the associated task bar, but it is not used internally for computing/updating task finish date and time (generating duration) based on any updated assignments. */
             assignmentsContent?: any;
 
+            /** Item labels are shown on task bars when areStandardTaskLabelsVisible, areSummaryTaskLabelsVisible, and/or areMilestoneTaskLabelsVisible settings are true. */
+            label?: string;
+            labelColor?: string;
+
             isReadOnly?: boolean;
             isHidden?: boolean;
             isBarVisible?: boolean;
@@ -303,10 +310,10 @@ declare module DlhSoft.Controls {
             isParentSummarizationEnabled?: boolean;
 
             /** When set to true it would ensure that the original item's total effort is preserved when duration is updated by updating assignment allocation units, assuming that the item has resources assigned. */
-			hasFixedEffort?: boolean;
+            hasFixedEffort?: boolean;
 			
-			/** When specifically set to false, overrides GanttChartView.areTaskDependencyConstraintsEnabled = true (auto-scheduling) for an item, setting up manual scheduling. */
-			areDependencyConstraintsEnabled?: boolean;
+            /** When specifically set to false, overrides GanttChartView.areTaskDependencyConstraintsEnabled = true (auto-scheduling) for an item, setting up manual scheduling. */
+            areDependencyConstraintsEnabled?: boolean;
 
             displayRowIndex?: number;
 
@@ -315,6 +322,7 @@ declare module DlhSoft.Controls {
 
             "class"?: string; style?: string;
             barClass?: string; standardBarClass?: string; completedBarClass?: string; summaryBarClass?: string; summaryCompletedBarClass?: string; milestoneBarClass?: string; baselineBarClass?: string; barStyle?: string; standardBarStyle?: string; completedBarStyle?: string; summaryBarStyle?: string; summaryCompletedBarStyle?: string; milestoneBarStyle?: string; baselineBarStyle?: string;
+			labelClass?: string; labelStyle?: string;
             taskTemplate? (item: Item): SVGElement;
             template? (item: Item): SVGElement;
 
@@ -465,6 +473,24 @@ declare module DlhSoft.Controls {
             barMargin?: number; barHeight?: number; barCornerRadius?: number;
             completedBarMargin?: number; completedBarHeight?: number; completedBarCornerRadius?: number;
 
+            areStandardTaskLabelsVisible?: boolean;
+            areSummaryTaskLabelsVisible?: boolean;
+            areMilestoneTaskLabelsVisible?: boolean;
+
+            standardLabelColor?: string;
+            summaryLabelColor?: string;
+            milestoneLabelColor?: string;
+
+            /** When set to true, it configures the chart to display images for the resources indicated by item.assignmentsContent (with tool tips indicating resource names and their non-100% allocations) rather than the string itself, using the media URLs specified by settings.resourceIamgeUrls dictionary. */
+            areResourceImagesVisibleAsAssignments?: boolean;
+            resourceImageUrls?: { key: string; value: string }[];
+
+            /** Dimension of dependency arrow triangles in the diagram. */
+            arrowSize?: number;
+
+            /** Color of dependency arrow triangles in the diagram. */
+            arrowFill?: string;
+
             styleDefinitionTemplate? (ganttChartView?: Element): SVGDefsElement;
             standardBarClass?: string; summaryBarClass?: string; milestoneBarClass?: string; standardBarStyle?: string; summaryBarStyle?: string; milestoneBarStyle?: string;
             standardCompletedBarClass?: string; standardCompletedBarStyle?: string;
@@ -474,6 +500,7 @@ declare module DlhSoft.Controls {
             dependencyLineClass?: string; dependencyLineStyle?: string;
             temporaryDependencyLineClass?: string; temporaryDependencyLineStyle?: string;
             assignmentsClass?: string; assignmentsStyle?: string;
+            standardLabelClass?: string; summaryLabelClass?: string; milestoneLabelClass?: string; standardLabelStyle?: string; summaryLabelStyle?: string; milestoneLabelStyle?: string;
             standardTaskTemplate? (item: Item): SVGElement; summaryTaskTemplate? (item: Item): SVGElement; milestoneTaskTemplate? (item: Item): SVGElement;
             extraTaskTemplate? (item: Item): SVGElement;
 
@@ -503,6 +530,9 @@ declare module DlhSoft.Controls {
 
             /** Determines whether dependency constraints are enabled in the chart, providing auto-scheduling features for dependent tasks; by default is it set to false for optimization purposes. */
             areTaskDependencyConstraintsEnabled?: boolean;
+
+            /** When set to true, ensures circular dependencies are never created (and invalidDependencyHandler is called, if set) even when areTaskDependencyConstraintsEnabled isn't set to true. */
+            alwaysHandleInvalidDependencies?: boolean;
 
             /** Determines whether dependency constraints are automatically ensured even while dragging task bars in the control (or only when the operation completes), when areTaskDependencyConstraintsEnabled property is set to true; by default it is set to false. */
             areTaskDependencyConstraintsEnabledWhileDragging?: boolean;
@@ -733,7 +763,7 @@ declare module DlhSoft.Controls {
             insertScheduleChartItem(index: number, item: Item): void; addScheduleChartItem(item: Item): void; insertScheduleChartItems(index: number, items: Item[]): void; addScheduleChartItems(items: Item[]): void;
             removeScheduleChartItem(item: Item): void; removeScheduleChartItems(items: Item[]): void;
             moveScheduleChartRange(fromIndex: number, count: number, toIndex: number): void;
-            moveScheduleChartItem(item: Item, toIndex: number);
+            moveScheduleChartItem(item: Item, toIndex: number): void;
             moveScheduleChartItemUp(item: Item): void; moveScheduleChartItemDown(item: Item): void;
 
             setItemContent(item: Item, value: any): void;
@@ -814,7 +844,7 @@ declare module DlhSoft.Controls {
             insertLoadChartItem(index: number, item: Item): void; addLoadChartItem(item: Item): void; insertLoadChartItems(index: number, items: Item[]): void; addLoadChartItems(items: Item[]): void;
             removeLoadChartItem(item: Item): void; removeLoadChartItems(items: Item[]): void;
             moveLoadChartRange(fromIndex: number, count: number, toIndex: number): void;
-            moveLoadChartItem(item: Item, toIndex: number);
+            moveLoadChartItem(item: Item, toIndex: number): void;
             moveLoadChartItemUp(item: Item): void; moveLoadChartItemDown(item: Item): void;
 
             setItemContent(item: Item, value: any): void;

@@ -4,7 +4,7 @@ import PertChartItem = PertChartView.Item;
 import PertChartSettings = PertChartView.Settings;
 import PredecessorItem = PertChartView.PredecessorItem;
 
-declare var initializePertChartTheme, initializePertChartTemplates: any;
+declare var initializePertChartTheme: any;
 
 @Component({
   selector: 'app-root',
@@ -95,9 +95,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.pertChartView = <PertChartView.Element>(<HTMLElement>this.pertChartViewRef.nativeElement).firstChild;
 
-    // Optionally, initialize custom theme and templates (themes.js, templates.js).
+    // Optionally, initialize custom themes (themes.js).
     initializePertChartTheme(this.settings, this.theme);
-    initializePertChartTemplates(this.settings, this.theme);
   }
 }
 

@@ -7,7 +7,6 @@ import PredecessorItem = NetworkDiagramView.PredecessorItem;
 // Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
-declare var initializePertChartTemplates;
 declare var initializePertChartTheme;
 
 // Retrieve and store the control element for reference purposes.
@@ -37,9 +36,8 @@ items[8].predecessors = [{ item: items[6] }, { item: items[7] }];
 // Prepare control settings.
 var settings = <NetworkDiagramView.Settings>{ };
 
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializePertChartTheme(settings, theme);
-initializePertChartTemplates(settings, theme);
 
 // Initialize the component.
 var networkDiagramView = DlhSoft.Controls.Pert.NetworkDiagramView.initialize(networkDiagramViewElement, items, settings);

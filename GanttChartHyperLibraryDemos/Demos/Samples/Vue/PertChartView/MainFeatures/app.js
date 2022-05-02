@@ -36,9 +36,8 @@ var settings = {
     // },
 };
 
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializePertChartTheme(settings, theme);
-initializePertChartTemplates(settings, theme);
 
 var app = new Vue({
     el: '#app',
@@ -55,7 +54,7 @@ var app = new Vue({
         setCustomDependencyLineColorToPredecessorItem: function() {
             var item = pertChartView.items[2];
             var predecessorItem = pertChartView.items[2].predecessors[0];
-            predecessorItem.dependencyLineStyle = 'stroke: DarkMagenta; fill: none; marker-end: url(#' + (theme != 'Default' ? 'Pert' : '') + 'ArrowMarker)';
+            predecessorItem.dependencyLineStyle = 'stroke: DarkMagenta; fill: none; marker-end: url(#ArrowMarker)';
             pertChartView.refreshPredecessorItems(item);
         },
         highlightCriticalPath: function() {
@@ -71,7 +70,7 @@ var app = new Vue({
             var criticalDependencies = pertChartView.getCriticalDependencies();
             for (i = 0; i < criticalDependencies.length; i++) {
                 var predecessorItem = criticalDependencies[i];
-                predecessorItem.dependencyLineStyle = 'stroke: Red; fill: none: none; marker-end: url(#' + (theme != 'Default' ? 'Pert' : '') + 'ArrowMarker)';
+                predecessorItem.dependencyLineStyle = 'stroke: Red; fill: none: none; marker-end: url(#ArrowMarker)';
                 predecessorItem.item.shapeStyle = 'stroke: Red; fill: White';
                 if (i >= criticalDependencies.length - 1)
                     predecessorItem.dependentItem.shapeStyle = 'stroke: Red; fill: White';

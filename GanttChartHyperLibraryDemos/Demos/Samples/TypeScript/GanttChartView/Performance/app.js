@@ -25,8 +25,8 @@ items[8].predecessors = [{ item: items[4] }, { item: items[5] }];
 for (var i = 4; i <= 5000; i++)
     items.push({ content: 'Task ' + i, indentation: i >= 8 && i % 3 == 2 ? 0 : 1, start: new Date(year, month, 2 + ((i - 1) / 250), 8, 0, 0), finish: new Date(year, month, 5 + ((i - 1) / 250), 16, 0, 0) });
 var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
+
 // Initialize the component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, items, settings);

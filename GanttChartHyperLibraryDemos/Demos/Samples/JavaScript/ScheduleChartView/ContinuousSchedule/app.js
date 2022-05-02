@@ -26,9 +26,9 @@ for (var i = 4; i <= 16; i++)
 var settings = {
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
+
 // Set up continuous schedule (24/7).
 settings.workingWeekStart = 0; // Sunday
 settings.workingWeekFinish = 6; // Saturday

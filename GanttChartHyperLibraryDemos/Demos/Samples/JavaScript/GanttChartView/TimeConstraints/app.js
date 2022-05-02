@@ -35,9 +35,9 @@ columns.splice(4, 0, { header: 'Max start', width: 140, cellTemplate: DlhSoft.Co
 columns.splice(5, 0, { header: 'Min finish', width: 140, cellTemplate: DlhSoft.Controls.GanttChartView.getMinFinishColumnTemplate(124, true, true, 16 * 60 * 60 * 1000) }); // 4 PM
 columns.splice(6, 0, { header: 'Max finish', width: 140, cellTemplate: DlhSoft.Controls.GanttChartView.getMaxFinishColumnTemplate(124, true, true, 16 * 60 * 60 * 1000) }); // 4 PM
 settings.columns = columns;
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
+
 // Optionally, visually indicate original tasks with time constraints.
 var specialItems = [specialItem];
 for (var i = 0; i < specialItems.length; i++) {

@@ -31,7 +31,7 @@ var settings = {
     alternativeItemClass: theme == 'Dark-black' ? 'alternativeGridItem-dark' : (theme == 'Steel-blue' ? 'alternativeGridItem-steel' : 'alternativeGridItem'),
     alternativeChartItemClass: theme == 'Dark-black' ? 'alternativeChartItem-dark' : 'alternativeChartItem'
 };
-// Optionally, initialize custom theme (themes.js).
+// Optionally, initialize custom themes (themes.js).
 initializeLoadChartTheme(settings, theme);
 // Initialize the component.
 var loadChartView = DlhSoft.Controls.LoadChartView.initialize(loadChartViewElement, loadChartItems, settings);

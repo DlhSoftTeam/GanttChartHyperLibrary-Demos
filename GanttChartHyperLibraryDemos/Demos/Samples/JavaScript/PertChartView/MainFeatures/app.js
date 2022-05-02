@@ -42,9 +42,8 @@ var settings = {
 // Optionally, specify the application target in order for the component to adapt to the screen size.
 // settings.target = 'Phone'; // Supported values: Standard, Phone.
 
-// Optionally, initialize custom theme and templates (themes.js, templates.js).
+// Optionally, initialize custom themes (themes.js).
 initializePertChartTheme(settings, theme);
-initializePertChartTemplates(settings, theme);
 
 // Initialize the component.
 DlhSoft.Controls.Pert.PertChartView.initialize(pertChartView, items, settings);

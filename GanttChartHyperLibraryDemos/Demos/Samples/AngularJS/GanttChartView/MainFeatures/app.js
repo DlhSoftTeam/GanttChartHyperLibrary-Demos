@@ -94,9 +94,9 @@ angular.module('GanttChartViewSample', ['DlhSoft.ProjectData.GanttChart.Directiv
     //         function () { return GanttChartView.getInputDate(item['targetDate']); }, 
     //         function (value) { item['targetDate'] = GanttChartView.getOutputDate(value); }); } });
     settings.columns = columns;
-    // Optionally, initialize custom theme and templates (themes.js, templates.js).
+    // Optionally, initialize custom themes (themes.js).
     initializeGanttChartTheme(settings, theme);
-    initializeGanttChartTemplates(settings, theme);
+    
     $scope.settings = settings;
     // Underlying GanttChartView component reference.
     var ganttChartView = document.getElementById('ganttChartView');

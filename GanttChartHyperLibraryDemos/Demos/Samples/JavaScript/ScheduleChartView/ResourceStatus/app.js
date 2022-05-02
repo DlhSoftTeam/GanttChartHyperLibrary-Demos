@@ -41,5 +41,5 @@ var settings = {
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
 initializeGanttChartTheme(settings, theme);
-initializeGanttChartTemplates(settings, theme);
+
 var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, scheduleChartItems, settings);

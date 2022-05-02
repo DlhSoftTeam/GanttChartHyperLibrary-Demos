@@ -4,7 +4,7 @@ import GanttChartItem = GanttChartView.Item;
 import GanttChartSettings = GanttChartView.Settings;
 import PredecessorItem = GanttChartView.PredecessorItem;
 
-declare var initializeGanttChartTheme, initializeGanttChartTemplates: any;
+declare var initializeGanttChartTheme: any;
 
 @Component({
   selector: 'app-root',
@@ -276,8 +276,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.ganttChartView = <GanttChartView.Element>(<HTMLElement>this.ganttChartViewRef.nativeElement).firstChild;
 
-    // Optionally, initialize custom theme and templates (themes.js, templates.js).
+    // Optionally, initialize custom themes (themes.js).
     initializeGanttChartTheme(this.settings, this.theme);
-    initializeGanttChartTemplates(this.settings, this.theme);
   }
 }
