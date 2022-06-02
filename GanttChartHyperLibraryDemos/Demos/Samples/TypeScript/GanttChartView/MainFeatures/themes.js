@@ -6,227 +6,356 @@ function initializeGanttChartTheme(settings, theme) {
         settings.theme = 'Aero';
         return;
     }
-    settings.headerHeight = 31 * 2; // 2 scale rows
-    settings.itemHeight = 28;
-    settings.barMargin = 4;
-    settings.completedBarMargin = 1;
-    settings.barCornerRadius = 1;
-    settings.completedBarCornerRadius = 1;
-    settings.arrowSize = 2;
-    settings.hourWidth = 5;
+    if (typeof settings.headerHeight === 'undefined')
+        settings.headerHeight = 31 * 2; // 2 scale rows
+    if (typeof settings.itemHeight === 'undefined')
+        settings.itemHeight = 28;
+    if (typeof settings.barMargin === 'undefined')
+        settings.barMargin = 4;
+    if (typeof settings.completedBarMargin === 'undefined')
+        settings.completedBarMargin = 1;
+    if (typeof settings.barCornerRadius === 'undefined')
+        settings.barCornerRadius = 1;
+    if (typeof settings.completedBarCornerRadius === 'undefined')
+        settings.completedBarCornerRadius = 1;
+    if (typeof settings.arrowSize === 'undefined')
+        settings.arrowSize = 2;
+    if (typeof settings.hourWidth === 'undefined')
+        settings.hourWidth = 5;
     switch (theme) {
         case 'Generic-bright':
-            settings.headerBackground = 'white';
-            settings.mainStroke = '#005c9e';
-            settings.mainFill = 'white';
-            settings.accentFill = '#005c9e';
-            settings.diamondFill = '#e31d3b';
-            settings.diamondStroke = '#005c9e';
+            if (typeof settings.headerBackground === 'undefined')
+                settings.headerBackground = 'white';
+            if (typeof settings.mainStroke === 'undefined')
+                settings.mainStroke = '#005c9e';
+            if (typeof settings.mainFill === 'undefined')
+                settings.mainFill = 'white';
+            if (typeof settings.accentFill === 'undefined')
+                settings.accentFill = '#005c9e';
+            if (typeof settings.diamondFill === 'undefined')
+                settings.diamondFill = '#e31d3b';
+            if (typeof settings.diamondStroke === 'undefined')
+                settings.diamondStroke = '#005c9e';
             break;
         case 'Generic-blue':
-            settings.headerBackground = 'white';
+            if (typeof settings.headerBackground === 'undefined')
+                settings.headerBackground = 'white';
             break;
         case 'Purple-green':
-            settings.headerBackground = '#dddfd4';
-            settings.mainStroke = '#005173';
-            settings.mainFill = '#a0729d';
-            settings.accentFill = '#91bc0e';
+            if (typeof settings.headerBackground === 'undefined')
+                settings.headerBackground = '#dddfd4';
+            if (typeof settings.mainStroke === 'undefined')
+                settings.mainStroke = '#005173';
+            if (typeof settings.mainFill === 'undefined')
+                settings.mainFill = '#a0729d';
+            if (typeof settings.accentFill === 'undefined')
+                settings.accentFill = '#91bc0e';
             break;
         case 'Blue-navy':
-            settings.headerBackground = '#eeeeee';
-            settings.selectedGridBackground = '#e8e8e8';
-            settings.mainStroke = '#6534ff';
-            settings.mainFill = '#369bf9';
-            settings.accentFill = '#227fd5';
-            settings.alternativeGridBackground = '#f9f9f9';
+            if (typeof settings.headerBackground === 'undefined')
+                settings.headerBackground = '#eeeeee';
+            if (typeof settings.selectedGridBackground === 'undefined')
+                settings.selectedGridBackground = '#e8e8e8';
+            if (typeof settings.mainStroke === 'undefined')
+                settings.mainStroke = '#6534ff';
+            if (typeof settings.mainFill === 'undefined')
+                settings.mainFill = '#369bf9';
+            if (typeof settings.accentFill === 'undefined')
+                settings.accentFill = '#227fd5';
+            if (typeof settings.alternativeGridBackground === 'undefined')
+                settings.alternativeGridBackground = '#f9f9f9';
             break;
         case 'Orange-brown':
-            settings.headerBackground = '#eeeeee';
-            settings.selectedGridBackground = '#e8e8e8';
-            settings.mainStroke = '#6534ff';
-            settings.mainFill = '#ffbf5a';
-            settings.accentFill = '#d5a05a';
-            settings.diamondFill = '#a91923';
-            settings.diamondStroke = '#222222';
-            settings.alternativeBackground = '#f9f9f9';
+            if (typeof settings.headerBackground === 'undefined')
+                settings.headerBackground = '#eeeeee';
+            if (typeof settings.selectedGridBackground === 'undefined')
+                settings.selectedGridBackground = '#e8e8e8';
+            if (typeof settings.mainStroke === 'undefined')
+                settings.mainStroke = '#6534ff';
+            if (typeof settings.mainFill === 'undefined')
+                settings.mainFill = '#ffbf5a';
+            if (typeof settings.accentFill === 'undefined')
+                settings.accentFill = '#d5a05a';
+            if (typeof settings.diamondFill === 'undefined')
+                settings.diamondFill = '#a91923';
+            if (typeof settings.diamondStroke === 'undefined')
+                settings.diamondStroke = '#222222';
+            if (typeof settings.alternativeBackground === 'undefined')
+                settings.alternativeBackground = '#f9f9f9';
             break;
         case 'Teal-green':
-            settings.headerBackground = '#eeeeee';
-            settings.mainStroke = '#6534ff';
-            settings.mainFill = '#5ebcbb';
-            settings.accentFill = '#3294a1';
-            settings.diamondFill = '#4c7f3d';
-            settings.diamondStroke = '#222222';
+            if (typeof settings.headerBackground === 'undefined')
+                settings.headerBackground = '#eeeeee';
+            if (typeof settings.mainStroke === 'undefined')
+                settings.mainStroke = '#6534ff';
+            if (typeof settings.mainFill === 'undefined')
+                settings.mainFill = '#5ebcbb';
+            if (typeof settings.accentFill === 'undefined')
+                settings.accentFill = '#3294a1';
+            if (typeof settings.diamondFill === 'undefined')
+                settings.diamondFill = '#4c7f3d';
+            if (typeof settings.diamondStroke === 'undefined')
+                settings.diamondStroke = '#222222';
             break;
         case 'Steel-blue':
-            settings.border = '#aaaaaa';
-            settings.headerBackground = '#4b5d6b';
-            settings.headerForeground = 'white';
-            settings.headerBorder = '#aaaaaa';
-            settings.containerBackground = '#a5b5c2';
-            settings.chartBackground = '#bfcfda';
-            settings.gridForeground = 'gray';
-            settings.toggleFill = 'gray';
-            settings.selectedGridForeground = '#4b5d6b';
-            settings.selectedGridBackground = '#95a5b2';
-            settings.nonworkingBackground = '#95a5b2';
-            settings.mainStroke = '#6534ff';
-            settings.mainFill = '#6699cc';
-            settings.accentFill = '#4c7f3d';
-            settings.diamondFill = '#4b5d6b';
-            settings.diamondStroke = '#222222';
+            if (typeof settings.border === 'undefined')
+                settings.border = '#aaaaaa';
+            if (typeof settings.headerBackground === 'undefined')
+                settings.headerBackground = '#4b5d6b';
+            if (typeof settings.headerForeground === 'undefined')
+                settings.headerForeground = 'white';
+            if (typeof settings.headerBorder === 'undefined')
+                settings.headerBorder = '#aaaaaa';
+            if (typeof settings.containerBackground === 'undefined')
+                settings.containerBackground = '#a5b5c2';
+            if (typeof settings.chartBackground === 'undefined')
+                settings.chartBackground = '#bfcfda';
+            if (typeof settings.gridForeground === 'undefined')
+                settings.gridForeground = 'gray';
+            if (typeof settings.toggleFill === 'undefined')
+                settings.toggleFill = 'gray';
+            if (typeof settings.selectedGridForeground === 'undefined')
+                settings.selectedGridForeground = '#4b5d6b';
+            if (typeof settings.selectedGridBackground === 'undefined')
+                settings.selectedGridBackground = '#95a5b2';
+            if (typeof settings.nonworkingBackground === 'undefined')
+                settings.nonworkingBackground = '#95a5b2';
+            if (typeof settings.mainStroke === 'undefined')
+                settings.mainStroke = '#6534ff';
+            if (typeof settings.mainFill === 'undefined')
+                settings.mainFill = '#6699cc';
+            if (typeof settings.accentFill === 'undefined')
+                settings.accentFill = '#4c7f3d';
+            if (typeof settings.diamondFill === 'undefined')
+                settings.diamondFill = '#4b5d6b';
+            if (typeof settings.diamondStroke === 'undefined')
+                settings.diamondStroke = '#222222';
             break;
         case 'Cyan-green':
-            settings.headerBackground = '#dddddd';
-            settings.mainStroke = '#6534ff';
-            settings.mainFill = '#1fb5ce';
-            settings.accentFill = '#1fce43';
-            settings.diamondFill = '#d6485b';
-            settings.diamondStroke = '#222222';
+            if (typeof settings.headerBackground === 'undefined')
+                settings.headerBackground = '#dddddd';
+            if (typeof settings.mainStroke === 'undefined')
+                settings.mainStroke = '#6534ff';
+            if (typeof settings.mainFill === 'undefined')
+                settings.mainFill = '#1fb5ce';
+            if (typeof settings.accentFill === 'undefined')
+                settings.accentFill = '#1fce43';
+            if (typeof settings.diamondFill === 'undefined')
+                settings.diamondFill = '#d6485b';
+            if (typeof settings.diamondStroke === 'undefined')
+                settings.diamondStroke = '#222222';
             break;
         case 'Purple-beige':
-            settings.selectedGridBackground = '#bfb8a4';
-            settings.mainStroke = '#005c9e';
-            settings.mainFill = '#a68b99';
-            settings.accentFill = '#bfb8a4';
-            settings.diamondFill = '#bfb8a4';
-            settings.diamondStroke = '#005c9e';
-            settings.alternativeGridBackground = '#f0eeeb';
-            settings.alternativeChartBackground = '#f9f9f9';
+            if (typeof settings.selectedGridBackground === 'undefined')
+                settings.selectedGridBackground = '#bfb8a4';
+            if (typeof settings.mainStroke === 'undefined')
+                settings.mainStroke = '#005c9e';
+            if (typeof settings.mainFill === 'undefined')
+                settings.mainFill = '#a68b99';
+            if (typeof settings.accentFill === 'undefined')
+                settings.accentFill = '#bfb8a4';
+            if (typeof settings.diamondFill === 'undefined')
+                settings.diamondFill = '#bfb8a4';
+            if (typeof settings.diamondStroke === 'undefined')
+                settings.diamondStroke = '#005c9e';
+            if (typeof settings.alternativeGridBackground === 'undefined')
+                settings.alternativeGridBackground = '#f0eeeb';
+            if (typeof settings.alternativeChartBackground === 'undefined')
+                settings.alternativeChartBackground = '#f9f9f9';
             break;
         case 'Dark-black':
-            settings.containerClass = 'dark'; // CSS class for dynamically generated elements, e.g. input (app.css)
-            settings.border = '#222222';
-            settings.headerBackground = '#111111';
-            settings.headerForeground = '#eeeeee';
-            settings.headerBorder = '#222222';
-            settings.containerBackground = '#222222';
-            settings.gridForeground = '#dddddd';
-            settings.chartForeground = '#dddddd';
-            settings.scaleSeparatorBorder = '#505050';
-            settings.toggleFill = '#808080';
-            settings.toggleHoveringFill = 'white';
-            settings.selectedGridForeground = 'white';
-            settings.selectedGridBackground = '#404040';
-            settings.nonworkingBackground = '#333333';
-            settings.mainStroke = 'gray';
-            settings.accentFill = '#ffbb00';
-            settings.summaryFill = '#505050';
-            settings.diamondFill = '#ffbb00';
-            settings.currentTimeStroke = '#289451';
+            if (typeof settings.containerClass === 'undefined')
+                settings.containerClass = 'dark'; // CSS class for dynamically generated elements, e.g. input (app.css)
+            if (typeof settings.border === 'undefined')
+                settings.border = '#222222';
+            if (typeof settings.headerBackground === 'undefined')
+                settings.headerBackground = '#111111';
+            if (typeof settings.headerForeground === 'undefined')
+                settings.headerForeground = '#eeeeee';
+            if (typeof settings.headerBorder === 'undefined')
+                settings.headerBorder = '#222222';
+            if (typeof settings.containerBackground === 'undefined')
+                settings.containerBackground = '#222222';
+            if (typeof settings.gridForeground === 'undefined')
+                settings.gridForeground = '#dddddd';
+            if (typeof settings.chartForeground === 'undefined')
+                settings.chartForeground = '#dddddd';
+            if (typeof settings.scaleSeparatorBorder === 'undefined')
+                settings.scaleSeparatorBorder = '#505050';
+            if (typeof settings.toggleFill === 'undefined')
+                settings.toggleFill = '#808080';
+            if (typeof settings.toggleHoveringFill === 'undefined')
+                settings.toggleHoveringFill = 'white';
+            if (typeof settings.selectedGridForeground === 'undefined')
+                settings.selectedGridForeground = 'white';
+            if (typeof settings.selectedGridBackground === 'undefined')
+                settings.selectedGridBackground = '#404040';
+            if (typeof settings.nonworkingBackground === 'undefined')
+                settings.nonworkingBackground = '#333333';
+            if (typeof settings.mainStroke === 'undefined')
+                settings.mainStroke = 'gray';
+            if (typeof settings.accentFill === 'undefined')
+                settings.accentFill = '#ffbb00';
+            if (typeof settings.summaryFill === 'undefined')
+                settings.summaryFill = '#505050';
+            if (typeof settings.diamondFill === 'undefined')
+                settings.diamondFill = '#ffbb00';
+            if (typeof settings.currentTimeStroke === 'undefined')
+                settings.currentTimeStroke = '#289451';
             break;
         case 'Gray-blue':
-            settings.headerBackground = 'white';
-            settings.containerBackground = '#f0f0f0';
-            settings.selectedGridBackground = 'white';
-            settings.mainStroke = '#005c9e';
-            settings.mainFill = 'white';
-            settings.accentFill = '#0087be';
-            settings.diamondFill = '#607080';
-            settings.diamondStroke = '#005c9e';
+            if (typeof settings.headerBackground === 'undefined')
+                settings.headerBackground = 'white';
+            if (typeof settings.containerBackground === 'undefined')
+                settings.containerBackground = '#f0f0f0';
+            if (typeof settings.selectedGridBackground === 'undefined')
+                settings.selectedGridBackground = 'white';
+            if (typeof settings.mainStroke === 'undefined')
+                settings.mainStroke = '#005c9e';
+            if (typeof settings.mainFill === 'undefined')
+                settings.mainFill = 'white';
+            if (typeof settings.accentFill === 'undefined')
+                settings.accentFill = '#0087be';
+            if (typeof settings.diamondFill === 'undefined')
+                settings.diamondFill = '#607080';
+            if (typeof settings.diamondStroke === 'undefined')
+                settings.diamondStroke = '#005c9e';
             break;
         case 'DlhSoft-gray':
-            settings.border = '#aaaaaa';
-            settings.headerBackground = '#e31d3b';
-            settings.headerForeground = 'white';
-            settings.headerBorder = 'transparent';
-            settings.selectedGridBackground = '#e8e8e8';
-            settings.mainStroke = '#666';
-            settings.mainFill = '#f0f0f0';
-            settings.accentFill = '#ad927f';
-            settings.summaryFill = '#666';
-            settings.diamondFill = '#82a0b3';
-            settings.diamondStroke = '#666';
-            settings.alternativeGridBackground = '#f8f8f8';
-            settings.currentTimeStroke = '#82a0b3';
+            if (typeof settings.border === 'undefined')
+                settings.border = '#aaaaaa';
+            if (typeof settings.headerBackground === 'undefined')
+                settings.headerBackground = '#e31d3b';
+            if (typeof settings.headerForeground === 'undefined')
+                settings.headerForeground = 'white';
+            if (typeof settings.headerBorder === 'undefined')
+                settings.headerBorder = 'transparent';
+            if (typeof settings.selectedGridBackground === 'undefined')
+                settings.selectedGridBackground = '#e8e8e8';
+            if (typeof settings.mainStroke === 'undefined')
+                settings.mainStroke = '#666';
+            if (typeof settings.mainFill === 'undefined')
+                settings.mainFill = '#f0f0f0';
+            if (typeof settings.accentFill === 'undefined')
+                settings.accentFill = '#ad927f';
+            if (typeof settings.summaryFill === 'undefined')
+                settings.summaryFill = '#666';
+            if (typeof settings.diamondFill === 'undefined')
+                settings.diamondFill = '#82a0b3';
+            if (typeof settings.diamondStroke === 'undefined')
+                settings.diamondStroke = '#666';
+            if (typeof settings.alternativeGridBackground === 'undefined')
+                settings.alternativeGridBackground = '#f8f8f8';
+            if (typeof settings.currentTimeStroke === 'undefined')
+                settings.currentTimeStroke = '#82a0b3';
             break;
     }
-    if (settings.containerBackground)
+    if (typeof settings.containerStyle === 'undefined' && settings.containerBackground)
         settings.containerStyle = 'background-color: ' + settings.containerBackground;
-    if (settings.headerForeground)
+    if (typeof settings.columnHeaderStyle === 'undefined' && settings.headerForeground)
         settings.columnHeaderStyle = 'color: ' + settings.headerForeground;
     if (settings.gridForeground) {
-        settings.itemStyle = 'color: ' + settings.gridForeground + (settings.gridBackground ? '; background-color: ' + settings.gridBackground : '');
-        if (settings.selectedGridForeground)
+        if (typeof settings.itemStyle === 'undefined')
+            settings.itemStyle = 'color: ' + settings.gridForeground + (settings.gridBackground ? '; background-color: ' + settings.gridBackground : '');
+        if (typeof settings.selectedItemStyle === 'undefined' && settings.selectedGridForeground)
             settings.selectedItemStyle = 'color: ' + settings.selectedGridForeground + '; background-color: ' + (settings.selectedGridBackground ? settings.selectedGridBackground : settings.gridForeground);
     }
     else {
-        if (settings.selectedGridForeground || settings.selectedGridBackground)
+        if (typeof settings.selectedItemStyle === 'undefined' && (settings.selectedGridForeground || settings.selectedGridBackground))
             settings.selectedItemStyle = 'color: ' + (settings.selectedGridForeground ? settings.selectedGridForeground : 'black') + '; background-color: ' + (settings.selectedGridBackground ? settings.selectedGridBackground : '#f0f0f0');
     }
-    if (settings.toggleFill)
+    if (typeof settings.toggleButtonStyle === 'undefined' && settings.toggleFill)
         settings.toggleButtonStyle = 'fill: ' + settings.toggleFill;
-    if (settings.toggleHoveringFill)
+    if (typeof settings.toggleButtonHoveringStyle === 'undefined' && settings.toggleHoveringFill)
         settings.toggleButtonHoveringStyle = 'fill: ' + settings.toggleHoveringFill;
-    settings.scales = [{ scaleType: 'NonworkingTime', isHeaderVisible: false, isHighlightingVisible: true, highlightingStyle: 'stroke-width: 0; fill: ' + (settings.nonworkingBackground ? settings.nonworkingBackground : '#f8f8f8') + '; fill-opacity: 0.65' },
-                       { scaleType: 'Weeks', headerTextFormat: 'Date', headerStyle: 'padding: 7px 5px; border-right: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + '; border-bottom: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + (settings.headerForeground ? '; color: ' + settings.headerForeground : ''), isSeparatorVisible: true, separatorStyle: 'stroke: ' + (settings.scaleSeparatorBorder ? settings.scaleSeparatorBorder : '#c8bfe7') + '; stroke-width: 0.5px' },
-                       { scaleType: 'Days', headerTextFormat: 'DayOfWeekAbbreviation', headerStyle: 'padding: 7px 5px; border-right: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + (settings.headerForeground ? '; color: ' + settings.headerForeground : '') },
-                       { scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: ' + (settings.currentTimeStroke ? settings.currentTimeStroke : '#e31d3b') + '; stroke-width: 0.5px' }];
+    if (typeof settings.scales === 'undefined') {
+        settings.scales = [{ scaleType: 'NonworkingTime', isHeaderVisible: false, isHighlightingVisible: true, highlightingStyle: 'stroke-width: 0; fill: ' + (settings.nonworkingBackground ? settings.nonworkingBackground : '#f8f8f8') + '; fill-opacity: 0.65' },
+                           { scaleType: 'Weeks', headerTextFormat: 'Date', headerStyle: 'padding: 7px 5px; border-right: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + '; border-bottom: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + (settings.headerForeground ? '; color: ' + settings.headerForeground : ''), isSeparatorVisible: true, separatorStyle: 'stroke: ' + (settings.scaleSeparatorBorder ? settings.scaleSeparatorBorder : '#c8bfe7') + '; stroke-width: 0.5px' },
+                           { scaleType: 'Days', headerTextFormat: 'DayOfWeekAbbreviation', headerStyle: 'padding: 7px 5px; border-right: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + (settings.headerForeground ? '; color: ' + settings.headerForeground : '') },
+                           { scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: ' + (settings.currentTimeStroke ? settings.currentTimeStroke : '#e31d3b') + '; stroke-width: 0.5px' }];
+    }
     if (settings.chartBackground)
         settings.scales.splice(0, 0, { scaleType: 'Custom', isHeaderVisible: false, intervals: [{ start: new Date(1, 0, 1), finish: new Date(10000, 11, 31, 23, 59, 59, 999) }], isHighlightingVisible: true, highlightingStyle: 'fill: ' + settings.chartBackground });
     if (settings.mainFill) {
-        settings.standardBarStyle = 'stroke: ' + (settings.mainStroke ? settings.mainStroke : settings.mainFill) + '; fill: ' + settings.mainFill;
-        settings.collapsedSummaryLineStyle = 'stroke: ' + (settings.mainStroke ? settings.mainStroke : settings.mainFill) + '; stroke-width: 0.65px; stroke-dasharray: 2 2';
+        if (typeof settings.standardBarStyle === 'undefined')
+            settings.standardBarStyle = 'stroke: ' + (settings.mainStroke ? settings.mainStroke : settings.mainFill) + '; fill: ' + settings.mainFill;
+        if (typeof settings.collapsedSummaryLineStyle === 'undefined')
+            settings.collapsedSummaryLineStyle = 'stroke: ' + (settings.mainStroke ? settings.mainStroke : settings.mainFill) + '; stroke-width: 0.65px; stroke-dasharray: 2 2';
     }
-    if (settings.accentFill)
+    if (typeof settings.standardCompletedBarStyle === 'undefined' && settings.accentFill)
         settings.standardCompletedBarStyle = 'stroke: ' + settings.accentFill + '; fill: ' + settings.accentFill;
-    if (settings.summaryFill)
+    if (typeof settings.summaryBarStyle === 'undefined' && settings.summaryFill)
         settings.summaryBarStyle = 'stroke: ' + (settings.summaryStroke ? settings.summaryStroke : settings.summaryFill) + '; fill: ' + settings.summaryFill;
-    if (settings.diamondFill)
+    if (typeof settings.milestoneBarStyle === 'undefined' && settings.diamondFill)
         settings.milestoneBarStyle = 'stroke: ' + (settings.diamondStroke ? settings.diamondStroke : settings.diamondFill) + '; fill: ' + settings.diamondFill;
     if (settings.mainStroke) {
-        settings.baselineBarStyle = 'fill: none; stroke: ' + settings.mainStroke + '; stroke-width: 0.65px; stroke-dasharray: 2, 2';
+        if (typeof settings.arrowFill === 'undefined')
+            settings.baselineBarStyle = 'fill: none; stroke: ' + settings.mainStroke + '; stroke-width: 0.65px; stroke-dasharray: 2, 2';
         if (!settings.arrowFill)
             settings.arrowFill = settings.mainStroke;
-        settings.dependencyLineStyle = 'stroke: ' + settings.arrowFill + '; stroke-width: 0.65px; fill: none; marker-end: url(#ArrowMarker)';
+        if (typeof settings.dependencyLineStyle === 'undefined')
+            settings.dependencyLineStyle = 'stroke: ' + settings.arrowFill + '; stroke-width: 0.65px; fill: none; marker-end: url(#ArrowMarker)';
     }
-    if (settings.chartForeground)
+    if (typeof settings.assignmentsStyle === 'undefined' && settings.chartForeground)
         settings.assignmentsStyle = 'font-size: x-small; fill: ' + settings.chartForeground;
     if (settings.alternativeBackground) {
-        settings.alternativeGridBackground = settings.alternativeBackground;
-        settings.alternativeChartBackground = settings.alternativeBackground;
+        if (typeof settings.alternativeGridBackground === 'undefined')
+            settings.alternativeGridBackground = settings.alternativeBackground;
+        if (typeof settings.alternativeChartBackground === 'undefined')
+            settings.alternativeChartBackground = settings.alternativeBackground;
     }
-    if (settings.alternativeGridBackground)
+    if (typeof settings.alternativeItemStyle === 'undefined' && settings.alternativeGridBackground)
         settings.alternativeItemStyle = 'background-color: ' + settings.alternativeGridBackground;
-    if (settings.alternativeChartBackground)
+    if (typeof settings.alternativeChartItemStyle === 'undefined' && settings.alternativeChartBackground)
         settings.alternativeChartItemStyle = 'fill: ' + settings.alternativeChartBackground;
 }
 function initializeLoadChartTheme(settings, theme) {
     initializeGanttChartTheme(settings, theme);
     if (theme == 'Default')
         return;
-    settings.barHeight = 20;
-    settings.allocationFill = settings.mainFill ? (settings.mainFill != 'white' ? settings.mainFill : settings.mainStroke) : '#8abbed';
-    settings.normalAllocationBarStyle = settings.underAllocationBarStyle = 'stroke: ' + settings.allocationFill + '; fill: ' + settings.allocationFill;
-    settings.overAllocationBarStyle = 'stroke: #e31d3b; fill: #e31d3b';
+    if (typeof settings.barHeight === 'undefined')
+        settings.barHeight = 20;
+    if (typeof settings.allocationFill === 'undefined')
+        settings.allocationFill = settings.mainFill ? (settings.mainFill != 'white' ? settings.mainFill : settings.mainStroke) : '#8abbed';
+    if (typeof settings.normalAllocationBarStyle === 'undefined')
+        settings.normalAllocationBarStyle = settings.underAllocationBarStyle = 'stroke: ' + settings.allocationFill + '; fill: ' + settings.allocationFill;
+    if (typeof settings.overAllocationBarStyle === 'undefined')
+        settings.overAllocationBarStyle = 'stroke: #e31d3b; fill: #e31d3b';
 }
 function initializePertChartTheme(settings, theme) {
     if (theme == 'Default')
         return;
-    settings.shapeStyle = 'fill: White; stroke: #606060; stroke-width: 1px';
-    settings.milestoneStyle = 'fill: White; stroke: #606060; stroke-width: 1px';
-    settings.dependencyLineStyle = 'stroke: #8abbed; stroke-width: 0.65px; fill: none; marker-end: url(#PertArrowMarker)';
-    settings.arrowFill = '#8abbed';
-    settings.virtualEffortDependencyLineStyle = 'stroke: #8abbed; stroke-width: 0.65px; stroke-dasharray: 2, 2; fill: none; marker-end: url(#PertArrowMarker)';
+    if (typeof settings.shapeStyle === 'undefined')
+        settings.shapeStyle = 'fill: White; stroke: #606060; stroke-width: 1px';
+    if (typeof settings.milestoneStyle === 'undefined')
+        settings.milestoneStyle = 'fill: White; stroke: #606060; stroke-width: 1px';
+    if (typeof settings.dependencyLineStyle === 'undefined')
+        settings.dependencyLineStyle = 'stroke: #8abbed; stroke-width: 0.65px; fill: none; marker-end: url(#PertArrowMarker)';
+    if (typeof settings.arrowFill === 'undefined')
+        settings.arrowFill = '#8abbed';
+    if (typeof settings.virtualEffortDependencyLineStyle === 'undefined')
+        settings.virtualEffortDependencyLineStyle = 'stroke: #8abbed; stroke-width: 0.65px; stroke-dasharray: 2, 2; fill: none; marker-end: url(#PertArrowMarker)';
     // Common helpers.
     var svgns = 'http://www.w3.org/2000/svg';
     // Template definitions.
-    settings.styleDefinitionTemplate = function () {
-        var defs = document.createElementNS(svgns, 'defs');
-        var arrowMarker = document.createElementNS(svgns, 'marker');
-        arrowMarker.setAttribute('id', 'PertArrowMarker');
-        arrowMarker.setAttribute("viewBox", "0 0 10 10");
-        arrowMarker.setAttribute("refX", "0");
-        arrowMarker.setAttribute("refY", "5");
-        arrowMarker.setAttribute("markerUnits", "strokeWidth");
-        arrowMarker.setAttribute("markerWidth", "5");
-        arrowMarker.setAttribute("markerHeight", "4");
-        arrowMarker.setAttribute("orient", "auto");
-        var arrowPath = document.createElementNS(svgns, "path");
-        arrowPath.setAttribute("fill", settings.arrowFill ? settings.arrowFill : '#3b87d9');
-        arrowPath.setAttribute("d", "M 0 0 L 10 5 L 0 10 z");
-        arrowMarker.appendChild(arrowPath);
-        defs.appendChild(arrowMarker);
-        return defs;
-    };
+    if (typeof settings.styleDefinitionTemplate === 'undefined') {
+        settings.styleDefinitionTemplate = function () {
+            var defs = document.createElementNS(svgns, 'defs');
+            var arrowMarker = document.createElementNS(svgns, 'marker');
+            arrowMarker.setAttribute('id', 'PertArrowMarker');
+            arrowMarker.setAttribute("viewBox", "0 0 10 10");
+            arrowMarker.setAttribute("refX", "0");
+            arrowMarker.setAttribute("refY", "5");
+            arrowMarker.setAttribute("markerUnits", "strokeWidth");
+            arrowMarker.setAttribute("markerWidth", "5");
+            arrowMarker.setAttribute("markerHeight", "4");
+            arrowMarker.setAttribute("orient", "auto");
+            var arrowPath = document.createElementNS(svgns, "path");
+            arrowPath.setAttribute("fill", settings.arrowFill ? settings.arrowFill : '#3b87d9');
+            arrowPath.setAttribute("d", "M 0 0 L 10 5 L 0 10 z");
+            arrowMarker.appendChild(arrowPath);
+            defs.appendChild(arrowMarker);
+            return defs;
+        };
+    }
 }
