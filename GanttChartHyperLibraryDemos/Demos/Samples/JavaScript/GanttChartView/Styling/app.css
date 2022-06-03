@@ -8,17 +8,14 @@
     background-color: #e0e0ff;
 }
 .cell input {
-    height: 24px;
+    height: 32px;
 }
-.cell input[type="text"] {
-    margin: 0 2px;
-    border-radius: 4px;
-    padding: 4px 6px;
-    line-height: 22px;
-    font-family: Calibri;
-    font-size: 16px;
-    color: #555;
-}
+    .cell input[type="text"] {
+        border-radius: 4px;
+        font-family: Calibri;
+        font-size: 16px;
+        color: #555;
+    }
 .cell input[type="text"]:focus {
     box-shadow: 0px 1px 0px 0px #78c;
 }
@@ -35,6 +32,7 @@
     fill: #3eb0c7;
     fill-opacity: 0.75;
     stroke: #3eb0c7;
+    align-content: center;
 }
 .darkBar {
     fill: #3b4160;

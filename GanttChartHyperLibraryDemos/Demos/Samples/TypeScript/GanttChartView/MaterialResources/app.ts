@@ -12,7 +12,7 @@ declare var initializeGanttChartTheme;
 // Retrieve and store the control element for reference purposes.
 var ganttChartViewElement = <HTMLElement>document.querySelector('#ganttChartView');
 
-var date = new Date(), year = date.getFullYear(), month = date.getMonth(), day = date.getDay();
+var date = new Date(), year = date.getFullYear(), month = date.getMonth(), day = date.getDate();
 var items = <GanttChartItem[]>[];
 for (var i = 1; i <= 16; i++)
     items.push({ content: 'Print job #' + i, start: new Date(year, month, day, 8, 0, 0) });

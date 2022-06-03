@@ -6,7 +6,7 @@ var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 // Retrieve and store the control element for reference purposes.
 var ganttChartViewElement = document.querySelector('#ganttChartView');
-var date = new Date(), year = date.getFullYear(), month = date.getMonth(), day = date.getDay();
+var date = new Date(), year = date.getFullYear(), month = date.getMonth(), day = date.getDate();
 var items = [
     { content: 'Task 1', isExpanded: false, start: new Date() },
     { content: 'Task 1.1', indentation: 1, start: new Date(year, month, day, 8, 0, 0), finish: new Date(year, month, day, 8, 5, 0) },

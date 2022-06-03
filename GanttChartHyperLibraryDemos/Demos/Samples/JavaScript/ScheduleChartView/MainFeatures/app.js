@@ -8,15 +8,15 @@ var scheduleChartView = document.querySelector('#scheduleChartView');
 
 // Prepare data items.
 var date = new Date(), year = date.getFullYear(), month = date.getMonth();
-var scheduleChartItems = [{ content: 'Resource 1', ganttChartItems: [{ content: 'Task A (Resource 1)', start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0) }] },
-                          { content: 'Resource 2', ganttChartItems: [{ content: 'Task A (Resource 2)', start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: '50%' },
-                                                                     { content: 'Task B (Resource 2)', start: new Date(year, month, 11, 8, 0, 0), finish: new Date(year, month, 12, 16, 0, 0), completedFinish: new Date(year, month, 12, 16, 0, 0) },
-                                                                     { content: 'Task C (Resource 2)', start: new Date(year, month, 14, 8, 0, 0), finish: new Date(year, month, 14, 16, 0, 0) }] },
-                          { content: 'Resource 3', ganttChartItems: [{ content: 'Task D (Resource 3)', start: new Date(year, month, 12, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0) }] }];
+var scheduleChartItems = [{ content: 'Resource 1', ganttChartItems: [{ content: 'Task A (Resource 1)', label: 'Task A',  start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0) }] },
+                          { content: 'Resource 2', ganttChartItems: [{ content: 'Task A (Resource 2)', label: 'Task A',  start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: '50%' },
+                                                                     { content: 'Task B (Resource 2)', label: 'Task B',  start: new Date(year, month, 11, 8, 0, 0), finish: new Date(year, month, 12, 16, 0, 0), completedFinish: new Date(year, month, 12, 16, 0, 0) },
+                                                                     { content: 'Task C (Resource 2)', label: 'Task C',  start: new Date(year, month, 14, 8, 0, 0), finish: new Date(year, month, 14, 16, 0, 0) }] },
+                          { content: 'Resource 3', ganttChartItems: [{ content: 'Task D (Resource 3)', label: 'Task D',  start: new Date(year, month, 12, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0) }] }];
 for (var i = 4; i <= 16; i++)
     scheduleChartItems.push({
-        content: 'Resource ' + i, ganttChartItems: [{ content: 'Task X (Resource ' + i + ')', start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 5, 16, 0, 0) },
-                                                    { content: 'Task Y (Resource ' + i + ')', start: new Date(year, month, 7, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0) }]
+        content: 'Resource ' + i, ganttChartItems: [{ content: 'Task X (Resource ' + i + ')', label: 'Task X', start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 5, 16, 0, 0) },
+                                                    { content: 'Task Y (Resource ' + i + ')', label: 'Task Y',  start: new Date(year, month, 7, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0) }]
     });
 
 // Prepare control settings.
@@ -57,6 +57,9 @@ var settings = {
     // Set the current time value to automatically scroll to a specific chart coordinate, and display a vertical bar highlighter at the specified point.
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
+
+settings.areStandardTaskLabelsVisible = true;
+settings.areMilestoneTaskLabelsVisible = true;
 
 // Optionally, configure selection.
 // settings.selectionMode = 'Extended'; // Supported values: None, Focus (default), Single, Extended, ExtendedFocus.
