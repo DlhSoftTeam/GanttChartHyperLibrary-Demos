@@ -83,7 +83,7 @@ var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleCh
 
 function getImage(item) {
     if (item.indentation == 0) {
-        return 'data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA='; // empty image source
+        return 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // empty image
     }
     else {
         return 'Images/' + item.image;

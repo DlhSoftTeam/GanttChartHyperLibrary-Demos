@@ -15,8 +15,8 @@ var scheduleChartItems = [{ content: 'Resource 1', ganttChartItems: [{ content: 
                           { content: 'Resource 3', ganttChartItems: [{ content: 'Task D (Resource 3)', label: 'Task D',  start: new Date(year, month, 12, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0) }] }];
 for (var i = 4; i <= 16; i++)
     scheduleChartItems.push({
-        content: 'Resource ' + i, ganttChartItems: [{ content: 'Task X (Resource ' + i + ')', label: 'Task X', start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 5, 16, 0, 0) },
-                                                    { content: 'Task Y (Resource ' + i + ')', label: 'Task Y',  start: new Date(year, month, 7, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0) }]
+        content: 'Resource ' + i, ganttChartItems: [{ content: 'Task X (Resource ' + i + ')', label: 'Task 1.' + (i-3), start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 5, 16, 0, 0) },
+                                                    { content: 'Task Y (Resource ' + i + ')', label: 'Task 2.' + (i-3),  start: new Date(year, month, 7, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0) }]
     });
 
 // Prepare control settings.
