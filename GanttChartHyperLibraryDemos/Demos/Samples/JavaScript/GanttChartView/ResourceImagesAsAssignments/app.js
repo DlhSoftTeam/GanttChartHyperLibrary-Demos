@@ -6,14 +6,15 @@ var theme = queryString ? queryString.substr(1) : null;
 var ganttChartView = document.querySelector('#ganttChartView');
 
 var date = new Date(), year = date.getFullYear(), month = date.getMonth();
-var items = [{ content: 'Planning', isExpanded: false },
+var items = [
+    { content: 'Planning', isExpanded: false },
     { content: 'Requirements', indentation: 1, start: new Date(year, month, 3, 8, 0, 0), finish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: 'Clarissa Candelaria, Printer' },
     { content: 'Architecture', indentation: 1, start: new Date(year, month, 3, 8, 0, 0), finish: new Date(year, month, 6, 12, 0, 0), assignmentsContent: 'Steven Rush' },
     { content: 'Development', isExpanded: true },
     { content: 'Date-times', indentation: 1, start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0), completedFinish: new Date(year, month, 3, 10, 0, 0), assignmentsContent: 'Clarissa Candelaria, Steven Rush [50%]' },
     { content: 'Chart', indentation: 1 },
     { content: 'Bars', indentation: 2, start: new Date(year, month, 7, 8, 0, 0), finish: new Date(year, month, 10, 16, 0, 0), completedFinish: new Date(year, month, 7, 16, 0, 0), assignmentsContent: 'Steven Rush' },
-    { content: 'Summary Bars', indentation: 2, start: new Date(year, month, 11, 8, 0, 0), finish: new Date(year, month, 16, 16, 0, 0), assignmentsContent: 'Steven Rush' },
+    { content: 'Summary bars', indentation: 2, start: new Date(year, month, 11, 8, 0, 0), finish: new Date(year, month, 16, 16, 0, 0), assignmentsContent: 'Steven Rush' },
     { content: 'Review', label: 'Review', indentation: 1, start: new Date(year, month, 10, 16, 0, 0), isMilestone: true },
     { content: 'Links', label: 'Links', indentation: 1, start: new Date(year, month, 6, 8, 0, 0), finish: new Date(year, month, 10, 16, 0, 0), hasMilestoneAtFinish: true },
     { content: 'Diagram functions', label: 'Diagram functions', indentation: 1, start: new Date(year, month, 6, 8, 0, 0), finish: new Date(year, month, 10, 12, 0, 0), assignmentsContent: 'Clarissa Candelaria, Printer' },
@@ -26,11 +27,12 @@ items[6].predecessors = [{ item: items[4] }, { item: items[5] }];
 
 var settings = { currentTime: new Date(year, month, 3, 12, 0, 0) };
 settings.areResourceImagesVisibleAsAssignments = true;
-settings.resourceImageUrls = [{ key: 'Clarissa Candelaria', value: 'Images/Clarissa.png' },
-{ key: 'Steven Rush', value: 'Images/Steven.png' },
-{ key: 'Denis Kaelin', value: 'Images/Denis.png' },
-{ key: 'Meeting room', value: 'Images/SetColor.png' },
-{ key: 'Printer', value: 'Images/Print.png' }];
+settings.resourceImageUrls = [
+    { key: 'Clarissa Candelaria', value: 'Images/Clarissa.png' },
+    { key: 'Steven Rush', value: 'Images/Steven.png' },
+    { key: 'Denis Kaelin', value: 'Images/Denis.png' },
+    { key: 'Meeting room', value: 'Images/SetColor.png' },
+    { key: 'Printer', value: 'Images/Print.png' }];
 
 var columns = DlhSoft.Controls.GanttChartView.getDefaultColumns(items, settings);
 columns.splice(1, 4); // Remove all default columns except Task and Assignments.

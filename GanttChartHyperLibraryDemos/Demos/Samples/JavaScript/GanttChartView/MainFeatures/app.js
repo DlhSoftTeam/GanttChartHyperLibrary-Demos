@@ -8,7 +8,8 @@ var ganttChartView = document.querySelector('#ganttChartView');
 
 // Prepare data items.
 var date = new Date(), year = date.getFullYear(), month = date.getMonth();
-var items = [{ content: 'Planning', albel: 'Planning', isExpanded: false },
+var items = [
+    { content: 'Planning', albel: 'Planning', isExpanded: false },
     { content: 'Analysis', indentation: 1, start: new Date(year, month, 1, 8, 0, 0), finish: new Date(year, month, 2, 16, 0, 0), assignmentsContent: 'Clarissa Candelaria [50%]' },
     { content: 'Requirements', indentation: 1, start: new Date(year, month, 1, 8, 0, 0), finish: new Date(year, month, 2, 16, 0, 0), assignmentsContent: 'Clarissa Candelaria  [50%], Tyson Lamberson' },
     { content: 'Review', label: 'Review', indentation: 1, start: new Date(year, month, 2, 16, 0, 0), isMilestone: true, assignmentsContent: 'Clarissa Candelaria' },
@@ -21,7 +22,7 @@ var items = [{ content: 'Planning', albel: 'Planning', isExpanded: false },
     { content: 'Automation testing functions', label: 'Very important!', indentation: 1, start: new Date(year, month, 4, 8, 0, 0), finish: new Date(year, month, 12, 12, 0, 0), assignmentsContent: 'Tyson Lamberson [50%]' },
     { content: 'Chart', label: 'Chart', indentation: 1 },
     { content: 'Bars', indentation: 2, start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 5, 16, 0, 0), completedFinish: new Date(year, month, 7, 16, 0, 0), assignmentsContent: 'Clarissa Candelaria [50%]' },
-    { content: 'Summary Bars', indentation: 2, start: new Date(year, month, 6, 12, 0, 0), finish: new Date(year, month, 9, 16, 0, 0), assignmentsContent: 'Steven Rush [50%]' },
+    { content: 'Summary bars', indentation: 2, start: new Date(year, month, 6, 12, 0, 0), finish: new Date(year, month, 9, 16, 0, 0), assignmentsContent: 'Steven Rush [50%]' },
     { content: 'Review', indentation: 2, start: new Date(year, month, 8, 16, 0, 0), isMilestone: true },
     { content: 'Links', indentation: 2, start: new Date(year, month, 7, 8, 0, 0), finish: new Date(year, month, 10, 16, 0, 0), assignmentsContent: 'Steven Rush [50%]' },
     { content: 'Diagram functions', indentation: 2, start: new Date(year, month, 5, 8, 0, 0), finish: new Date(year, month, 8, 12, 0, 0), assignmentsContent: 'Tyson Lamberson [50%]' },

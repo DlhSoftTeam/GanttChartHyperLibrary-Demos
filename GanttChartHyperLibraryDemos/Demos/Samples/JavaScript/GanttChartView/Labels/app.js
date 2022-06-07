@@ -8,20 +8,21 @@ var theme = queryString ? queryString.substr(1) : null;
 var ganttChartViewElement = document.querySelector('#ganttChartView');
 // Prepare data items.
 var date = new Date(), year = date.getFullYear(), month = date.getMonth();
-var items = [{ content: 'Planning', isExpanded: false },
-{ content: 'Requirements', label: 'Requirements', indentation: 1, start: new Date(year, month, 1, 8, 0, 0), finish: new Date(year, month, 4, 16, 0, 0) },
-{ content: 'Architecture', label: 'Architecture', indentation: 1, start: new Date(year, month, 1, 12, 0, 0), finish: new Date(year, month, 6, 12, 0, 0), assignmentsContent: 'Steven Rush' },
-{ content: 'Review', label: 'Review', indentation: 1, start: new Date(year, month, 6, 12, 0, 0), isMilestone: true, assignmentsContent: 'Clarissa Candelaria' },
-{ content: 'Development', label: 'Development', isExpanded: true },
-{ content: 'Date-times', label: 'Date-times', indentation: 1, start: new Date(year, month, 7, 8, 0, 0), finish: new Date(year, month, 11, 12, 0, 0), completedFinish: new Date(year, month, 5, 12, 0, 0), assignmentsContent: 'Clarissa Candelaria, Steven Rush [50%]' },
-{ content: 'Chart', indentation: 1 },
-{ content: 'Bars', label: 'Bars', indentation: 2, start: new Date(year, month, 5, 8, 0, 0), finish: new Date(year, month, 10, 16, 0, 0), assignmentsContent: 'Steven Rush' },
-{ content: 'Summary Bars', label: 'Summary Bars', indentation: 2, start: new Date(year, month, 6, 12, 0, 0), finish: new Date(year, month, 10, 16, 0, 0), assignmentsContent: 'Steven Rush', hasMilestoneAtFinish: true },
-{ content: 'Review', label: 'Review', indentation: 1, start: new Date(year, month, 10, 16, 0, 0), isMilestone: true },
-{ content: 'Links', label: 'Links', indentation: 1, start: new Date(year, month, 6, 8, 0, 0), finish: new Date(year, month, 10, 16, 0, 0), hasMilestoneAtFinish: true },
-{ content: 'Diagram functions', label: 'Diagram functions', indentation: 1, start: new Date(year, month, 6, 8, 0, 0), finish: new Date(year, month, 10, 12, 0, 0) },
-{ content: 'Quality assurance', label: 'Quality assurance', indentation: 1, start: new Date(year, month, 5, 8, 0, 0), finish: new Date(year, month, 15, 16, 0, 0), hasMilestoneAtFinish: true },
-{ content: 'Project delivery', label: 'Project delivery', indentation: 1, start: new Date(year, month, 15, 8, 0, 0), finish: new Date(year, month, 18, 12, 0, 0) }];
+var items = [
+    { content: 'Planning', isExpanded: false },
+    { content: 'Requirements', label: 'Requirements', indentation: 1, start: new Date(year, month, 1, 8, 0, 0), finish: new Date(year, month, 4, 16, 0, 0) },
+    { content: 'Architecture', label: 'Architecture', indentation: 1, start: new Date(year, month, 1, 12, 0, 0), finish: new Date(year, month, 6, 12, 0, 0), assignmentsContent: 'Steven Rush' },
+    { content: 'Review', label: 'Review', indentation: 1, start: new Date(year, month, 6, 12, 0, 0), isMilestone: true, assignmentsContent: 'Clarissa Candelaria' },
+    { content: 'Development', label: 'Development', isExpanded: true },
+    { content: 'Date-times', label: 'Date-times', indentation: 1, start: new Date(year, month, 7, 8, 0, 0), finish: new Date(year, month, 11, 12, 0, 0), completedFinish: new Date(year, month, 5, 12, 0, 0), assignmentsContent: 'Clarissa Candelaria, Steven Rush [50%]' },
+    { content: 'Chart', indentation: 1 },
+    { content: 'Bars', label: 'Bars', indentation: 2, start: new Date(year, month, 5, 8, 0, 0), finish: new Date(year, month, 10, 16, 0, 0), assignmentsContent: 'Steven Rush' },
+    { content: 'Summary bars', label: 'Summary bars', indentation: 2, start: new Date(year, month, 6, 12, 0, 0), finish: new Date(year, month, 10, 16, 0, 0), assignmentsContent: 'Steven Rush', hasMilestoneAtFinish: true },
+    { content: 'Review', label: 'Review', indentation: 1, start: new Date(year, month, 10, 16, 0, 0), isMilestone: true },
+    { content: 'Links', label: 'Links', indentation: 1, start: new Date(year, month, 6, 8, 0, 0), finish: new Date(year, month, 10, 16, 0, 0), hasMilestoneAtFinish: true },
+    { content: 'Diagram functions', label: 'Diagram functions', indentation: 1, start: new Date(year, month, 6, 8, 0, 0), finish: new Date(year, month, 10, 12, 0, 0) },
+    { content: 'Quality assurance', label: 'Quality assurance', indentation: 1, start: new Date(year, month, 5, 8, 0, 0), finish: new Date(year, month, 15, 16, 0, 0), hasMilestoneAtFinish: true },
+    { content: 'Project delivery', label: 'Project delivery', indentation: 1, start: new Date(year, month, 15, 8, 0, 0), finish: new Date(year, month, 18, 12, 0, 0) }];
 
 var settings = { currentTime: new Date(year, month, 3, 12, 0, 0) };
 

@@ -203,7 +203,7 @@ angular.module('Demos', [])
                 }
             },
             {
-                component: 'GanttChartView', feature: 'ResourceImagesAsAssignments', title: 'Resource Images As Assignments (resource icons)', description: 'Shows how you can show resource icons in the chart area, instead of resource name',
+                component: 'GanttChartView', feature: 'ResourceImagesAsAssignments', title: 'Resource icons as assignments', description: 'Shows how you can show resource icons in the chart area instead of assigned resource names',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js']
                 }
@@ -228,7 +228,7 @@ angular.module('Demos', [])
                 }
             },
             {
-                component: 'GanttChartView', feature: 'Labels', title: 'Bar labels', description: 'Shows how to define labels on the standard bar, milestone and summary bar and customize the style.',
+                component: 'GanttChartView', feature: 'Labels', title: 'Bar labels', description: 'Shows how to define labels on the standard, summary, and milestone bars and customize their styles.',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js']
                 }
@@ -347,7 +347,7 @@ angular.module('Demos', [])
                 }
             },
             {
-                component: 'ScheduleChartView', feature: 'HierarchyLabelsAndImages', title: 'Hierarchy (resource groups, task labels, resource images)', description: 'Sample application showing how to display expandable groups of resources in a hierarchical fashion, adding labels to the tasks, resource image column, and predecessors.',
+                component: 'ScheduleChartView', feature: 'HierarchyLabelsAndImages', title: 'Hierarchy + task labels & resource icons', description: 'Sample application showing how to display expandable groups of resources in a hierarchical fashion and adding labels to the task bars, dependencies between them, and a resource image grid column as well.',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
                 }
