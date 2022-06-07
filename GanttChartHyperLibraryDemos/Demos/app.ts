@@ -203,6 +203,12 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'GanttChartView', feature: 'ResourceImagesAsAssignments', title: 'Resource Images As Assignments (resource icons)', description: 'Shows how you can show resource icons in the chart area, instead of resource name',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js']
+                }
+            },
+            {
                 component: 'GanttChartView', feature: 'AssignmentsTemplate', title: 'Assignments template (resource icons)', description: 'Shows how you can customize assignments template and show resource icons in the chart area',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
@@ -217,6 +223,12 @@ angular.module('Demos', [])
             },
             {
                 component: 'GanttChartView', feature: 'SummaryBackgroundColors', title: 'Summary background colors', description: 'Shows how to setup a custom template to draw background rectangles of custom colors enclosing summary items and their child tasks',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'Labels', title: 'Bar labels', description: 'Shows how to define labels on the standard bar, milestone and summary bar and customize the style.',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js']
                 }
@@ -324,14 +336,20 @@ angular.module('Demos', [])
                 component: 'ScheduleChartView', feature: 'Filtering', title: 'Filtering and hiding items', description: 'Shows how you can set up an item visibility filter function and hide individual items when needed',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
-                    'TypeScript': ['index.html', 'app.css', 'app.ts'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts']
                 }
             },
             {
                 component: 'ScheduleChartView', feature: 'Hierarchy', title: 'Hierarchy (resource groups)', description: 'Sample application showing how to display expandable groups of resources in a hierarchical fashion',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
-                    'TypeScript': ['index.html', 'app.css', 'app.ts'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
+                component: 'ScheduleChartView', feature: 'HierarchyLabelsAndImages', title: 'Hierarchy (resource groups, task labels, resource images)', description: 'Sample application showing how to display expandable groups of resources in a hierarchical fashion, adding labels to the tasks, resource image column, and predecessors.',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
                 }
             },
             {
