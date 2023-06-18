@@ -1,8 +1,8 @@
 ﻿/* Assembly: DlhSoft.ProjectData.GanttChart.HTML.Controls,
    Company: DlhSoft,
    Product: Project Data Modern Library,
-   Version: 5.3.18.2,
-   Copyright: Copyright © 2012-2022 DlhSoft,
+   Version: 5.3.20.0,
+   Copyright: Copyright © 2012-2023 DlhSoft,
    Title: Project Data Gantt Chart HTML Controls,
    Description: Project Data Gantt Chart related HTML client components */
 
@@ -311,6 +311,9 @@ declare module DlhSoft.Controls {
 
             /** When set to true it would ensure that the original item's total effort is preserved when duration is updated by updating assignment allocation units, assuming that the item has resources assigned. */
             hasFixedEffort?: boolean;
+
+			/** Gets or sets a value indicating whether the item's fixed effort, when HasFixedEffort is set to true, is preserved by updating item's Finish date and time rather than assignments' allocations. */
+			fixedEffortUpdatesFinish?: boolean;
 			
             /** When specifically set to false, overrides GanttChartView.areTaskDependencyConstraintsEnabled = true (auto-scheduling) for an item, setting up manual scheduling. */
             areDependencyConstraintsEnabled?: boolean;
@@ -379,12 +382,15 @@ declare module DlhSoft.Controls {
             /** The finish time of the working day interval, in milliseconds passed since midnight; by default it is set to 4 PM; the finish of the visible time interval of the day is also defined using the same value. */
             workingDayFinish?: number;
 
-            /** Optional collection of special nonworking days, such as holidays. */
-            specialNonworkingDays?: Date[];
+            /** Optional collection of special nonworking days, such as holidays; alternatively, a Boolean function that receives a date argument and indicates whether it represents a nonworking day or not. */
+            specialNonworkingDays?: Date[] | ((Date) => boolean);
         }
 
         /** Represents settings for a GanttChartView component. */
         interface Settings {
+            /** Indicates whether the default settings of the component should revert to the original version (before 2023). */
+            classic?: boolean;
+
             /** Name of the target to generically apply to the control; Standard, and Phone targets are supported; by default it is Standard. */
             target?: string;
 
@@ -464,8 +470,8 @@ declare module DlhSoft.Controls {
             /** The finish time of the visible day interval, in milliseconds passed since midnight; by default it is set to 4 PM; the finish of the working time interval of the day is also defined using the same value. */
             visibleDayFinish?: number;
 
-            /** Optional collection of special nonworking days, such as holidays. */
-            specialNonworkingDays?: Date[];
+            /** Optional collection of special nonworking days, such as holidays; alternatively, a Boolean function that receives a date argument and indicates whether it represents a nonworking day or not. */
+            specialNonworkingDays?: Date[] | ((Date) => boolean);
 
             /** Allows initializing working week and day intervals and special nonworking days to consider for scheduling purposes using an alternative definition object. */
             schedule?: Schedule;
@@ -496,6 +502,7 @@ declare module DlhSoft.Controls {
             standardCompletedBarClass?: string; standardCompletedBarStyle?: string;
             summaryCompletedBarClass?: string; summaryCompletedBarStyle?: string;
             collapsedSummaryLineClass?: string; collapsedSummaryLineStyle?: string;
+            completedBarThumbClass?: string; completedBarThumbStyle?: string;
             dependencyPointerClass?: string; dependencyPointerStyle?: string;
             dependencyLineClass?: string; dependencyLineStyle?: string;
             temporaryDependencyLineClass?: string; temporaryDependencyLineStyle?: string;
@@ -575,6 +582,7 @@ declare module DlhSoft.Controls {
             alternativeItemClass?: string; alternativeChartItemClass?: string; alternativeItemStyle?: string; alternativeChartItemStyle?: string;
 
             gridLines?: string; horizontalGridLines?: string; verticalGridLines?: string; horizontalChartLines?: string;
+            verticalGridHeaderLines?: boolean;
 
             /** Indicates whether the control will create task bars only when they need to be presented (such as only when scrolling the view to their positions); by default it is set to true for optimization purposes. */
             isVirtualizing?: boolean;

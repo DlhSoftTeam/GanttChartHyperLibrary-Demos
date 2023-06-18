@@ -1634,11 +1634,11 @@
     <Reference Include="DlhSoft.ProjectData.Core.Imaging, Version=5.0.7.3, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
       <HintPath>..\packages\DlhSoft.ProjectManagementFramework.5.0.7.7\lib\net40-client\DlhSoft.ProjectData.Core.Imaging.dll</HintPath>
     </Reference>
-    <Reference Include="DlhSoft.ProjectData.GanttChart.LightWPF.Controls, Version=4.3.45.13, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.45.13\lib\net45\DlhSoft.ProjectData.GanttChart.LightWPF.Controls.dll</HintPath>
+    <Reference Include="DlhSoft.ProjectData.GanttChart.LightWPF.Controls, Version=4.3.48.3, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.48.3\lib\net45\DlhSoft.ProjectData.GanttChart.LightWPF.Controls.dll</HintPath>
     </Reference>
-    <Reference Include="DlhSoft.ProjectData.PertChart.LightWPF.Controls, Version=4.3.45.10, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.45.13\lib\net45\DlhSoft.ProjectData.PertChart.LightWPF.Controls.dll</HintPath>
+    <Reference Include="DlhSoft.ProjectData.PertChart.LightWPF.Controls, Version=4.3.48.1, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.48.3\lib\net45\DlhSoft.ProjectData.PertChart.LightWPF.Controls.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
