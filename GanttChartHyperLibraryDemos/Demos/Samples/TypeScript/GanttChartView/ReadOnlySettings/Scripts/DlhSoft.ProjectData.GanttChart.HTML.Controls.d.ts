@@ -1,7 +1,7 @@
 ﻿/* Assembly: DlhSoft.ProjectData.GanttChart.HTML.Controls,
    Company: DlhSoft,
    Product: Project Data Modern Library,
-   Version: 5.3.20.0,
+   Version: 5.3.20.2,
    Copyright: Copyright © 2012-2023 DlhSoft,
    Title: Project Data Gantt Chart HTML Controls,
    Description: Project Data Gantt Chart related HTML client components */
@@ -773,6 +773,8 @@ declare module DlhSoft.Controls {
             moveScheduleChartRange(fromIndex: number, count: number, toIndex: number): void;
             moveScheduleChartItem(item: Item, toIndex: number): void;
             moveScheduleChartItemUp(item: Item): void; moveScheduleChartItemDown(item: Item): void;
+
+            moveGanttChartItem(ganttChartItem: GanttChartView.Item, newScheduleChartItem: Item): void;
 
             setItemContent(item: Item, value: any): void;
 
