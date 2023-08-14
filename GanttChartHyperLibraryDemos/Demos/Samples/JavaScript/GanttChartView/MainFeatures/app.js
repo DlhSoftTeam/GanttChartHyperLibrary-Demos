@@ -141,8 +141,6 @@ columns.push({ header: 'Cost ($)', width: 100, cellTemplate: DlhSoft.Controls.Ga
 columns.push({ header: 'Est. start', width: 140, cellTemplate: DlhSoft.Controls.GanttChartView.getBaselineStartColumnTemplate(124, true, true, 8 * 60 * 60 * 1000) }); // 8 AM
 columns.push({ header: 'Est. finish', width: 140, cellTemplate: DlhSoft.Controls.GanttChartView.getBaselineFinishColumnTemplate(124, true, true, 16 * 60 * 60 * 1000) }); // 4 PM
 
-columns[1].width = 200;
-
 // Optionally, set custom item properties and/or append custom columns bound to their values.
 // items[7].description = 'Custom description';
 // columns.push({ header: 'Description', width: 200, cellTemplate: function (item) { return item.ganttChartView.ownerDocument.createTextNode(item.description); } });
