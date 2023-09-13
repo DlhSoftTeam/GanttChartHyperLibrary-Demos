@@ -10,33 +10,148 @@ var ganttChartViewElement = document.querySelector('#ganttChartView');
 var scheduleChartViewElement = document.querySelector('#scheduleChartView');
 // Prepare unassigned tasks (Gantt Chart items).
 var date = new Date(), year = date.getFullYear(), month = date.getMonth();
-var ganttChartItems = [];
-for (var i = 1; i <= 16; i++)
-    ganttChartItems.push({ content: 'Task ' + i, start: new Date(year, month, 2 + i - 1, 8, 0, 0), finish: new Date(year, month, 2 + i - 1 + 3, 16, 0, 0) });
+var ganttChartItems = [
+    { content: 'Critical Path', label: 'Critical Path', start: new Date(year, month, 9, 8, 0, 0), finish: new Date(year, month, 18, 16, 0, 0) },
+    { content: 'Level Resources', label: 'Level Resources', start: new Date(year, month, 9, 8, 0, 0), finish: new Date(year, month, 24, 12, 0, 0) },
+    { content: 'Load Chart', label: 'Load Chart', start: new Date(year, month, 9, 8, 0, 0), finish: new Date(year, month, 20, 16, 0, 0) },
+    { content: 'Pert Chart', label: 'Pert Chart', start: new Date(year, month, 9, 8, 0, 0), finish: new Date(year, month, 25, 16, 0, 0) },
+    { content: 'Network Diagram', label: 'Network Diagram', start: new Date(year, month, 11, 12, 0, 0), finish: new Date(year, month, 29, 16, 0, 0) },
+    { content: 'Review Charts', label: 'Review Charts', start: new Date(year, month, 30, 10, 0, 0), isMilestone: true }
+];
 var ganttChartSettings = {
-    gridWidth: '20%', chartWidth: '80%', isSplitterEnabled: false,
-    isChartReadOnly: true, isMouseWheelZoomEnabled: false,
-    currentTime: new Date(year, month, 2, 12, 0, 0)
+    gridWidth: '20%', chartWidth: '80%',
+    currentTime: new Date(year, month, 2, 12, 0, 0),
+    itemHeight: 32
 };
+
+ganttChartSettings.timelineStart = new Date(year, month - 1, 30);
+ganttChartSettings.timelineFinish = new Date(year, month + 1, 2);
+var customIntervals = function () {
+    var intervals = [];
+    // Replace the next lines of code with your custom logic.
+    var dayDuration = 24 * 60 * 60 * 1000; // 24 hours (in milliseconds).
+    var daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    for (var d = ganttChartSettings.timelineStart; d <= ganttChartSettings.timelineFinish; d = new Date(d.valueOf() + dayDuration))
+        intervals.push({ headerText: daysOfWeek[d.getDay()], start: d, finish: new Date(d.valueOf() + dayDuration) });
+    return intervals;
+}(); // Call the inline function to immediately retreive the time intervals.
+// Define a fully custom scale item using Custom scale type and Custom header text format, providing the time intervals to be displayed using an inline function.
+var customScale = { scaleType: 'Custom', headerTextFormat: 'Custom', intervals: customIntervals, headerStyle: 'padding: 2.25px; border-right: solid 1px White; color: #fff;', separatorStyle: 'stroke: #ddd; stroke-width: 0.5px' };
+ganttChartSettings.scales = [
+    { scaleType: 'NonworkingTime', isHeaderVisible: false, isHighlightingVisible: true, highlightingStyle: 'stroke-width: 0; fill: ' + (theme == 'Dark-black' ? '#333333' : (theme == 'Steel-blue' ? '#ddd;' : '#f8f8f8')) },
+    { scaleType: 'Months', headerTextFormat: 'MonthYear', headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis', isSeparatorVisible: true, separatorStyle: 'stroke: #ddd; stroke-width: 1px' },
+    { scaleType: 'Weeks', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: #ddd; stroke-width: 0.5px' },
+    { scaleType: 'Days', headerTextFormat: 'Day', isSeparatorVisible: true, headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White; color: #fff;', separatorStyle: 'stroke: #ddd; stroke-width: 0.5px' },
+    customScale,
+    { scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: Red; stroke-width: 0.5px' }];
+// Ensure space for 3 scales with visible headers.
+ganttChartSettings.headerHeight = 21 * 3;
+
+ganttChartSettings.areStandardTaskLabelsVisible = true;
+ganttChartSettings.areSummaryTaskLabelsVisible = true;
+ganttChartSettings.areMilestoneTaskLabelsVisible = true;
+ganttChartSettings.standardLabelStyle = 'color: #dcf2f8;';
+ganttChartSettings.milestoneLabelStyle = 'color: #ff851b;';
+
 // Optionally, initialize custom themes for Gantt Chart (themes.js).
 initializeGanttChartTheme(ganttChartSettings, theme);
 
 // Initialize the Gantt Chart component.
 var ganttChartView = DlhSoft.Controls.GanttChartView.initialize(ganttChartViewElement, ganttChartItems, ganttChartSettings);
 // Prepare target resource items (Schedule Chart items).
-var items = [];
-for (var i = 1; i <= 5; i++)
-    items.push({ content: 'Resource ' + i, start: new Date(), ganttChartItems: [] });
+var items = [
+    { content: 'Project Managers', start: new Date() },
+    {
+        content: 'Steven Bright', image: 'Steven.png', role: 'Architect', indentation: 1, start: new Date(), ganttChartItems:
+            [{ content: 'Arhitecture', label: 'Architecture', start: new Date(year, month, 1, 8, 0, 0), finish: new Date(year, month, 2, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0) }]
+    },
+    {
+        content: 'Jane Gershwin', image: 'Jane.png', role: 'Technical Lead', indentation: 1, start: new Date(), ganttChartItems: [
+            { content: 'Requirements', label: 'Requirements', start: new Date(year, month, 1, 8, 0, 0), finish: new Date(year, month, 3, 10, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: '50%' },
+            { content: 'Review', label: 'Review', start: new Date(year, month, 11, 12, 0, 0), isMilestone: true },
+            { content: 'Design', label: 'Design', start: new Date(year, month, 4, 12, 0, 0), finish: new Date(year, month, 7, 16, 0, 0) }]
+    },
+    { content: 'JavaScript', start: new Date() },
+    {
+        content: 'Victor Duncan', image: 'Victor.png', role: 'Senior developer', indentation: 1, start: new Date(), ganttChartItems: [
+            { content: 'Chart', label: 'Chart', start: new Date(year, month, 6, 8, 0, 0), finish: new Date(year, month, 8, 12, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: '50%' },
+            { content: 'Bars', label: 'Bars', start: new Date(year, month, 10, 8, 0, 0), finish: new Date(year, month, 12, 16, 0, 0) },
+            { content: 'Summary bars', label: 'Summary bars', start: new Date(year, month, 13, 8, 0, 0), finish: new Date(year, month, 18, 16, 0, 0) }]
+    },
+    {
+        content: 'Johanna Mcamis', image: 'Johanna.png', role: 'Developer', indentation: 1, start: new Date(), ganttChartItems: [
+            { content: 'Date-times', label: 'Date-times', start: new Date(year, month, 6, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: '50%' },
+            { content: 'Headers', label: 'Headers', start: new Date(year, month, 9, 12, 0, 0), finish: new Date(year, month, 12, 16, 0, 0) },
+            { content: 'Intervals', label: 'Intervals', start: new Date(year, month, 14, 8, 0, 0), finish: new Date(year, month, 17, 16, 0, 0) }]
+    },
+    {
+        content: 'Denis Kaelin', image: 'Denis.png', role: 'Tester', indentation: 1, start: new Date(), ganttChartItems: [
+            { content: 'Quality assurance', label: 'Quality assurance', start: new Date(year, month, 6, 8, 0, 0), finish: new Date(year, month, 14, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: '50%' },
+            { content: 'Automation testing functions', label: 'Automation testing functions', start: new Date(year, month, 14, 8, 0, 0), finish: new Date(year, month, 18, 16, 0, 0) }]
+    },
+    { content: '.NET', start: new Date() },
+    {
+        content: 'Diane McField', image: 'Diane.png', role: 'Senior Developer', indentation: 1, start: new Date(), ganttChartItems:
+            [{ content: 'Diagram functions', label: 'Diagram functions', start: new Date(year, month, 5, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0) }]
+    },
+    {
+        content: 'Albert Makhow', image: 'Albert.png', role: 'Developer', indentation: 1, start: new Date(), ganttChartItems:
+            [{ content: 'Schedules', label: 'Schedules', start: new Date(year, month, 6, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0) }]
+    },
+    {
+        content: 'Tyson Lamberson', image: 'Tyson.png', role: 'Developer', indentation: 1, start: new Date(), ganttChartItems:
+            [{ content: 'Scales', label: 'Scales', start: new Date(year, month, 6, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0) }]
+    }
+];
 var scheduleChartSettings = {
-    gridWidth: '20%', chartWidth: '80%', isSplitterEnabled: false,
-    isMouseWheelZoomEnabled: false,
-    currentTime: new Date(year, month, 2, 12, 0, 0) // Display the current time vertical line of the chart at the project start date.
+    gridWidth: '20%', chartWidth: '80%',
+    currentTime: new Date(year, month, 2, 12, 0, 0), // Display the current time vertical line of the chart at the project start date.
+    itemHeight: 32
 };
+
+scheduleChartSettings.timelineStart = new Date(year, month, 2);
+scheduleChartSettings.timelineFinish = new Date(year, month + 1, 2);
+
+scheduleChartSettings.scales = [
+    { scaleType: 'NonworkingTime', isHeaderVisible: false, isHighlightingVisible: true, highlightingStyle: 'stroke-width: 0; fill: ' + (theme == 'Dark-black' ? '#333333' : (theme == 'Steel-blue' ? '#ddd;' : '#f8f8f8')) },
+    { scaleType: 'Months', headerTextFormat: 'MonthYear', headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis', isSeparatorVisible: true, separatorStyle: 'stroke: #ddd; stroke-width: 1px' },
+    { scaleType: 'Weeks', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: #ddd; stroke-width: 0.5px' },
+    { scaleType: 'Days', headerTextFormat: 'Day', isSeparatorVisible: true, headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White; color: #fff;', separatorStyle: 'stroke: #ddd; stroke-width: 0.5px' },
+    customScale,
+    { scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: Red; stroke-width: 0.5px' }];
+// Ensure space for 3 scales with visible headers.
+scheduleChartSettings.headerHeight = 21 * 3;
+
+scheduleChartSettings.areStandardTaskLabelsVisible = true;
+scheduleChartSettings.areSummaryTaskLabelsVisible = true;
+scheduleChartSettings.areMilestoneTaskLabelsVisible = true;
+scheduleChartSettings.standardLabelStyle = 'color: #dcf2f8;';
+scheduleChartSettings.milestoneLabelStyle = 'color: #ff851b;';
+
+var columns = ScheduleChartView.getDefaultColumns(items, scheduleChartSettings);
+columns[0].width = 144;
+
+columns.push({ header: 'Role', width: 108, cellTemplate: function (item) { return DlhSoft.Controls.ScheduleChartView.textInputColumnTemplateBase(document, 100, function () { return item.role; }, function (value) { item.role = value; }); } });
+columns.push({ header: 'Image', width: 44, cellTemplate: DlhSoft.Controls.GanttChartView.getIconColumnTemplate(getImage, null, 'width: 24px; height: 24px; border-radius: 50%;') });
+
+scheduleChartSettings.columns = columns;
+scheduleChartSettings.areStandardTaskLabelsVisible = true;
+scheduleChartSettings.areMilestoneTaskLabelsVisible = true;
+
 // Optionally, initialize custom themes for Schedule Chart (themes.js).
 initializeGanttChartTheme(scheduleChartSettings, theme);
 // Initialize the Schedule Chart component.
 var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, items, scheduleChartSettings);
-;
+
+function getImage(item) {
+    if (item.indentation == 0) {
+        return 'data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA='; // empty image source
+    }
+    else {
+        return 'Images/' + item.image;
+    }
+}
+
 // Synchronize displayed time (horizontal scrolling) between Gantt Chart and Schedule Chart components.
 ganttChartSettings.displayedTimeChangeHandler = scheduleChartSettings.displayedTimeChangeHandler = function (displayedTime) {
     if (displayedTime != scheduleChartView.settings.displayedTime)
@@ -49,7 +164,7 @@ var hoveredGanttChartItem;
 var draggedGanttChartItem;
 var draggingToScheduleChartItem;
 var draggingIndicator = document.createElement('div');
-draggingIndicator.setAttribute('style', 'display: none; position: absolute; padding: 2px 4px; background-color: #8abbed; color: White; font-family: Arial');
+draggingIndicator.setAttribute('style', 'display: none; position: absolute; padding: 2px 4px; background-color: #aaa; color: White; font-family: Arial');
 document.body.appendChild(draggingIndicator);
 function isCursorOnTaskBar(isOnItemsArea, isOnChart, row, column) {
     if (isOnItemsArea && isOnChart) {
@@ -87,10 +202,13 @@ ganttChartSettings.mouseDownHandler = function () {
     }
 };
 scheduleChartSettings.mouseMoveHandler = function (isOnItemsArea, isOnChart, row) {
-    if (isOnItemsArea) {
+    if (draggedGanttChartItem && isOnItemsArea && !row.hasChildren) {
         draggingToScheduleChartItem = row;
         scheduleChartView.selectItem(draggingToScheduleChartItem);
         draggingIndicator.innerText = draggedGanttChartItem.content + ': ' + draggingToScheduleChartItem.content;
+    } else {
+        draggingToScheduleChartItem = null;
+        scheduleChartView.selectItem(row);
     }
 };
 window.onmousemove = function (e) {
