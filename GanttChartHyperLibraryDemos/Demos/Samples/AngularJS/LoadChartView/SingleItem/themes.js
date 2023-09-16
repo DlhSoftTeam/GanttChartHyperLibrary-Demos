@@ -1,4 +1,4 @@
-﻿// Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+﻿// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 function initializeGanttChartTheme(settings, theme) {
     if (theme == 'Default')
         return;
@@ -36,10 +36,48 @@ function initializeGanttChartTheme(settings, theme) {
                 settings.diamondFill = '#e31d3b';
             if (typeof settings.diamondStroke === 'undefined')
                 settings.diamondStroke = '#005c9e';
+            if (typeof settings.standardLabelColor === 'undefined')
+                settings.standardLabelColor = '#daae66';
+            if (typeof settings.summaryLabelColor === 'undefined')
+                settings.summaryLabelColor = '#dcf2f8;';
+            if (typeof settings.milestoneLabelColor === 'undefined')
+                settings.milestoneLabelColor = '#ff851b;';
             break;
         case 'Generic-blue':
             if (typeof settings.headerBackground === 'undefined')
                 settings.headerBackground = 'white';
+            break;
+        case 'Royal-blue':
+            if (typeof settings.border === 'undefined')
+                settings.border = '#ccc';
+            if (typeof settings.headerBackground === 'undefined')
+                settings.headerBackground = '#aaa';
+            if (typeof settings.headerForeground === 'undefined')
+                settings.headerForeground = 'white';
+            if (typeof settings.toggleFill === 'undefined')
+                settings.toggleFill = '#ccc';
+            if (typeof settings.selectedGridForeground === 'undefined')
+                settings.selectedGridForeground = '#4b5d6b';
+            if (typeof settings.selectedGridBackground === 'undefined')
+                settings.selectedGridBackground = '#ddd';
+            if (typeof settings.nonworkingBackground === 'undefined')
+                settings.nonworkingBackground = '#ccc';
+            if (typeof settings.mainStroke === 'undefined')
+                settings.mainStroke = '#407cee';
+            if (typeof settings.mainFill === 'undefined')
+                settings.mainFill = '#407cee';
+            if (typeof settings.accentFill === 'undefined')
+                settings.accentFill = '#6aa84f';
+            if (typeof settings.diamondFill === 'undefined')
+                settings.diamondFill = '#fdbb86';
+            if (typeof settings.diamondStroke === 'undefined')
+                settings.diamondStroke = '#222222';
+            if (typeof settings.standardLabelColor === 'undefined')
+                settings.standardLabelColor = '#dcf2f8;';
+            if (typeof settings.summaryLabelColor === 'undefined')
+                settings.summaryLabelColor = '#dcf2f8;';
+            if (typeof settings.milestoneLabelColor === 'undefined')
+                settings.milestoneLabelColor = '#ff851b;';
             break;
         case 'Purple-green':
             if (typeof settings.headerBackground === 'undefined')
@@ -50,6 +88,12 @@ function initializeGanttChartTheme(settings, theme) {
                 settings.mainFill = '#a0729d';
             if (typeof settings.accentFill === 'undefined')
                 settings.accentFill = '#91bc0e';
+            if (typeof settings.standardLabelColor === 'undefined')
+                settings.standardLabelColor = '#fff;';
+            if (typeof settings.summaryLabelColor === 'undefined')
+                settings.summaryLabelColor = '#fff;';
+            if (typeof settings.milestoneLabelColor === 'undefined')
+                settings.milestoneLabelColor = '#ff851b;';
             break;
         case 'Blue-navy':
             if (typeof settings.headerBackground === 'undefined')
@@ -64,6 +108,12 @@ function initializeGanttChartTheme(settings, theme) {
                 settings.accentFill = '#227fd5';
             if (typeof settings.alternativeGridBackground === 'undefined')
                 settings.alternativeGridBackground = '#f9f9f9';
+            if (typeof settings.standardLabelColor === 'undefined')
+                settings.standardLabelColor = '#dcf2f8;';
+            if (typeof settings.summaryLabelColor === 'undefined')
+                settings.summaryLabelColor = '#dcf2f8;';
+            if (typeof settings.milestoneLabelColor === 'undefined')
+                settings.milestoneLabelColor = '#ff851b;';
             break;
         case 'Orange-brown':
             if (typeof settings.headerBackground === 'undefined')
@@ -71,43 +121,55 @@ function initializeGanttChartTheme(settings, theme) {
             if (typeof settings.selectedGridBackground === 'undefined')
                 settings.selectedGridBackground = '#e8e8e8';
             if (typeof settings.mainStroke === 'undefined')
-                settings.mainStroke = '#6534ff';
+                settings.mainStroke = '#cc9d38';
             if (typeof settings.mainFill === 'undefined')
-                settings.mainFill = '#ffbf5a';
+                settings.mainFill = '#ffcf6b';
             if (typeof settings.accentFill === 'undefined')
                 settings.accentFill = '#d5a05a';
             if (typeof settings.diamondFill === 'undefined')
-                settings.diamondFill = '#a91923';
+                settings.diamondFill = '#00c389';
             if (typeof settings.diamondStroke === 'undefined')
                 settings.diamondStroke = '#222222';
             if (typeof settings.alternativeBackground === 'undefined')
                 settings.alternativeBackground = '#f9f9f9';
+            if (typeof settings.standardLabelColor === 'undefined')
+                settings.standardLabelColor = '#fff;';
+            if (typeof settings.summaryLabelColor === 'undefined')
+                settings.summaryLabelColor = '#fff;';
+            if (typeof settings.milestoneLabelColor === 'undefined')
+                settings.milestoneLabelColor = '#6a66b3;';
             break;
         case 'Teal-green':
             if (typeof settings.headerBackground === 'undefined')
                 settings.headerBackground = '#eeeeee';
             if (typeof settings.mainStroke === 'undefined')
-                settings.mainStroke = '#6534ff';
+                settings.mainStroke = '#3294a1';
             if (typeof settings.mainFill === 'undefined')
-                settings.mainFill = '#5ebcbb';
+                settings.mainFill = '#5ebccc';
             if (typeof settings.accentFill === 'undefined')
                 settings.accentFill = '#3294a1';
             if (typeof settings.diamondFill === 'undefined')
-                settings.diamondFill = '#4c7f3d';
+                settings.diamondFill = '#faffb3';
             if (typeof settings.diamondStroke === 'undefined')
-                settings.diamondStroke = '#222222';
+                settings.diamondStroke = '#3294a1';
+            if (typeof settings.standardLabelColor === 'undefined')
+                settings.standardLabelColor = '#dcf2f8;';
+            if (typeof settings.summaryLabelColor === 'undefined')
+                settings.summaryLabelColor = '#dcf2f8;';
+            if (typeof settings.milestoneLabelColor === 'undefined')
+                settings.milestoneLabelColor = '#ff851b;';
             break;
         case 'Steel-blue':
             if (typeof settings.border === 'undefined')
                 settings.border = '#aaaaaa';
             if (typeof settings.headerBackground === 'undefined')
-                settings.headerBackground = '#4b5d6b';
+                settings.headerBackground = '#6b7d8b';
             if (typeof settings.headerForeground === 'undefined')
                 settings.headerForeground = 'white';
             if (typeof settings.headerBorder === 'undefined')
                 settings.headerBorder = '#aaaaaa';
             if (typeof settings.containerBackground === 'undefined')
-                settings.containerBackground = '#a5b5c2';
+                settings.containerBackground = '#d5e5f2';
             if (typeof settings.chartBackground === 'undefined')
                 settings.chartBackground = '#bfcfda';
             if (typeof settings.gridForeground === 'undefined')
@@ -121,21 +183,27 @@ function initializeGanttChartTheme(settings, theme) {
             if (typeof settings.nonworkingBackground === 'undefined')
                 settings.nonworkingBackground = '#95a5b2';
             if (typeof settings.mainStroke === 'undefined')
-                settings.mainStroke = '#6534ff';
+                settings.mainStroke = '#4477aa';
             if (typeof settings.mainFill === 'undefined')
                 settings.mainFill = '#6699cc';
             if (typeof settings.accentFill === 'undefined')
                 settings.accentFill = '#4c7f3d';
             if (typeof settings.diamondFill === 'undefined')
-                settings.diamondFill = '#4b5d6b';
+                settings.diamondFill = '#999';
             if (typeof settings.diamondStroke === 'undefined')
                 settings.diamondStroke = '#222222';
+            if (typeof settings.standardLabelColor === 'undefined')
+                settings.standardLabelColor = '#dcf2f8;';
+            if (typeof settings.summaryLabelColor === 'undefined')
+                settings.summaryLabelColor = '#dcf2f8;';
+            if (typeof settings.milestoneLabelColor === 'undefined')
+                settings.milestoneLabelColor = '#ff851b;';
             break;
         case 'Cyan-green':
             if (typeof settings.headerBackground === 'undefined')
                 settings.headerBackground = '#dddddd';
             if (typeof settings.mainStroke === 'undefined')
-                settings.mainStroke = '#6534ff';
+                settings.mainStroke = '#7fc6ce';
             if (typeof settings.mainFill === 'undefined')
                 settings.mainFill = '#1fb5ce';
             if (typeof settings.accentFill === 'undefined')
@@ -144,14 +212,20 @@ function initializeGanttChartTheme(settings, theme) {
                 settings.diamondFill = '#d6485b';
             if (typeof settings.diamondStroke === 'undefined')
                 settings.diamondStroke = '#222222';
+            if (typeof settings.standardLabelColor === 'undefined')
+                settings.standardLabelColor = '#dcf2f8;';
+            if (typeof settings.summaryLabelColor === 'undefined')
+                settings.summaryLabelColor = '#dcf2f8;';
+            if (typeof settings.milestoneLabelColor === 'undefined')
+                settings.milestoneLabelColor = '#ff851b;';
             break;
         case 'Purple-beige':
             if (typeof settings.selectedGridBackground === 'undefined')
-                settings.selectedGridBackground = '#bfb8a4';
+                settings.selectedGridBackground = '#d0d5e5';
             if (typeof settings.mainStroke === 'undefined')
-                settings.mainStroke = '#005c9e';
+                settings.mainStroke = '#bfb8a4';
             if (typeof settings.mainFill === 'undefined')
-                settings.mainFill = '#a68b99';
+                settings.mainFill = '#d0d5f5';
             if (typeof settings.accentFill === 'undefined')
                 settings.accentFill = '#bfb8a4';
             if (typeof settings.diamondFill === 'undefined')
@@ -162,6 +236,12 @@ function initializeGanttChartTheme(settings, theme) {
                 settings.alternativeGridBackground = '#f0eeeb';
             if (typeof settings.alternativeChartBackground === 'undefined')
                 settings.alternativeChartBackground = '#f9f9f9';
+            if (typeof settings.standardLabelColor === 'undefined')
+                settings.standardLabelColor = '#555;';
+            if (typeof settings.summaryLabelColor === 'undefined')
+                settings.summaryLabelColor = '#fff;';
+            if (typeof settings.milestoneLabelColor === 'undefined')
+                settings.milestoneLabelColor = '#ff851b;';
             break;
         case 'Dark-black':
             if (typeof settings.containerClass === 'undefined')
@@ -202,48 +282,54 @@ function initializeGanttChartTheme(settings, theme) {
                 settings.diamondFill = '#ffbb00';
             if (typeof settings.currentTimeStroke === 'undefined')
                 settings.currentTimeStroke = '#289451';
+            if (typeof settings.standardLabelColor === 'undefined')
+                settings.standardLabelColor = '#dcf2f8;';
+            if (typeof settings.summaryLabelColor === 'undefined')
+                settings.summaryLabelColor = '#dcf2f8;';
+            if (typeof settings.milestoneLabelColor === 'undefined')
+                settings.milestoneLabelColor = '#ff851b;';
             break;
         case 'Gray-blue':
             if (typeof settings.headerBackground === 'undefined')
                 settings.headerBackground = 'white';
             if (typeof settings.containerBackground === 'undefined')
-                settings.containerBackground = '#f0f0f0';
+                settings.containerBackground = '#fafafa';
             if (typeof settings.selectedGridBackground === 'undefined')
-                settings.selectedGridBackground = 'white';
+                settings.selectedGridBackground = '#def8ff';
             if (typeof settings.mainStroke === 'undefined')
                 settings.mainStroke = '#005c9e';
             if (typeof settings.mainFill === 'undefined')
                 settings.mainFill = 'white';
             if (typeof settings.accentFill === 'undefined')
-                settings.accentFill = '#0087be';
+                settings.accentFill = '#007acc';
             if (typeof settings.diamondFill === 'undefined')
-                settings.diamondFill = '#607080';
+                settings.diamondFill = '#abe2ff';
             if (typeof settings.diamondStroke === 'undefined')
-                settings.diamondStroke = '#005c9e';
+                settings.diamondStroke = '#007acc';
             break;
         case 'DlhSoft-gray':
             if (typeof settings.border === 'undefined')
                 settings.border = '#aaaaaa';
             if (typeof settings.headerBackground === 'undefined')
-                settings.headerBackground = '#e31d3b';
+                settings.headerBackground = '#CDDFFC';
             if (typeof settings.headerForeground === 'undefined')
-                settings.headerForeground = 'white';
+                settings.headerForeground = '#333';
             if (typeof settings.headerBorder === 'undefined')
                 settings.headerBorder = 'transparent';
             if (typeof settings.selectedGridBackground === 'undefined')
                 settings.selectedGridBackground = '#e8e8e8';
             if (typeof settings.mainStroke === 'undefined')
-                settings.mainStroke = '#666';
+                settings.mainStroke = '#777';
             if (typeof settings.mainFill === 'undefined')
-                settings.mainFill = '#f0f0f0';
+                settings.mainFill = '#f9f9f9';
             if (typeof settings.accentFill === 'undefined')
-                settings.accentFill = '#ad927f';
+                settings.accentFill = '#decfb9';
             if (typeof settings.summaryFill === 'undefined')
-                settings.summaryFill = '#666';
+                settings.summaryFill = '#777';
             if (typeof settings.diamondFill === 'undefined')
-                settings.diamondFill = '#82a0b3';
+                settings.diamondFill = '#99c9ce';
             if (typeof settings.diamondStroke === 'undefined')
-                settings.diamondStroke = '#666';
+                settings.diamondStroke = '#777';
             if (typeof settings.alternativeGridBackground === 'undefined')
                 settings.alternativeGridBackground = '#f8f8f8';
             if (typeof settings.currentTimeStroke === 'undefined')
@@ -270,9 +356,9 @@ function initializeGanttChartTheme(settings, theme) {
         settings.toggleButtonHoveringStyle = 'fill: ' + settings.toggleHoveringFill;
     if (typeof settings.scales === 'undefined') {
         settings.scales = [{ scaleType: 'NonworkingTime', isHeaderVisible: false, isHighlightingVisible: true, highlightingStyle: 'stroke-width: 0; fill: ' + (settings.nonworkingBackground ? settings.nonworkingBackground : '#f8f8f8') + '; fill-opacity: 0.65' },
-                           { scaleType: 'Weeks', headerTextFormat: 'Date', headerStyle: 'padding: 7px 5px; border-right: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + '; border-bottom: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + (settings.headerForeground ? '; color: ' + settings.headerForeground : ''), isSeparatorVisible: true, separatorStyle: 'stroke: ' + (settings.scaleSeparatorBorder ? settings.scaleSeparatorBorder : '#c8bfe7') + '; stroke-width: 0.5px' },
-                           { scaleType: 'Days', headerTextFormat: 'DayOfWeekAbbreviation', headerStyle: 'padding: 7px 5px; border-right: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + (settings.headerForeground ? '; color: ' + settings.headerForeground : '') },
-                           { scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: ' + (settings.currentTimeStroke ? settings.currentTimeStroke : '#e31d3b') + '; stroke-width: 0.5px' }];
+        { scaleType: 'Weeks', headerTextFormat: 'Date', headerStyle: 'padding: 7px 5px; border-right: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + '; border-bottom: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + (settings.headerForeground ? '; color: ' + settings.headerForeground : ''), isSeparatorVisible: true, separatorStyle: 'stroke: ' + (settings.scaleSeparatorBorder ? settings.scaleSeparatorBorder : '#c8bfe7') + '; stroke-width: 0.5px' },
+        { scaleType: 'Days', headerTextFormat: 'DayOfWeekAbbreviation', headerStyle: 'padding: 7px 5px; border-right: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + (settings.headerForeground ? '; color: ' + settings.headerForeground : '') },
+        { scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: ' + (settings.currentTimeStroke ? settings.currentTimeStroke : '#e31d3b') + '; stroke-width: 0.5px' }];
     }
     if (settings.chartBackground)
         settings.scales.splice(0, 0, { scaleType: 'Custom', isHeaderVisible: false, intervals: [{ start: new Date(1, 0, 1), finish: new Date(10000, 11, 31, 23, 59, 59, 999) }], isHighlightingVisible: true, highlightingStyle: 'fill: ' + settings.chartBackground });

@@ -2,7 +2,7 @@
 var GanttChartView = DlhSoft.Controls.GanttChartView;
 var ScheduleChartView = DlhSoft.Controls.ScheduleChartView;
 // Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 // Retrieve and store the control and container elements for reference purposes.
@@ -31,17 +31,18 @@ var customIntervals = function () {
     // Replace the next lines of code with your custom logic.
     var dayDuration = 24 * 60 * 60 * 1000; // 24 hours (in milliseconds).
     var daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    for (var d = ganttChartSettings.timelineStart; d <= ganttChartSettings.timelineFinish; d = new Date(d.valueOf() + dayDuration))
+    for (var d = new Date(ganttChartSettings.timelineStart.valueOf() - dayDuration * 7); d <= new Date(ganttChartSettings.timelineFinish.valueOf() + dayDuration * 7); d = new Date(d.valueOf() + dayDuration))
         intervals.push({ headerText: daysOfWeek[d.getDay()], start: d, finish: new Date(d.valueOf() + dayDuration) });
     return intervals;
 }(); // Call the inline function to immediately retreive the time intervals.
 // Define a fully custom scale item using Custom scale type and Custom header text format, providing the time intervals to be displayed using an inline function.
-var customScale = { scaleType: 'Custom', headerTextFormat: 'Custom', intervals: customIntervals, headerStyle: 'padding: 2.25px; border-right: solid 1px White; color: #fff;', separatorStyle: 'stroke: #ddd; stroke-width: 0.5px' };
+var colorForeground = (theme == 'Dark-black' || theme == 'Steel-blue' || theme == 'Royal-blue') ? '#fff' : '#444';
+var customScale = { scaleType: 'Custom', headerTextFormat: 'Custom', headerStyle: 'padding: 2px; border-right: solid 1px #ddd; color: ' + colorForeground, intervals: customIntervals };
 ganttChartSettings.scales = [
     { scaleType: 'NonworkingTime', isHeaderVisible: false, isHighlightingVisible: true, highlightingStyle: 'stroke-width: 0; fill: ' + (theme == 'Dark-black' ? '#333333' : (theme == 'Steel-blue' ? '#ddd;' : '#f8f8f8')) },
-    { scaleType: 'Months', headerTextFormat: 'MonthYear', headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis', isSeparatorVisible: true, separatorStyle: 'stroke: #ddd; stroke-width: 1px' },
-    { scaleType: 'Weeks', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: #ddd; stroke-width: 0.5px' },
-    { scaleType: 'Days', headerTextFormat: 'Day', isSeparatorVisible: true, headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White; color: #fff;', separatorStyle: 'stroke: #ddd; stroke-width: 0.5px' },
+    { scaleType: 'Months', headerTextFormat: 'MonthYear', headerStyle: 'white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 2px; border-right: solid 1px #ddd; border-bottom: solid 1px #ddd; color: ' + colorForeground, isSeparatorVisible: true, separatorStyle: 'stroke: #999; stroke-width: 0.5px; opacity: 0.25;' },
+    { scaleType: 'Weeks', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: #aaa; stroke-width: 0.5px; opacity: 0.25;' },
+    { scaleType: 'Days', headerTextFormat: 'Day', isSeparatorVisible: true, headerStyle: 'padding: 2px; border-right: solid 1px #ddd; border-bottom: solid 1px #ddd; color: ' + colorForeground, separatorStyle: 'stroke: #bbb; stroke-width: 0.5px; opacity: 0.25;' },
     customScale,
     { scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: Red; stroke-width: 0.5px' }];
 // Ensure space for 3 scales with visible headers.
@@ -50,8 +51,7 @@ ganttChartSettings.headerHeight = 21 * 3;
 ganttChartSettings.areStandardTaskLabelsVisible = true;
 ganttChartSettings.areSummaryTaskLabelsVisible = true;
 ganttChartSettings.areMilestoneTaskLabelsVisible = true;
-ganttChartSettings.standardLabelStyle = 'color: #dcf2f8;';
-ganttChartSettings.milestoneLabelStyle = 'color: #ff851b;';
+ganttChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('GanttChart', gridWidth, chartWidth); };
 
 // Optionally, initialize custom themes for Gantt Chart (themes.js).
 initializeGanttChartTheme(ganttChartSettings, theme);
@@ -63,13 +63,13 @@ var items = [
     { content: 'Project Managers', start: new Date() },
     {
         content: 'Steven Bright', image: 'Steven.png', role: 'Architect', indentation: 1, start: new Date(), ganttChartItems:
-            [{ content: 'Arhitecture', label: 'Architecture', start: new Date(year, month, 1, 8, 0, 0), finish: new Date(year, month, 2, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0) }]
+            [{ content: 'Arhitecture', label: 'Architecture', start: new Date(year, month, 1, 8, 0, 0), finish: new Date(year, month, 5, 16, 0, 0), completedFinish: new Date(year, month, 4, 16, 0, 0) }]
     },
     {
         content: 'Jane Gershwin', image: 'Jane.png', role: 'Technical Lead', indentation: 1, start: new Date(), ganttChartItems: [
-            { content: 'Requirements', label: 'Requirements', start: new Date(year, month, 1, 8, 0, 0), finish: new Date(year, month, 3, 10, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: '50%' },
+            { content: 'Requirements', label: 'Requirements', start: new Date(year, month, 1, 8, 0, 0), finish: new Date(year, month, 4, 10, 0, 0), completedFinish: new Date(year, month, 2, 16, 0, 0), assignmentsContent: '50%' },
             { content: 'Review', label: 'Review', start: new Date(year, month, 11, 12, 0, 0), isMilestone: true },
-            { content: 'Design', label: 'Design', start: new Date(year, month, 4, 12, 0, 0), finish: new Date(year, month, 7, 16, 0, 0) }]
+            { content: 'Design', label: 'Design', start: new Date(year, month, 6, 12, 0, 0), finish: new Date(year, month, 9, 16, 0, 0) }]
     },
     { content: 'JavaScript', start: new Date() },
     {
@@ -87,7 +87,7 @@ var items = [
     {
         content: 'Denis Kaelin', image: 'Denis.png', role: 'Tester', indentation: 1, start: new Date(), ganttChartItems: [
             { content: 'Quality assurance', label: 'Quality assurance', start: new Date(year, month, 6, 8, 0, 0), finish: new Date(year, month, 14, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: '50%' },
-            { content: 'Automation testing functions', label: 'Automation testing functions', start: new Date(year, month, 14, 8, 0, 0), finish: new Date(year, month, 18, 16, 0, 0) }]
+            { content: 'Automation testing functions', label: 'Automation testing functions', start: new Date(year, month, 16, 12, 0, 0), finish: new Date(year, month, 22, 16, 0, 0) }]
     },
     { content: '.NET', start: new Date() },
     {
@@ -114,9 +114,9 @@ scheduleChartSettings.timelineFinish = new Date(year, month + 1, 2);
 
 scheduleChartSettings.scales = [
     { scaleType: 'NonworkingTime', isHeaderVisible: false, isHighlightingVisible: true, highlightingStyle: 'stroke-width: 0; fill: ' + (theme == 'Dark-black' ? '#333333' : (theme == 'Steel-blue' ? '#ddd;' : '#f8f8f8')) },
-    { scaleType: 'Months', headerTextFormat: 'MonthYear', headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis', isSeparatorVisible: true, separatorStyle: 'stroke: #ddd; stroke-width: 1px' },
-    { scaleType: 'Weeks', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: #ddd; stroke-width: 0.5px' },
-    { scaleType: 'Days', headerTextFormat: 'Day', isSeparatorVisible: true, headerStyle: 'padding: 2.25px; border-right: solid 1px White; border-bottom: solid 1px White; color: #fff;', separatorStyle: 'stroke: #ddd; stroke-width: 0.5px' },
+    { scaleType: 'Months', headerTextFormat: 'MonthYear', headerStyle: 'white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 2px; border-right: solid 1px #ddd; border-bottom: solid 1px #ddd; color: ' + colorForeground, isSeparatorVisible: true, separatorStyle: 'stroke: #999; stroke-width: 0.5px; opacity: 0.25;' },
+    { scaleType: 'Weeks', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: #aaa; stroke-width: 0.5px; opacity: 0.25;' },
+    { scaleType: 'Days', headerTextFormat: 'Day', isSeparatorVisible: true, headerStyle: 'padding: 2px; border-right: solid 1px #ddd; border-bottom: solid 1px #ddd; color: ' + colorForeground, separatorStyle: 'stroke: #bbb; stroke-width: 0.5px; opacity: 0.25;' },
     customScale,
     { scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: Red; stroke-width: 0.5px' }];
 // Ensure space for 3 scales with visible headers.
@@ -125,8 +125,6 @@ scheduleChartSettings.headerHeight = 21 * 3;
 scheduleChartSettings.areStandardTaskLabelsVisible = true;
 scheduleChartSettings.areSummaryTaskLabelsVisible = true;
 scheduleChartSettings.areMilestoneTaskLabelsVisible = true;
-scheduleChartSettings.standardLabelStyle = 'color: #dcf2f8;';
-scheduleChartSettings.milestoneLabelStyle = 'color: #ff851b;';
 
 var columns = ScheduleChartView.getDefaultColumns(items, scheduleChartSettings);
 columns[0].width = 144;
@@ -138,7 +136,10 @@ scheduleChartSettings.columns = columns;
 scheduleChartSettings.areStandardTaskLabelsVisible = true;
 scheduleChartSettings.areMilestoneTaskLabelsVisible = true;
 
-// Optionally, initialize custom themes for Schedule Chart (themes.js).
+var isWaitingToRefreshScheduleChartViewSplitterPosition,
+    isWaitingToRefreshGanttChartViewSplitterPosition;
+scheduleChartSettings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('ScheduleChart', gridWidth, chartWidth); }
+
 initializeGanttChartTheme(scheduleChartSettings, theme);
 // Initialize the Schedule Chart component.
 var scheduleChartView = DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartViewElement, items, scheduleChartSettings);
@@ -159,6 +160,25 @@ ganttChartSettings.displayedTimeChangeHandler = scheduleChartSettings.displayedT
     if (displayedTime != ganttChartView.settings.displayedTime)
         ganttChartView.scrollToDateTime(displayedTime);
 };
+function refreshViewsSplitterPosition(sourceControlType, gridWidth, chartWidth) {
+    if (sourceControlType != 'ScheduleChart' && !isWaitingToRefreshScheduleChartViewSplitterPosition) {
+        isWaitingToRefreshScheduleChartViewSplitterPosition = true;
+        setTimeout(function () {
+            var scheduleChartView = document.querySelector('#scheduleChartView');
+            scheduleChartView.setSplitterPosition(gridWidth, chartWidth);
+            isWaitingToRefreshScheduleChartViewSplitterPosition = false;
+        });
+    }
+
+    if (sourceControlType != 'GanttChart' && !isWaitingToRefreshGanttChartViewSplitterPosition) {
+        isWaitingToRefreshGanttChartViewSplitterPosition = true;
+        setTimeout(function () {
+            ganttChartView.setSplitterPosition(gridWidth, chartWidth);
+            isWaitingToRefreshGanttChartViewSplitterPosition = false;
+        });
+    }
+}
+
 // Support for dragging source tasks from Gantt Chart to target Schedule Chart resource rows.
 var hoveredGanttChartItem;
 var draggedGanttChartItem;

@@ -1706,8 +1706,7 @@
     <PreBuildEvent>for /d %25%25t in ("$(ProjectDir)\Samples\*") do for /d %25%25c in ("%25%25t\*") do for /d %25%25f in ("%25%25c\*") do xcopy /y "$(ProjectDir)\Scripts\*.*" "%25%25f\Scripts\"
 for /d %25%25t in ("$(ProjectDir)\Samples\*") do if not "%25%25t"=="$(ProjectDir)\Samples\AngularJS" for /d %25%25c in ("%25%25t\*") do for /d %25%25f in ("%25%25c\*") do del "%25%25f\Scripts\angular*.*"
 for /d %25%25t in ("$(ProjectDir)\Samples\*") do for /d %25%25c in ("%25%25t\*") do for /d %25%25f in ("%25%25c\*") do xcopy /y "$(ProjectDir)\Samples\*.*" "%25%25f\"
-for /d %25%25t in ("$(ProjectDir)\Samples\*") do for /d %25%25c in ("%25%25t\*") do for /d %25%25f in ("%25%25c\*") do cd "%25%25f" &amp; for %25%25i in (*.aspx.cs *.aspx) do del "%25%25i.txt"
-</PreBuildEvent>
+for /d %25%25t in ("$(ProjectDir)\Samples\*") do for /d %25%25c in ("%25%25t\*") do for /d %25%25f in ("%25%25c\*") do cd "%25%25f" &amp; for %25%25i in (*.aspx.cs *.aspx) do del "%25%25i.txt"</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>for /d %25%25t in ("$(ProjectDir)\Samples\*") do for /d %25%25c in ("%25%25t\*") do cd "%25%25c" &amp; for /d %25%25f in (*) do del "%25%25f\licensing.js" &amp; "$(ProjectDir)\Tools\ArchiveBuilder.exe" %25%25f.zip %25%25f &amp; copy "$(ProjectDir)\Samples\licensing.js" "%25%25f"

@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
   print: () => void;
 
   // Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
   queryString = window.location.search;
   theme = this.queryString ? this.queryString.substr(1) : null;
   
