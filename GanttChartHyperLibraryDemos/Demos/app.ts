@@ -632,7 +632,7 @@ angular.module('Demos', [])
         ];
         var themes = ['Default', 'Generic-bright', 'Generic-blue', 'Royal-blue', 'DlhSoft-gray', 'Purple-green', 'Steel-blue', 'Dark-black', 'Cyan-green', 'Blue-navy', 'Orange-brown', 'Teal-green', 'Purple-beige', 'Gray-blue', 'Aero'];
         $scope.themes = themes;
-        $scope.selectedTheme = themes[1];
+        $scope.selectedTheme = themes[2];
         $scope.selectTheme = (theme) => {
             if (theme == $scope.selectedTheme)
                 return;

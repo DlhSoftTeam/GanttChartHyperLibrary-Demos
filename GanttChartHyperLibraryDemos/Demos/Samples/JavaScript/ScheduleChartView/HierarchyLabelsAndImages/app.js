@@ -57,6 +57,7 @@ scheduleChartItems[2].ganttChartItems[1].predecessors = [{ item: scheduleChartIt
 scheduleChartItems[4].ganttChartItems[0].predecessors = [{ item: scheduleChartItems[2].ganttChartItems[0] }];
 scheduleChartItems[4].ganttChartItems[1].predecessors = [{ item: scheduleChartItems[4].ganttChartItems[0] }];
 scheduleChartItems[5].ganttChartItems[1].predecessors = [{ item: scheduleChartItems[5].ganttChartItems[0] }];
+
 // Prepare control settings.
 var settings = {
     // Set the current time value to automatically scroll to a specific chart coordinate, and display a vertical bar highlighter at the specified point.
@@ -65,7 +66,6 @@ var settings = {
     chartWidth: '65%'
 };
 
-settings.areTaskDependenciesVisible = true;
 var columns = ScheduleChartView.getDefaultColumns(scheduleChartItems, settings);
 columns[0].width = 144;
 
@@ -73,8 +73,11 @@ columns.push({ header: 'Role', width: 108, cellTemplate: function (item) { retur
 columns.push({ header: 'Image', width: 44, cellTemplate: DlhSoft.Controls.GanttChartView.getIconColumnTemplate(getImage, null, 'width: 20px; height: 20px; border-radius: 50%;') });
 
 settings.columns = columns;
+
 settings.areStandardTaskLabelsVisible = true;
 settings.areMilestoneTaskLabelsVisible = true;
+settings.areTaskDependenciesVisible = true;
+
 // Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
 

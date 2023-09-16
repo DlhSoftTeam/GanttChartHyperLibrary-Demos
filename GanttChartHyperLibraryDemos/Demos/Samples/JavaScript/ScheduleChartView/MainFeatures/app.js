@@ -19,6 +19,11 @@ for (var i = 4; i <= 16; i++)
                                                     { content: 'Task Y (Resource ' + i + ')', label: 'Task 2.' + (i-3),  start: new Date(year, month, 7, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0) }]
     });
 
+scheduleChartItems[3].ganttChartItems[0].predecessors = [{ item: scheduleChartItems[0].ganttChartItems[0], dependencyType: 'SS' }];
+scheduleChartItems[1].ganttChartItems[1].predecessors = [{ item: scheduleChartItems[1].ganttChartItems[0] }];
+scheduleChartItems[2].ganttChartItems[0].predecessors = [{ item: scheduleChartItems[1].ganttChartItems[1] }];
+scheduleChartItems[3].ganttChartItems[1].predecessors = [{ item: scheduleChartItems[3].ganttChartItems[0] }];
+
 // Prepare control settings.
 var settings = {
     // Optionally, hide data grid or set grid and chart widths, set read only settings, and/or disable virtualization.
@@ -60,6 +65,7 @@ var settings = {
 
 settings.areStandardTaskLabelsVisible = true;
 settings.areMilestoneTaskLabelsVisible = true;
+settings.areTaskDependenciesVisible = true;
 
 // Optionally, configure selection.
 // settings.selectionMode = 'Extended'; // Supported values: None, Focus (default), Single, Extended, ExtendedFocus.
