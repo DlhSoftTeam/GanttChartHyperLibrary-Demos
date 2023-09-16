@@ -87,12 +87,14 @@ var settings = {
     currentTime: new Date(year, month, 2, 12, 0, 0)
 };
 
-// Optionally, set labels visiblility.
+// Optionally, set labels visibility.
 settings.areStandardTaskLabelsVisible = true;
 settings.areSummaryTaskLabelsVisible = true;
 settings.areMilestoneTaskLabelsVisible = true;
-settings.standardLabelStyle = 'color: #1C0825;';
-settings.milestoneLabelStyle = 'color: #E48F56;';
+
+// Also optionally, customize label styles.
+// settings.standardLabelStyle = 'color: #1C0825;';
+// settings.milestoneLabelStyle = 'color: #E48F56;';
 
 // Optionally, set baseline properties.
 items[7].baselineStart = new Date(year, month, 3, 8, 0, 0);

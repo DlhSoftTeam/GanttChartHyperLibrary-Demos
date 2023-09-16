@@ -61,7 +61,7 @@ function initializeGanttChartTheme(settings, theme) {
             if (typeof settings.selectedGridBackground === 'undefined')
                 settings.selectedGridBackground = '#ddd';
             if (typeof settings.nonworkingBackground === 'undefined')
-                settings.nonworkingBackground = '#ccc';
+                settings.nonworkingBackground = '#f8f8f8';
             if (typeof settings.mainStroke === 'undefined')
                 settings.mainStroke = '#407cee';
             if (typeof settings.mainFill === 'undefined')
