@@ -31,8 +31,7 @@ settings.resourceImageUrls = [
     { key: 'Clarissa Candelaria', value: 'Images/Clarissa.png' },
     { key: 'Steven Rush', value: 'Images/Steven.png' },
     { key: 'Denis Kaelin', value: 'Images/Denis.png' },
-    { key: 'Meeting room', value: 'Images/SetColor.png' },
-    { key: 'Printer', value: 'Images/Print.png' }];
+    { key: 'Printer', value: 'Images/Printer.png' }];
 
 var columns = DlhSoft.Controls.GanttChartView.getDefaultColumns(items, settings);
 columns.splice(1, 4); // Remove all default columns except Task and Assignments.

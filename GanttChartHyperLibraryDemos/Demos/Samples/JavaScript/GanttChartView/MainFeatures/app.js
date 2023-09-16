@@ -176,6 +176,18 @@ items[4].executionCost = 50;
 settings.defaultResourceHourCost = 10;
 settings.specificResourceHourCosts = [{ key: 'Denis Kaelin', value: 20 }, { key: 'Printer', value: 0.5 }];
 
+// Optionally, set up resource images.
+settings.areResourceImagesVisibleAsAssignments = true;
+settings.resourceImageUrls = [
+    { key: 'Steven Rush', value: 'Images/Steven.png' },
+    { key: 'Clarissa Candelaria', value: 'Images/Clarissa.png' },
+    { key: 'Tyson Lamberson', value: 'Images/Tyson.png' },
+    { key: 'Joanna Mcamis', value: 'Images/Joanna.png' },
+    { key: 'Denis Kaelin', value: 'Images/Denis.png' },
+    { key: 'Alicia Rock', value: 'Images/Alicia.png' },
+    { key: 'Meeting room', value: 'Images/MeetingRoom.png' },
+    { key: 'Printer', value: 'Images/Printer.png' }];
+
 // Optionally, display multiple item parts on a single chart line.
 // items[13].parts = [ { content: 'Task 8 (Part 1)', start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 4, 16, 0, 0) },
 //                     { content: 'Task 8 (Part 2)', start: new Date(year, month, 8, 8, 0, 0), finish: new Date(year, month, 10, 12, 0, 0), assignmentsContent: 'Tyson Lamberson' } ];
