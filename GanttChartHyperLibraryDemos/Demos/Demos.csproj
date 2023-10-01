@@ -576,6 +576,14 @@
     <Content Include="Samples\JavaScript\PertChartView\Styling\themes.js" />
     <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\app.css" />
     <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\app.js" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\Images\Albert.png" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\Images\Denis.png" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\Images\Diane.png" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\Images\Jane.png" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\Images\Johanna.png" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\Images\Steven.png" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\Images\Tyson.png" />
+    <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\Images\Victor.png" />
     <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\index.html" />
     <Content Include="Samples\JavaScript\ScheduleChartView\AssigningTasks\themes.js" />
     <Content Include="Samples\JavaScript\ScheduleChartView\BuiltinScales\app.css" />

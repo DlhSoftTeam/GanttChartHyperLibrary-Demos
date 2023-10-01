@@ -19,12 +19,12 @@ var ganttChartItems = [
     { content: 'Review Charts', label: 'Review Charts', start: new Date(year, month, 30, 10, 0, 0), isMilestone: true }
 ];
 var ganttChartSettings = {
-    gridWidth: '20%', chartWidth: '80%',
+    gridWidth: '40%', chartWidth: '60%',
     currentTime: new Date(year, month, 2, 12, 0, 0),
     itemHeight: 32
 };
 
-ganttChartSettings.timelineStart = new Date(year, month - 1, 30);
+ganttChartSettings.timelineStart = new Date(year, month, 2);
 ganttChartSettings.timelineFinish = new Date(year, month + 1, 2);
 var customIntervals = function () {
     var intervals = [];
@@ -68,7 +68,7 @@ var items = [
     {
         content: 'Jane Gershwin', image: 'Jane.png', role: 'Technical Lead', indentation: 1, start: new Date(), ganttChartItems: [
             { content: 'Requirements', label: 'Requirements', start: new Date(year, month, 1, 8, 0, 0), finish: new Date(year, month, 4, 10, 0, 0), completedFinish: new Date(year, month, 2, 16, 0, 0), assignmentsContent: '50%' },
-            { content: 'Review', label: 'Review', start: new Date(year, month, 11, 12, 0, 0), isMilestone: true },
+            { content: 'Review', label: 'Review', start: new Date(year, month, 12, 12, 0, 0), isMilestone: true },
             { content: 'Design', label: 'Design', start: new Date(year, month, 6, 12, 0, 0), finish: new Date(year, month, 9, 16, 0, 0) }]
     },
     { content: 'JavaScript', start: new Date() },
@@ -104,7 +104,7 @@ var items = [
     }
 ];
 var scheduleChartSettings = {
-    gridWidth: '20%', chartWidth: '80%',
+    gridWidth: '40%', chartWidth: '60%',
     currentTime: new Date(year, month, 2, 12, 0, 0), // Display the current time vertical line of the chart at the project start date.
     itemHeight: 32
 };
