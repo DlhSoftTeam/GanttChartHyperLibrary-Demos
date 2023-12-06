@@ -602,6 +602,9 @@ declare module DlhSoft.Controls {
             /** Indicates whether to use multi-selector combo box controls for assignment cells in the grid when the required data control library is available. */
             useResourceSelector?: boolean;
 
+            /** Indicates whether to use tool tip controls generated inside the SVG content rather than title elements. True by default. */
+            useInlineToolTips?: boolean;
+
             /** Indicates whether to use tool tip controls for updating task start, finish, completion, dependencies, and/or assignments in the chart using drag and drop operations when the required data control library is available. */
             useUpdatingToolTips?: boolean;
 

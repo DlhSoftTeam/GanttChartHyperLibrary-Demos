@@ -155,6 +155,9 @@ declare module DlhSoft.Controls.Pert {
             isDependencyToolTipVisible?: boolean;
             predecessorItemTemplate? (item: Item, predecessorItem: PredecessorItem): SVGElement;
 
+            /** Indicates whether to use tool tip controls generated inside the SVG content rather than title elements. True by default. */
+            useInlineToolTips?: boolean;
+
             /** Converts time span values to text values whenever needed within the control; the function may be provided by the developer for further customization and/or localization purposes. */
             timeSpanFormatter? (timeSpan: number): string;
 
@@ -328,6 +331,9 @@ declare module DlhSoft.Controls.Pert {
 
             isDependencyToolTipVisible?: boolean;
             predecessorItemTemplate? (item: Item, predecessorItem: PredecessorItem): SVGElement;
+
+            /** Indicates whether to use tool tip controls generated inside the SVG content rather than title elements. True by default. */
+            useInlineToolTips?: boolean;
 
             /** Converts date and time values to text values whenever needed within the control; the function may be provided by the developer for further customization and/or localization purposes. */
             dateTimeFormatter? (dateTime: Date): string;
