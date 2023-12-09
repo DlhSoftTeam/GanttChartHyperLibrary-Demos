@@ -1,2 +1,0 @@
-﻿function initializeGanttChartTemplates(settings, theme) {
-}

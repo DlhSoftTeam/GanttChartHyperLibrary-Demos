@@ -1,5 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
@@ -12,7 +12,8 @@ import { NetworkDiagramView } from './DlhSoft/DlhSoft.ProjectData.PertChart.Angu
 @NgModule({
   declarations: [
     AppComponent,
-    ScheduleChartView
+    GanttChartView, ScheduleChartView, LoadChartView,
+    PertChartView, NetworkDiagramView
   ],
   imports: [
     BrowserModule

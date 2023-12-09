@@ -1,8 +1,8 @@
 ﻿/* Assembly: DlhSoft.ProjectData.PertChart.HTML.Controls,
    Company: DlhSoft,
    Product: Project Data Modern Library,
-   Version: 5.3.1.0,
-   Copyright: Copyright © 2012-2016 DlhSoft,
+   Version: 5.3.20.0,
+   Copyright: Copyright © 2012-2023 DlhSoft,
    Title: Project Data PERT Chart HTML Controls,
    Description: Project Data PERT Chart related HTML client components */
 
@@ -112,6 +112,9 @@ declare module DlhSoft.Controls.Pert {
 
         /** Represents settings for a PertChartView component. */
         interface Settings {
+            /** Indicates whether the default settings of the component should revert to the original version (before 2023). */
+            classic?: boolean;
+
             /** Name of the target to generically apply to the control; Standard, and Phone targets are supported; by default it is Standard. */
             target?: string;
 
@@ -151,6 +154,9 @@ declare module DlhSoft.Controls.Pert {
 
             isDependencyToolTipVisible?: boolean;
             predecessorItemTemplate? (item: Item, predecessorItem: PredecessorItem): SVGElement;
+
+            /** Indicates whether to use tool tip controls generated inside the SVG content rather than title elements. True by default. */
+            useInlineToolTips?: boolean;
 
             /** Converts time span values to text values whenever needed within the control; the function may be provided by the developer for further customization and/or localization purposes. */
             timeSpanFormatter? (timeSpan: number): string;
@@ -283,6 +289,9 @@ declare module DlhSoft.Controls.Pert {
 
         /** Represents settings for a NetworkDiagramView component. */
         interface Settings {
+            /** Indicates whether the default settings of the component should revert to the original version (before 2023). */
+            classic?: boolean;
+
             /** Name of the target to generically apply to the control; Standard, and Phone targets are supported; by default it is Standard. */
             target?: string;
 
@@ -322,6 +331,9 @@ declare module DlhSoft.Controls.Pert {
 
             isDependencyToolTipVisible?: boolean;
             predecessorItemTemplate? (item: Item, predecessorItem: PredecessorItem): SVGElement;
+
+            /** Indicates whether to use tool tip controls generated inside the SVG content rather than title elements. True by default. */
+            useInlineToolTips?: boolean;
 
             /** Converts date and time values to text values whenever needed within the control; the function may be provided by the developer for further customization and/or localization purposes. */
             dateTimeFormatter? (dateTime: Date): string;
