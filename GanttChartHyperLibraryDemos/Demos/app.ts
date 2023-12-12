@@ -115,7 +115,8 @@ angular.module('Demos', [])
                 component: 'GanttChartView', feature: 'BuiltinScales', title: 'Built-in scales (from years to hours)', description: 'Shows how you can combine and use built-in scale types, text header formats, and related settings',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
-                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                    'TypeScript': ['index.html', 'app.css', 'app.ts'],
+                    'Angular': ['app.html', 'app.css', 'app.ts', 'themes.js']
                 }
             },
             {

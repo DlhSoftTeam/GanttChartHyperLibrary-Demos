@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+.container {
+  font-weight: bold;
+  color: #1D83D4;
+}
+.summaryBar {
+  fill: #6EA090;
+}
+.standardBar {
+  fill: #8bd8fb;
+  stroke: #2196f3;
+  stroke-width: 0.75;
+}
+.standardCompletedBar {
+  fill: #2196f3;
+  stroke-width: 0;
+}
+.milestoneBar {
+  fill: #e6c7e1;
+  stroke: green;
+  stroke-width: 0.75;
+}
+.dependencyLine {
+  stroke: #f1c232;
+  stroke-width: 1.25;
+  fill: none;
+  marker-end: url(#ArrowMarker);
+}
+.assignments {
+  fill: #B58472;
+}
