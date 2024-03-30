@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>GanttChartView Printing Sample</title>
@@ -10,14 +10,43 @@
     <script src="app.js" type="text/javascript" defer="defer"></script>
 </head>
 <body>
-<div class="ribbonContainer">
-    <div class="ribbonPanel">
-        <div class="ribbonHeader">Command</div>
-        <div class="ribbonCommandsArea">
-            <div class="ribbonCommand"><a href="javascript:print();" title="Print"><img src="Images/Print.png" alt="Print" /></a></div>
+    <div class="ribbonContainer">
+        <div class="ribbonPanel">
+            <div class="ribbonHeader">Command</div>
+            <div class="ribbonCommandsArea">
+                <div class="ribbonCommand"><a href="javascript:openPrintingOptionsDialog();" title="Print"><img src="Images/Print.png" alt="Print" /></a></div>
+            </div>
         </div>
     </div>
-</div>
-<div id="ganttChartView" style="height: 388px">...</div>
+    <div id="printingOptionsDialog" class="editor">
+        <p class="header">Printing Options</p>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="2"><p style="margin-top: 0; margin-bottom: 8px;">TIMELINE</p></td>
+            </tr>
+            <tr>
+                <td>Start date:</td>
+                <td class="cell"><input id="startDateTimelineEditor" /></td>
+            </tr>
+            <tr>
+                <td>Finish date:</td>
+                <td class="cell"><input id="finishDateTimelineEditor" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><div style="color: grey; margin-top: 4px; margin-bottom: 16px;">Note: printing output will include entire weeks.</div></td>
+            </tr>
+            <tr>
+                <td colspan="2"><p style="margin-top: 0; margin-bottom: 8px;">SELECT COLUMNS</p></td>
+            </tr>
+            <tr>
+                <td colspan="2"><div id="columnsList" style="border: 1px solid #aaa; height: 160px; width: 100%; overflow-y: auto;"></div></td>
+            </tr>
+        </table>
+        <div class="command-area">
+            <a class="command main" href="javascript:print()">Print</a>
+            <a class="command" href="javascript:close()">Close</a>
+        </div>
+    </div>
+    <div id="ganttChartView" style="height: 388px">...</div>
 </body>
 </html>

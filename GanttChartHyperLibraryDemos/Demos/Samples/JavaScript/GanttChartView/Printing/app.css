@@ -41,3 +41,52 @@ input {
     color: black;
     background-color: white;
 }
+
+/* Support for printing/editing printing settings. */
+.editor {
+    z-index: 1;
+    position: absolute;
+    left: 24px;
+    top: 32px;
+    border: 1px solid #808080;
+    padding: 10px;
+    background-color: white;
+    font-family: Tahoma, Arial;
+    font-size: 12px;
+    box-shadow: #808080 4px 4px;
+    display: none;
+}
+
+    .editor .header {
+        margin-top: 0px;
+        font-size: larger;
+        font-weight: bold;
+    }
+
+    .editor .cell {
+        padding: 4px;
+    }
+
+    .editor .command-area {
+        margin-top: 8px;
+    }
+
+    .editor input {
+        border: 1px solid #e0e0e0;
+        padding: 4px;
+    }
+
+    .editor .command-area {
+        margin-top: 12px;
+        margin-bottom: 4px;
+    }
+
+    .editor .command-area .command {
+        text-decoration: none;
+        margin-right: 4px;
+    }
+
+    .editor .command-area .main {
+        font-weight: bold;
+    }
+
