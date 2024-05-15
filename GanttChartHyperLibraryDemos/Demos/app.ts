@@ -70,6 +70,12 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'GanttChartView', feature: 'PredecessorsSuccessors', title: 'Predecessors and Successors Columns', description: 'Customizing Predecessors column and adding Successors column',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js']
+                }
+            },
+            {
                 component: 'GanttChartView', feature: 'ChangeNotifications', title: 'Change notifications (item value update handling)', description: 'Shows how custom code can be executed when changes occur on the data presented by the component',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
@@ -197,10 +203,16 @@ angular.module('Demos', [])
                 }
             },
             {
-                component: 'GanttChartView', feature: 'CustomTemplate', title: 'Custom template (drawing item bars using custom SVG)', description: 'Shows how you can write code to customize drawing stanadard item bars in the chart area using SVG elements',
+                component: 'GanttChartView', feature: 'CustomTemplate', title: 'Custom template (drawing item bars using custom SVG)', description: 'Shows how you can write code to customize drawing standard item bars in the chart area using SVG elements',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
                     'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'ExtraTemplate', title: 'Add objects to an item bar using custom SVG', description: 'Shows how you can write code to add objects to a standard item bar in the chart area using SVG elements',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js']
                 }
             },
             {
@@ -407,6 +419,12 @@ angular.module('Demos', [])
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
                     'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
+                component: 'ScheduleChartView', feature: 'HighlightingNonworkingTimeForSpecificResources', title: 'Nonworking time for specific resources', description: 'Shows how you can highlight special time intervals in the chart area for a specific resources',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js']
                 }
             },
             {
