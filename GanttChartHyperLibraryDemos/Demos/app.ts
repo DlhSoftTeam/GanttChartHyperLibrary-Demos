@@ -63,10 +63,16 @@ angular.module('Demos', [])
                 }
             },
             {
-                component: 'GanttChartView', feature: 'Interruptions', title: 'Interruptions', description: 'Shows how you can set up task template extensions to draw interruptions',
+                component: 'GanttChartView', feature: 'Interruptions', title: 'Interruptions and other customizations', description: 'Shows how you can set up task template extensions to draw interruptions and also how to customize miscellaneous chart elements',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
                     'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'PredecessorsSuccessors', title: 'Predecessors and successors columns', description: 'Customizing Predecessors column and adding Successors column',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js']
                 }
             },
             {
@@ -197,10 +203,16 @@ angular.module('Demos', [])
                 }
             },
             {
-                component: 'GanttChartView', feature: 'CustomTemplate', title: 'Custom template (drawing item bars using custom SVG)', description: 'Shows how you can write code to customize drawing stanadard item bars in the chart area using SVG elements',
+                component: 'GanttChartView', feature: 'CustomTemplate', title: 'Custom template (drawing item bars using custom SVG)', description: 'Shows how you can write code to customize drawing standard item bars in the chart area using SVG elements',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
                     'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'ExtraTemplate', title: 'Add elements to the item bars using custom SVG', description: 'Shows how you can write code to add objects to a standard item bar in the chart area using SVG elements',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js']
                 }
             },
             {
@@ -410,6 +422,12 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'ScheduleChartView', feature: 'HighlightingNonworkingTimeForSpecificResources', title: 'Nonworking time for specific resources', description: 'Shows how you can highlight special time intervals in the chart area for a specific resources',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js']
+                }
+            },
+            {
                 component: 'ScheduleChartView', feature: 'ContinuousSchedule', title: 'Continuous schedule (non-stop working time)', description: 'Shows how to define continuous working time for tasks (24/7)',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
@@ -445,7 +463,7 @@ angular.module('Demos', [])
                 }
             },
             {
-                component: 'ScheduleChartView', feature: 'CustomTemplate', title: 'Custom template (drawing item bars using custom SVG)', description: 'Shows how you can write code to customize drawing stanadard item bars in the chart area using SVG elements',
+                component: 'ScheduleChartView', feature: 'CustomTemplate', title: 'Custom template (drawing item bars using custom SVG)', description: 'Shows how you can write code to customize drawing standard item bars in the chart area using SVG elements',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
                     'TypeScript': ['index.html', 'app.css', 'app.ts']
