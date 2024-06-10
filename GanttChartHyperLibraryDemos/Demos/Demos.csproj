@@ -1032,7 +1032,6 @@
     <Content Include="Samples\Vue\ScheduleChartView\MainFeatures\Images\ZoomIn.png" />
     <Content Include="Samples\Vue\ScheduleChartView\MainFeatures\index.html" />
     <Content Include="Samples\Vue\ScheduleChartView\MainFeatures\themes.js" />
-    <Content Include="Samples\JavaScript\GanttChartView\PredecessorsSuccessors\Images\Thumbs.db" />
     <None Include="Scripts\angular-mocks.js" />
     <None Include="Scripts\angular.js" />
     <None Include="Scripts\angular.min.js" />
@@ -1053,7 +1052,6 @@
     <Content Include="Scripts\DlhSoft.ProjectData.PertChart.HTML.Controls.js" />
     <Content Include="Templates\SourceCode.html" />
     <Content Include="Templates\Sample.html" />
-    <Content Include="Samples\React\GanttChartView\MainFeatures\Images\Thumbs.db" />
     <None Include="Scripts\angular.min.js.map" />
     <None Include="Tools\ArchiveBuilder.exe" />
     <None Include="Tools\Interop.Shell32.dll" />
