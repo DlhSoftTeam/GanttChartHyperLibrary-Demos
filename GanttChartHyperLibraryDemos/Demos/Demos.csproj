@@ -109,6 +109,14 @@
     <Content Include="Samples\JavaScript\GanttChartView\ExtraTemplate\Images\Steven.png" />
     <Content Include="Samples\JavaScript\GanttChartView\ExtraTemplate\Images\Tyson.png" />
     <Content Include="Samples\JavaScript\GanttChartView\ExtraTemplate\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\Interruptions\Images\Albert.png" />
+    <Content Include="Samples\JavaScript\GanttChartView\Interruptions\Images\Clarissa.png" />
+    <Content Include="Samples\JavaScript\GanttChartView\Interruptions\Images\Diane.png" />
+    <Content Include="Samples\JavaScript\GanttChartView\Interruptions\Images\Jane.png" />
+    <Content Include="Samples\JavaScript\GanttChartView\Interruptions\Images\Johanna.png" />
+    <Content Include="Samples\JavaScript\GanttChartView\Interruptions\Images\Steven.png" />
+    <Content Include="Samples\JavaScript\GanttChartView\Interruptions\Images\Tyson.png" />
+    <Content Include="Samples\JavaScript\GanttChartView\Interruptions\Images\Victor.png" />
     <Content Include="Samples\JavaScript\GanttChartView\MainFeatures\Images\Printer.png" />
     <Content Include="Samples\JavaScript\GanttChartView\PredecessorsSuccessors\app.css" />
     <Content Include="Samples\JavaScript\GanttChartView\PredecessorsSuccessors\app.js" />

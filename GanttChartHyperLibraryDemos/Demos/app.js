@@ -51,7 +51,7 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'Interruptions', title: 'Interruptions', description: 'Shows how you can set up task template extensions to draw interruptions',
+            component: 'GanttChartView', feature: 'Interruptions', title: 'Interruptions and Customization', description: 'Shows how you can set up task template extensions to draw interruptions and customization of different elements from chart',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']

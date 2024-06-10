@@ -63,14 +63,14 @@ angular.module('Demos', [])
                 }
             },
             {
-                component: 'GanttChartView', feature: 'Interruptions', title: 'Interruptions', description: 'Shows how you can set up task template extensions to draw interruptions',
+                component: 'GanttChartView', feature: 'Interruptions', title: 'Interruptions and customization', description: 'Shows how you can set up task template extensions to draw interruptions and customization of miscellaneous chart elements',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
                     'TypeScript': ['index.html', 'app.css', 'app.ts']
                 }
             },
             {
-                component: 'GanttChartView', feature: 'PredecessorsSuccessors', title: 'Predecessors and Successors Columns', description: 'Customizing Predecessors column and adding Successors column',
+                component: 'GanttChartView', feature: 'PredecessorsSuccessors', title: 'Predecessors and successors columns', description: 'Customizing Predecessors column and adding Successors column',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js']
                 }
