@@ -72,7 +72,8 @@ angular.module('Demos', [])
             {
                 component: 'GanttChartView', feature: 'PredecessorsSuccessors', title: 'Predecessors and successors columns', description: 'Customizing Predecessors column and adding Successors column',
                 sourceCodeFiles: {
-                    'JavaScript': ['index.html', 'app.css', 'app.js']
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
+                    'React': ['index.html', 'app.css', 'app.jsx']
                 }
             },
             {
@@ -199,7 +200,8 @@ angular.module('Demos', [])
                 component: 'GanttChartView', feature: 'Styling', title: 'Styling (with CSS classes)', description: 'Shows how to style up elements defined by the component using CSS classes',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
-                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                    'TypeScript': ['index.html', 'app.css', 'app.ts'],
+                    'React': ['index.html', 'app.css', 'app.jsx']
                 }
             },
             {
@@ -292,7 +294,8 @@ angular.module('Demos', [])
                 component: 'GanttChartView', feature: 'Printing', title: 'Printing (virtual printers, e.g. Print to PDF, supported)', description: 'Includes code that initiates a print operation; end user can select the printer to use (virtual printers such as Print to PDF are supported as well)',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
-                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                    'TypeScript': ['index.html', 'app.css', 'app.ts'],
+                    'React': ['index.html', 'app.css', 'app.jsx']
                 }
             },
             {

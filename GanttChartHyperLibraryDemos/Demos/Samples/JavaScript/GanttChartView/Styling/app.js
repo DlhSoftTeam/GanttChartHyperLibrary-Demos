@@ -31,18 +31,39 @@ items[8].baselineStart = new Date(year, month, 12, 8, 0, 0);
 var settings =
 {
     currentTime: new Date(year, month, 2, 12, 0, 0),
-    itemHeight: 32, barHeight: 16, barMargin: 8, arrowSize: 1.5,
+    itemHeight: 32, barHeight: 20, barMargin: 6, arrowSize: 1.5,
     gridLines: '#eaeaea',
-
     containerClass: 'container', selectedItemClass: 'selectedItem', cellClass: 'cell',
     toggleButtonClass: 'toggleButton', toggleButtonHoveringClass: 'toggleButtonHovering',
-    standardBarClass: 'standardBar', standardCompletionBarClass: 'darkBar',
-    summaryBarClass: 'darkBar', milestoneBarClass: 'darkBar',
-    assignmentsClass: 'assignments', dependencyLineClass: 'dependencyLine',
+    cellClass: theme == 'Dark-black' ? 'cell-dark' : 'cell',
+    standardBarClass: 'standardBar', standardCompletedBarClass: 'standardCompletedBar',
+    summaryBarClass: 'summaryBar', milestoneBarClass: 'milestoneBar',
+    assignmentsClass: 'assignments',
+    dependencyLineClass: 'dependencyLine',
     baselineBarClass: 'baselineBar',
     alternativeItemClass: theme == 'Dark-black' ? 'alternativeGridItem-dark' : (theme == 'Steel-blue' ? 'alternativeGridItem-steel' : 'alternativeGridItem'),
     alternativeChartItemClass: theme == 'Dark-black' ? 'alternativeChartItem-dark' : 'alternativeChartItem'
 };
+
+settings.styleDefinitionTemplate = function (ganttChartView) {
+    var document = ganttChartView.ownerDocument;
+    var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    var arrowMarker = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+    arrowMarker.setAttribute('id', 'ArrowMarker');
+    arrowMarker.setAttribute('viewBox', '0 0 12 6');
+    arrowMarker.setAttribute('refX', '3');
+    arrowMarker.setAttribute('refY', '6');
+    arrowMarker.setAttribute('markerUnits', 'strokeWidth');
+    arrowMarker.setAttribute('markerWidth', '6');
+    arrowMarker.setAttribute('markerHeight', '8');
+    arrowMarker.setAttribute('orient', 'auto');
+    var arrowPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    arrowPath.setAttribute('fill', '#ffb38a');
+    arrowPath.setAttribute('d', 'M 0 0 L 12 6 L 0 12 z');
+    arrowMarker.appendChild(arrowPath);
+    defs.appendChild(arrowMarker);
+    return defs;
+}
 
 // Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
