@@ -45,7 +45,7 @@ var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
 var columns = DlhSoft.Controls.GanttChartView.getDefaultColumns(items, settings);
 var indexOffset = columns[0].isSelection ? 1 : 0;
 
-columns.splice(3 + indexOffset, 0, {
+columns.splice(1 + indexOffset, 0, {
     header: 'Predecessors', width: 200, cellTemplate: (item) => {
         return DlhSoft.Controls.GanttChartView.multiSelectorComboBoxInputColumnTemplateBase(
             document, 196,
@@ -67,7 +67,7 @@ columns.splice(3 + indexOffset, 0, {
     }
 });
 
-columns.splice(4 + indexOffset, 0, {
+columns.splice(2 + indexOffset, 0, {
     header: 'Successors', width: 200, cellTemplate: (item) => {
         return DlhSoft.Controls.GanttChartView.multiSelectorComboBoxInputColumnTemplateBase(
             document, 196,

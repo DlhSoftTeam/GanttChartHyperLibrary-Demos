@@ -38,7 +38,7 @@ initializeGanttChartTheme(settings, theme);
 // Initialize extra columns.
 var columns = DlhSoft.Controls.GanttChartView.getDefaultColumns(items, settings);
 var indexOffset = columns[0].isSelection ? 1 : 0;
-columns.splice(0 + indexOffset, 0, { header: '', width: 32, cellTemplate: DlhSoft.Controls.GanttChartView.getIconColumnTemplate('Images/Task.Icon.png', null, 'width: 16px; height: 16px; margin-top: 2px', true, undefined, undefined, 'background: #f8f8f8') });
+columns.splice(0 + indexOffset, 0, { header: '', width: 32, cellTemplate: DlhSoft.Controls.GanttChartView.getIconColumnTemplate('Images/checkmark.png', null, 'width: 16px; height: 16px; margin-top: 2px', true, undefined, undefined, 'background: #f8f8f8') });
 columns.splice(1 + indexOffset, 0, { header: '', width: 40, cellTemplate: DlhSoft.Controls.GanttChartView.getIndexColumnTemplate() });
 columns.splice(2 + indexOffset, 0, { header: 'WBS', width: 50, cellTemplate: DlhSoft.Controls.GanttChartView.getWbsColumnTemplate() });
 columns.splice(5 + indexOffset, 0, { header: 'Effort (h)', width: 80, cellTemplate: DlhSoft.Controls.GanttChartView.getTotalEffortColumnTemplate(64) });
