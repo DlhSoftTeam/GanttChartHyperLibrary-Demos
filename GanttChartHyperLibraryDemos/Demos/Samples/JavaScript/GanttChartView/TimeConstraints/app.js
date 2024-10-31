@@ -1,7 +1,7 @@
 /// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts'/>
 var GanttChartView = DlhSoft.Controls.GanttChartView;
 // Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 // Retrieve and store the control element for reference purposes.
@@ -27,7 +27,7 @@ specialItem.minStart = new Date(year, month, 1, 8, 0, 0);
 specialItem.maxStart = new Date(year, month, 5, 8, 0, 0);
 specialItem.minFinish = new Date(year, month, 5, 8, 0, 0);
 specialItem.maxFinish = new Date(year, month, 14, 8, 0, 0);
-var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
+var settings = { currentTime: new Date(year, month, 2, 12, 0, 0), itemClass: 'grid-item' };
 // Prepare the start and finish constraint columns.
 var columns = DlhSoft.Controls.GanttChartView.getDefaultColumns(items, settings);
 columns.splice(3, 0, { header: 'Min start', width: 140, cellTemplate: DlhSoft.Controls.GanttChartView.getMinStartColumnTemplate(124, true, true, 8 * 60 * 60 * 1000) }); // 8 AM

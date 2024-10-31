@@ -20,7 +20,7 @@ for (var i = 4; i <= 16; i++)
             { content: 'Task Y (Resource ' + i + ')', start: new Date(year, month, 7, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0) }]
     });
 var settings = {
-    currentTime: new Date(year, month, 2, 12, 0, 0)
+    currentTime: new Date(year, month, 2, 12, 0, 0), itemClass: 'grid-item'
 };
 initializeGanttChartTheme(settings, theme);
 

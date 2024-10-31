@@ -1,31 +1,61 @@
 .ribbonContainer {
-    overflow: auto; 
-    background-color: #909090; border-bottom: 1px solid White; 
-    font-family: Tahoma, Arial; font-size: 12px;
+    overflow: auto;
+    background-color: #fefefe;
+    border-bottom: 1px solid White;
+    font-family: Calibri, Tahoma, Arial;
+    font-size: 14px;
 }
+
 .ribbonPanel {
-    float: left; overflow: auto; 
-    background-color: #a0a0a0; border-right: 1px solid #c0c0c0; 
+    float: left;
+    overflow: auto;
+    background-color: #fefefe;
+    border-right: 1px solid #ddd;
 }
+
 .ribbonHeader {
-    background-color: #808080; color: white; 
+    background-color: #efefef;
+    color: #3e4b54;
     padding: 5px;
 }
+
 .ribbonCommandsArea {
     padding: 2px 3px;
 }
+
 .ribbonCommand {
-    float: left; margin: 4px;
+    float: left;
+    margin: 3px;
+    padding: 3px;
 }
-.ribbonCommand img {
-    border: 0px;
+
+    .ribbonCommand img {
+        width: 18px;
+        vertical-align: sub;
+    }
+
+    .ribbonCommand:hover {
+        background-color: #bfefff;
+    }
+
+.ribbonContainer .content {
+    display: inline-block;
+    margin: 8px;
+    padding: 10px;
 }
+
+    .ribbonContainer .content a {
+        color: #3e4b54;
+    }
 .extraPanel {
-    background-color: #a0a0a0; border-bottom: 1px solid White;
-    color: White; font-family: Tahoma, Arial; font-size: 12px;
+    background-color: #fefefe;
+    border-bottom: 1px solid White;
+    color: #3e4b54;
+    font-family: Tahoma, Arial;
+    font-size: 12px;
 }
 .extraPanelHeader {
-    background-color: #808080; padding: 6px;
+    background-color: #efefef; padding: 6px;
 }
 .extraPanelContent {
     padding: 1px 6px;
@@ -35,16 +65,14 @@
     float: right; padding: 5px 6px;
 }
 .extraPanel a {
-    color: White;
+    color: #3e4b54;
 }
 .toggle {
-    margin: 2px;
-    padding: 2px;
-    padding-bottom: 0px;
     opacity: 0.95;
 }
+
 .pressed {
-    background-color: #e0e0e0;
+    background-color: #e9e9e9;
     opacity: 1;
 }
 
@@ -67,5 +95,8 @@ input {
 .dark input:focus {
     color: black;
     background-color: white;
+}
+.grid-item:hover {
+    background-color: #eee;
 }
 

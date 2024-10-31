@@ -22,3 +22,6 @@ input {
 .standardLabelClass {
     color: #2e2c2c;
 }
+.grid-item:hover {
+    background-color: #eee;
+}

@@ -15,11 +15,17 @@
     padding: 2px 3px;
 }
 .ribbonCommand {
-    float: left; margin: 4px;
+    float: left;
+    margin: 3px;
+    padding: 3px;
 }
-.ribbonCommand img {
-    border: 0px;
-}
+    .ribbonCommand img {
+        width: 18px;
+        vertical-align: sub;
+    }
+    .ribbonCommand:hover {
+        background-color: #bfefff;
+    }
 
 /* Overrides */
 body {

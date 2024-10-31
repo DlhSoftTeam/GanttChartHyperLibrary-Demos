@@ -18,3 +18,7 @@ input {
     color: black;
     background-color: white;
 }
+.grid-item:hover {
+    background-color: #eee;
+}
+

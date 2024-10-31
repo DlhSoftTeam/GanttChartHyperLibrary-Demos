@@ -5,6 +5,16 @@ body {
 input {
     font-size: 12px;
 }
+button {
+    vertical-align: sub;
+    margin: 4px 4px 4px 0px;
+    padding: 4px 12px;
+    border: 1px solid #aaa;
+}
+
+    button:hover {
+        background-color: #bfefff;
+    }
 
 /* Dark theme */
 .dark input {

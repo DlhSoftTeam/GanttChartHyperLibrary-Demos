@@ -1,7 +1,7 @@
 /// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts'/>
 var GanttChartView = DlhSoft.Controls.GanttChartView;
 // Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 // Retrieve and store the control element for reference purposes.
@@ -12,10 +12,10 @@ var items = [{ content: 'Planning' },
 { content: 'Requirements', label: 'Requirements', indentation: 1, start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 6, 15, 0, 0), completedFinish: new Date(year, month, 3, 15, 0, 0) },
 { content: 'Arhitecture', label: 'Arhitecture', indentation: 1, start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 6, 10, 0, 0), completedFinish: new Date(year, month, 4, 10, 0, 0), hasMilestoneAtFinish: true },
 { content: 'Development', label: 'Development', isExpanded: true },
-{ content: 'Date-times', label: 'Date-times', indentation: 1, start: new Date(year, month, 5, 8, 0, 0), finish: new Date(year, month, 12, 15, 0, 0), completedFinish: new Date(year, month, 10, 15, 0, 0), assignmentsContent: 'Clarissa, Steven [50%]' },
+{ content: 'Date-times', label: 'Date-times', indentation: 1, start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 12, 15, 0, 0), completedFinish: new Date(year, month, 10, 15, 0, 0), assignmentsContent: 'Clarissa, Steven [50%]' },
 { content: 'Chart', indentation: 1 },
 { content: 'Bars', label: 'Bars', indentation: 2, start: new Date(year, month, 3, 8, 0, 0), finish: new Date(year, month, 4, 12, 0, 0), completedFinish: new Date(year, month, 3, 16, 0, 0), assignmentsContent: 'Steven' },
-{ content: 'Summary Bars', label: 'Summary Bars', indentation: 2, start: new Date(year, month, 4, 12, 30, 0), finish: new Date(year, month, 12, 16, 0, 0), completedFinish: new Date(year, month, 6, 15, 0, 0), assignmentsContent: 'Steven', hasMilestoneAtFinish: true },
+{ content: 'Summary Bars', label: 'Summary Bars', indentation: 2, start: new Date(year, month, 4, 12, 30, 0), finish: new Date(year, month, 14, 16, 0, 0), completedFinish: new Date(year, month, 6, 15, 0, 0), assignmentsContent: 'Steven', hasMilestoneAtFinish: true },
 { content: 'Review', indentation: 1, start: new Date(year, month, 13, 16, 0, 0), isMilestone: true },
 { content: 'Links', label: 'Links', indentation: 1, start: new Date(year, month, 4, 8, 0, 0), finish: new Date(year, month, 5, 16, 0, 0), completedFinish: new Date(year, month, 5, 12, 0, 0), hasMilestoneAtFinish: true },
 { content: 'Diagram functions', label: 'Diagram functions', indentation: 1, start: new Date(year, month, 5, 8, 0, 0), finish: new Date(year, month, 9, 15, 0, 0) },
@@ -54,7 +54,6 @@ var settings = {
     // isGridVisible: false,
     gridWidth: '36%',
     chartWidth: '64%',
-    itemHeight: 34,
     dependencyLineStyle: 'stroke: #ffb38a; fill: none; marker-end: url(#ArrowMarker)',
 
     // Optionally, display alternative row background.
@@ -62,6 +61,7 @@ var settings = {
 
     // Set the current time value to automatically scroll to a specific chart coordinate, and display a vertical bar highlighter at the specified point.
     currentTime: new Date(year, month, 5, 12, 0, 0),
+    itemClass: 'grid-item',
     visibleWeekStart: 1, 
     visibleWeekFinish: 6
 };

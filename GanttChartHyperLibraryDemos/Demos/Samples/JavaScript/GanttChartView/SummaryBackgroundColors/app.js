@@ -1,7 +1,7 @@
 /// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts'/>
 var GanttChartView = DlhSoft.Controls.GanttChartView;
 // Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 // Retrieve and store the control element for reference purposes.
@@ -23,13 +23,13 @@ items[7].predecessors = [{ item: items[6], lag: 2 * 60 * 60 * 1000 }];
 items[8].predecessors = [{ item: items[4] }, { item: items[5] }];
 for (var i = 4; i <= 16; i++)
     items.push({ content: 'Task ' + i, indentation: i >= 8 && i % 3 == 2 ? 0 : 1, start: new Date(year, month, 2 + (i <= 8 ? (i - 4) * 3 : i - 8), 8, 0, 0), finish: new Date(year, month, 2 + (i <= 8 ? (i - 4) * 3 + (i > 8 ? 6 : 1) : i - 2), 16, 0, 0) });
-var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
+var settings = { currentTime: new Date(year, month, 2, 12, 0, 0), itemClass: 'grid-item' };
 // Set up colors.
-items[0].backgroundColor = 'blue';
-items[3].backgroundColor = 'yellow';
-items[5].backgroundColor = 'green';
+items[0].backgroundColor = '#66cccc'; //blue
+items[3].backgroundColor = '#fff9c8'; //yellow
+items[5].backgroundColor = '#cff65e'; //green
 for (var i = 13; i <= 19; i += 3)
-    items[i].backgroundColor = i % 2 == 0 ? 'orange' : 'brown';
+    items[i].backgroundColor = i % 2 == 0 ? '#ffa550' : '#cab59c';
 // Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
 
@@ -50,7 +50,7 @@ settings.summaryTaskTemplate = function (item) {
         background.setAttribute('width', 10 + Math.max(0, itemRight - itemLeft - 1) + 10);
         background.setAttribute('height', getVisibleItemCount(item) * settings.itemHeight);
         background.setAttribute('fill', item.backgroundColor);
-        background.setAttribute('opacity', 0.1);
+        background.setAttribute('opacity', 0.5);
         group.insertBefore(background, group.firstChild);
     }
     return group;

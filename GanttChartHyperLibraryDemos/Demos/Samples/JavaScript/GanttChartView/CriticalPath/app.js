@@ -1,5 +1,5 @@
 ﻿// Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 
@@ -23,6 +23,7 @@ for (var i = 4; i <= 16; i++)
     items.push({ content: 'Task ' + i, start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 4, 16, 0, 0) });
 
 var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
+settings.itemClass = "grid-item";
 
 // Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);
@@ -33,8 +34,8 @@ for (var i = 0; i < ganttChartView.items.length; i++) {
     var item = ganttChartView.items[i];
     delete item.barStyle;
     if (!item.hasChildren && ganttChartView.isItemCritical(item)) {
-        item.barStyle = 'stroke: #e31d3b; fill: #e31d3b';
-        item.completedBarStyle = 'stroke: transparent; fill: #800000';
+        item.barStyle = 'stroke: #f497b5; fill: #f497b5';
+        item.completedBarStyle = 'stroke: transparent; fill: #e41a1c';
     }
     ganttChartView.refreshChartItem(item);
 }

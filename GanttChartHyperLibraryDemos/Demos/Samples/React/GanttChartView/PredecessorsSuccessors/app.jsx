@@ -9,7 +9,7 @@ class App extends React.Component {
     }
     render() {
         // Query string syntax: ?theme
-        // Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+        // Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
         var queryString = window.location.search;
         var theme = queryString ? queryString.substr(1) : null;
 
@@ -58,7 +58,7 @@ class App extends React.Component {
         var columns = DlhSoft.Controls.GanttChartView.getDefaultColumns(items, settings);
         var indexOffset = columns[0].isSelection ? 1 : 0;
 
-        columns.splice(3 + indexOffset, 0, {
+        columns.splice(1 + indexOffset, 0, {
             header: 'Predecessors', width: 200, cellTemplate: (item) => {
                 return DlhSoft.Controls.GanttChartView.multiSelectorComboBoxInputColumnTemplateBase(
                     document, 196,
@@ -80,7 +80,7 @@ class App extends React.Component {
             }
         });
 
-        columns.splice(4 + indexOffset, 0, {
+        columns.splice(2 + indexOffset, 0, {
             header: 'Successors', width: 200, cellTemplate: (item) => {
                 return DlhSoft.Controls.GanttChartView.multiSelectorComboBoxInputColumnTemplateBase(
                     document, 196,
@@ -121,6 +121,8 @@ class App extends React.Component {
                     ganttChartView.refreshItem(successor);
             }
         };
+        columns[5 + indexOffset].cellClass = 'center-cell';
+        columns[6 + indexOffset].cellClass = 'center-cell';
         settings.columns = columns;
         // Optionally, define assignable resources.
         settings.assignableResources = ['Clarissa Candelaria', 'Tyson Lamberson', 'Steven Rush',
@@ -136,7 +138,7 @@ class App extends React.Component {
             console.log(propertyName + ' changed for ' + item.content + '.');
         }
         return (
-            <div>
+            <div id="ganttChartViewContainer">
                 <GanttChartView ref={this.ganttChartViewRef} items={items} settings={settings} change={onItemChanged} style={{ minHeight: '388px' }}>...</GanttChartView>
             </div>);
     }

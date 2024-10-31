@@ -38,7 +38,8 @@ for (var i = 4; i <= 16; i++)
 var settings = {
     isReadOnly: true, isTaskCompletedEffortVisible: false,
     workingWeekStart: 0, workingWeekFinish: 6,
-    currentTime: new Date(year, month, 2, 12, 0, 0)
+    currentTime: new Date(year, month, 2, 12, 0, 0),
+    itemClass: 'grid-item'
 };
 initializeGanttChartTheme(settings, theme);
 

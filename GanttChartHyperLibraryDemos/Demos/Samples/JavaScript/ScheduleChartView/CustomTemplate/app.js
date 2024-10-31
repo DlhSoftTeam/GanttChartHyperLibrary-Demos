@@ -2,7 +2,7 @@
 var GanttChartView = DlhSoft.Controls.GanttChartView;
 var ScheduleChartView = DlhSoft.Controls.ScheduleChartView;
 // Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 // Retrieve and store the control element for reference purposes.
@@ -38,7 +38,7 @@ for (var i = 4; i <= 16; i++)
 scheduleChartItems[4].ganttChartItems[0].label = 'Task X (Resource 5)';
 scheduleChartItems[5].ganttChartItems[0].label = 'X (6)';
 var settings = {
-    currentTime: new Date(year, month, 2, 12, 0, 0)
+    currentTime: new Date(year, month, 2, 12, 0, 0), itemClass: 'grid-item'
 };
 // Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);

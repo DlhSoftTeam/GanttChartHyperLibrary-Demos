@@ -70,6 +70,37 @@ body {
 input {
     font-size: 12px;
 }
+#ganttChartView input[type=text] {
+    font-size: 12px;
+    background-color: transparent;
+    padding: 3px !important;
+}
+
+    #ganttChartView input[type=text]:focus-visible, input[type=text]:focus {
+        outline: 0px solid transparent;
+        padding: 3px;
+    }
+/* Dropdown open */
+#ganttChartView span > div > div {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #f8f8f8 !important;
+}
+    /* Each row from Dropdown open */
+    #ganttChartView span > div > div > div > div {
+        padding: 4px 2px !important;
+    }
+
+        #ganttChartView span > div > div > div > div:hover {
+            background-color: #eee;
+        }
+
+#ganttChartView span > div div > span {
+    vertical-align: top;
+}
+    /* Checkbox from Dropdown open */
+    #ganttChartView span > div div > span input[type=checkbox] {
+        margin-right: 4px !important;
+    }
 
 /* Dark theme */
 .dark input {
@@ -133,4 +164,7 @@ input {
 }
 .grid-item:hover {
     background-color: #eee;
+}
+.center-cell {
+    text-align: center;
 }

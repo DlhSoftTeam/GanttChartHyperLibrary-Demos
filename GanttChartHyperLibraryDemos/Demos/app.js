@@ -16,6 +16,13 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'GanttChartView', feature: 'Performance', title: 'Performance (large data set)', description: 'Shows app responsiveness and other runtime performance features when loading large sets of hierarchical data',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
             component: 'GanttChartView', feature: 'AssigningResources', title: 'Assigning resources (with multi-selector combo box)', description: 'Shows how resource assignments work and includes code providing automatic Load Chart synchronization',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
@@ -30,13 +37,6 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'Columns', title: 'Grid columns (built-in and custom)', description: 'Shows how to add supplemental built-in and custom grid columns including a column presenting task icon thumbs that offer vertical drag and drop support',
-            sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts']
-            }
-        },
-        {
             component: 'GanttChartView', feature: 'ReadOnlySettings', title: 'Read only, visibility, and other behavioral settings', description: 'Shows how you can set up read only, visibility, and other settings on the component and on specific items',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
@@ -44,14 +44,14 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'Filtering', title: 'Filtering and hiding items', description: 'Shows how you can set up an item visibility filter function and hide individual items when needed',
+            component: 'GanttChartView', feature: 'Interruptions', title: 'Interruptions and other customizations', description: 'Shows how you can set up task template extensions to draw interruptions and also how to customize miscellaneous chart elements',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
-            component: 'GanttChartView', feature: 'Interruptions', title: 'Interruptions and other customizations', description: 'Shows how you can set up task template extensions to draw interruptions and also how to customize miscellaneous chart elements',
+            component: 'GanttChartView', feature: 'Filtering', title: 'Filtering and hiding items', description: 'Shows how you can set up an item visibility filter function and hide individual items when needed',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
@@ -79,31 +79,16 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'ContextMenus', title: 'Context menus', description: 'Shows how you can set up item and dependency line context menus',
+            component: 'GanttChartView', feature: 'CustomTemplate', title: 'Custom template (drawing item bars using custom SVG)', description: 'Shows how you can write code to customize drawing standard item bars in the chart area using SVG elements',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
-            component: 'GanttChartView', feature: 'SelectionModes', title: 'Selection mode (single, extended, by clicking)', description: 'Shows how you can set up selection mode and handle item selection changes in the component',
+            component: 'GanttChartView', feature: 'ExtraTemplate', title: 'Add elements to the item bars using custom SVG', description: 'Shows how you can write code to add objects to a standard item bar in the chart area using SVG elements',
             sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts']
-            }
-        },
-        {
-            component: 'GanttChartView', feature: 'WBS', title: 'WBS path (work breakdown structure column)', description: 'Shows how you can easily insert a WBS column to the grid',
-            sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts']
-            }
-        },
-        {
-            component: 'GanttChartView', feature: 'MoveUpDown', title: 'Move up-down (hierarchical moving)', description: 'Shows how you can allow the end user to move items up and down without breaking the hierarchy',
-            sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts']
+                'JavaScript': ['index.html', 'app.css', 'app.js']
             }
         },
         {
@@ -115,14 +100,21 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'ZoomLevel', title: 'Zoom level (and disabling mouse wheel zooming)', description: 'Shows how you can set up zoom level settings for the chart area',
+            component: 'GanttChartView', feature: 'CustomScale', title: 'Custom scale (time intervals and header texts)', description: 'Shows how to define a fully custom chart scale with special time intervals and text headers',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
-            component: 'GanttChartView', feature: 'CustomScale', title: 'Custom scale (time intervals and header texts)', description: 'Shows how to define a fully custom chart scale with special time intervals and text headers',
+            component: 'GanttChartView', feature: 'ContextMenus', title: 'Context menus', description: 'Shows how you can set up item and dependency line context menus',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'Statuses', title: 'Status columns (including color indicator)', description: 'Shows how to add supplemental custom columns for showing task statuses, such as To do, In progress, Behind schedule, and Completed',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
@@ -136,6 +128,13 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'GanttChartView', feature: 'DateTimeFormats', title: 'Date and time formats (simple or fully customized)', description: 'Shows how to set up custom formatting for dates, times, and durations',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
             component: 'GanttChartView', feature: 'SpecialDays', title: 'Special days (vertically highlight specific time intervals)', description: 'Shows how you can highlight special time intervals in the chart area',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
@@ -143,14 +142,40 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'Baseline', title: 'Baseline (estimation time bars vs. actual task bars)', description: 'Shows how you can define and display estimation bars for tasks (i.e. project baseline)',
+            component: 'GanttChartView', feature: 'SummaryUpdating', title: 'Summary updating (using drag operations)', description: 'Shows how to setup a custom template to allow dragging summary items and automatically update child tasks accordingly',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'SummaryBackgroundColors', title: 'Summary background colors', description: 'Shows how to setup a custom template to draw background rectangles of custom colors enclosing summary items and their child tasks',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'MultipleBarsPerItem', title: 'Multiple bars per item (parts)', description: 'Shows how you can define and display multiple bars for each task (i.e. item parts)',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
-            component: 'GanttChartView', feature: 'Statuses', title: 'Status columns (including color indicator)', description: 'Shows how to add supplemental custom columns for showing task statuses, such as To do, In progress, Behind schedule, and Completed',
+            component: 'GanttChartView', feature: 'UndoRedo', title: 'Undo-redo (using Undo Management Library)', description: 'Shows how you can add support for undo and redo operations for the Gantt Chart items – using UndoStack component from DlhSoft Undo Management Library, available separately for free as open source',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'WorkOptimizations', title: 'Work optimizations (reschedule project, level resources)', description: 'Shows how you can optimize project timeline and avoiding resource over-allocation',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'SelectionModes', title: 'Selection mode (single, extended, by clicking)', description: 'Shows how you can set up selection mode and handle item selection changes in the component',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
@@ -178,31 +203,11 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'DateTimeFormats', title: 'Date and time formats (simple or fully customized)', description: 'Shows how to set up custom formatting for dates, times, and durations',
-            sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts']
-            }
-        },
-        {
             component: 'GanttChartView', feature: 'Styling', title: 'Styling (with CSS classes)', description: 'Shows how to style up elements defined by the component using CSS classes',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts'],
                 'React': ['index.html', 'app.css', 'app.jsx']
-            }
-        },
-        {
-            component: 'GanttChartView', feature: 'CustomTemplate', title: 'Custom template (drawing item bars using custom SVG)', description: 'Shows how you can write code to customize drawing standard item bars in the chart area using SVG elements',
-            sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts']
-            }
-        },
-        {
-            component: 'GanttChartView', feature: 'ExtraTemplate', title: 'Add elements to the item bars using custom SVG', description: 'Shows how you can write code to add objects to a standard item bar in the chart area using SVG elements',
-            sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js']
             }
         },
         {
@@ -219,42 +224,9 @@ angular.module('Demos', [])
             }
         },
         {
-            component: 'GanttChartView', feature: 'SummaryUpdating', title: 'Summary updating (using drag operations)', description: 'Shows how to setup a custom template to allow dragging summary items and automatically update child tasks accordingly',
-            sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js']
-            }
-        },
-        {
-            component: 'GanttChartView', feature: 'SummaryBackgroundColors', title: 'Summary background colors', description: 'Shows how to setup a custom template to draw background rectangles of custom colors enclosing summary items and their child tasks',
-            sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js']
-            }
-        },
-        {
             component: 'GanttChartView', feature: 'Labels', title: 'Bar labels', description: 'Shows how to define labels on the standard, summary, and milestone bars and customize their styles.',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js']
-            }
-        },
-        {
-            component: 'GanttChartView', feature: 'MultipleBarsPerItem', title: 'Multiple bars per item (parts)', description: 'Shows how you can define and display multiple bars for each task (i.e. item parts)',
-            sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts']
-            }
-        },
-        {
-            component: 'GanttChartView', feature: 'UndoRedo', title: 'Undo-redo (using Undo Management Library)', description: 'Shows how you can add support for undo and redo operations for the Gantt Chart items – using UndoStack component from DlhSoft Undo Management Library, available separately for free as open source',
-            sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts']
-            }
-        },
-        {
-            component: 'GanttChartView', feature: 'WorkOptimizations', title: 'Work optimizations (reschedule project, level resources)', description: 'Shows how you can optimize project timeline and avoiding resource over-allocation',
-            sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
@@ -266,6 +238,41 @@ angular.module('Demos', [])
         },
         {
             component: 'GanttChartView', feature: 'TimeConstraints', title: 'Time constraints (minimum-maximum start and finish)', description: 'Shows how you can set up constraints on item date and times using minimum and/or maximum values',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'WBS', title: 'WBS path (work breakdown structure column)', description: 'Shows how you can easily insert a WBS column to the grid',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'Columns', title: 'Grid columns (built-in and custom)', description: 'Shows how to add supplemental built-in and custom grid columns including a column presenting task icon thumbs that offer vertical drag and drop support',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'MoveUpDown', title: 'Move up-down (hierarchical moving)', description: 'Shows how you can allow the end user to move items up and down without breaking the hierarchy',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'ZoomLevel', title: 'Zoom level (and disabling mouse wheel zooming)', description: 'Shows how you can set up zoom level settings for the chart area',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'Baseline', title: 'Baseline (estimation time bars vs. actual task bars)', description: 'Shows how you can define and display estimation bars for tasks (i.e. project baseline)',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
@@ -291,13 +298,6 @@ angular.module('Demos', [])
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js', 'GetPng.aspx.cs'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts', 'GetPng.aspx.cs']
-            }
-        },
-        {
-            component: 'GanttChartView', feature: 'Performance', title: 'Performance (large data set)', description: 'Shows app responsiveness and other runtime performance features when loading large sets of hierarchical data',
-            sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts']
             }
         },
         {
@@ -329,6 +329,19 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'ScheduleChartView', feature: 'AssigningTasks', title: 'Assigning tasks (drag unassigned items)', description: 'Shows how you can define a Gantt Chart displaying unassigned items and allowing the end user to drag items from that area to a Schedule Chart and assign tasks to specific resources',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'ScheduleChartView', feature: 'HierarchyLabelsAndImages', title: 'Hierarchy + task labels & resource icons', description: 'Sample application showing how to display expandable groups of resources in a hierarchical fashion and adding labels to the task bars, dependencies between them, and a resource image grid column as well.',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+            }
+        },
+        {
             component: 'ScheduleChartView', feature: 'GanttChartIntegration', title: 'Gantt Chart integration', description: 'Sample application showing how to generate a Schedule Chart view from Gantt Chart data',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
@@ -348,12 +361,6 @@ angular.module('Demos', [])
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
-            }
-        },
-        {
-            component: 'ScheduleChartView', feature: 'HierarchyLabelsAndImages', title: 'Hierarchy + task labels & resource icons', description: 'Sample application showing how to display expandable groups of resources in a hierarchical fashion and adding labels to the task bars, dependencies between them, and a resource image grid column as well.',
-            sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js'],
             }
         },
         {
@@ -420,13 +427,6 @@ angular.module('Demos', [])
         },
         {
             component: 'ScheduleChartView', feature: 'ContinuousSchedule', title: 'Continuous schedule (non-stop working time)', description: 'Shows how to define continuous working time for tasks (24/7)',
-            sourceCodeFiles: {
-                'JavaScript': ['index.html', 'app.css', 'app.js'],
-                'TypeScript': ['index.html', 'app.css', 'app.ts']
-            }
-        },
-        {
-            component: 'ScheduleChartView', feature: 'AssigningTasks', title: 'Assigning tasks (drag unassigned items)', description: 'Shows how you can define a Gantt Chart displaying unassigned items and allowing the end user to drag items from that area to a Schedule Chart and assign tasks to specific resources',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
@@ -640,7 +640,7 @@ angular.module('Demos', [])
             }
         }
     ];
-    var themes = ['Default', 'Generic-bright', 'Generic-blue', 'Royal-blue', 'DlhSoft-gray', 'Purple-green', 'Steel-blue', 'Dark-black', 'Cyan-green', 'Blue-navy', 'Orange-brown', 'Teal-green', 'Purple-beige', 'Gray-blue', 'Aero'];
+    var themes = ['Default', 'Generic-bright', 'Generic-blue', 'Blue-green', 'Royal-blue', 'DlhSoft-gray', 'Purple-green', 'Steel-blue', 'Dark-black', 'Cyan-green', 'Blue-navy', 'Orange-brown', 'Teal-green', 'Purple-beige', 'Gray-blue', 'Aero'];
     $scope.themes = themes;
     $scope.selectedTheme = themes[3];
     $scope.selectTheme = function (theme) {

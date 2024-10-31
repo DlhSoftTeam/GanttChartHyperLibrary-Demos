@@ -1,7 +1,7 @@
 /// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts'/>
 var GanttChartView = DlhSoft.Controls.GanttChartView;
 // Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 // Retrieve and store the control element for reference purposes.
@@ -24,7 +24,10 @@ var items = [
     { content: 'Quality assurance', label: 'Quality assurance', indentation: 1, start: new Date(year, month, 5, 8, 0, 0), finish: new Date(year, month, 15, 16, 0, 0), hasMilestoneAtFinish: true },
     { content: 'Project delivery', label: 'Project delivery', indentation: 1, start: new Date(year, month, 15, 8, 0, 0), finish: new Date(year, month, 18, 12, 0, 0) }];
 
-var settings = { currentTime: new Date(year, month, 3, 12, 0, 0) };
+var settings = {
+    currentTime: new Date(year, month, 3, 12, 0, 0),
+    itemClass: 'grid-item'
+};
 
 settings.areStandardTaskLabelsVisible = true;
 settings.areSummaryTaskLabelsVisible = true;

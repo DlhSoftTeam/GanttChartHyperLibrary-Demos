@@ -2,7 +2,7 @@
 var GanttChartView = DlhSoft.Controls.GanttChartView;
 var ScheduleChartView = DlhSoft.Controls.ScheduleChartView;
 // Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 // Retrieve and store the control and container elements for reference purposes.
@@ -21,7 +21,8 @@ var ganttChartItems = [
 var ganttChartSettings = {
     gridWidth: '40%', chartWidth: '60%',
     currentTime: new Date(year, month, 2, 12, 0, 0),
-    itemHeight: 32
+    itemClass: 'grid-item',
+    itemHeight: 32, barMargin: 6
 };
 
 ganttChartSettings.timelineStart = new Date(year, month, 2);
@@ -104,9 +105,10 @@ var items = [
     }
 ];
 var scheduleChartSettings = {
-    gridWidth: '40%', chartWidth: '60%',
+    gridWidth: '30%', chartWidth: '60%',
     currentTime: new Date(year, month, 2, 12, 0, 0), // Display the current time vertical line of the chart at the project start date.
-    itemHeight: 32
+    itemClass: 'grid-item',
+    itemHeight: 32, barMargin: 6, itemClass: 'grid-item'
 };
 
 scheduleChartSettings.timelineStart = new Date(year, month, 2);
@@ -131,7 +133,7 @@ columns[0].width = 144;
 
 columns.push({ header: 'Role', width: 108, cellTemplate: function (item) { return DlhSoft.Controls.ScheduleChartView.textInputColumnTemplateBase(document, 100, function () { return item.role; }, function (value) { item.role = value; }); } });
 columns.push({ header: 'Image', width: 44, cellTemplate: DlhSoft.Controls.GanttChartView.getIconColumnTemplate(getImage, null, 'width: 24px; height: 24px; border-radius: 50%;') });
-
+columns[2].cellClass = 'center-cell';
 scheduleChartSettings.columns = columns;
 scheduleChartSettings.areStandardTaskLabelsVisible = true;
 scheduleChartSettings.areMilestoneTaskLabelsVisible = true;

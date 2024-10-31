@@ -1,5 +1,5 @@
 ﻿// Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 
@@ -32,7 +32,7 @@ var settings =
 {
     currentTime: new Date(year, month, 2, 12, 0, 0),
     itemHeight: 32, barHeight: 20, barMargin: 6, arrowSize: 1.5,
-    gridLines: '#eaeaea',
+    gridLines: '#eaeaea', itemClass: 'grid-item',
     containerClass: 'container', selectedItemClass: 'selectedItem', cellClass: 'cell',
     toggleButtonClass: 'toggleButton', toggleButtonHoveringClass: 'toggleButtonHovering',
     cellClass: theme == 'Dark-black' ? 'cell-dark' : 'cell',

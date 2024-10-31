@@ -1,27 +1,43 @@
 .ribbonContainer {
-    overflow: auto; 
-    background-color: #ddd; border-bottom: 1px solid White; 
-    font-family: Tahoma, Arial; font-size: 14px;
+    overflow: auto;
+    background-color: #fefefe;
+    border-bottom: 1px solid White;
+    font-family: Calibri, Tahoma, Arial;
+    font-size: 14px;
 }
+
 .ribbonPanel {
-    float: left; overflow: auto; 
-    background-color: #eee; border-right: 1px solid #ddd; 
+    float: left;
+    overflow: auto;
+    background-color: #fefefe;
+    border-right: 1px solid #ddd;
 }
+
 .ribbonHeader {
-    background-color: #808080; color: white; 
+    background-color: #efefef;
+    color: #3e4b54;
     padding: 5px;
 }
+
 .ribbonCommandsArea {
     padding: 2px 3px;
 }
+
 .ribbonCommand {
-    float: left; 
-    margin: 4px;
+    float: left;
+    margin: 3px;
+    padding: 3px;
 }
+
     .ribbonCommand img {
-        border: 0px;
-        width: 24px;
+        width: 18px;
+        vertical-align: sub;
     }
+
+    .ribbonCommand:hover {
+        background-color: #bfefff;
+    }
+
 .toggle {
     margin: 2px;
     padding: 2px;
@@ -120,3 +136,6 @@ body {
         color: #444;
         background-color: white;
     }
+.grid-item:hover {
+    background-color: #eee;
+}
