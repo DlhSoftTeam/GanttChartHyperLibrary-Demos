@@ -842,4 +842,3 @@ $(document).ready(function () {
             clearInterval(syncSizeTimer);
     }, 500);
 });
-//# sourceMappingURL=app.js.map

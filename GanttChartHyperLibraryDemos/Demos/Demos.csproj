@@ -560,6 +560,7 @@
     <Content Include="Samples\React\GanttChartView\MainFeatures\app.jsx" />
     <Content Include="Samples\React\GanttChartView\MainFeatures\Images\AddNew.png" />
     <Content Include="Samples\React\GanttChartView\MainFeatures\Images\Baseline.png" />
+    <Content Include="Samples\React\GanttChartView\MainFeatures\Images\checkmark.png" />
     <Content Include="Samples\React\GanttChartView\MainFeatures\Images\Copy.png" />
     <Content Include="Samples\React\GanttChartView\MainFeatures\Images\CriticalPath.png" />
     <Content Include="Samples\React\GanttChartView\MainFeatures\Images\CustomScales.png" />

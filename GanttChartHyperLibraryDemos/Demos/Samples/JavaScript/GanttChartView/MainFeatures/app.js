@@ -132,7 +132,8 @@ var indexOffset = columns[0].isSelection ? 1 : 0;
 
 // Optionally, configure existing columns.
 // columns[0 + indexOffset].header = 'Work items';
- columns[0 + indexOffset].width = 204;
+
+columns[0 + indexOffset].width = 204;
 
 // Optionally, add supplemental columns.
 columns.splice(0 + indexOffset, 0, { header: '', width: 32, cellTemplate: DlhSoft.Controls.GanttChartView.getIconColumnTemplate('Images/checkmark.png', null, 'width: 16px; height: 16px; margin-top: 2px', true, undefined, undefined, 'background: #f8f8f8') });
@@ -145,9 +146,10 @@ columns.push({ header: 'Cost ($)', width: 100, cellTemplate: DlhSoft.Controls.Ga
 columns.push({ header: 'Est. start', width: 140, cellTemplate: DlhSoft.Controls.GanttChartView.getBaselineStartColumnTemplate(124, true, true, 8 * 60 * 60 * 1000) }); // 8 AM
 columns.push({ header: 'Est. finish', width: 140, cellTemplate: DlhSoft.Controls.GanttChartView.getBaselineFinishColumnTemplate(124, true, true, 16 * 60 * 60 * 1000) }); // 4 PM
 
-//Center content in milestone and completed columns
+// Center content in milestone and completed columns
 columns[7 + indexOffset].cellClass = 'center-cell';
 columns[8 + indexOffset].cellClass = 'center-cell';
+
 // Optionally, set custom item properties and/or append custom columns bound to their values.
 // items[7].description = 'Custom description';
 // columns.push({ header: 'Description', width: 200, cellTemplate: function (item) { return item.ganttChartView.ownerDocument.createTextNode(item.description); } });
