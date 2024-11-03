@@ -1,15 +1,15 @@
 .startedStatusBar {
-    fill: lightgreen;
+    fill: #9ed673;
     fill-opacity: 0.75;
     stroke: green;
 }
 .issuesStatusBar {
-    fill: orange;
+    fill: #ff5050;
     fill-opacity: 0.75;
     stroke: red;
 }
 .maintenanceStatusBar {
-    fill: yellow;
+    fill: #f18f33;
     fill-opacity: 0.75;
     stroke: orange;
 }
@@ -33,4 +33,7 @@ input {
 .dark input:focus {
     color: black;
     background-color: white;
+}
+.grid-item:hover {
+    background-color: #eee;
 }

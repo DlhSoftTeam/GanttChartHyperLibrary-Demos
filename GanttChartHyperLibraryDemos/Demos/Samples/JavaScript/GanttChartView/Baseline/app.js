@@ -1,5 +1,5 @@
 ﻿// Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 
@@ -35,6 +35,7 @@ items[7].baselineFinish = new Date(year, month, 11, 16, 0, 0);
 items[8].baselineStart = new Date(year, month, 12, 8, 0, 0);
 
 var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
+settings.itemClass = "grid-item";
 
 // Prepare the estimation start and finish columns.
 var columns = DlhSoft.Controls.GanttChartView.getDefaultColumns(items, settings);

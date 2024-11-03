@@ -1,27 +1,32 @@
 .ribbonContainer {
     overflow: auto; 
-    background-color: #909090; border-bottom: 1px solid White; 
+    background-color: #FEFEFE; border-bottom: 1px solid White; 
     font-family: Tahoma, Arial; font-size: 12px;
 }
 .ribbonPanel {
     float: left; overflow: auto; 
-    background-color: #a0a0a0; border-right: 1px solid #c0c0c0; 
+    background-color: #FEFEFE; border-right: 1px solid #c0c0c0; 
 }
 .ribbonHeader {
-    background-color: #808080; color: white; 
+    background-color: #EFEFEF; color: #3E4B54; 
     padding: 5px;
 }
 .ribbonCommandsArea {
     padding: 2px 3px;
 }
 .ribbonCommand {
-    float: left; margin: 4px;
+    float: left;
+    margin: 3px;
+    padding: 3px;
 }
-.ribbonCommand img {
-    border: 0px;
-}
+    .ribbonCommand img {
+        width: 18px;
+        vertical-align: sub;
+    }
+    .ribbonCommand:hover {
+        background-color: #bfefff;
+    }
 .ribbonContainer .content {
-    color: white;
     display: inline-block;
     margin: 8px;
     padding: 10px;
@@ -48,15 +53,15 @@ input {
     background-color: white;
 }
 .extraPanel {
-    background-color: #a0a0a0; border-bottom: 1px solid White;
-    color: White; font-family: Tahoma, Arial; font-size: 12px;
+    background-color: #FEFEFE; border-bottom: 1px solid White;
+    font-family: Tahoma, Arial; font-size: 12px;
 }
 .extraPanel {
-    background-color: #a0a0a0; border-bottom: 1px solid White;
-    color: White; font-family: Tahoma, Arial; font-size: 12px;
+    background-color: #FEFEFE; border-bottom: 1px solid White;
+    font-family: Tahoma, Arial; font-size: 12px;
 }
 .extraPanelHeader {
-    background-color: #808080; padding: 6px;
+    background-color: #EFEFEF; padding: 6px;
 }
 .extraPanelContent {
     padding: 1px 6px;
@@ -67,4 +72,7 @@ input {
 }
 .extraPanel a {
     color: White;
+}
+.grid-item:hover {
+    background-color: #eee;
 }

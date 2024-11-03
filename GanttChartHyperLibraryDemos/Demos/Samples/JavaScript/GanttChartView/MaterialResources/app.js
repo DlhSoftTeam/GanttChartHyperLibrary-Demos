@@ -1,7 +1,7 @@
 /// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts'/>
 var GanttChartView = DlhSoft.Controls.GanttChartView;
 // Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 // Retrieve and store the control element for reference purposes.
@@ -12,6 +12,7 @@ for (var i = 1; i <= 16; i++)
     items.push({ content: 'Print job #' + i, start: new Date(year, month, day, 8, 0, 0) });
 var dayDuration = 24 * 60 * 60 * 1000; // 24 hours (in milliseconds).
 var settings = {
+    itemClass: 'grid-item',
     schedule: { workingWeekStart: 0, workingWeekFinish: 6, workingDayStart: 0, workingDayFinish: dayDuration },
     timelineStart: GanttChartView.getOutputDate(GanttChartView.getWeekStart(new Date(year, month, day), 0)),
     timelineFinish: GanttChartView.getOutputDate(GanttChartView.getWeekFinish(new Date(year, month, day), 0)),

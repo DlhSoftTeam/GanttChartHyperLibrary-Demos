@@ -1,14 +1,14 @@
 .ribbonContainer {
     overflow: auto; 
-    background-color: #909090; border-bottom: 1px solid White; 
+    background-color: #FEFEFE; border-bottom: 1px solid White; 
     font-family: Tahoma, Arial; font-size: 12px;
 }
 .ribbonPanel {
     float: left; overflow: auto; 
-    background-color: #a0a0a0; border-right: 1px solid #c0c0c0; 
+    background-color: #FEFEFE; border-right: 1px solid #c0c0c0; 
 }
 .ribbonHeader {
-    background-color: #808080; color: white; 
+    background-color: #EFEFEF; color: #3E4B54; 
     padding: 5px;
 }
 .ribbonCommandsArea {

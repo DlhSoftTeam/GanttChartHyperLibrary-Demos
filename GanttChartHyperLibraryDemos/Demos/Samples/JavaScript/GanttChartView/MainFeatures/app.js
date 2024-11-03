@@ -1,5 +1,5 @@
 ﻿// Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 
@@ -84,7 +84,8 @@ var settings = {
     // },
 
     // Set the current time value to automatically scroll to a specific chart coordinate, and display a vertical bar highlighter at the specified point.
-    currentTime: new Date(year, month, 2, 12, 0, 0)
+    currentTime: new Date(year, month, 2, 12, 0, 0),
+    itemClass: 'grid-item'
 };
 
 // Optionally, set labels visibility.
@@ -131,18 +132,22 @@ var indexOffset = columns[0].isSelection ? 1 : 0;
 
 // Optionally, configure existing columns.
 // columns[0 + indexOffset].header = 'Work items';
-// columns[0 + indexOffset].width = 240;
+ columns[0 + indexOffset].width = 204;
 
 // Optionally, add supplemental columns.
-columns.splice(0 + indexOffset, 0, { header: '', width: 40, cellTemplate: DlhSoft.Controls.GanttChartView.getIndexColumnTemplate() });
-columns.splice(3 + indexOffset, 0, { header: 'Effort (h)', width: 80, cellTemplate: DlhSoft.Controls.GanttChartView.getTotalEffortColumnTemplate(64) });
-columns.splice(4 + indexOffset, 0, { header: 'Duration (d)', width: 80, cellTemplate: DlhSoft.Controls.GanttChartView.getDurationColumnTemplate(64, 8) });
-columns.splice(8 + indexOffset, 0, { header: '%', width: 80, cellTemplate: DlhSoft.Controls.GanttChartView.getCompletionColumnTemplate(64) });
-columns.splice(9 + indexOffset, 0, { header: 'Predecessors', width: 100, cellTemplate: DlhSoft.Controls.GanttChartView.getPredecessorsColumnTemplate(84) });
+columns.splice(0 + indexOffset, 0, { header: '', width: 32, cellTemplate: DlhSoft.Controls.GanttChartView.getIconColumnTemplate('Images/checkmark.png', null, 'width: 16px; height: 16px; margin-top: 2px', true, undefined, undefined, 'background: #f8f8f8') });
+columns.splice(1 + indexOffset, 0, { header: '', width: 40, cellTemplate: DlhSoft.Controls.GanttChartView.getIndexColumnTemplate() });
+columns.splice(4 + indexOffset, 0, { header: 'Effort (h)', width: 80, cellTemplate: DlhSoft.Controls.GanttChartView.getTotalEffortColumnTemplate(64) });
+columns.splice(5 + indexOffset, 0, { header: 'Duration (d)', width: 80, cellTemplate: DlhSoft.Controls.GanttChartView.getDurationColumnTemplate(64, 8) });
+columns.splice(9 + indexOffset, 0, { header: '%', width: 80, cellTemplate: DlhSoft.Controls.GanttChartView.getCompletionColumnTemplate(64) });
+columns.splice(10 + indexOffset, 0, { header: 'Predecessors', width: 100, cellTemplate: DlhSoft.Controls.GanttChartView.getPredecessorsColumnTemplate(84) });
 columns.push({ header: 'Cost ($)', width: 100, cellTemplate: DlhSoft.Controls.GanttChartView.getCostColumnTemplate(84) });
 columns.push({ header: 'Est. start', width: 140, cellTemplate: DlhSoft.Controls.GanttChartView.getBaselineStartColumnTemplate(124, true, true, 8 * 60 * 60 * 1000) }); // 8 AM
 columns.push({ header: 'Est. finish', width: 140, cellTemplate: DlhSoft.Controls.GanttChartView.getBaselineFinishColumnTemplate(124, true, true, 16 * 60 * 60 * 1000) }); // 4 PM
 
+//Center content in milestone and completed columns
+columns[7 + indexOffset].cellClass = 'center-cell';
+columns[8 + indexOffset].cellClass = 'center-cell';
 // Optionally, set custom item properties and/or append custom columns bound to their values.
 // items[7].description = 'Custom description';
 // columns.push({ header: 'Description', width: 200, cellTemplate: function (item) { return item.ganttChartView.ownerDocument.createTextNode(item.description); } });

@@ -5,7 +5,16 @@ body {
 input {
     font-size: 12px;
 }
+.ribbonCommand {
+    float: left;
+    margin: 4px 4px 4px 0px;
+    padding: 4px 12px;
+    border: 1px solid #aaa;
+}
 
+    .ribbonCommand:hover {
+        background-color: #bfefff;
+    }
 /* Dark theme */
 .dark input {
     color: white;
@@ -17,4 +26,7 @@ input {
 .dark input:focus {
     color: black;
     background-color: white;
+}
+.grid-item:hover {
+    background-color: #eee;
 }

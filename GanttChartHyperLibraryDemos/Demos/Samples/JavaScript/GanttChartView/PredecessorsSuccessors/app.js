@@ -1,5 +1,5 @@
 ﻿// Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 
@@ -40,12 +40,15 @@ items[8].predecessors = [{ item: items[4] }, { item: items[5] }];
 for (var i = 4; i <= 16; i++)
     items.push({ content: 'Task ' + i, indentation: i >= 8 && i % 3 == 2 ? 0 : 1, start: new Date(year, month, 2 + (i <= 8 ? (i - 4) * 3 : i - 8), 8, 0, 0), finish: new Date(year, month, 2 + (i <= 8 ? (i - 4) * 3 + (i > 8 ? 6 : 1) : i - 2), 16, 0, 0) });
 
-var settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
+var settings = {
+    currentTime: new Date(year, month, 2, 12, 0, 0),
+    itemClass: 'grid-item'
+};
 
 var columns = DlhSoft.Controls.GanttChartView.getDefaultColumns(items, settings);
 var indexOffset = columns[0].isSelection ? 1 : 0;
-
-columns.splice(3 + indexOffset, 0, {
+columns[0 + indexOffset].width = 204;
+columns.splice(1 + indexOffset, 0, {
     header: 'Predecessors', width: 200, cellTemplate: (item) => {
         return DlhSoft.Controls.GanttChartView.multiSelectorComboBoxInputColumnTemplateBase(
             document, 196,
@@ -67,7 +70,7 @@ columns.splice(3 + indexOffset, 0, {
     }
 });
 
-columns.splice(4 + indexOffset, 0, {
+columns.splice(2 + indexOffset, 0, {
     header: 'Successors', width: 200, cellTemplate: (item) => {
         return DlhSoft.Controls.GanttChartView.multiSelectorComboBoxInputColumnTemplateBase(
             document, 196,
@@ -108,6 +111,10 @@ settings.itemPropertyChangeHandler = function (item, propertyName, isDirect, isF
             ganttChartView.refreshItem(successor);
     }
 };
+
+columns[5 + indexOffset].cellClass = 'center-cell';
+columns[6 + indexOffset].cellClass = 'center-cell';
+
 settings.columns = columns;
 
 // Optionally, define assignable resources.

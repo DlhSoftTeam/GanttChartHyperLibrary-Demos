@@ -1,9 +1,8 @@
 .command-area {
     overflow: auto; 
     border-bottom: 1px solid White; 
-    background-color: #a0a0a0; 
+    background-color: #FEFEFE; 
     font-family: Tahoma, Arial; font-size: 12px;
-    color: white; 
     padding: 2px 3px;
 }
 
@@ -27,3 +26,16 @@ input {
     color: black;
     background-color: white;
 }
+.grid-item:hover {
+    background-color: #eee;
+}
+button, input[type=checkbox] {
+    vertical-align: sub;
+    margin: 4px 4px 4px 0px;
+    padding: 4px 12px;
+    border: 1px solid #aaa;
+}
+
+    button:hover {
+        background-color: #bfefff;
+    }

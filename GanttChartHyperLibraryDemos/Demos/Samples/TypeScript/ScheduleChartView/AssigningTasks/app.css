@@ -1,6 +1,6 @@
 .ribbonContainer {
     overflow: auto; 
-    background-color: #909090; border-bottom: 1px solid White; 
+    background-color: #FEFEFE; border-bottom: 1px solid White; 
     font-family: Tahoma, Arial; font-size: 12px;
 }
 .ribbonContainer .content {

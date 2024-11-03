@@ -1,7 +1,7 @@
 /// <reference path='./Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.d.ts'/>
 var GanttChartView = DlhSoft.Controls.GanttChartView;
 // Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 // Retrieve and store the control element for reference purposes.
@@ -33,7 +33,7 @@ function initialize() {
     for (var i = 0; i < items.length; i++)
         items[i].isSelected = false;
     selectionCountOutput.innerText = '0';
-    settings = { currentTime: new Date(year, month, 2, 12, 0, 0) };
+    settings = { currentTime: new Date(year, month, 2, 12, 0, 0), itemClass: 'grid-item' };
     settings.selectionMode = selectionModeSelect.value;
     // Handle item selection changes.
     settings.itemSelectionChangeHandler = function () {

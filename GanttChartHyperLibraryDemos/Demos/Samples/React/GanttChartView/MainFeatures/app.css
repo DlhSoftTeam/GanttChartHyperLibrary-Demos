@@ -1,40 +1,49 @@
 .ribbonContainer {
     overflow: auto;
-    background-color: #ddd;
+    background-color: #fefefe;
     border-bottom: 1px solid White;
-    font-family: Tahoma, Arial;
+    font-family: Calibri, Tahoma, Arial;
     font-size: 14px;
 }
 
 .ribbonPanel {
     float: left;
     overflow: auto;
-    background-color: #eee;
+    background-color: #fefefe;
     border-right: 1px solid #ddd;
 }
 
 .ribbonHeader {
-    background-color: #808080;
-    color: white;
+    background-color: #efefef;
+    color: #3e4b54;
     padding: 5px;
 }
 
 .ribbonCommandsArea {
     padding: 2px 3px;
 }
+
 .ribbonCommand {
-    float: left; margin: 4px;
+    float: left;
+    margin: 3px;
+    padding: 3px;
 }
+
     .ribbonCommand img {
-        border: 0px;
-        width: 24px;
+        width: 18px;
+        vertical-align: sub;
     }
+
+    .ribbonCommand:hover {
+        background-color: #bfefff;
+    }
+
 .extraPanel {
-    background-color: #a0a0a0; border-bottom: 1px solid White;
-    color: White; font-family: Tahoma, Arial; font-size: 12px;
+    background-color: #FEFEFE; border-bottom: 1px solid White;
+    font-family: Tahoma, Arial; font-size: 12px;
 }
 .extraPanelHeader {
-    background-color: #808080; padding: 6px;
+    background-color: #EFEFEF; padding: 6px;
     margin: 4px 0px 4px 0px;
 }
 .extraPanelContent {
@@ -62,9 +71,38 @@
 body {
     margin: 0;
 }
-input {
+/* Style for dropdown */
+#ganttChartViewContainer input[type=text] {
     font-size: 12px;
+    background-color: transparent;
+    padding: 3px !important;
 }
+
+    #ganttChartViewContainer input[type=text]:focus-visible, input[type=text]:focus {
+        outline: 0px solid transparent;
+        padding: 3px;
+    }
+/* Dropdown open */
+#ganttChartViewContainer span > div > div {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #f8f8f8 !important;
+}
+    /* Each row from Dropdown open */
+    #ganttChartViewContainer span > div > div > div > div {
+        padding: 4px 2px !important;
+    }
+
+        #ganttChartViewContainer span > div > div > div > div:hover {
+            background-color: #eee;
+        }
+
+#ganttChartViewContainer span > div div > span {
+    vertical-align: top;
+}
+    /* Checkbox from Dropdown open */
+    #ganttChartViewContainer span > div div > span input[type=checkbox] {
+        margin-right: 4px !important;
+    }
 
 /* Dark theme */
 .dark input {
@@ -125,4 +163,7 @@ input {
 }
 .editor .command-area .main {
     font-weight: bold;
+}
+.grid-item:hover {
+    background-color: #eee;
 }

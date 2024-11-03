@@ -2,7 +2,7 @@
 var GanttChartView = DlhSoft.Controls.GanttChartView;
 var ScheduleChartView = DlhSoft.Controls.ScheduleChartView;
 // Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
 // Retrieve and store the control element for reference purposes.
@@ -27,7 +27,7 @@ for (var i = 4; i <= 16; i++)
 // Prepare control settings.
 var settings = {
     // Set the current time value to automatically scroll to a specific chart coordinate, and display a vertical bar highlighter at the specified point.
-    currentTime: new Date(year, month, 2, 12, 0, 0)
+    currentTime: new Date(year, month, 2, 12, 0, 0), itemClass: 'grid-item'
 };
 // Optionally, initialize custom themes (themes.js).
 initializeGanttChartTheme(settings, theme);

@@ -1,18 +1,55 @@
 ﻿// Query string syntax: ?theme
-// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+// Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 var queryString = window.location.search;
 var theme = queryString ? queryString.substr(1) : null;
+var GanttChartView = DlhSoft.Controls.GanttChartView;
+var ScheduleChartView = DlhSoft.Controls.ScheduleChartView;
 
 // Retrieve and store the control element for reference purposes.
 var scheduleChartView = document.querySelector('#scheduleChartView');
 
 // Prepare data items.
 var date = new Date(), year = date.getFullYear(), month = date.getMonth();
-var scheduleChartItems = [{ content: 'Resource 1', ganttChartItems: [{ content: 'Task A (Resource 1)', label: 'Task A',  start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0) }] },
-                          { content: 'Resource 2', ganttChartItems: [{ content: 'Task A (Resource 2)', label: 'Task A',  start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: '50%' },
-                                                                     { content: 'Task B (Resource 2)', label: 'Task B',  start: new Date(year, month, 11, 8, 0, 0), finish: new Date(year, month, 12, 16, 0, 0), completedFinish: new Date(year, month, 12, 16, 0, 0) },
-                                                                     { content: 'Task C (Resource 2)', label: 'Task C',  start: new Date(year, month, 14, 8, 0, 0), finish: new Date(year, month, 14, 16, 0, 0) }] },
-                          { content: 'Resource 3', ganttChartItems: [{ content: 'Task D (Resource 3)', label: 'Task D',  start: new Date(year, month, 12, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0) }] }];
+var scheduleChartItems = [
+    {
+        content: 'Steven Bright', image: 'Steven.png', role: 'Architect', start: new Date(), ganttChartItems:
+            [{ content: 'Arhitecture', label: 'Architecture', start: new Date(year, month, 4, 8, 0, 0), finish: new Date(year, month, 8, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0) }]
+    },
+    {
+        content: 'Jane Gershwin', image: 'Jane.png', role: 'Technical Lead', start: new Date(), ganttChartItems: [
+            { content: 'Requirements', label: 'Requirements', start: new Date(year, month, 4, 8, 0, 0), finish: new Date(year, month, 8, 10, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: '50%' },
+            { content: 'Review', label: 'Review', start: new Date(year, month, 12, 16, 0, 0), isMilestone: true },
+            { content: 'Design', label: 'Design', start: new Date(year, month, 14, 12, 0, 0), finish: new Date(year, month, 17, 16, 0, 0) }]
+    },
+    {
+        content: 'Victor Duncan', image: 'Victor.png', role: 'Senior developer', start: new Date(), ganttChartItems: [
+            { content: 'Chart', label: 'Chart', start: new Date(year, month, 7, 8, 0, 0), finish: new Date(year, month, 10, 12, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: '50%' },
+            { content: 'Bars', label: 'Bars', start: new Date(year, month, 11, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0) },
+            { content: 'Summary bars', label: 'Summary bars', start: new Date(year, month, 15, 8, 0, 0), finish: new Date(year, month, 18, 16, 0, 0) }]
+    },
+    {
+        content: 'Johanna Mcamis', image: 'Johanna.png', role: 'Developer', start: new Date(), ganttChartItems: [
+            { content: 'Date-times', label: 'Date-times', start: new Date(year, month, 7, 8, 0, 0), finish: new Date(year, month, 10, 12, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: '50%' },
+            { content: 'Headers', label: 'Headers', start: new Date(year, month, 11, 12, 0, 0), finish: new Date(year, month, 14, 12, 0, 0) },
+            { content: 'Intervals', label: 'Intervals', start: new Date(year, month, 15, 8, 0, 0), finish: new Date(year, month, 18, 16, 0, 0) }]
+    },
+    {
+        content: 'Denis Kaelin', image: 'Denis.png', role: 'Tester', start: new Date(), ganttChartItems: [
+            { content: 'Quality assurance', label: 'Quality assurance', start: new Date(year, month, 7, 8, 0, 0), finish: new Date(year, month, 14, 16, 0, 0), completedFinish: new Date(year, month, 5, 16, 0, 0), assignmentsContent: '50%' },
+            { content: 'Automation testing functions', label: 'Automation testing functions', start: new Date(year, month, 17, 8, 0, 0), finish: new Date(year, month, 22, 16, 0, 0) }]
+    },
+    {
+        content: 'Diane McField', image: 'Diane.png', role: 'Senior Developer', start: new Date(), ganttChartItems:
+            [{ content: 'Diagram functions', label: 'Diagram functions', start: new Date(year, month, 7, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0) }]
+    },
+    {
+        content: 'Albert Makhow', image: 'Albert.png', role: 'Developer', start: new Date(), ganttChartItems:
+            [{ content: 'Schedules', label: 'Schedules', start: new Date(year, month, 7, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0) }]
+    },
+    {
+        content: 'Tyson Lamberson', image: 'Tyson.png', role: 'Developer', start: new Date(), ganttChartItems:
+            [{ content: 'Scales', label: 'Scales', start: new Date(year, month, 7, 12, 0, 0), finish: new Date(year, month, 14, 16, 0, 0) }]
+    }];;
 for (var i = 4; i <= 16; i++)
     scheduleChartItems.push({
         content: 'Resource ' + i, ganttChartItems: [{ content: 'Task X (Resource ' + i + ')', label: 'Task 1.' + (i-3), start: new Date(year, month, 2, 8, 0, 0), finish: new Date(year, month, 5, 16, 0, 0) },
@@ -28,8 +65,8 @@ scheduleChartItems[3].ganttChartItems[1].predecessors = [{ item: scheduleChartIt
 var settings = {
     // Optionally, hide data grid or set grid and chart widths, set read only settings, and/or disable virtualization.
     // isGridVisible: false,
-    // gridWidth: '20%',
-    // chartWidth: '80%',
+     gridWidth: '30%',
+     chartWidth: '70%',
     // isGridReadOnly: true,
     // isChartReadOnly: true,
     // isVirtualizing: false,
@@ -60,7 +97,8 @@ var settings = {
     // },
 
     // Set the current time value to automatically scroll to a specific chart coordinate, and display a vertical bar highlighter at the specified point.
-    currentTime: new Date(year, month, 2, 12, 0, 0)
+    currentTime: new Date(year, month, 2, 12, 0, 0),
+    itemClass: 'grid-item'
 };
 
 settings.areStandardTaskLabelsVisible = true;
@@ -80,7 +118,13 @@ settings.areTaskDependenciesVisible = true;
 // columns[0].width = 240;
 // scheduleChartItems[1].description = 'Custom description';
 // columns.push({ header: 'Description', width: 200, cellTemplate: function (item) { return window.document.createTextNode(item.description); } });
-// settings.columns = columns;
+var columns = ScheduleChartView.getDefaultColumns(scheduleChartItems, settings);
+columns[0].width = 144;
+columns.push({ header: 'Role', width: 108, cellTemplate: function (item) { return DlhSoft.Controls.ScheduleChartView.textInputColumnTemplateBase(document, 100, function () { return item.role; }, function (value) { item.role = value; }); } });
+columns.push({ header: 'Image', width: 44, cellTemplate: DlhSoft.Controls.GanttChartView.getIconColumnTemplate(getImage, null, 'width: 24px; height: 24px; border-radius: 50%;') });
+columns[2].cellClass = 'center-cell';
+
+settings.columns = columns;
 
 // Optionally, handle item property change notifications.
 // settings.itemPropertyChangeHandler = function (item, propertyName, isDirect, isFinal) {
@@ -137,6 +181,14 @@ initializeGanttChartTheme(settings, theme);
 // Initialize the component.
 DlhSoft.Controls.ScheduleChartView.initialize(scheduleChartView, scheduleChartItems, settings);
 
+function getImage(item) {
+    if (item.image === null) {
+        return 'data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA='; // empty image source
+    }
+    else {
+        return 'Images/' + item.image;
+    }
+}
 // Define user command functions.
 function addNewItem() {
     var item = { content: 'New resource', ganttChartItems: [] };

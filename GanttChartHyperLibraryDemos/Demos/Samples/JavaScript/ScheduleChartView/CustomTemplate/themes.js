@@ -1,4 +1,4 @@
-﻿// Supported themes: Default, Generic-bright, Generic-blue, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
+﻿// Supported themes: Default, Generic-bright, Generic-blue, Blue-green, Royal-blue, DlhSoft-gray, Purple-green, Steel-blue, Dark-black, Cyan-green, Blue-navy, Orange-brown, Teal-green, Purple-beige, Gray-blue, Aero.
 function initializeGanttChartTheme(settings, theme) {
     if (theme == 'Default')
         return;
@@ -46,6 +46,42 @@ function initializeGanttChartTheme(settings, theme) {
         case 'Generic-blue':
             if (typeof settings.headerBackground === 'undefined')
                 settings.headerBackground = 'white';
+            break;
+        case 'Blue-green':
+            if (typeof settings.border === 'undefined')
+                settings.border = '#ddd';
+            if (typeof settings.headerBackground === 'undefined')
+                settings.headerBackground = '#fefefe';
+            if (typeof settings.headerForeground === 'undefined')
+                settings.headerForeground = '#2c3e50';
+            if (typeof settings.toggleFill === 'undefined')
+                settings.toggleFill = '#aaa';
+            if (typeof settings.selectedGridForeground === 'undefined')
+                settings.selectedGridForeground = '#4b5d6b';
+            if (typeof settings.selectedGridBackground === 'undefined')
+                settings.selectedGridBackground = '#b6e1f4aa';
+            if (typeof settings.nonworkingBackground === 'undefined')
+                settings.nonworkingBackground = '#f8f8f8aa';
+            if (typeof settings.summaryFill === 'undefined')
+                settings.summaryFill = '#327bab';
+            if (typeof settings.mainStroke === 'undefined')
+                settings.mainStroke = '#b6e1f4';
+            if (typeof settings.mainFill === 'undefined')
+                settings.mainFill = '#b6e1f4';
+            if (typeof settings.accentFill === 'undefined')
+                settings.accentFill = '#8cbcab';
+            if (typeof settings.arrowFill === 'undefined')
+                settings.arrowFill = '#ffb38a';
+            if (typeof settings.diamondFill === 'undefined')
+                settings.diamondFill = '#fdbb86';
+            if (typeof settings.diamondStroke === 'undefined')
+                settings.diamondStroke = '#a0a0a0';
+            if (typeof settings.standardLabelColor === 'undefined')
+                settings.standardLabelColor = '#705733;';
+            if (typeof settings.summaryLabelColor === 'undefined')
+                settings.summaryLabelColor = '#dcf2f8;';
+            if (typeof settings.milestoneLabelColor === 'undefined')
+                settings.milestoneLabelColor = '#ff851b;';
             break;
         case 'Royal-blue':
             if (typeof settings.border === 'undefined')
