@@ -611,6 +611,7 @@
     <Content Include="Samples\React\GanttChartView\Styling\index.html" />
     <Content Include="Samples\React\GanttChartView\Styling\themes.js" />
     <Content Include="Samples\React\LoadChartView\MainFeatures\app.css" />
+    <Content Include="Samples\React\LoadChartView\MainFeatures\app.jsx" />
     <Content Include="Samples\React\LoadChartView\MainFeatures\Images\CustomScales.png" />
     <Content Include="Samples\React\LoadChartView\MainFeatures\Images\DecreaseTimelinePage.png" />
     <Content Include="Samples\React\LoadChartView\MainFeatures\Images\IncreaseTimelinePage.png" />
@@ -1104,6 +1105,7 @@
     <None Include="Scripts\angular.min.js.map" />
     <None Include="Tools\ArchiveBuilder.exe" />
     <None Include="Tools\Interop.Shell32.dll" />
+    <Content Include="theme-hyperblue.css" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>

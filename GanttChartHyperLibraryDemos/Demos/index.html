@@ -6,9 +6,9 @@
     <link href="https://DlhSoft.com/css/themify-icons.css" rel="stylesheet" type="text/css" media="all" />
     <link href="https://DlhSoft.com/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="https://DlhSoft.com/css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="https://DlhSoft.com/css/theme-hyperblue.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="theme-hyperblue.css" rel="stylesheet" type="text/css" media="all" />
     <link href="https://DlhSoft.com/css/custom.css" rel="stylesheet" type="text/css" media="all" />
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:200,300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600' rel='stylesheet' type='text/css'>
     <link href="app.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="https://DlhSoft.com/js/jquery.min.js"></script>
     <script type="text/javascript" src="https://DlhSoft.com/js/bootstrap.min.js"></script>
@@ -113,9 +113,9 @@
                             <div class="title" ng-click="selectComponent(component)">
                                 <span>{{ component }}</span>
                             </div>
-                            <div class="content bg-secondary">
+                            <div class="content">
                                 <p>
-                                    <span ng-repeat="sample in getSamples(component, selectedTechnology)" class="{{ selectedSample == sample ? '' : 'fade-on-hover' }}">
+                                    <span ng-repeat="sample in getSamples(component, selectedTechnology)" class="{{ selectedSample == sample ? '' : 'list' }}">
                                         <a ng-show="sample.sourceCodeFiles" href="javascript:" ng-click="selectSample(sample)" title="{{ sample.description }}">{{ sample.title }}</a>
                                         <a ng-show="sample.sourceCodeUrls" class="download-link" href="javascript:" ng-href="{{ sample.sourceCodeUrls[selectedTechnology.name] }}" title="{{ sample.description + ' – download (.zip)' }}">{{ sample.title }}</a>
                                         <br/>
