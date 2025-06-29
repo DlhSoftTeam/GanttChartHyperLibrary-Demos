@@ -96,7 +96,7 @@ settings.itemPropertyChangeHandler = function (item, propertyName, isDirect, isF
 settings.displayedTimeChangeHandler = function (displayedTime) { refreshViewsDisplayedTime('GanttChart', displayedTime); };
 settings.splitterPositionChangeHandler = function (gridWidth, chartWidth) { refreshViewsSplitterPosition('GanttChart', gridWidth, chartWidth); };
 settings.hourWidthChangeHandler = function (hourWidth) { refreshView(); };
-var isWaitingToRefreshScheduleChartView, isWaitingToRefreshScheduleChartViewDisplayedTime, isWaitingToRefreshScheduleChartViewSplitterPosition, isWaitingToRefreshLoadChartView, isWaitingToRefreshLoadChartViewDisplayedTime, isWaitingToRefreshLoadChartViewSplitterPosition, isWaitingToRefreshGanttChartViewDisplayedTime, isWaitingToRefreshGanttChartViewSplitterPosition;
+var isWaitingToRefreshLoadChartView, isWaitingToRefreshLoadChartViewDisplayedTime, isWaitingToRefreshLoadChartViewSplitterPosition, isWaitingToRefreshGanttChartViewDisplayedTime, isWaitingToRefreshGanttChartViewSplitterPosition;
 function refreshView() {
     refreshLoadChartResourceSelector();
     refreshLoadChartView();
@@ -174,14 +174,6 @@ function refreshViewsDisplayedTime(sourceControlType, displayedTime) {
     }
 }
 function refreshViewsSplitterPosition(sourceControlType, gridWidth, chartWidth) {
-    if (sourceControlType != 'ScheduleChart' && scheduleChartPanel.style.display != 'none' && !isWaitingToRefreshScheduleChartViewSplitterPosition) {
-        isWaitingToRefreshScheduleChartViewSplitterPosition = true;
-        setTimeout(function () {
-            var scheduleChartView = document.querySelector('#scheduleChartView');
-            scheduleChartView.setSplitterPosition(gridWidth, chartWidth);
-            isWaitingToRefreshScheduleChartViewSplitterPosition = false;
-        });
-    }
     if (sourceControlType != 'LoadChart' && loadChartPanel.style.display != 'none' && !isWaitingToRefreshLoadChartViewSplitterPosition) {
         isWaitingToRefreshLoadChartViewSplitterPosition = true;
         setTimeout(function () {
