@@ -63,6 +63,13 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'GanttChartView', feature: 'Localization', title: 'Localization', description: 'Example of translating the resources (labels, columns, months, days etc.) and to set up the date format.',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
+                    //'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
                 component: 'GanttChartView', feature: 'Filtering', title: 'Filtering and hiding items', description: 'Shows how you can set up an item visibility filter function and hide individual items when needed',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],

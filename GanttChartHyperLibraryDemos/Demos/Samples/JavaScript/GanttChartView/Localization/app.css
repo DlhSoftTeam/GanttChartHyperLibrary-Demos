@@ -1,0 +1,74 @@
+.ribbonContainer {
+    overflow: auto;
+    background-color: #fefefe;
+    border-bottom: 1px solid White;
+    font-family: Calibri, Tahoma, Arial;
+    font-size: 14px;
+}
+
+.ribbonPanel {
+    float: left;
+    overflow: auto;
+    background-color: #fefefe;
+    border-right: 1px solid #ddd;
+}
+
+.ribbonHeader {
+    background-color: #efefef;
+    color: #3e4b54;
+    padding: 5px;
+}
+
+.ribbonCommandsArea {
+    padding: 2px 3px;
+}
+
+.ribbonCommand {
+    float: left;
+    margin: 3px;
+    padding: 3px;
+}
+
+    .ribbonCommand img {
+        width: 18px;
+        vertical-align: sub;
+    }
+
+    .ribbonCommand:hover {
+        background-color: #bfefff;
+    }
+
+.ribbonContainer .content {
+    display: inline-block;
+    margin: 8px;
+    padding: 10px;
+}
+.toggle {
+    opacity: 0.95;
+}
+
+.pressed {
+    background-color: #e9e9e9;
+    opacity: 1;
+}
+
+/* Overrides */
+body {
+    margin: 0;
+}
+input {
+    font-size: 12px;
+}
+
+/* Dark theme */
+.dark input {
+    color: white;
+    background-color: black;
+}
+.dark input:disabled {
+    color: gray;
+}
+.dark input:focus {
+    color: black;
+    background-color: white;
+}
