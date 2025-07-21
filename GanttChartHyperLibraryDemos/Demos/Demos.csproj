@@ -105,6 +105,14 @@
     <Content Include="Samples\JavaScript\GanttChartView\Columns\Images\Delete.png" />
     <Content Include="Samples\JavaScript\GanttChartView\Columns\Images\IncreaseIndentation.png" />
     <Content Include="Samples\JavaScript\GanttChartView\Columns\Images\InsertNew.png" />
+    <Content Include="Samples\JavaScript\GanttChartView\DateOnly\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\DateOnly\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\DateOnly\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\DateOnly\themes.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\DateTimePickerStyling\app.css" />
+    <Content Include="Samples\JavaScript\GanttChartView\DateTimePickerStyling\app.js" />
+    <Content Include="Samples\JavaScript\GanttChartView\DateTimePickerStyling\index.html" />
+    <Content Include="Samples\JavaScript\GanttChartView\DateTimePickerStyling\themes.js" />
     <Content Include="Samples\JavaScript\GanttChartView\ExportPngImage-PMF\Images\ExportPngImage.png" />
     <Content Include="Samples\JavaScript\GanttChartView\ExtraTemplate\app.css" />
     <Content Include="Samples\JavaScript\GanttChartView\ExtraTemplate\app.js" />
@@ -1241,7 +1249,9 @@
     <Folder Include="Samples\JavaScript\GanttChartView\CustomScale\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\CustomSchedules\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\CustomTemplate\Scripts\" />
+    <Folder Include="Samples\JavaScript\GanttChartView\DateOnly\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\DateTimeFormats\Scripts\" />
+    <Folder Include="Samples\JavaScript\GanttChartView\DateTimePickerStyling\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\ExportPngImage-PMF\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\ExtraTemplate\Scripts\" />
     <Folder Include="Samples\JavaScript\GanttChartView\Filtering\Scripts\" />

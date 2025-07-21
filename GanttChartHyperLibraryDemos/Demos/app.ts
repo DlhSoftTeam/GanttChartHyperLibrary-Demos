@@ -154,6 +154,20 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'GanttChartView', feature: 'DateOnly', title: 'Date Only', description: 'Shows how to set up dateTimePicker to show only date',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'DateTimePickerStyling', title: 'Date and time picker styling', description: 'Shows how to style up elements from date time picker using CSS classes',
+                sourceCodeFiles: {
+                    'JavaScript': ['index.html', 'app.css', 'app.js'],
+                    'TypeScript': ['index.html', 'app.css', 'app.ts']
+                }
+            },
+            {
                 component: 'GanttChartView', feature: 'SpecialDays', title: 'Special days (vertically highlight specific time intervals)', description: 'Shows how you can highlight special time intervals in the chart area',
                 sourceCodeFiles: {
                     'JavaScript': ['index.html', 'app.css', 'app.js'],
