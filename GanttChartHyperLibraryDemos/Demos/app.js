@@ -51,6 +51,12 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'GanttChartView', feature: 'Localization', title: 'Localization', description: 'Shows how to translate string resources (labels, columns, months, days, etc.) to multiple available languages and to set up the date format accordingly',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+            }
+        },
+        {
             component: 'GanttChartView', feature: 'Filtering', title: 'Filtering and hiding items', description: 'Shows how you can set up an item visibility filter function and hide individual items when needed',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
@@ -129,6 +135,20 @@ angular.module('Demos', [])
         },
         {
             component: 'GanttChartView', feature: 'DateTimeFormats', title: 'Date and time formats (simple or fully customized)', description: 'Shows how to set up custom formatting for dates, times, and durations',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'DateOnly', title: 'Date only', description: 'Shows how to display and pick dates without time information, and to ensure updates are all of 8 hours (a full day), each',
+            sourceCodeFiles: {
+                'JavaScript': ['index.html', 'app.css', 'app.js'],
+                'TypeScript': ['index.html', 'app.css', 'app.ts']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'DateTimePickerStyling', title: 'Date picker styling', description: 'Shows how to style up the date picker elements using CSS classes',
             sourceCodeFiles: {
                 'JavaScript': ['index.html', 'app.css', 'app.js'],
                 'TypeScript': ['index.html', 'app.css', 'app.ts']
